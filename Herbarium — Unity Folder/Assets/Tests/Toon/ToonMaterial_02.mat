@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: ToonMaterial_02
   m_Shader: {fileID: -6465566751694194690, guid: 860444d4db87f874fb7c5ae644f8f5f1, type: 3}
-  m_Parent: {fileID: 2100000, guid: d63a92ced5098684398d8781fc531523, type: 2}
+  m_Parent: {fileID: 2100000, guid: 4c971ef00d871c44a93c530d7c793630, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -27,6 +27,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Glow_Size: 0.14
+    - _Highlight_Intensity: 1.8
     - _Shadows_Size: 1.58
     m_Colors:
     - _Base_Color: {r: 0.14150941, g: 0.14150941, b: 0.14150941, a: 0}

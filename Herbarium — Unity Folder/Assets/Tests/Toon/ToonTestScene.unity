@@ -742,7 +742,7 @@ GameObject:
   - component: {fileID: 3469287837200639791}
   - component: {fileID: 1711813855555720165}
   m_Layer: 0
-  m_Name: characters
+  m_Name: character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -771,14 +771,14 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e8f70dcbfa32e15428a8b80d84dbc8f0, type: 2}
+  - {fileID: 2100000, guid: 4c971ef00d871c44a93c530d7c793630, type: 2}
   - {fileID: 2100000, guid: 25a87655b681d054a97d09e6c91f719d, type: 2}
   - {fileID: 2100000, guid: ebf4e0f8a70861849948714ca795e989, type: 2}
   - {fileID: 2100000, guid: 6f4dff7112930d547b0a02053fdce3d2, type: 2}
-  - {fileID: 2100000, guid: 39efc5ca01d7e3049a2a0ca8993d9b3e, type: 2}
-  - {fileID: 2100000, guid: 9a4972a0a9e962b4cb5a6c07d5132791, type: 2}
-  - {fileID: 2100000, guid: d63a92ced5098684398d8781fc531523, type: 2}
-  - {fileID: 2100000, guid: 4c971ef00d871c44a93c530d7c793630, type: 2}
+  - {fileID: 2100000, guid: 25a87655b681d054a97d09e6c91f719d, type: 2}
+  - {fileID: 2100000, guid: 25a87655b681d054a97d09e6c91f719d, type: 2}
+  - {fileID: 2100000, guid: 25a87655b681d054a97d09e6c91f719d, type: 2}
+  - {fileID: 2100000, guid: e8f70dcbfa32e15428a8b80d84dbc8f0, type: 2}
   - {fileID: 2100000, guid: e8f70dcbfa32e15428a8b80d84dbc8f0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -808,7 +808,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149545841200}
-  m_Mesh: {fileID: 8924474404701378520, guid: b3a048727934e2d4299d84403ef4ba81, type: 3}
+  m_Mesh: {fileID: 7501478907683072405, guid: b3a048727934e2d4299d84403ef4ba81, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
