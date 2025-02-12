@@ -12,10 +12,7 @@ public class CharacterMovement : MonoBehaviour
     private GameObject selectionEffect;
     
     public GameObject selectionEffectPrefab;
-
-    void Start()
-    {
-    }
+    public float rotationSpeed = 10f; // Vitesse de rotation
 
     void Update()
     {
@@ -62,6 +59,11 @@ public class CharacterMovement : MonoBehaviour
 
             if (moveDirection.magnitude >= 0.1f)
             {
+                // Rotation vers la direction du déplacement
+                Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
+                transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+
+                // Déplacement du personnage
                 transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
             }
         }
@@ -77,6 +79,15 @@ public class CharacterMovement : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 targetPosition = new Vector3(hit.point.x, transform.position.y, hit.point.z);
+
+                // Calcul de la direction et rotation avant de commencer à bouger
+                Vector3 direction = (targetPosition - transform.position).normalized;
+                if (direction.magnitude > 0.1f)
+                {
+                    Quaternion toRotation = Quaternion.LookRotation(direction, Vector3.up);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+                }
+
                 StartCoroutine(MoveToTarget());
             }
         }
@@ -88,6 +99,14 @@ public class CharacterMovement : MonoBehaviour
 
         while (Vector3.Distance(transform.position, targetPosition) > 0.1f)
         {
+            Vector3 direction = (targetPosition - transform.position).normalized;
+            
+            if (direction.magnitude > 0.1f)
+            {
+                Quaternion toRotation = Quaternion.LookRotation(direction, Vector3.up);
+                transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            }
+
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
             yield return null;
         }
