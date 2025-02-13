@@ -80,7 +80,6 @@ public class CharacterMovement : MonoBehaviour
             {
                 targetPosition = new Vector3(hit.point.x, transform.position.y, hit.point.z);
 
-                // Calcul de la direction et rotation avant de commencer à bouger
                 Vector3 direction = (targetPosition - transform.position).normalized;
                 if (direction.magnitude > 0.1f)
                 {

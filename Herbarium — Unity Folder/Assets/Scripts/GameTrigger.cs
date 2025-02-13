@@ -6,63 +6,70 @@ public class GameTrigger : MonoBehaviour
     public string triggerTag = "Player";
     public CinemachineVirtualCamera newCamera;
     public CinemachineVirtualCamera currentCamera;
+    public string question = "Wanna play 's mini-game ?";
+    public string sceneToPlay = "MiniGame_";
+    public Sprite transitionSprite;
 
+    private GameController gameController;
     private CharacterMovement currentCharacterMovement;
-    private bool isInTrigger = false;
+    private DialogueBox dialogueBox;
+
+    public bool isInTrigger = false;
+
+    void Start()
+    {
+        dialogueBox = FindAnyObjectByType<DialogueBox>();
+        dialogueBox.transitionSprite = transitionSprite;
+        gameController = FindAnyObjectByType<GameController>();
+    }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(triggerTag))
+        if (!other.CompareTag(triggerTag)) return;
+
+        if (currentCharacterMovement == null)
         {
             currentCharacterMovement = other.GetComponent<CharacterMovement>();
-            if (currentCharacterMovement != null)
-            {
-                currentCharacterMovement.enabled = false;
-            }
-
-            SwitchCamera();
-            isInTrigger = true;
         }
+        
+        if (gameController != null) gameController.enabled = false;
+        if (currentCharacterMovement != null) currentCharacterMovement.enabled = false;
+
+        SwitchCamera();
+        isInTrigger = true;
+
+        dialogueBox?.ShowDialogue(question, sceneToPlay);
     }
 
     void Update()
     {
         if (isInTrigger && Input.GetKeyDown(KeyCode.Escape))
         {
-            if (currentCharacterMovement != null)
-            {
-                currentCharacterMovement.enabled = true;
-            }
-
-            SwitchBackToInitialCamera();
-
-            isInTrigger = false;
+            PlayerPlayable();
         }
     }
 
+    public void PlayerPlayable()
+    {
+        if (gameController != null) gameController.enabled = true;
+        if (currentCharacterMovement != null) currentCharacterMovement.enabled = true;
+            
+        SwitchBackToInitialCamera();
+    }
+    
     private void SwitchCamera()
     {
-        if (currentCamera != null)
-        {
-            currentCamera.gameObject.SetActive(false);
-        }
-
-        if (newCamera != null)
-        {
-            newCamera.gameObject.SetActive(true);
-        }
+        if (currentCamera != null) currentCamera.gameObject.SetActive(false);
+        if (newCamera != null) newCamera.gameObject.SetActive(true);
     }
 
-    private void SwitchBackToInitialCamera()
+    public void SwitchBackToInitialCamera()
     {
-        if (newCamera != null)
-        {
-            newCamera.gameObject.SetActive(false);
-        }
+        if (!isInTrigger) return;
 
-        if (currentCamera != null)
-        {
-            currentCamera.gameObject.SetActive(true);
-        }
+        isInTrigger = false;
+
+        if (newCamera != null) newCamera.gameObject.SetActive(false);
+        if (currentCamera != null) currentCamera.gameObject.SetActive(true);
     }
 }
