@@ -18,7 +18,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3804750332108280150, guid: 20b6b6713172f494d970737326771192, type: 3}
       propertyPath: m_TagString
-      value: Player 3
+      value: Aya
+      objectReference: {fileID: 0}
+    - target: {fileID: 5677816198325256792, guid: 20b6b6713172f494d970737326771192, type: 3}
+      propertyPath: m_Name
+      value: CamFocusAya
       objectReference: {fileID: 0}
     - target: {fileID: 5985583560308303940, guid: 20b6b6713172f494d970737326771192, type: 3}
       propertyPath: m_LocalPosition.x
