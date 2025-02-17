@@ -19,7 +19,6 @@ public class GameTrigger : MonoBehaviour
     void Start()
     {
         dialogueBox = FindAnyObjectByType<DialogueBox>();
-        dialogueBox.transitionSprite = transitionSprite;
         gameController = FindAnyObjectByType<GameController>();
     }
 
@@ -37,7 +36,9 @@ public class GameTrigger : MonoBehaviour
 
         SwitchCamera();
         isInTrigger = true;
-
+        
+        
+        dialogueBox.transitionSprite = transitionSprite;
         dialogueBox?.ShowDialogue(question, sceneToPlay);
     }
 

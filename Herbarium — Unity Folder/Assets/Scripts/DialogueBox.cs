@@ -17,7 +17,7 @@ public class DialogueBox : MonoBehaviour
     
     [HideInInspector]
     public Sprite transitionSprite;
-    void Start()
+    void Awake()
     {
         gameTrigger = new List<GameTrigger>(FindObjectsByType<GameTrigger>(FindObjectsSortMode.None));
         sceneChanger = FindAnyObjectByType<SceneChanger>();
@@ -48,11 +48,19 @@ public class DialogueBox : MonoBehaviour
 
     public void OnNoClicked()
     {
-        foreach (var gameTrigger in gameTrigger)
-        {
-            gameTrigger.PlayerPlayable();
-        }
+        PlayerActivationAndDetection();
         HideDialogue();
+    }
+
+    public void PlayerActivationAndDetection()
+    {
+        if (gameTrigger != null)
+        {
+            foreach (var gameTrigger in gameTrigger)
+            { 
+                gameTrigger.PlayerPlayable();
+            }
+        }
     }
 
     private void HideDialogue()

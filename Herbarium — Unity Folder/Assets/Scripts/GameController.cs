@@ -15,16 +15,20 @@ public class GameController : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
-    }
-
-    void Start()
-    {
+        
         characterMovements = new CharacterMovement[characters.Length];
         for (int i = 0; i < characters.Length; i++)
         {
             characterMovements[i] = characters[i].GetComponent<CharacterMovement>();
             characterMovements[i].SetSelectionEffect(false);
         }
+        
+        DialogueBox dialogueBox = FindAnyObjectByType<DialogueBox>();
+        if (dialogueBox != null)
+        {
+            dialogueBox.PlayerActivationAndDetection();
+        }
+        
         UpdateCharacterControl();
     }
 

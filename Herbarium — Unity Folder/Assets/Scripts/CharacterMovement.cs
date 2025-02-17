@@ -13,7 +13,12 @@ public class CharacterMovement : MonoBehaviour
     
     public GameObject selectionEffectPrefab;
     public float rotationSpeed = 10f; // Vitesse de rotation
-
+    
+    private void OnDestroy()
+    {
+        SceneStateManager.Instance?.SaveTransform(gameObject.name, transform);
+    }
+    
     void Update()
     {
         if (isControlled)

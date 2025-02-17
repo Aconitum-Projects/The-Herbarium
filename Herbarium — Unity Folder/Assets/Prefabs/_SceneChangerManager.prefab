@@ -85,6 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3977493578815172804}
   - component: {fileID: 8486617616556797699}
+  - component: {fileID: 8589334083693094579}
   - component: {fileID: 4271912110349360147}
   - component: {fileID: 628648412810565317}
   - component: {fileID: 7642633852710125354}
@@ -132,6 +133,19 @@ MonoBehaviour:
   showPanel: {x: 0, y: 0}
   hidePanel: {x: 3950, y: 0}
   slideDuration: 0.5
+--- !u!114 &8589334083693094579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4639848696802759813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6e98b48a4239cf4fbfde781c2874bc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToSave: MainScene
 --- !u!223 &4271912110349360147
 Canvas:
   m_ObjectHideFlags: 0
@@ -229,7 +243,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -3950, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7829950400015830616
