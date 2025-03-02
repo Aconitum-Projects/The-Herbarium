@@ -23,10 +23,10 @@ public class GameController : MonoBehaviour
             characterMovements[i].SetSelectionEffect(false);
         }
         
-        DialogueBox dialogueBox = FindAnyObjectByType<DialogueBox>();
-        if (dialogueBox != null)
+        GameTrigger gameTrigger = FindObjectsByType<GameTrigger>();
+        if (gameTrigger != null)
         {
-            dialogueBox.PlayerActivationAndDetection();
+            gameTrigger.PlayerPlayable();
         }
         
         UpdateCharacterControl();
