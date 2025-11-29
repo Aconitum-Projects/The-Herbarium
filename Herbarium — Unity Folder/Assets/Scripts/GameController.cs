@@ -23,10 +23,10 @@ public class GameController : MonoBehaviour
             characterMovements[i].SetSelectionEffect(false);
         }
         
-        GameTrigger gameTrigger = FindObjectsByType<GameTrigger>();
-        if (gameTrigger != null)
+        //GameTrigger gameTrigger = FindObjectsByType<GameTrigger>();
+        //if (gameTrigger != null)
         {
-            gameTrigger.PlayerPlayable();
+            //gameTrigger.PlayerPlayable();
         }
         
         UpdateCharacterControl();

@@ -64,9 +64,10 @@ Material:
     - _Rim_Power: 2
     - _WobbleX: 0
     - _WobbleZ: 0
+    - _Wobble_Multiplier: 5
     m_Colors:
     - _BottomColor: {r: 0.81960785, g: 0.14146483, b: 0, a: 1}
-    - _FillAmount: {r: 0.00000023841858, g: -0.1718136, b: 0, a: 0}
+    - _FillAmount: {r: 0.0000009536743, g: 0.32395494, b: 0, a: 0}
     - _FoamColor: {r: 0.99215686, g: 0.615352, b: 0.28627458, a: 1}
     - _Rim_Color: {r: 1, g: 0.78263444, b: 0.32549024, a: 1}
     - _TopColor: {r: 0.7647059, g: 0.09127961, b: 0, a: 1}
