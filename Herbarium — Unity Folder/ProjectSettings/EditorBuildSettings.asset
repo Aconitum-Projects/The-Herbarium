@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 268d40b903ccafb41a09281c9037b22f
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
+    path: Assets/Scenes/Gameplay.unity
     guid: 0b68d8f92d564534e926b33ac3798de8
   - enabled: 1
     path: Assets/Scenes/MiniGame_Aya.unity
@@ -20,6 +20,36 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MiniGame_Ura.unity
     guid: 3321f47f19420b54eaf890c195995c67
+  - enabled: 1
+    path: Assets/Scenes/SubMiniGames/MiniGame_Ingredient_00.unity
+    guid: 5a7ff2dcedd5d6748a6fc210132014cc
+  - enabled: 1
+    path: Assets/Scenes/SubMiniGames/MiniGame_Ingredient_01.unity
+    guid: 23c61355c960abc45a887e8cc343f938
+  - enabled: 1
+    path: Assets/Scenes/SubMiniGames/MiniGame_Ingredient_02.unity
+    guid: 6776cfcae2a70b44a9fb7c3be25d7813
+  - enabled: 1
+    path: Assets/Scenes/SubMiniGames/MiniGame_Ingredient_03.unity
+    guid: e9eecccc36d0b3b4c8eecd1c65f70e62
+  - enabled: 1
+    path: Assets/Scenes/SubMiniGames/MiniGame_Ingredient_04.unity
+    guid: 41cddcc29d20b36478459b2fc28a6910
+  - enabled: 1
+    path: Assets/Scenes/SubMiniGames/MiniGame_Ingredient_05.unity
+    guid: 7ebae788ded72054c8f34285b0319676
+  - enabled: 1
+    path: Assets/Scenes/SubMiniGames/MiniGame_Ingredient_06.unity
+    guid: 2bf940eb05d306f4db6da02e9623f44a
+  - enabled: 1
+    path: Assets/Scenes/SubMiniGames/MiniGame_Ingredient_07.unity
+    guid: e3ad5259474c226418c2bf2679bf8a0e
+  - enabled: 1
+    path: Assets/Scenes/SubMiniGames/MiniGame_Ingredient_08.unity
+    guid: f128b4ca760b95f4b93baf4a8004554b
+  - enabled: 1
+    path: Assets/Scenes/SubMiniGames/MiniGame_Ingredient_09.unity
+    guid: 3313f7110f6e09f4b956dfec58af711d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
