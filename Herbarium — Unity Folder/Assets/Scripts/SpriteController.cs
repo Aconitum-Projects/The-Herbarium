@@ -10,6 +10,13 @@ public class SpriteController : MonoBehaviour
         FollowMouse,
         Detachable
     }
+    
+    public enum DetachType
+    {
+        None,
+        Draggable,
+        Fall
+    }
 
     [Header("Mode")] public Mode currentMode = Mode.Dragable;
 
@@ -20,10 +27,12 @@ public class SpriteController : MonoBehaviour
 
     [Header("Detachable Settings")]
     public Vector2 maxScale = new Vector2(2f, 2f);
-    public bool detachToDragable = true;
-    public bool detachToNone = false;
     public float distanceMultiplier = 1f;
     public float scaleDuration = 0.2f;
+    public float fallDistance = 3f;
+    public float fallDuration = 0.4f;
+    
+    public DetachType detachType;
 
     private Vector3 initialScale;
     private Vector3 detachOrigin;
@@ -126,29 +135,39 @@ public class SpriteController : MonoBehaviour
         Vector3 worldPos = mainCam.ScreenToWorldPoint(mousePos);
 
         float distance = Vector3.Distance(worldPos, detachOrigin);
-        float t = Mathf.Clamp01(distance * distanceMultiplier / 1f); // facteur normalisé 0-1
+        float t = Mathf.Clamp01(distance * distanceMultiplier / 1f);
 
-        // Calcul du scale cible en Vector2
         Vector2 targetScale = new Vector2(
             Mathf.Lerp(initialScale.x, maxScale.x, t),
             Mathf.Lerp(initialScale.y, maxScale.y, t)
         );
 
-        // Tween pour smooth le scale
         transform.DOScale(new Vector3(targetScale.x, targetScale.y, transform.localScale.z), scaleDuration);
 
         if (t >= 1f)
         {
             isDragging = false;
 
-            // Remettre le scale initial avec un tween rapide
             transform.DOScale(initialScale, 0.1f);
-
-            // Prendre la position de la souris
             transform.position = worldPos;
 
-            if (detachToDragable) currentMode = Mode.Dragable;
-            else if (detachToNone) currentMode = Mode.None;
+            switch (detachType)
+            {
+                case DetachType.Fall:
+                    transform.DOMoveY(worldPos.y - fallDistance, fallDuration)
+                        .SetEase(Ease.InQuad);
+
+                    currentMode = Mode.None;
+                    return;
+
+                case DetachType.Draggable:
+                    currentMode = Mode.Dragable;
+                    return;
+
+                case DetachType.None:
+                    currentMode = Mode.None;
+                    return;
+            }
         }
     }
 }
