@@ -5,6 +5,7 @@ using DG.Tweening;
 public class ColorDetector : MonoBehaviour
 {
     [Header("State")]
+    public bool done = false;
     public bool validated = false;
 
     [Header("Settings")]
@@ -59,10 +60,10 @@ public class ColorDetector : MonoBehaviour
                 colliding.Add(target);
         }
 
-        bool wasValidated = validated;
-        validated = colliding.Count == targetColliders.Count;
+        bool wasValidated = done;
+        done = colliding.Count == targetColliders.Count;
 
-        if (validated && !alreadyValidated)
+        if (done && !alreadyValidated)
         {
             alreadyValidated = true;
             waitingForRelease = true;
@@ -85,7 +86,12 @@ public class ColorDetector : MonoBehaviour
 
     private void DoValidatedTween()
     {
-        transform.DOMove(initialPosition + offscreenOffset, tweenDuration).SetEase(tweenEase);
+        transform.DOMove(initialPosition + offscreenOffset, tweenDuration)
+            .SetEase(tweenEase)
+            .OnComplete(() =>
+            {
+                validated = true;
+            });
     }
-    
+
 }
