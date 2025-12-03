@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IbogaPetalDeatched
       objectReference: {fileID: 0}
+    - target: {fileID: 8593720287639485042, guid: 95c451ccdab25e6498b9c5acaae50bf5, type: 3}
+      propertyPath: m_TagString
+      value: PetalColor1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
