@@ -57,6 +57,8 @@ public class DetachDetector : MonoBehaviour
 
     void OnAllDetached()
     {
-        transform.parent.GetComponent<VictoryChecker>().CheckAllDetached();
+        var vc = transform.parent.GetComponent<VictoryChecker>();
+        if (vc != null)
+            vc.CheckAllDetached();
     }
 }

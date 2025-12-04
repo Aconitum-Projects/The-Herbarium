@@ -7,20 +7,24 @@ public class SpriteControllerEditor : Editor
 {
     SerializedProperty currentMode;
 
+    // Follow Mouse
     SerializedProperty followX;
     SerializedProperty followY;
     SerializedProperty followSpeed;
+    SerializedProperty cutterCollider;
 
+    // Detachable
     SerializedProperty maxScale;
     SerializedProperty distanceMultiplier;
     SerializedProperty scaleDuration;
-    
-    SerializedProperty isCuted;
     SerializedProperty isDetached;
-    
     SerializedProperty detachType;
     SerializedProperty fallDistance;
     SerializedProperty fallDuration;
+
+    // Cuttable
+    SerializedProperty cuttableCollider;
+    SerializedProperty isCut;
 
     void OnEnable()
     {
@@ -29,104 +33,124 @@ public class SpriteControllerEditor : Editor
         followX = serializedObject.FindProperty("followX");
         followY = serializedObject.FindProperty("followY");
         followSpeed = serializedObject.FindProperty("followSpeed");
+        cutterCollider = serializedObject.FindProperty("cutterCollider");
 
         maxScale = serializedObject.FindProperty("maxScale");
         distanceMultiplier = serializedObject.FindProperty("distanceMultiplier");
         scaleDuration = serializedObject.FindProperty("scaleDuration");
-        
-        isCuted = serializedObject.FindProperty("isCuted");
         isDetached = serializedObject.FindProperty("isDetached");
-
         detachType = serializedObject.FindProperty("detachType");
         fallDistance = serializedObject.FindProperty("fallDistance");
         fallDuration = serializedObject.FindProperty("fallDuration");
+
+        cuttableCollider = serializedObject.FindProperty("cuttableCollider");
+        isCut = serializedObject.FindProperty("isCut");
     }
 
     public override void OnInspectorGUI()
     {
+        // Styles pour gros titres
+        GUIStyle bigTitle = new GUIStyle(EditorStyles.boldLabel) { fontSize = 25, alignment = TextAnchor.MiddleLeft };
+        GUIStyle middleTitle = new GUIStyle(EditorStyles.miniBoldLabel) { fontSize = 20, alignment = TextAnchor.MiddleLeft };
+
         serializedObject.Update();
 
-        // ------------------------------------------------ MODE ------------------------------------------------
+        EditorGUILayout.Space(10);
         EditorGUILayout.PropertyField(currentMode);
-        EditorGUILayout.PropertyField(isDetached);
-        EditorGUILayout.PropertyField(isCuted);
-        EditorGUILayout.Space();
+        EditorGUILayout.Space(15);
 
-        // Si plusieurs valeurs → pas de logique conditionnelle
         if (!currentMode.hasMultipleDifferentValues)
         {
-            SpriteController.Mode mode =
-                (SpriteController.Mode)currentMode.enumValueIndex;
+            SpriteController.Mode mode = (SpriteController.Mode)currentMode.enumValueIndex;
 
-            // ------------------------------------------------ FOLLOW MOUSE ------------------------------------------------
+            // ---------------------- FOLLOW MOUSE ----------------------
             if (mode == SpriteController.Mode.FollowMouse)
             {
-                EditorGUILayout.LabelField("Follow Mouse Settings", EditorStyles.boldLabel);
+                EditorGUILayout.LabelField("Follow Mouse Settings", bigTitle);
+                EditorGUILayout.Space(5);
                 EditorGUILayout.PropertyField(followX);
                 EditorGUILayout.PropertyField(followY);
                 EditorGUILayout.PropertyField(followSpeed);
+                EditorGUILayout.Space(15);
             }
 
-            // ------------------------------------------------ DETACHABLE ------------------------------------------------
+            // ---------------------- DETACHABLE ----------------------
             if (mode == SpriteController.Mode.Detachable)
             {
-                EditorGUILayout.LabelField("Detach Settings", EditorStyles.boldLabel);
-
+                EditorGUILayout.LabelField("Detach Settings", bigTitle);
+                EditorGUILayout.Space(5);
                 EditorGUILayout.PropertyField(detachType);
-                EditorGUILayout.Space();
+                EditorGUILayout.Space(10);
 
-                // Pas de logique si multi-values
                 if (!detachType.hasMultipleDifferentValues)
                 {
-                    SpriteController.DetachType type =
-                        (SpriteController.DetachType)detachType.enumValueIndex;
+                    SpriteController.DetachType type = (SpriteController.DetachType)detachType.enumValueIndex;
 
                     if (type == SpriteController.DetachType.Fall)
                     {
-                        EditorGUILayout.LabelField("Fall Settings", EditorStyles.miniBoldLabel);
+                        EditorGUILayout.LabelField("Fall Settings", middleTitle);
                         EditorGUILayout.PropertyField(fallDistance);
                         EditorGUILayout.PropertyField(fallDuration);
-                        EditorGUILayout.Space();
+                        EditorGUILayout.Space(10);
                     }
-
-                    if (type == SpriteController.DetachType.Draggable)
+                    else if (type == SpriteController.DetachType.Draggable)
                     {
-                        EditorGUILayout.LabelField("Draggable Settings", EditorStyles.miniBoldLabel);
+                        EditorGUILayout.LabelField("Draggable Settings", middleTitle);
                         EditorGUILayout.HelpBox("Pas de settings spécifiques.", MessageType.Info);
-                        EditorGUILayout.Space();
+                        EditorGUILayout.Space(10);
                     }
-
-                    if (type == SpriteController.DetachType.None)
+                    else if (type == SpriteController.DetachType.None)
                     {
-                        EditorGUILayout.LabelField("None Settings", EditorStyles.miniBoldLabel);
+                        EditorGUILayout.LabelField("None Settings", middleTitle);
                         EditorGUILayout.HelpBox("Aucun comportement particulier.", MessageType.Info);
-                        EditorGUILayout.Space();
+                        EditorGUILayout.Space(10);
                     }
                 }
                 else
                 {
                     EditorGUILayout.HelpBox("DetachType diffère entre les objets sélectionnés.", MessageType.Info);
-                    EditorGUILayout.Space();
+                    EditorGUILayout.Space(10);
                 }
 
-                // ---------------- COMMON ----------------
-                EditorGUILayout.LabelField("General Detach Settings", EditorStyles.boldLabel);
+                EditorGUILayout.LabelField("General Detach Settings", bigTitle);
+                EditorGUILayout.Space(5);
                 EditorGUILayout.PropertyField(maxScale);
                 EditorGUILayout.PropertyField(distanceMultiplier);
                 EditorGUILayout.PropertyField(scaleDuration);
+                EditorGUILayout.PropertyField(isDetached);
+                EditorGUILayout.Space(15);
             }
-            
-            // ------------------------------------------------ NONE ------------------------------------------------
+
+            // ---------------------- CUTTABLE ----------------------
+            if (mode == SpriteController.Mode.Cuttable)
+            {
+                EditorGUILayout.LabelField("Cuttable Settings", bigTitle);
+                EditorGUILayout.Space(5);
+                EditorGUILayout.PropertyField(cuttableCollider);
+                EditorGUILayout.PropertyField(isCut);
+                EditorGUILayout.PropertyField(cutterCollider);
+                EditorGUILayout.Space(10);
+
+                EditorGUILayout.LabelField("Fall Settings", middleTitle);
+                EditorGUILayout.PropertyField(fallDistance);
+                EditorGUILayout.PropertyField(fallDuration);
+                EditorGUILayout.Space(15);
+            }
+
+            // ---------------------- NONE ----------------------
             if (mode == SpriteController.Mode.None)
             {
-                EditorGUILayout.LabelField("None Settings", EditorStyles.boldLabel);
-                EditorGUILayout.PropertyField(isCuted);
+                EditorGUILayout.LabelField("None Settings", bigTitle);
+                EditorGUILayout.Space(5);
+                EditorGUILayout.PropertyField(isCut);
+                EditorGUILayout.PropertyField(isDetached);
+                EditorGUILayout.Space(15);
             }
         }
         else
         {
-            // mode = mixed
             EditorGUILayout.HelpBox("Les objets sélectionnés ont des modes différents.", MessageType.Info);
+            EditorGUILayout.Space(15);
         }
 
         serializedObject.ApplyModifiedProperties();

@@ -8,7 +8,8 @@ public class SpriteController : MonoBehaviour
         None,
         Dragable,
         FollowMouse,
-        Detachable
+        Detachable,
+        Cuttable
     }
     
     public enum DetachType
@@ -17,29 +18,31 @@ public class SpriteController : MonoBehaviour
         Draggable,
         Fall
     }
+    
+    // Mode
+    public Mode currentMode = Mode.Dragable;
 
-    [Header("Mode")] public Mode currentMode = Mode.Dragable;
-
-    [Header("Follow Mouse Settings")]
+    // Follow Mouse Settings
     public bool followX = true;
     public bool followY = true;
     public float followSpeed = 10f;
+    public Collider2D cutterCollider;
 
-    [Header("Detachable Settings")]
+    // Detachable Settings
     public Vector2 maxScale = new Vector2(2f, 2f);
     public float distanceMultiplier = 1f;
     public float scaleDuration = 0.2f;
     public float fallDistance = 3f;
     public float fallDuration = 0.4f;
-    
-    public bool isCuted  = false;
     public bool isDetached  = false;
-    
     public DetachType detachType;
-
+    
+    // Cuttable Settings
+    public Collider2D cuttableCollider;
+    public bool isCut  = false;
+    
     private Vector3 initialScale;
     private Vector3 detachOrigin;
-
     private Camera mainCam;
     private Vector3 offset;
     private bool isDragging = false;
@@ -57,6 +60,20 @@ public class SpriteController : MonoBehaviour
             case Mode.Dragable: break;
             case Mode.FollowMouse: FollowMouseUpdate(); break;
             case Mode.Detachable: if (isDragging) DetachableUpdate(); break;
+            case Mode.Cuttable: CheckCuttable(); break;
+        }
+    }
+    
+    // ------------------ Cuttable ------------------
+    private void CheckCuttable()
+    {
+        if (isCut || cutterCollider == null || cuttableCollider == null) return;
+
+        if (cutterCollider.IsTouching(cuttableCollider))
+        {
+            isCut = true;
+            StartFall();
+            currentMode = Mode.None;
         }
     }
 
@@ -158,9 +175,7 @@ public class SpriteController : MonoBehaviour
             switch (detachType)
             {
                 case DetachType.Fall:
-                    transform.DOMoveY(worldPos.y - fallDistance, fallDuration)
-                        .SetEase(Ease.InQuad);
-
+                    StartFall();
                     currentMode = Mode.None;
                     return;
 
@@ -173,5 +188,12 @@ public class SpriteController : MonoBehaviour
                     return;
             }
         }
+    }
+    
+    // ------------------ Fall ------------------
+    private void StartFall()
+    {
+        Vector3 fallTarget = transform.position - new Vector3(0, fallDistance, 0);
+        transform.DOMove(fallTarget, fallDuration).SetEase(Ease.InQuad);
     }
 }

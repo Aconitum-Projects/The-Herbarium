@@ -8,7 +8,7 @@ public class CutedDetector : MonoBehaviour
 
     [Header("Settings")]
     public Transform elementsParent;
-    public string targetTag = "ToCuted";
+    public string targetTag = "ToCut";
 
     private List<SpriteController> targets = new List<SpriteController>();
 
@@ -47,7 +47,7 @@ public class CutedDetector : MonoBehaviour
 
         foreach (var t in targets)
         {
-            if (t == null || !t.isCuted)
+            if (t == null || !t.isCut)
                 return;
         }
 
@@ -57,6 +57,8 @@ public class CutedDetector : MonoBehaviour
 
     void OnAllCuted()
     {
-        transform.parent.GetComponent<VictoryChecker>().CheckAllCuted();
+        var vc = transform.parent.GetComponent<VictoryChecker>();
+        if (vc != null)
+            vc.CheckAllCuted();
     }
 }
