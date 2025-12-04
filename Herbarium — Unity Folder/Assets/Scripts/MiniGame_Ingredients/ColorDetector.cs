@@ -5,93 +5,98 @@ using DG.Tweening;
 public class ColorDetector : MonoBehaviour
 {
     [Header("State")]
-    public bool done = false;
     public bool validated = false;
 
     [Header("Settings")]
-    public string colorTag = "Color01";
-    public GameObject elementsParent;
+    public string targetTag = "Color01";
+    public Transform elementsParent;
 
     [Header("Animation")]
     public Vector3 offscreenOffset = new Vector3(0, 5f, 0);
     public float tweenDuration = 0.5f;
     public Ease tweenEase = Ease.InQuad;
 
-    private List<Collider2D> targetColliders = new List<Collider2D>();
+    private List<Collider2D> targets = new List<Collider2D>();
     private HashSet<Collider2D> colliding = new HashSet<Collider2D>();
-    private Vector3 initialPosition;
 
-    private bool alreadyValidated = false;
+    private Vector3 initialPos;
+
     private bool waitingForRelease = false;
+    private bool readyToValidate = false;
 
     void Start()
     {
-        initialPosition = transform.position;
-
-        //transform.position = initialPosition + offscreenOffset;
-        //transform.DOMove(initialPosition, tweenDuration).SetEase(tweenEase);
+        initialPos = transform.position;
 
         if (elementsParent == null)
         {
-            Debug.LogWarning("Ce checker n’a pas de parent, impossible de lister les objets taggés.");
+            Debug.LogWarning("ColorDetector : aucun parent défini.");
             return;
         }
 
         foreach (Transform child in elementsParent.GetComponentsInChildren<Transform>())
         {
-            if (child.CompareTag(colorTag))
+            if (child.CompareTag(targetTag))
             {
-                Collider2D col = child.GetComponent<Collider2D>();
+                var col = child.GetComponent<Collider2D>();
                 if (col != null)
-                    targetColliders.Add(col);
+                    targets.Add(col);
             }
         }
 
-        if (targetColliders.Count == 0)
-            Debug.LogWarning($"Aucun objet avec le tag '{colorTag}' trouvé dans le parent.");
+        if (targets.Count == 0)
+            Debug.LogWarning($"ColorDetector : aucun objet taggé {targetTag}.");
     }
 
-    private void Update()
+    void Update()
     {
+        if (validated) return;
+
         colliding.Clear();
-        foreach (var target in targetColliders)
+        foreach (var t in targets)
         {
-            if (GetComponent<Collider2D>().bounds.Intersects(target.bounds))
-                colliding.Add(target);
+            if (t != null && GetComponent<Collider2D>().bounds.Intersects(t.bounds))
+                colliding.Add(t);
         }
 
-        bool wasValidated = done;
-        done = colliding.Count == targetColliders.Count;
+        bool allMatch = colliding.Count == targets.Count;
 
-        if (done && !alreadyValidated)
+        if (allMatch && !readyToValidate)
         {
-            alreadyValidated = true;
+            readyToValidate = true;
             waitingForRelease = true;
         }
 
         if (waitingForRelease && Input.GetMouseButtonUp(0))
         {
-            if (colliding.Count == targetColliders.Count)
+            waitingForRelease = false;
+
+            if (colliding.Count == targets.Count)
             {
-                waitingForRelease = false;
                 DoValidatedTween();
             }
             else
             {
-                waitingForRelease = false;
-                alreadyValidated = false;
+                readyToValidate = false;
             }
         }
     }
 
-    private void DoValidatedTween()
+    void DoValidatedTween()
     {
-        transform.DOMove(initialPosition + offscreenOffset, tweenDuration)
+        transform.DOMove(initialPos + offscreenOffset, tweenDuration)
             .SetEase(tweenEase)
             .OnComplete(() =>
             {
                 validated = true;
+                NotifyManager();
             });
     }
 
+    void NotifyManager()
+    {
+        var vc = transform.parent.GetComponent<VictoryChecker>();
+        if (vc != null)
+            vc.CheckMatchingColors();
+    }
 }

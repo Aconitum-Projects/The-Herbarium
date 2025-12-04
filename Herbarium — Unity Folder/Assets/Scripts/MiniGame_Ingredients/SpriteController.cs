@@ -32,6 +32,9 @@ public class SpriteController : MonoBehaviour
     public float fallDistance = 3f;
     public float fallDuration = 0.4f;
     
+    public bool isCuted  = false;
+    public bool isDetached  = false;
+    
     public DetachType detachType;
 
     private Vector3 initialScale;
@@ -150,6 +153,7 @@ public class SpriteController : MonoBehaviour
 
             transform.DOScale(initialScale, 0.1f);
             transform.position = worldPos;
+            isDetached = true;
 
             switch (detachType)
             {

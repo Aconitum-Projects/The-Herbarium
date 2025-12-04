@@ -14,7 +14,10 @@ public class SpriteControllerEditor : Editor
     SerializedProperty maxScale;
     SerializedProperty distanceMultiplier;
     SerializedProperty scaleDuration;
-
+    
+    SerializedProperty isCuted;
+    SerializedProperty isDetached;
+    
     SerializedProperty detachType;
     SerializedProperty fallDistance;
     SerializedProperty fallDuration;
@@ -30,6 +33,9 @@ public class SpriteControllerEditor : Editor
         maxScale = serializedObject.FindProperty("maxScale");
         distanceMultiplier = serializedObject.FindProperty("distanceMultiplier");
         scaleDuration = serializedObject.FindProperty("scaleDuration");
+        
+        isCuted = serializedObject.FindProperty("isCuted");
+        isDetached = serializedObject.FindProperty("isDetached");
 
         detachType = serializedObject.FindProperty("detachType");
         fallDistance = serializedObject.FindProperty("fallDistance");
@@ -42,6 +48,8 @@ public class SpriteControllerEditor : Editor
 
         // ------------------------------------------------ MODE ------------------------------------------------
         EditorGUILayout.PropertyField(currentMode);
+        EditorGUILayout.PropertyField(isDetached);
+        EditorGUILayout.PropertyField(isCuted);
         EditorGUILayout.Space();
 
         // Si plusieurs valeurs → pas de logique conditionnelle
@@ -106,6 +114,13 @@ public class SpriteControllerEditor : Editor
                 EditorGUILayout.PropertyField(maxScale);
                 EditorGUILayout.PropertyField(distanceMultiplier);
                 EditorGUILayout.PropertyField(scaleDuration);
+            }
+            
+            // ------------------------------------------------ NONE ------------------------------------------------
+            if (mode == SpriteController.Mode.None)
+            {
+                EditorGUILayout.LabelField("None Settings", EditorStyles.boldLabel);
+                EditorGUILayout.PropertyField(isCuted);
             }
         }
         else
