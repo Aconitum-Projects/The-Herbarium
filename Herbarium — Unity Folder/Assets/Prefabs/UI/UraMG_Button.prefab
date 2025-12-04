@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8100528934053906255}
   - component: {fileID: 7661798416461967307}
   m_Layer: 5
-  m_Name: IngredientButton
+  m_Name: UraMG_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b692940a5a06398478832de105d186d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: MiniGame_Ingredient_00
+  sceneAsset: {fileID: 102900000, guid: 5a7ff2dcedd5d6748a6fc210132014cc, type: 3}
+  sceneName: UraMG_00
   sprite: {fileID: 21300000, guid: 606bea3746562d7469f9331eeda37d61, type: 3}
 --- !u!114 &8100528934053906255
 MonoBehaviour:

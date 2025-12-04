@@ -1,10 +1,19 @@
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+using UnityEngine.SceneManagement;
+
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
 public class ButtonHandler : MonoBehaviour
 {
-    public string sceneName;
+    #if UNITY_EDITOR
+        public SceneAsset sceneAsset;
+    #endif
+    [SerializeField] private string sceneName;
+
     public Sprite sprite;
         
     private Button button;
@@ -12,6 +21,18 @@ public class ButtonHandler : MonoBehaviour
     private Vector3 originalScale;
     private Color originalColor;
     private Image buttonImage;
+
+    void OnValidate()
+    {
+        #if UNITY_EDITOR
+                if (sceneAsset != null)
+                {
+                    var path = AssetDatabase.GetAssetPath(sceneAsset);
+                    sceneName = System.IO.Path.GetFileNameWithoutExtension(path);
+                }
+        #endif
+    }
+
 
     void Start()
     {
@@ -56,7 +77,7 @@ public class ButtonHandler : MonoBehaviour
             button.transform.DOScale(originalScale, 0.1f).SetEase(Ease.InQuad);
         });
 
-        sceneChanger.ChangeScene(sceneName);
         sceneChanger.ChangeSprite(sprite);
+        SceneManager.LoadScene(sceneName);
     }
 }
