@@ -21,6 +21,7 @@ public class SpriteControllerEditor : Editor
     SerializedProperty detachType;
     SerializedProperty fallDistance;
     SerializedProperty fallDuration;
+    SerializedProperty keepDetachedScale;
 
     // Cuttable
     SerializedProperty cuttableCollider;
@@ -42,6 +43,7 @@ public class SpriteControllerEditor : Editor
         detachType = serializedObject.FindProperty("detachType");
         fallDistance = serializedObject.FindProperty("fallDistance");
         fallDuration = serializedObject.FindProperty("fallDuration");
+        keepDetachedScale = serializedObject.FindProperty("keepDetachedScale");
 
         cuttableCollider = serializedObject.FindProperty("cuttableCollider");
         isCut = serializedObject.FindProperty("isCut");
@@ -102,7 +104,7 @@ public class SpriteControllerEditor : Editor
                     else if (type == SpriteController.DetachType.None)
                     {
                         EditorGUILayout.LabelField("None Settings", middleTitle);
-                        EditorGUILayout.HelpBox("Aucun comportement particulier.", MessageType.Info);
+                        EditorGUILayout.PropertyField(keepDetachedScale);
                         EditorGUILayout.Space(10);
                     }
                 }

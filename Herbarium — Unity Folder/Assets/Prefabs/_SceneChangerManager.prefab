@@ -145,7 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6e98b48a4239cf4fbfde781c2874bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToSave: MainScene
+  sceneAsset: {fileID: 102900000, guid: 0b68d8f92d564534e926b33ac3798de8, type: 3}
+  sceneName: Gameplay
 --- !u!223 &4271912110349360147
 Canvas:
   m_ObjectHideFlags: 0

@@ -337,7 +337,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4005142584304633741}
   - component: {fileID: 6603093444115684928}
-  - component: {fileID: 3227978560149161886}
   - component: {fileID: 1161625721528450029}
   - component: {fileID: 2414962944841590745}
   m_Layer: 0
@@ -391,21 +390,6 @@ MonoBehaviour:
   detachType: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
---- !u!114 &3227978560149161886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5096150735636197476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbb6e6ab1db7afe4bafce5aaddab8a12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  validated: 0
-  elementsParent: {fileID: 0}
-  targetTag: ToCut
 --- !u!61 &1161625721528450029
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -436,7 +420,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -533,7 +517,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!61 &8961451872489488296
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -564,7 +548,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

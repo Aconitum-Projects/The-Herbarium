@@ -5,39 +5,31 @@ public enum VictoryType
 {
     MatchingColors,
     AllDetached,
-    AllCuted
+    AllCut,
+    AllRevealed
 }
 
 public class VictoryChecker : MonoBehaviour
 {
-    [Header("Settings")]
     public VictoryType victoryType;
 
-    [Header("Matching Colors")]
     public List<ColorDetector> colorsDetectors;
-
-    [Header("All Detached")]
     public List<DetachDetector> detachDetectors;
+    public List<CutDetector> cutDetectors;
+    public List<RevealedDetector> revealedDetectors;
 
-    [Header("All Cuted")]
-    public List<CutedDetector> cutedDetectors;
-
-    [Header("Victory Manager")]
     public VictoryManager victoryManager;
 
     private bool victoryTriggered = false;
 
     void Start()
     { 
-        // 1. Cherche dans les parents
         if (victoryManager == null)
             victoryManager = GetComponentInParent<VictoryManager>();
 
-        // 2. Cherche globalement si toujours rien
         if (victoryManager == null)
             victoryManager = FindObjectOfType<VictoryManager>();
 
-        // 3. Warn si toujours rien
         if (victoryManager == null)
             Debug.LogWarning("VictoryChecker : Aucun VictoryManager trouvé dans la scène.");
     }
@@ -87,12 +79,26 @@ public class VictoryChecker : MonoBehaviour
         return true;
     }
 
-    public bool CheckAllCuted()
+    public bool CheckAllCut()
     {
-        if (cutedDetectors == null || cutedDetectors.Count == 0) 
+        if (cutDetectors == null || cutDetectors.Count == 0) 
             return false;
 
-        foreach (var d in cutedDetectors)
+        foreach (var d in cutDetectors)
+        {
+            if (d == null || !d.validated)
+                return false;
+        }
+
+        TriggerIfComplete(true);
+        return true;
+    }
+    public bool CheckAllRevealed()
+    {
+        if (cutDetectors == null || revealedDetectors.Count == 0) 
+            return false;
+
+        foreach (var d in revealedDetectors)
         {
             if (d == null || !d.validated)
                 return false;

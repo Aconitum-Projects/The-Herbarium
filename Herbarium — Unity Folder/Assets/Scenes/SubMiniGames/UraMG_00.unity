@@ -337,6 +337,7 @@ MonoBehaviour:
   fallDuration: 0.4
   isDetached: 0
   detachType: 0
+  keepDetachedScale: 0
   cuttableCollider: {fileID: 799424076}
   isCut: 0
 --- !u!1001 &244157799
@@ -993,17 +994,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4005142584304633741, guid: 8184972814e54634f9dd92f73f17d228, type: 3}
   m_PrefabInstance: {fileID: 1173172271}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &514085299 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3227978560149161886, guid: 8184972814e54634f9dd92f73f17d228, type: 3}
-  m_PrefabInstance: {fileID: 1173172271}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbb6e6ab1db7afe4bafce5aaddab8a12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &564728098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1569,8 +1559,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5096150735636197476, guid: 8184972814e54634f9dd92f73f17d228, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1173172273}
   m_SourcePrefab: {fileID: 100100000, guid: 8184972814e54634f9dd92f73f17d228, type: 3}
+--- !u!1 &1173172272 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5096150735636197476, guid: 8184972814e54634f9dd92f73f17d228, type: 3}
+  m_PrefabInstance: {fileID: 1173172271}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1173172273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173172272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbb6e6ab1db7afe4bafce5aaddab8a12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  validated: 0
+  elementsParent: {fileID: 1618898558}
+  targetTag: ToCut
 --- !u!1 &1280551348
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,6 +1696,7 @@ MonoBehaviour:
   fallDuration: 0.4
   isDetached: 0
   detachType: 0
+  keepDetachedScale: 0
   cuttableCollider: {fileID: 1077013771}
   isCut: 0
 --- !u!1 &1387292725 stripped
@@ -1758,7 +1772,7 @@ Transform:
   m_Children:
   - {fileID: 799424075}
   - {fileID: 218426583}
-  m_Father: {fileID: 1679510835}
+  m_Father: {fileID: 1618898558}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1504872704
 SpriteRenderer:
@@ -1924,13 +1938,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7771637918381786674}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: cutDetectors.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: cutedDetectors.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: 'cutDetectors.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1173172273}
+    - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: 'cutedDetectors.Array.data[0]'
       value: 
-      objectReference: {fileID: 514085299}
+      objectReference: {fileID: 0}
     - target: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_Name
       value: SubGame_A
@@ -1947,12 +1969,42 @@ PrefabInstance:
       addedObject: {fileID: 514085296}
     - targetCorrespondingSourceObject: {fileID: 111986037346041635, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1504872703}
-    - targetCorrespondingSourceObject: {fileID: 111986037346041635, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2050127608}
+      addedObject: {fileID: 1618898558}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+--- !u!1 &1618898557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1618898558}
+  m_Layer: 0
+  m_Name: Flowers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1618898558
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618898557}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1504872703}
+  - {fileID: 2050127608}
+  m_Father: {fileID: 1679510835}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1618975591
 GameObject:
   m_ObjectHideFlags: 0
@@ -2411,7 +2463,7 @@ Transform:
   m_Children:
   - {fileID: 1077013770}
   - {fileID: 1280551349}
-  m_Father: {fileID: 1679510835}
+  m_Father: {fileID: 1618898558}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2050127609
 SpriteRenderer:
@@ -2598,6 +2650,7 @@ MonoBehaviour:
   fallDuration: 0.35
   isDetached: 0
   detachType: 1
+  keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
 --- !u!114 &1111022005525534127
@@ -2624,6 +2677,7 @@ MonoBehaviour:
   fallDuration: 0.35
   isDetached: 0
   detachType: 1
+  keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
 --- !u!114 &1111022005607515612
@@ -2650,6 +2704,7 @@ MonoBehaviour:
   fallDuration: 0.35
   isDetached: 0
   detachType: 1
+  keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
 --- !u!114 &1111022005695101728
@@ -2676,6 +2731,7 @@ MonoBehaviour:
   fallDuration: 0.35
   isDetached: 0
   detachType: 1
+  keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
 --- !u!114 &1111022005935050619
@@ -2702,6 +2758,7 @@ MonoBehaviour:
   fallDuration: 0.35
   isDetached: 0
   detachType: 1
+  keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
 --- !u!114 &1111022006027085590
@@ -2728,6 +2785,7 @@ MonoBehaviour:
   fallDuration: 0.35
   isDetached: 0
   detachType: 1
+  keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
 --- !u!114 &1111022006288775917
@@ -2754,6 +2812,7 @@ MonoBehaviour:
   fallDuration: 0.35
   isDetached: 0
   detachType: 1
+  keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
 --- !u!114 &1111022006509650037
@@ -2780,6 +2839,7 @@ MonoBehaviour:
   fallDuration: 0.35
   isDetached: 0
   detachType: 1
+  keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
 --- !u!114 &1111022006563523718
@@ -2806,6 +2866,7 @@ MonoBehaviour:
   fallDuration: 0.35
   isDetached: 0
   detachType: 1
+  keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
 --- !u!114 &1111022006865199892
@@ -2832,6 +2893,7 @@ MonoBehaviour:
   fallDuration: 0.35
   isDetached: 0
   detachType: 1
+  keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
 --- !u!212 &2257306298914501353

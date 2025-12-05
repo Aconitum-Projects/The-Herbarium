@@ -1,14 +1,21 @@
-using System.Collections.Generic;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class SceneStateManager : MonoBehaviour
 {
+    #if UNITY_EDITOR
+    public SceneAsset sceneAsset;
+    #endif
+
+    [SerializeField] private string sceneName;
+
     public static SceneStateManager Instance;
 
     private Dictionary<string, TransformData> savedTransforms = new Dictionary<string, TransformData>();
-
-    [SerializeField] private string sceneToSave = "MainScene"; // Change par le nom de ta scène
 
     private void Awake()
     {
@@ -16,20 +23,34 @@ public class SceneStateManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
             Destroy(gameObject);
         }
-
-        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnDestroy()
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        if (Instance == this)
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
     }
 
+    #if UNITY_EDITOR
+    private void OnValidate()
+    {
+        if (sceneAsset != null)
+        {
+            string path = AssetDatabase.GetAssetPath(sceneAsset);
+            sceneName = System.IO.Path.GetFileNameWithoutExtension(path);
+        }
+    }
+    #endif
+
+    // ------------------ Sauvegarde / Chargement ------------------
     public void SaveTransform(string objectName, Transform transform)
     {
         savedTransforms[objectName] = new TransformData(transform);
@@ -37,28 +58,31 @@ public class SceneStateManager : MonoBehaviour
 
     public bool LoadTransform(string objectName, Transform transform)
     {
-        if (savedTransforms.ContainsKey(objectName))
+        if (savedTransforms.TryGetValue(objectName, out TransformData data))
         {
-            transform.position = savedTransforms[objectName].position;
-            transform.rotation = savedTransforms[objectName].rotation;
+            transform.position = data.position;
+            transform.rotation = data.rotation;
+            transform.localScale = data.scale;
             return true;
         }
         return false;
     }
 
+    // ------------------ Callback scène ------------------
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == sceneToSave)
-        {
-            RestoreTransforms();
-        }
+        RestoreTransforms();
     }
 
     private void RestoreTransforms()
     {
-        foreach (var obj in FindObjectsOfType<CharacterMovement>())
+        foreach (var kvp in savedTransforms)
         {
-            LoadTransform(obj.gameObject.name, obj.transform);
+            GameObject obj = GameObject.Find(kvp.Key);
+            if (obj != null)
+            {
+                LoadTransform(kvp.Key, obj.transform);
+            }
         }
     }
 }
@@ -68,10 +92,12 @@ public class TransformData
 {
     public Vector3 position;
     public Quaternion rotation;
+    public Vector3 scale;
 
     public TransformData(Transform transform)
     {
         position = transform.position;
         rotation = transform.rotation;
+        scale = transform.localScale;
     }
 }

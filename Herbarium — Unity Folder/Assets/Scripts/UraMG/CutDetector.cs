@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CutedDetector : MonoBehaviour
+public class CutDetector : MonoBehaviour
 {
     [Header("State")]
     public bool validated = false;
@@ -59,6 +59,6 @@ public class CutedDetector : MonoBehaviour
     {
         var vc = transform.parent.GetComponent<VictoryChecker>();
         if (vc != null)
-            vc.CheckAllCuted();
+            vc.CheckAllCut();
     }
 }

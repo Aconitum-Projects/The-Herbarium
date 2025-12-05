@@ -919,9 +919,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4271912110349360147, guid: ac7b9e98b402806469a2b45139eae42c, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 2092230421}
+    - target: {fileID: 4271912110349360147, guid: ac7b9e98b402806469a2b45139eae42c, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271912110349360147, guid: ac7b9e98b402806469a2b45139eae42c, type: 3}
+      propertyPath: m_VertexColorAlwaysGammaSpace
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4639848696802759813, guid: ac7b9e98b402806469a2b45139eae42c, type: 3}
       propertyPath: m_Name
       value: _SceneChangerManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589334083693094579, guid: ac7b9e98b402806469a2b45139eae42c, type: 3}
+      propertyPath: sceneName
+      value: Gameplay
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

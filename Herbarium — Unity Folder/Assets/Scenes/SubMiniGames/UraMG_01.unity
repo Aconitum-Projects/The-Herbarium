@@ -191,11 +191,11 @@ Transform:
   m_GameObject: {fileID: 23609914}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.2999997, y: 5, z: 0}
-  m_LocalScale: {x: 0.66, y: 0.7, z: 2}
+  m_LocalPosition: {x: 0, y: -0.6666667, z: 0}
+  m_LocalScale: {x: 2, y: 0.46666667, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 533123869}
+  m_Father: {fileID: 1127412257}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &41314499
 GameObject:
@@ -255,6 +255,7 @@ MonoBehaviour:
   fallDuration: 0.35
   isDetached: 0
   detachType: 1
+  keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
 --- !u!61 &41314502
@@ -375,11 +376,11 @@ Transform:
   m_GameObject: {fileID: 53908936}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8, y: 5, z: 0}
-  m_LocalScale: {x: 0.66, y: 0.7, z: 2}
+  m_LocalPosition: {x: 0, y: -0.6666667, z: 0}
+  m_LocalScale: {x: 2, y: 0.46666667, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 533123869}
+  m_Father: {fileID: 1291769703}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &66632395
 GameObject:
@@ -627,11 +628,11 @@ Transform:
   m_GameObject: {fileID: 99293658}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.8000002, y: 5, z: 0}
-  m_LocalScale: {x: 0.66, y: 0.7, z: 2}
+  m_LocalPosition: {x: 0, y: -0.6666667, z: 0}
+  m_LocalScale: {x: 2, y: 0.46666667, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 533123869}
+  m_Father: {fileID: 922586975}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &111791337
 GameObject:
@@ -807,17 +808,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &221313171 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3227978560149161886, guid: 8184972814e54634f9dd92f73f17d228, type: 3}
-  m_PrefabInstance: {fileID: 6503285481400409126}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbb6e6ab1db7afe4bafce5aaddab8a12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &221313174 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4005142584304633741, guid: 8184972814e54634f9dd92f73f17d228, type: 3}
@@ -1014,6 +1004,7 @@ MonoBehaviour:
   fallDuration: 0.4
   isDetached: 0
   detachType: 1
+  keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
 --- !u!1001 &254200301
@@ -1169,6 +1160,7 @@ MonoBehaviour:
   fallDuration: 0.35
   isDetached: 0
   detachType: 1
+  keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
 --- !u!61 &290707901
@@ -1289,11 +1281,11 @@ Transform:
   m_GameObject: {fileID: 339019990}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.1, y: 5, z: 0}
-  m_LocalScale: {x: 0.66, y: 0.7, z: 2}
+  m_LocalPosition: {x: 0, y: -0.6666667, z: 0}
+  m_LocalScale: {x: 2, y: 0.46666667, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 533123869}
+  m_Father: {fileID: 517319930}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &350691874
 GameObject:
@@ -1442,6 +1434,7 @@ MonoBehaviour:
   fallDuration: 0.4
   isDetached: 0
   detachType: 0
+  keepDetachedScale: 0
   cuttableCollider: {fileID: 23609915}
   isCut: 0
 --- !u!61 &400209189
@@ -1779,7 +1772,8 @@ Transform:
   m_LocalPosition: {x: 2.1, y: 6, z: 0}
   m_LocalScale: {x: 0.33, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 339019992}
   m_Father: {fileID: 1543791821}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &517319931
@@ -1894,13 +1888,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7771637918381786674}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: cutDetectors.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: cutedDetectors.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: 'cutDetectors.Array.data[0]'
+      value: 
+      objectReference: {fileID: 6503285481400409128}
+    - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: 'cutedDetectors.Array.data[0]'
       value: 
-      objectReference: {fileID: 221313171}
+      objectReference: {fileID: 0}
     - target: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_Name
       value: SubGame_A
@@ -1915,21 +1917,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 111986037346041635, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       insertIndex: -1
       addedObject: {fileID: 221313174}
-    - targetCorrespondingSourceObject: {fileID: 111986037346041635, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 53908938}
-    - targetCorrespondingSourceObject: {fileID: 111986037346041635, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1938034866}
-    - targetCorrespondingSourceObject: {fileID: 111986037346041635, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 99293660}
-    - targetCorrespondingSourceObject: {fileID: 111986037346041635, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 339019992}
-    - targetCorrespondingSourceObject: {fileID: 111986037346041635, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 23609916}
     - targetCorrespondingSourceObject: {fileID: 111986037346041635, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1543791821}
@@ -2062,6 +2049,7 @@ MonoBehaviour:
   fallDuration: 0.4
   isDetached: 0
   detachType: 0
+  keepDetachedScale: 0
   cuttableCollider: {fileID: 1938034865}
   isCut: 0
 --- !u!61 &693763517
@@ -2342,6 +2330,7 @@ MonoBehaviour:
   fallDuration: 0.35
   isDetached: 0
   detachType: 1
+  keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
 --- !u!61 &882909365
@@ -2450,6 +2439,7 @@ MonoBehaviour:
   fallDuration: 0.4
   isDetached: 0
   detachType: 0
+  keepDetachedScale: 0
   cuttableCollider: {fileID: 99293659}
   isCut: 0
 --- !u!61 &921360797
@@ -2527,7 +2517,8 @@ Transform:
   m_LocalPosition: {x: 0.8000002, y: 6, z: 0}
   m_LocalScale: {x: 0.33, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 99293660}
   m_Father: {fileID: 1543791821}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &922586976
@@ -2819,6 +2810,7 @@ MonoBehaviour:
   fallDuration: 0.4
   isDetached: 0
   detachType: 0
+  keepDetachedScale: 0
   cuttableCollider: {fileID: 339019991}
   isCut: 0
 --- !u!61 &1086472479
@@ -2983,7 +2975,8 @@ Transform:
   m_LocalPosition: {x: 4.2999997, y: 6, z: 0}
   m_LocalScale: {x: 0.33, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 23609916}
   m_Father: {fileID: 1543791821}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1127412258
@@ -3620,7 +3613,8 @@ Transform:
   m_LocalPosition: {x: -8, y: 6, z: 0}
   m_LocalScale: {x: 0.33, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 53908938}
   m_Father: {fileID: 1543791821}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1291769704
@@ -4106,7 +4100,8 @@ Transform:
   m_LocalPosition: {x: -5.5, y: 6, z: 0}
   m_LocalScale: {x: 0.33, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1938034866}
   m_Father: {fileID: 1543791821}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1583336146
@@ -4378,11 +4373,11 @@ Transform:
   m_GameObject: {fileID: 1938034864}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.5, y: 5, z: 0}
-  m_LocalScale: {x: 0.66, y: 0.7, z: 2}
+  m_LocalPosition: {x: 0, y: -0.6666667, z: 0}
+  m_LocalScale: {x: 2, y: 0.46666667, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 533123869}
+  m_Father: {fileID: 1583336145}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1945796164
 GameObject:
@@ -4710,6 +4705,7 @@ MonoBehaviour:
   fallDuration: 0.4
   isDetached: 0
   detachType: 0
+  keepDetachedScale: 0
   cuttableCollider: {fileID: 53908937}
   isCut: 0
 --- !u!61 &2014747144
@@ -5180,8 +5176,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5096150735636197476, guid: 8184972814e54634f9dd92f73f17d228, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 6503285481400409128}
   m_SourcePrefab: {fileID: 100100000, guid: 8184972814e54634f9dd92f73f17d228, type: 3}
+--- !u!1 &6503285481400409127 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5096150735636197476, guid: 8184972814e54634f9dd92f73f17d228, type: 3}
+  m_PrefabInstance: {fileID: 6503285481400409126}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6503285481400409128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6503285481400409127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbb6e6ab1db7afe4bafce5aaddab8a12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  validated: 0
+  elementsParent: {fileID: 1543791821}
+  targetTag: ToCut
 --- !u!114 &7771637918381786674 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 121606632956851241, guid: e8d44bbe121692943bb226e7e067d71d, type: 3}

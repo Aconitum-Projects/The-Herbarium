@@ -36,6 +36,7 @@ public class SpriteController : MonoBehaviour
     public float fallDuration = 0.4f;
     public bool isDetached  = false;
     public DetachType detachType;
+    public bool keepDetachedScale = false;
     
     // Cuttable Settings
     public Collider2D cuttableCollider;
@@ -179,9 +180,14 @@ public class SpriteController : MonoBehaviour
         {
             isDragging = false;
 
-            transform.DOScale(initialScale, 0.1f);
+            if (!keepDetachedScale)
+            {
+                transform.DOScale(initialScale, 0.1f);
+            }
+
             transform.position = worldPos;
             isDetached = true;
+
 
             switch (detachType)
             {

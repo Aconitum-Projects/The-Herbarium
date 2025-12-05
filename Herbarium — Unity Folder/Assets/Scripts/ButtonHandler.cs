@@ -78,6 +78,6 @@ public class ButtonHandler : MonoBehaviour
         });
 
         sceneChanger.ChangeSprite(sprite);
-        SceneManager.LoadScene(sceneName);
+        sceneChanger.ChangeScene(sceneName);  
     }
 }
