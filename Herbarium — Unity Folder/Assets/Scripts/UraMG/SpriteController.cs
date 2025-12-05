@@ -6,7 +6,7 @@ public class SpriteController : MonoBehaviour
     public enum Mode
     {
         None,
-        Dragable,
+        Draggable,
         FollowMouse,
         Detachable,
         Cuttable
@@ -20,7 +20,7 @@ public class SpriteController : MonoBehaviour
     }
     
     // Mode
-    public Mode currentMode = Mode.Dragable;
+    public Mode currentMode = Mode.Draggable;
 
     // Follow Mouse Settings
     public bool followX = true;
@@ -51,13 +51,14 @@ public class SpriteController : MonoBehaviour
     {
         mainCam = Camera.main;
         initialScale = transform.localScale;
+        
     }
 
     void Update()
     {
         switch (currentMode)
         {
-            case Mode.Dragable: break;
+            case Mode.Draggable: break;
             case Mode.FollowMouse: FollowMouseUpdate(); break;
             case Mode.Detachable: if (isDragging) DetachableUpdate(); break;
             case Mode.Cuttable: CheckCuttable(); break;
@@ -72,15 +73,25 @@ public class SpriteController : MonoBehaviour
         if (cutterCollider.IsTouching(cuttableCollider))
         {
             isCut = true;
+
+            Transform cutter = cutterCollider.transform.parent;
+            if (cutter != null)
+            {
+                Animator anim = cutter.GetComponent<Animator>();
+                if (anim != null)
+                    anim.SetTrigger("Cut");
+            }
+
             StartFall();
             currentMode = Mode.None;
         }
     }
 
-    // ------------------ Dragable ------------------
+
+    // ------------------ Draggable ------------------
     void OnMouseDown()
     {
-        if (currentMode == Mode.Dragable || currentMode == Mode.Detachable)
+        if (currentMode == Mode.Draggable || currentMode == Mode.Detachable)
         {
             isDragging = true;
 
@@ -101,7 +112,7 @@ public class SpriteController : MonoBehaviour
     {
         if (!isDragging) return;
 
-        if (currentMode == Mode.Dragable)
+        if (currentMode == Mode.Draggable)
         {
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = Mathf.Abs(mainCam.transform.position.z - transform.position.z);
@@ -180,7 +191,7 @@ public class SpriteController : MonoBehaviour
                     return;
 
                 case DetachType.Draggable:
-                    currentMode = Mode.Dragable;
+                    currentMode = Mode.Draggable;
                     return;
 
                 case DetachType.None:
