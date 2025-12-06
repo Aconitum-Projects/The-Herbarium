@@ -652,7 +652,7 @@ MonoBehaviour:
   followSpeed: 10
   cutterCollider: {fileID: 0}
   maxScale: {x: 0.6, y: 7}
-  distanceMultiplier: 0.05
+  distanceMultiplier: 0.1
   scaleDuration: 0.1
   fallDistance: 40
   fallDuration: 0.4
@@ -1215,7 +1215,7 @@ MonoBehaviour:
   followSpeed: 10
   cutterCollider: {fileID: 0}
   maxScale: {x: 0.6, y: 7}
-  distanceMultiplier: 0.05
+  distanceMultiplier: 0.1
   scaleDuration: 0.1
   fallDistance: 40
   fallDuration: 0.4
@@ -1377,7 +1377,7 @@ MonoBehaviour:
   followSpeed: 10
   cutterCollider: {fileID: 0}
   maxScale: {x: 0.6, y: 7}
-  distanceMultiplier: 0.05
+  distanceMultiplier: 0.1
   scaleDuration: 0.1
   fallDistance: 40
   fallDuration: 0.4
