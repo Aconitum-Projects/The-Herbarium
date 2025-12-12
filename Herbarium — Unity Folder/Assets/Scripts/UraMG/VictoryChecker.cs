@@ -6,7 +6,8 @@ public enum VictoryType
     MatchingColors,
     AllDetached,
     AllCut,
-    AllRevealed
+    AllRevealed,
+    AllShake
 }
 
 public class VictoryChecker : MonoBehaviour
@@ -17,6 +18,7 @@ public class VictoryChecker : MonoBehaviour
     public List<DetachDetector> detachDetectors;
     public List<CutDetector> cutDetectors;
     public List<RevealedDetector> revealedDetectors;
+    public List<ShakeDetector> shakeDetectors;
 
     public VictoryManager victoryManager;
 
@@ -99,6 +101,20 @@ public class VictoryChecker : MonoBehaviour
             return false;
 
         foreach (var d in revealedDetectors)
+        {
+            if (d == null || !d.validated)
+                return false;
+        }
+
+        TriggerIfComplete(true);
+        return true;
+    }
+    public bool CheckAllShake()
+    {
+        if (shakeDetectors == null || shakeDetectors.Count == 0) 
+            return false;
+
+        foreach (var d in shakeDetectors)
         {
             if (d == null || !d.validated)
                 return false;

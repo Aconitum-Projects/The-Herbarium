@@ -11,6 +11,7 @@ public class VictoryCheckerEditor : Editor
     SerializedProperty detachDetectors;
     SerializedProperty cutedDetectors;
     SerializedProperty revealedDetectors;
+    SerializedProperty shakeDetectors;
 
     SerializedProperty victoryManager;
 
@@ -22,6 +23,7 @@ public class VictoryCheckerEditor : Editor
         detachDetectors = serializedObject.FindProperty("detachDetectors");
         cutedDetectors = serializedObject.FindProperty("cutDetectors");
         revealedDetectors = serializedObject.FindProperty("revealedDetectors");
+        shakeDetectors = serializedObject.FindProperty("shakeDetectors");
 
         victoryManager = serializedObject.FindProperty("victoryManager");
     }
@@ -68,6 +70,12 @@ public class VictoryCheckerEditor : Editor
                 case VictoryType.AllRevealed:
                     EditorGUILayout.LabelField("Revealed Detectors", middleTitle);
                     EditorGUILayout.PropertyField(revealedDetectors, true);
+                    EditorGUILayout.Space(15);
+                    break;
+
+                case VictoryType.AllShake:
+                    EditorGUILayout.LabelField("Shake Detectors", middleTitle);
+                    EditorGUILayout.PropertyField(shakeDetectors, true);
                     EditorGUILayout.Space(15);
                     break;
             }

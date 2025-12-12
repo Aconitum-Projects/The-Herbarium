@@ -21,6 +21,7 @@ public class SpriteController : MonoBehaviour
     
     // Mode
     public Mode currentMode = Mode.Draggable;
+    public bool isShakeable = false;
 
     // Follow Mouse Settings
     public bool followX = true;
@@ -42,6 +43,16 @@ public class SpriteController : MonoBehaviour
     public Collider2D cuttableCollider;
     public bool isCut  = false;
     
+    // Shakeable Settings
+    public bool isShaken = false;
+    public float shakeThreshold = 15f;
+    public float shakeMultiplier = 1f;
+    public float shakeResetTime = 0.2f;
+
+    private Vector3 lastPos;
+    private float shakeTimer = 0f;
+
+    
     private Vector3 initialScale;
     private Vector3 detachOrigin;
     private Camera mainCam;
@@ -52,7 +63,7 @@ public class SpriteController : MonoBehaviour
     {
         mainCam = Camera.main;
         initialScale = transform.localScale;
-        
+        lastPos = transform.position;
     }
 
     void Update()
@@ -64,6 +75,29 @@ public class SpriteController : MonoBehaviour
             case Mode.Detachable: if (isDragging) DetachableUpdate(); break;
             case Mode.Cuttable: CheckCuttable(); break;
         }
+        
+        // ----------- Shake Detection -----------
+        if (currentMode == Mode.Draggable && isDragging && isShakeable)
+        {
+            float speed = (transform.position - lastPos).magnitude / Time.deltaTime;
+
+            // Applique le multiplicateur sur le seuil, pas sur speed
+            if (!isShaken && speed > shakeThreshold * shakeMultiplier)
+            {
+                isShaken = true;
+                shakeTimer = shakeResetTime;
+            }
+        }
+
+        if (isShaken)
+        {
+            shakeTimer -= Time.deltaTime;
+            if (shakeTimer <= 0f)
+                isShaken = false;
+        }
+
+        lastPos = transform.position;
+
     }
     
     // ------------------ Cuttable ------------------

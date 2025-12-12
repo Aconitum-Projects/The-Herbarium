@@ -27,6 +27,13 @@ public class SpriteControllerEditor : Editor
     SerializedProperty cuttableCollider;
     SerializedProperty isCut;
 
+    // Shakeable
+    SerializedProperty isShakeable;
+    SerializedProperty isShaken;
+    SerializedProperty shakeThreshold;
+    SerializedProperty shakeMultiplier;
+    SerializedProperty shakeResetTime;
+
     void OnEnable()
     {
         currentMode = serializedObject.FindProperty("currentMode");
@@ -47,32 +54,58 @@ public class SpriteControllerEditor : Editor
 
         cuttableCollider = serializedObject.FindProperty("cuttableCollider");
         isCut = serializedObject.FindProperty("isCut");
+
+        isShakeable = serializedObject.FindProperty("isShakeable");
+        isShaken = serializedObject.FindProperty("isShaken");
+        shakeThreshold = serializedObject.FindProperty("shakeThreshold");
+        shakeMultiplier = serializedObject.FindProperty("shakeMultiplier");
+        shakeResetTime = serializedObject.FindProperty("shakeResetTime");
     }
 
     public override void OnInspectorGUI()
     {
-        // Styles pour gros titres
         GUIStyle bigTitle = new GUIStyle(EditorStyles.boldLabel) { fontSize = 25, alignment = TextAnchor.MiddleLeft };
         GUIStyle middleTitle = new GUIStyle(EditorStyles.miniBoldLabel) { fontSize = 20, alignment = TextAnchor.MiddleLeft };
 
         serializedObject.Update();
 
         EditorGUILayout.Space(10);
-        EditorGUILayout.PropertyField(currentMode);
+        EditorGUILayout.PropertyField(currentMode, new GUIContent("Mode", "Mode de fonctionnement du sprite"));
         EditorGUILayout.Space(15);
 
         if (!currentMode.hasMultipleDifferentValues)
         {
             SpriteController.Mode mode = (SpriteController.Mode)currentMode.enumValueIndex;
 
+            // ---------------------- DRAGGABLE ----------------------
+            if (mode == SpriteController.Mode.Draggable)
+            {
+                EditorGUILayout.LabelField("Draggable Settings", bigTitle);
+                EditorGUILayout.Space(5);
+                EditorGUILayout.PropertyField(isShakeable, new GUIContent("Shakeable", "Le sprite peut être secoué pour déclencher un événement"));
+
+                if (isShakeable.boolValue)
+                {
+                    EditorGUILayout.PropertyField(shakeThreshold, new GUIContent("Shake Threshold", "Vitesse minimale du mouvement pour déclencher le shake"));
+                    EditorGUILayout.PropertyField(shakeMultiplier, new GUIContent("Shake Multiplier", "Réduit ou augmente la sensibilité du shake"));
+                    EditorGUILayout.PropertyField(shakeResetTime, new GUIContent("Shake Reset Time", "Durée avant que le shake soit réinitialisé"));
+
+                    EditorGUI.BeginDisabledGroup(true);
+                    EditorGUILayout.PropertyField(isShaken, new GUIContent("Is Shaken", "Indique si le sprite est actuellement secoué"));
+                    EditorGUI.EndDisabledGroup();
+                }
+
+                EditorGUILayout.Space(15);
+            }
+
             // ---------------------- FOLLOW MOUSE ----------------------
             if (mode == SpriteController.Mode.FollowMouse)
             {
                 EditorGUILayout.LabelField("Follow Mouse Settings", bigTitle);
                 EditorGUILayout.Space(5);
-                EditorGUILayout.PropertyField(followX);
-                EditorGUILayout.PropertyField(followY);
-                EditorGUILayout.PropertyField(followSpeed);
+                EditorGUILayout.PropertyField(followX, new GUIContent("Follow X", "Le sprite suit la souris sur l'axe X"));
+                EditorGUILayout.PropertyField(followY, new GUIContent("Follow Y", "Le sprite suit la souris sur l'axe Y"));
+                EditorGUILayout.PropertyField(followSpeed, new GUIContent("Follow Speed", "Vitesse à laquelle le sprite suit la souris"));
                 EditorGUILayout.Space(15);
             }
 
@@ -81,7 +114,7 @@ public class SpriteControllerEditor : Editor
             {
                 EditorGUILayout.LabelField("Detach Settings", bigTitle);
                 EditorGUILayout.Space(5);
-                EditorGUILayout.PropertyField(detachType);
+                EditorGUILayout.PropertyField(detachType, new GUIContent("Detach Type", "Type de détachement du sprite"));
                 EditorGUILayout.Space(10);
 
                 if (!detachType.hasMultipleDifferentValues)
@@ -91,8 +124,8 @@ public class SpriteControllerEditor : Editor
                     if (type == SpriteController.DetachType.Fall)
                     {
                         EditorGUILayout.LabelField("Fall Settings", middleTitle);
-                        EditorGUILayout.PropertyField(fallDistance);
-                        EditorGUILayout.PropertyField(fallDuration);
+                        EditorGUILayout.PropertyField(fallDistance, new GUIContent("Fall Distance", "Distance de chute du sprite"));
+                        EditorGUILayout.PropertyField(fallDuration, new GUIContent("Fall Duration", "Durée de la chute"));
                         EditorGUILayout.Space(10);
                     }
                     else if (type == SpriteController.DetachType.Draggable)
@@ -104,7 +137,7 @@ public class SpriteControllerEditor : Editor
                     else if (type == SpriteController.DetachType.None)
                     {
                         EditorGUILayout.LabelField("None Settings", middleTitle);
-                        EditorGUILayout.PropertyField(keepDetachedScale);
+                        EditorGUILayout.PropertyField(keepDetachedScale, new GUIContent("Keep Detached Scale", "Garder l'échelle du sprite après détachement"));
                         EditorGUILayout.Space(10);
                     }
                 }
@@ -116,10 +149,14 @@ public class SpriteControllerEditor : Editor
 
                 EditorGUILayout.LabelField("General Detach Settings", bigTitle);
                 EditorGUILayout.Space(5);
-                EditorGUILayout.PropertyField(maxScale);
-                EditorGUILayout.PropertyField(distanceMultiplier);
-                EditorGUILayout.PropertyField(scaleDuration);
-                EditorGUILayout.PropertyField(isDetached);
+                EditorGUILayout.PropertyField(maxScale, new GUIContent("Max Scale", "Échelle maximale du sprite lors du détachement"));
+                EditorGUILayout.PropertyField(distanceMultiplier, new GUIContent("Distance Multiplier", "Multiplicateur de distance pour le détachement"));
+                EditorGUILayout.PropertyField(scaleDuration, new GUIContent("Scale Duration", "Durée de l'animation d'échelle"));
+
+                EditorGUI.BeginDisabledGroup(true);
+                EditorGUILayout.PropertyField(isDetached, new GUIContent("Is Detached", "Indique si le sprite est actuellement détaché"));
+                EditorGUI.EndDisabledGroup();
+
                 EditorGUILayout.Space(15);
             }
 
@@ -128,14 +165,18 @@ public class SpriteControllerEditor : Editor
             {
                 EditorGUILayout.LabelField("Cuttable Settings", bigTitle);
                 EditorGUILayout.Space(5);
-                EditorGUILayout.PropertyField(cuttableCollider);
-                EditorGUILayout.PropertyField(isCut);
-                EditorGUILayout.PropertyField(cutterCollider);
+                EditorGUILayout.PropertyField(cuttableCollider, new GUIContent("Cuttable Collider", "Collider que le sprite peut être coupé"));
+
+                EditorGUI.BeginDisabledGroup(true);
+                EditorGUILayout.PropertyField(isCut, new GUIContent("Is Cut", "Indique si le sprite a été coupé"));
+                EditorGUI.EndDisabledGroup();
+
+                EditorGUILayout.PropertyField(cutterCollider, new GUIContent("Cutter Collider", "Collider qui coupe le sprite"));
                 EditorGUILayout.Space(10);
 
                 EditorGUILayout.LabelField("Fall Settings", middleTitle);
-                EditorGUILayout.PropertyField(fallDistance);
-                EditorGUILayout.PropertyField(fallDuration);
+                EditorGUILayout.PropertyField(fallDistance, new GUIContent("Fall Distance", "Distance de chute après coupe"));
+                EditorGUILayout.PropertyField(fallDuration, new GUIContent("Fall Duration", "Durée de la chute après coupe"));
                 EditorGUILayout.Space(15);
             }
 
@@ -144,8 +185,12 @@ public class SpriteControllerEditor : Editor
             {
                 EditorGUILayout.LabelField("None Settings", bigTitle);
                 EditorGUILayout.Space(5);
-                EditorGUILayout.PropertyField(isCut);
-                EditorGUILayout.PropertyField(isDetached);
+
+                EditorGUI.BeginDisabledGroup(true);
+                EditorGUILayout.PropertyField(isCut, new GUIContent("Is Cut", "Indique si le sprite a été coupé"));
+                EditorGUILayout.PropertyField(isDetached, new GUIContent("Is Detached", "Indique si le sprite est détaché"));
+                EditorGUI.EndDisabledGroup();
+
                 EditorGUILayout.Space(15);
             }
         }
