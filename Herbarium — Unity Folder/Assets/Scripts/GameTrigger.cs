@@ -1,11 +1,11 @@
 using UnityEngine;
-using Cinemachine;
+using Unity.Cinemachine;
 
 public class GameTrigger : MonoBehaviour
 {
     public string triggerTag = "Player";
-    public CinemachineVirtualCamera newCamera;
-    public CinemachineVirtualCamera currentCamera;
+    public CinemachineCamera newCamera;
+    public CinemachineCamera currentCamera;
     public string question = "Wanna play 's mini-game ?";
     public string sceneToPlay = "MiniGame_";
     public Sprite transitionSprite;

@@ -28,7 +28,7 @@ public class VictoryChecker : MonoBehaviour
             victoryManager = GetComponentInParent<VictoryManager>();
 
         if (victoryManager == null)
-            victoryManager = FindObjectOfType<VictoryManager>();
+            victoryManager = FindFirstObjectByType<VictoryManager>();
 
         if (victoryManager == null)
             Debug.LogWarning("VictoryChecker : Aucun VictoryManager trouvé dans la scène.");

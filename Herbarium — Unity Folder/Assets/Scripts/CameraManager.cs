@@ -1,5 +1,5 @@
 using UnityEngine;
-using Cinemachine;
+using Unity.Cinemachine;
 
 public class CameraManager : MonoBehaviour
 {
@@ -8,12 +8,12 @@ public class CameraManager : MonoBehaviour
     public float maxDistance = 20f;
     public float minDistance = 10f;
 
-    private CinemachineVirtualCamera virtualCamera;
+    private CinemachineCamera virtualCamera;
     private Vector3 currentVelocity;
 
     void Start()
     {
-        virtualCamera = GetComponent<CinemachineVirtualCamera>();
+        virtualCamera = GetComponent<CinemachineCamera>();
     }
 
     void Update()
