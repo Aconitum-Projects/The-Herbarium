@@ -201,6 +201,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: m_text
+      value: Cut the plant from the roots
+      objectReference: {fileID: 0}
+    - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: m_fontSize
+      value: 134.25
+      objectReference: {fileID: 0}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: victoryType
       value: 2
@@ -538,6 +546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 4
+  isShakeable: 0
   followX: 1
   followY: 1
   followSpeed: 10
@@ -552,6 +561,10 @@ MonoBehaviour:
   keepDetachedScale: 0
   cuttableCollider: {fileID: 807464061}
   isCut: 0
+  isShaken: 0
+  shakeThreshold: 15
+  shakeMultiplier: 1
+  shakeResetTime: 0.2
 --- !u!61 &807464061 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 4643391055013847307, guid: b7312cfa62748614aba021b095c20630, type: 3}
@@ -650,6 +663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 3
+  isShakeable: 0
   followX: 1
   followY: 1
   followSpeed: 10
@@ -664,6 +678,10 @@ MonoBehaviour:
   keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
+  isShaken: 0
+  shakeThreshold: 15
+  shakeMultiplier: 1
+  shakeResetTime: 0.2
 --- !u!212 &1022418947
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1063,6 +1081,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: m_text
+      value: Pull the  Iboga
+      objectReference: {fileID: 0}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: victoryType
       value: 1
@@ -1093,7 +1115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1219,6 +1241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 3
+  isShakeable: 0
   followX: 1
   followY: 1
   followSpeed: 10
@@ -1233,6 +1256,10 @@ MonoBehaviour:
   keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
+  isShaken: 0
+  shakeThreshold: 15
+  shakeMultiplier: 1
+  shakeResetTime: 0.2
 --- !u!212 &1860703407
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1384,6 +1411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 3
+  isShakeable: 0
   followX: 1
   followY: 1
   followSpeed: 10
@@ -1398,6 +1426,10 @@ MonoBehaviour:
   keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
+  isShaken: 0
+  shakeThreshold: 15
+  shakeMultiplier: 1
+  shakeResetTime: 0.2
 --- !u!212 &2070208723
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1695,6 +1727,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: m_text
+      value: Trim the roots
+      objectReference: {fileID: 0}
+    - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: m_fontSize
+      value: 134.25
+      objectReference: {fileID: 0}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: victoryType
       value: 1
@@ -1745,7 +1785,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

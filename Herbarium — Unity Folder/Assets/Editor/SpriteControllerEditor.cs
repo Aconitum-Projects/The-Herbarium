@@ -72,6 +72,19 @@ public class SpriteControllerEditor : Editor
         EditorGUILayout.Space(10);
         EditorGUILayout.PropertyField(currentMode, new GUIContent("Mode", "Mode de fonctionnement du sprite"));
         EditorGUILayout.Space(15);
+        
+        EditorGUILayout.PropertyField(isShakeable, new GUIContent("Shakeable", "Le sprite peut être secoué pour déclencher un événement"));
+        if (isShakeable.boolValue)
+        {
+            EditorGUILayout.PropertyField(shakeThreshold, new GUIContent("Shake Threshold", "Vitesse minimale du mouvement pour déclencher le shake"));
+            EditorGUILayout.PropertyField(shakeMultiplier, new GUIContent("Shake Multiplier", "Réduit ou augmente la sensibilité du shake"));
+            EditorGUILayout.PropertyField(shakeResetTime, new GUIContent("Shake Reset Time", "Durée avant que le shake soit réinitialisé"));
+
+            EditorGUI.BeginDisabledGroup(true);
+            EditorGUILayout.PropertyField(isShaken, new GUIContent("Is Shaken", "Indique si le sprite est actuellement secoué"));
+            EditorGUI.EndDisabledGroup();
+        }
+        EditorGUILayout.Space(15);
 
         if (!currentMode.hasMultipleDifferentValues)
         {
@@ -82,20 +95,6 @@ public class SpriteControllerEditor : Editor
             {
                 EditorGUILayout.LabelField("Draggable Settings", bigTitle);
                 EditorGUILayout.Space(5);
-                EditorGUILayout.PropertyField(isShakeable, new GUIContent("Shakeable", "Le sprite peut être secoué pour déclencher un événement"));
-
-                if (isShakeable.boolValue)
-                {
-                    EditorGUILayout.PropertyField(shakeThreshold, new GUIContent("Shake Threshold", "Vitesse minimale du mouvement pour déclencher le shake"));
-                    EditorGUILayout.PropertyField(shakeMultiplier, new GUIContent("Shake Multiplier", "Réduit ou augmente la sensibilité du shake"));
-                    EditorGUILayout.PropertyField(shakeResetTime, new GUIContent("Shake Reset Time", "Durée avant que le shake soit réinitialisé"));
-
-                    EditorGUI.BeginDisabledGroup(true);
-                    EditorGUILayout.PropertyField(isShaken, new GUIContent("Is Shaken", "Indique si le sprite est actuellement secoué"));
-                    EditorGUI.EndDisabledGroup();
-                }
-
-                EditorGUILayout.Space(15);
             }
 
             // ---------------------- FOLLOW MOUSE ----------------------

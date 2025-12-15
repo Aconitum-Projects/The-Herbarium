@@ -77,7 +77,8 @@ public class SpriteController : MonoBehaviour
         }
         
         // ----------- Shake Detection -----------
-        if (currentMode == Mode.Draggable && isDragging && isShakeable)
+        if (isShakeable)
+
         {
             float speed = (transform.position - lastPos).magnitude / Time.deltaTime;
 

@@ -2389,15 +2389,15 @@ PrefabInstance:
     - target: {fileID: 121606632956851241, guid: e8d44bbe121692943bb226e7e067d71d, type: 3}
       propertyPath: 'miniGames.Array.data[0]'
       value: 
-      objectReference: {fileID: 1817449466}
+      objectReference: {fileID: 1710579192}
     - target: {fileID: 121606632956851241, guid: e8d44bbe121692943bb226e7e067d71d, type: 3}
       propertyPath: 'miniGames.Array.data[1]'
       value: 
-      objectReference: {fileID: 1710579192}
+      objectReference: {fileID: 1387292725}
     - target: {fileID: 121606632956851241, guid: e8d44bbe121692943bb226e7e067d71d, type: 3}
       propertyPath: 'miniGames.Array.data[2]'
       value: 
-      objectReference: {fileID: 1387292725}
+      objectReference: {fileID: 1817449466}
     - target: {fileID: 3590329957699650091, guid: e8d44bbe121692943bb226e7e067d71d, type: 3}
       propertyPath: m_Camera
       value: 
