@@ -609,7 +609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -831,7 +831,7 @@ GameObject:
   - component: {fileID: 547394300}
   - component: {fileID: 547394299}
   m_Layer: 0
-  m_Name: TEST
+  m_Name: LianaTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -976,8 +976,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TrailFollow
   line: {fileID: 547394299}
   maxPoints: 20
-  followSpeed: 50
+  followSpeed: 200
   trailLength: 15
+  center: {x: 0, y: 0}
+  radius: {x: 4, y: 2}
+  spiralStrength: 1
+  spiralClamp: {x: 0.2, y: 1.5}
 --- !u!1001 &564728098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2321,6 +2325,10 @@ PrefabInstance:
     - target: {fileID: 111986037346041635, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: m_text
+      value: Roll up the liana
       objectReference: {fileID: 0}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: victoryManager
