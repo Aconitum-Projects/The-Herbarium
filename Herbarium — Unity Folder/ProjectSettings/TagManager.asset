@@ -12,6 +12,9 @@ TagManager:
   - ToDetach
   - ToCut
   - ToShake
+  - ToFill
+  - ToErase
+  - ToStop
   layers:
   - Default
   - TransparentFX

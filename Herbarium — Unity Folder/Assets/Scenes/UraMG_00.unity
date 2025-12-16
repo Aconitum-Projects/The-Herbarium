@@ -329,10 +329,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 4
+  isShakeable: 0
   followX: 1
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 903028685}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 2, y: 2}
   distanceMultiplier: 1
   scaleDuration: 0.2
@@ -343,6 +348,10 @@ MonoBehaviour:
   keepDetachedScale: 0
   cuttableCollider: {fileID: 799424076}
   isCut: 0
+  isShaken: 0
+  shakeThreshold: 15
+  shakeMultiplier: 50
+  shakeResetTime: 0.2
 --- !u!1001 &244157799
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1566,6 +1575,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scisor
       objectReference: {fileID: 0}
+    - target: {fileID: 6603093444115684928, guid: 8184972814e54634f9dd92f73f17d228, type: 3}
+      propertyPath: limitX
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1698,10 +1711,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 4
+  isShakeable: 0
   followX: 1
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 903028685}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 2, y: 2}
   distanceMultiplier: 1
   scaleDuration: 0.2
@@ -1712,6 +1730,10 @@ MonoBehaviour:
   keepDetachedScale: 0
   cuttableCollider: {fileID: 1077013771}
   isCut: 0
+  isShaken: 0
+  shakeThreshold: 15
+  shakeMultiplier: 50
+  shakeResetTime: 0.2
 --- !u!1 &1387292725 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
@@ -2665,10 +2687,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 3
+  isShakeable: 0
   followX: 1
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 0}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 0.6, y: 1.5}
   distanceMultiplier: 0.25
   scaleDuration: 0.1
@@ -2679,6 +2706,10 @@ MonoBehaviour:
   keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
+  isShaken: 0
+  shakeThreshold: 15
+  shakeMultiplier: 50
+  shakeResetTime: 0.2
 --- !u!114 &1111022005525534127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2692,10 +2723,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 3
+  isShakeable: 0
   followX: 1
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 0}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 0.6, y: 1.5}
   distanceMultiplier: 0.25
   scaleDuration: 0.1
@@ -2706,6 +2742,10 @@ MonoBehaviour:
   keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
+  isShaken: 0
+  shakeThreshold: 15
+  shakeMultiplier: 50
+  shakeResetTime: 0.2
 --- !u!114 &1111022005607515612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2719,10 +2759,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 3
+  isShakeable: 0
   followX: 1
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 0}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 0.6, y: 1.5}
   distanceMultiplier: 0.25
   scaleDuration: 0.1
@@ -2733,6 +2778,10 @@ MonoBehaviour:
   keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
+  isShaken: 0
+  shakeThreshold: 15
+  shakeMultiplier: 50
+  shakeResetTime: 0.2
 --- !u!114 &1111022005695101728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2746,10 +2795,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 3
+  isShakeable: 0
   followX: 1
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 0}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 0.6, y: 1.5}
   distanceMultiplier: 0.25
   scaleDuration: 0.1
@@ -2760,6 +2814,10 @@ MonoBehaviour:
   keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
+  isShaken: 0
+  shakeThreshold: 15
+  shakeMultiplier: 50
+  shakeResetTime: 0.2
 --- !u!114 &1111022005935050619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2773,10 +2831,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 3
+  isShakeable: 0
   followX: 1
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 0}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 0.6, y: 1.5}
   distanceMultiplier: 0.25
   scaleDuration: 0.1
@@ -2787,6 +2850,10 @@ MonoBehaviour:
   keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
+  isShaken: 0
+  shakeThreshold: 15
+  shakeMultiplier: 50
+  shakeResetTime: 0.2
 --- !u!114 &1111022006027085590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2800,10 +2867,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 3
+  isShakeable: 0
   followX: 1
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 0}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 0.6, y: 1.5}
   distanceMultiplier: 0.25
   scaleDuration: 0.1
@@ -2814,6 +2886,10 @@ MonoBehaviour:
   keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
+  isShaken: 0
+  shakeThreshold: 15
+  shakeMultiplier: 50
+  shakeResetTime: 0.2
 --- !u!114 &1111022006288775917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2827,10 +2903,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 3
+  isShakeable: 0
   followX: 1
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 0}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 0.6, y: 1.5}
   distanceMultiplier: 0.25
   scaleDuration: 0.1
@@ -2841,6 +2922,10 @@ MonoBehaviour:
   keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
+  isShaken: 0
+  shakeThreshold: 15
+  shakeMultiplier: 50
+  shakeResetTime: 0.2
 --- !u!114 &1111022006509650037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2854,10 +2939,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 3
+  isShakeable: 0
   followX: 1
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 0}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 0.6, y: 1.5}
   distanceMultiplier: 0.25
   scaleDuration: 0.1
@@ -2868,6 +2958,10 @@ MonoBehaviour:
   keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
+  isShaken: 0
+  shakeThreshold: 15
+  shakeMultiplier: 50
+  shakeResetTime: 0.2
 --- !u!114 &1111022006563523718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2881,10 +2975,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 3
+  isShakeable: 0
   followX: 1
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 0}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 0.6, y: 1.5}
   distanceMultiplier: 0.25
   scaleDuration: 0.1
@@ -2895,6 +2994,10 @@ MonoBehaviour:
   keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
+  isShaken: 0
+  shakeThreshold: 15
+  shakeMultiplier: 50
+  shakeResetTime: 0.2
 --- !u!114 &1111022006865199892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2908,10 +3011,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 3
+  isShakeable: 0
   followX: 1
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 0}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 0.6, y: 1.5}
   distanceMultiplier: 0.25
   scaleDuration: 0.1
@@ -2922,6 +3030,10 @@ MonoBehaviour:
   keepDetachedScale: 0
   cuttableCollider: {fileID: 0}
   isCut: 0
+  isShaken: 0
+  shakeThreshold: 15
+  shakeMultiplier: 50
+  shakeResetTime: 0.2
 --- !u!212 &2257306298914501353
 SpriteRenderer:
   m_ObjectHideFlags: 0

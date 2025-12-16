@@ -7,7 +7,10 @@ public enum VictoryType
     AllDetached,
     AllCut,
     AllRevealed,
-    AllShake
+    AllShake,
+    AllFilled,
+    AllErased,
+    AllStopped
 }
 
 public class VictoryChecker : MonoBehaviour
@@ -19,6 +22,9 @@ public class VictoryChecker : MonoBehaviour
     public List<CutDetector> cutDetectors;
     public List<RevealedDetector> revealedDetectors;
     public List<ShakeDetector> shakeDetectors;
+    public List<FilledDetector> filledDetectors;
+    public List<ErasedDetector> erasedDetectors;
+    public List<StoppableDetector> stoppedDetectors;
 
     public VictoryManager victoryManager;
 
@@ -35,8 +41,6 @@ public class VictoryChecker : MonoBehaviour
         if (victoryManager == null)
             Debug.LogWarning("VictoryChecker : Aucun VictoryManager trouvé dans la scène.");
     }
-
-    // --- MAIN CHECK ---
     void TriggerIfComplete(bool condition)
     {
         if (victoryTriggered) return;
@@ -46,11 +50,6 @@ public class VictoryChecker : MonoBehaviour
         victoryTriggered = true;
         victoryManager.TriggerVictory();
     }
-
-    // ------------------------------------------------------
-    // Called by one of the detectors whenever it validates.
-    // ------------------------------------------------------
-
     public bool CheckMatchingColors()
     {
         if (colorsDetectors == null || colorsDetectors.Count == 0) 
@@ -123,4 +122,47 @@ public class VictoryChecker : MonoBehaviour
         TriggerIfComplete(true);
         return true;
     }
+    public bool CheckAllFilled()
+    {
+        if (filledDetectors == null || filledDetectors.Count == 0)
+            return false;
+
+        foreach (var d in filledDetectors)
+        {
+            if (d == null || !d.validated)
+                return false;
+        }
+
+        TriggerIfComplete(true);
+        return true;
+    }
+    public bool CheckAllErased()
+    {
+        if (erasedDetectors == null || erasedDetectors.Count == 0)
+            return false;
+
+        foreach (var d in erasedDetectors)
+        {
+            if (d == null || !d.validated)
+                return false;
+        }
+
+        TriggerIfComplete(true);
+        return true;
+    }
+    public bool CheckAllStopped()
+    {
+        if (stoppedDetectors == null || stoppedDetectors.Count == 0)
+            return false;
+
+        foreach (var d in stoppedDetectors)
+        {
+            if (d == null || !d.validated)
+                return false;
+        }
+
+        TriggerIfComplete(true);
+        return true;
+    }
+
 }

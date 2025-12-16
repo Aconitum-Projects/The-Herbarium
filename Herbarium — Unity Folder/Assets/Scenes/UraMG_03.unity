@@ -275,8 +275,12 @@ MonoBehaviour:
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 387002081}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 2, y: 2}
-  distanceMultiplier: 1
+  detachThreshold: 5
   scaleDuration: 0.2
   fallDistance: 30
   fallDuration: 0.4
@@ -289,6 +293,12 @@ MonoBehaviour:
   shakeThreshold: 15
   shakeMultiplier: 15
   shakeResetTime: 0.2
+  fillX: 1
+  fillY: 1
+  fillOffsetX: 0
+  fillOffsetY: 0
+  fillDuration: 1.2
+  fillEase: 4
 --- !u!1 &158548856
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,8 +350,12 @@ MonoBehaviour:
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 387002081}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 2, y: 2}
-  distanceMultiplier: 1
+  detachThreshold: 5
   scaleDuration: 0.2
   fallDistance: 30
   fallDuration: 0.4
@@ -354,6 +368,12 @@ MonoBehaviour:
   shakeThreshold: 15
   shakeMultiplier: 15
   shakeResetTime: 0.2
+  fillX: 1
+  fillY: 1
+  fillOffsetX: 0
+  fillOffsetY: 0
+  fillDuration: 1.2
+  fillEase: 4
 --- !u!61 &158548859
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -451,8 +471,12 @@ MonoBehaviour:
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 387002081}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 2, y: 2}
-  distanceMultiplier: 1
+  detachThreshold: 5
   scaleDuration: 0.2
   fallDistance: 30
   fallDuration: 0.4
@@ -465,6 +489,12 @@ MonoBehaviour:
   shakeThreshold: 15
   shakeMultiplier: 15
   shakeResetTime: 0.2
+  fillX: 1
+  fillY: 1
+  fillOffsetX: 0
+  fillOffsetY: 0
+  fillDuration: 1.2
+  fillEase: 4
 --- !u!61 &161949373
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -678,8 +708,12 @@ MonoBehaviour:
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 387002081}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 2, y: 2}
-  distanceMultiplier: 1
+  detachThreshold: 5
   scaleDuration: 0.2
   fallDistance: 30
   fallDuration: 0.4
@@ -692,6 +726,12 @@ MonoBehaviour:
   shakeThreshold: 15
   shakeMultiplier: 15
   shakeResetTime: 0.2
+  fillX: 1
+  fillY: 1
+  fillOffsetX: 0
+  fillOffsetY: 0
+  fillDuration: 1.2
+  fillEase: 4
 --- !u!61 &307380431
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1131,8 +1171,12 @@ MonoBehaviour:
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 0}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 2, y: 2}
-  distanceMultiplier: 1
+  detachThreshold: 5
   scaleDuration: 0.2
   fallDistance: 3
   fallDuration: 0.4
@@ -1145,6 +1189,12 @@ MonoBehaviour:
   shakeThreshold: 15
   shakeMultiplier: 50
   shakeResetTime: 0.2
+  fillX: 1
+  fillY: 1
+  fillOffsetX: 0
+  fillOffsetY: 0
+  fillDuration: 1.2
+  fillEase: 4
 --- !u!212 &685148254
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1300,8 +1350,12 @@ MonoBehaviour:
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 387002081}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 2, y: 2}
-  distanceMultiplier: 1
+  detachThreshold: 5
   scaleDuration: 0.2
   fallDistance: 30
   fallDuration: 0.4
@@ -1314,6 +1368,12 @@ MonoBehaviour:
   shakeThreshold: 15
   shakeMultiplier: 15
   shakeResetTime: 0.2
+  fillX: 1
+  fillY: 1
+  fillOffsetX: 0
+  fillOffsetY: 0
+  fillDuration: 1.2
+  fillEase: 4
 --- !u!61 &756361356
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1580,8 +1640,12 @@ MonoBehaviour:
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 387002081}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 2, y: 2}
-  distanceMultiplier: 1
+  detachThreshold: 5
   scaleDuration: 0.2
   fallDistance: 30
   fallDuration: 0.4
@@ -1594,6 +1658,12 @@ MonoBehaviour:
   shakeThreshold: 15
   shakeMultiplier: 15
   shakeResetTime: 0.2
+  fillX: 1
+  fillY: 1
+  fillOffsetX: 0
+  fillOffsetY: 0
+  fillDuration: 1.2
+  fillEase: 4
 --- !u!61 &1336628222
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1783,7 +1853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1857,8 +1927,12 @@ MonoBehaviour:
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 387002081}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 2, y: 2}
-  distanceMultiplier: 1
+  detachThreshold: 5
   scaleDuration: 0.2
   fallDistance: 30
   fallDuration: 0.4
@@ -1871,6 +1945,12 @@ MonoBehaviour:
   shakeThreshold: 15
   shakeMultiplier: 15
   shakeResetTime: 0.2
+  fillX: 1
+  fillY: 1
+  fillOffsetX: 0
+  fillOffsetY: 0
+  fillDuration: 1.2
+  fillEase: 4
 --- !u!61 &1785040756
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2130,8 +2210,12 @@ MonoBehaviour:
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 387002081}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 2, y: 2}
-  distanceMultiplier: 1
+  detachThreshold: 5
   scaleDuration: 0.2
   fallDistance: 30
   fallDuration: 0.4
@@ -2144,6 +2228,12 @@ MonoBehaviour:
   shakeThreshold: 15
   shakeMultiplier: 15
   shakeResetTime: 0.2
+  fillX: 1
+  fillY: 1
+  fillOffsetX: 0
+  fillOffsetY: 0
+  fillDuration: 1.2
+  fillEase: 4
 --- !u!1001 &2570661400001010404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2368,7 +2458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

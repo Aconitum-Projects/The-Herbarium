@@ -580,7 +580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -865,12 +865,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 3
+  isShakeable: 0
   followX: 1
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 0}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 0, y: 0}
-  distanceMultiplier: 0.25
+  detachThreshold: 5
   scaleDuration: 0.05
   fallDistance: 3
   fallDuration: 0.4
@@ -879,6 +884,16 @@ MonoBehaviour:
   keepDetachedScale: 1
   cuttableCollider: {fileID: 0}
   isCut: 0
+  isShaken: 0
+  shakeThreshold: 15
+  shakeMultiplier: 50
+  shakeResetTime: 0.2
+  fillX: 1
+  fillY: 1
+  fillOffsetX: 0
+  fillOffsetY: 0
+  fillDuration: 1.2
+  fillEase: 4
 --- !u!1 &1019669226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,7 +1473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1678,12 +1693,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 3
+  isShakeable: 0
   followX: 1
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 0}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 0, y: 0}
-  distanceMultiplier: 0.25
+  detachThreshold: 5
   scaleDuration: 0.05
   fallDistance: 3
   fallDuration: 0.4
@@ -1692,6 +1712,16 @@ MonoBehaviour:
   keepDetachedScale: 1
   cuttableCollider: {fileID: 0}
   isCut: 0
+  isShaken: 0
+  shakeThreshold: 15
+  shakeMultiplier: 50
+  shakeResetTime: 0.2
+  fillX: 1
+  fillY: 1
+  fillOffsetX: 0
+  fillOffsetY: 0
+  fillDuration: 1.2
+  fillEase: 4
 --- !u!1001 &1769284456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2052,12 +2082,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 3
+  isShakeable: 0
   followX: 1
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 0}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 0, y: 0}
-  distanceMultiplier: 0.25
+  detachThreshold: 5
   scaleDuration: 0.05
   fallDistance: 3
   fallDuration: 0.4
@@ -2066,6 +2101,16 @@ MonoBehaviour:
   keepDetachedScale: 1
   cuttableCollider: {fileID: 0}
   isCut: 0
+  isShaken: 0
+  shakeThreshold: 15
+  shakeMultiplier: 50
+  shakeResetTime: 0.2
+  fillX: 1
+  fillY: 1
+  fillOffsetX: 0
+  fillOffsetY: 0
+  fillDuration: 1.2
+  fillEase: 4
 --- !u!4 &2116047787 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8630397086539058061, guid: 84af937ca46609e4ea944a561e7d7669, type: 3}
@@ -2175,12 +2220,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 3
+  isShakeable: 0
   followX: 1
   followY: 1
   followSpeed: 10
   cutterCollider: {fileID: 0}
+  limitX: 0
+  xLimits: {x: -5, y: 5}
+  limitY: 0
+  yLimits: {x: -3, y: 3}
   maxScale: {x: 0, y: 0}
-  distanceMultiplier: 0.25
+  detachThreshold: 5
   scaleDuration: 0.05
   fallDistance: 3
   fallDuration: 0.4
@@ -2189,6 +2239,16 @@ MonoBehaviour:
   keepDetachedScale: 1
   cuttableCollider: {fileID: 0}
   isCut: 0
+  isShaken: 0
+  shakeThreshold: 15
+  shakeMultiplier: 50
+  shakeResetTime: 0.2
+  fillX: 1
+  fillY: 1
+  fillOffsetX: 0
+  fillOffsetY: 0
+  fillDuration: 1.2
+  fillEase: 4
 --- !u!1001 &2570661400001010404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2462,6 +2522,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 2171438864932852989, guid: 84af937ca46609e4ea944a561e7d7669, type: 3}
+      propertyPath: detachThreshold
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2458900867075542519, guid: 84af937ca46609e4ea944a561e7d7669, type: 3}
       propertyPath: m_TagString
       value: Untagged
@@ -2473,6 +2537,10 @@ PrefabInstance:
     - target: {fileID: 4189320889731033501, guid: 84af937ca46609e4ea944a561e7d7669, type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670591200811815038, guid: 84af937ca46609e4ea944a561e7d7669, type: 3}
+      propertyPath: detachThreshold
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4678578947893484488, guid: 84af937ca46609e4ea944a561e7d7669, type: 3}
       propertyPath: m_TagString
@@ -2501,6 +2569,14 @@ PrefabInstance:
     - target: {fileID: 6795465580961748673, guid: 84af937ca46609e4ea944a561e7d7669, type: 3}
       propertyPath: m_Name
       value: Datura
+      objectReference: {fileID: 0}
+    - target: {fileID: 6895130798321203906, guid: 84af937ca46609e4ea944a561e7d7669, type: 3}
+      propertyPath: detachThreshold
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321814634095107376, guid: 84af937ca46609e4ea944a561e7d7669, type: 3}
+      propertyPath: detachThreshold
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7482462771002590555, guid: 84af937ca46609e4ea944a561e7d7669, type: 3}
       propertyPath: m_TagString
