@@ -1,4 +1,3 @@
-using System.Security;
 using UnityEngine;
 using UnityEditor;
 
@@ -19,37 +18,60 @@ public class VictoryCheckerEditor : Editor
 
     SerializedProperty victoryManager;
 
+    // Instruction Canvas
+    SerializedProperty instructionCanvas;
+    SerializedProperty instructionRect;
+    SerializedProperty animDuration;
+    SerializedProperty animEase;
+
     void OnEnable()
     {
         victoryType = serializedObject.FindProperty("victoryType");
 
-        colorsDetectors = serializedObject.FindProperty("colorsDetectors");
-        detachDetectors = serializedObject.FindProperty("detachDetectors");
-        cutedDetectors = serializedObject.FindProperty("cutDetectors");
+        colorsDetectors   = serializedObject.FindProperty("colorsDetectors");
+        detachDetectors   = serializedObject.FindProperty("detachDetectors");
+        cutedDetectors    = serializedObject.FindProperty("cutDetectors");
         revealedDetectors = serializedObject.FindProperty("revealedDetectors");
-        shakeDetectors = serializedObject.FindProperty("shakeDetectors");
-        filledDetectors = serializedObject.FindProperty("filledDetectors");
-        erasedDetectors = serializedObject.FindProperty("erasedDetectors");
-        stoppedDetectors = serializedObject.FindProperty("stoppedDetectors");
+        shakeDetectors    = serializedObject.FindProperty("shakeDetectors");
+        filledDetectors   = serializedObject.FindProperty("filledDetectors");
+        erasedDetectors   = serializedObject.FindProperty("erasedDetectors");
+        stoppedDetectors  = serializedObject.FindProperty("stoppedDetectors");
 
         victoryManager = serializedObject.FindProperty("victoryManager");
+
+        // Instruction UI
+        instructionCanvas = serializedObject.FindProperty("instructionCanvas");
+        instructionRect   = serializedObject.FindProperty("instructionRect");
+        animDuration      = serializedObject.FindProperty("animDuration");
+        animEase          = serializedObject.FindProperty("animEase");
     }
 
     public override void OnInspectorGUI()
     {
-        GUIStyle bigTitle = new GUIStyle(EditorStyles.boldLabel) { fontSize = 25, alignment = TextAnchor.MiddleLeft };
-        GUIStyle middleTitle = new GUIStyle(EditorStyles.miniBoldLabel) { fontSize = 20, alignment = TextAnchor.MiddleLeft };
+        GUIStyle bigTitle = new GUIStyle(EditorStyles.boldLabel)
+        {
+            fontSize = 25,
+            alignment = TextAnchor.MiddleLeft
+        };
+
+        GUIStyle middleTitle = new GUIStyle(EditorStyles.miniBoldLabel)
+        {
+            fontSize = 20,
+            alignment = TextAnchor.MiddleLeft
+        };
 
         serializedObject.Update();
         EditorGUILayout.Space(10);
 
+        // --------------------
+        // Victory
+        // --------------------
         EditorGUILayout.LabelField("Victory Checker Settings", bigTitle);
         EditorGUILayout.Space(10);
 
         EditorGUILayout.PropertyField(victoryType);
         EditorGUILayout.Space(15);
 
-        // Affiche seulement la liste correspondant au type sélectionné
         if (!victoryType.hasMultipleDifferentValues)
         {
             VictoryType type = (VictoryType)victoryType.enumValueIndex;
@@ -59,62 +81,81 @@ public class VictoryCheckerEditor : Editor
                 case VictoryType.MatchingColors:
                     EditorGUILayout.LabelField("Matching Colors Detectors", middleTitle);
                     EditorGUILayout.PropertyField(colorsDetectors, true);
-                    EditorGUILayout.Space(15);
                     break;
 
                 case VictoryType.AllDetached:
                     EditorGUILayout.LabelField("Detach Detectors", middleTitle);
                     EditorGUILayout.PropertyField(detachDetectors, true);
-                    EditorGUILayout.Space(15);
                     break;
 
                 case VictoryType.AllCut:
-                    EditorGUILayout.LabelField("Cuted Detectors", middleTitle);
+                    EditorGUILayout.LabelField("Cut Detectors", middleTitle);
                     EditorGUILayout.PropertyField(cutedDetectors, true);
-                    EditorGUILayout.Space(15);
                     break;
 
                 case VictoryType.AllRevealed:
                     EditorGUILayout.LabelField("Revealed Detectors", middleTitle);
                     EditorGUILayout.PropertyField(revealedDetectors, true);
-                    EditorGUILayout.Space(15);
                     break;
 
                 case VictoryType.AllShake:
                     EditorGUILayout.LabelField("Shake Detectors", middleTitle);
                     EditorGUILayout.PropertyField(shakeDetectors, true);
-                    EditorGUILayout.Space(15);
                     break;
 
                 case VictoryType.AllFilled:
                     EditorGUILayout.LabelField("Filled Detectors", middleTitle);
                     EditorGUILayout.PropertyField(filledDetectors, true);
-                    EditorGUILayout.Space(15);
                     break;
 
                 case VictoryType.AllErased:
                     EditorGUILayout.LabelField("Erased Detectors", middleTitle);
                     EditorGUILayout.PropertyField(erasedDetectors, true);
-                    EditorGUILayout.Space(15);
                     break;
 
                 case VictoryType.AllStopped:
                     EditorGUILayout.LabelField("Stopped Detectors", middleTitle);
                     EditorGUILayout.PropertyField(stoppedDetectors, true);
-                    EditorGUILayout.Space(15);
                     break;
             }
+
+            EditorGUILayout.Space(15);
         }
         else
         {
-            EditorGUILayout.HelpBox("Les objets sélectionnés ont des types de victoire différents.", MessageType.Info);
+            EditorGUILayout.HelpBox(
+                "Les objets sélectionnés ont des types de victoire différents.",
+                MessageType.Info
+            );
             EditorGUILayout.Space(15);
         }
 
-        EditorGUILayout.LabelField("Victory Manager", bigTitle);
-        EditorGUILayout.PropertyField(victoryManager);
+        // --------------------
+        // Instruction UI
+        // --------------------
+        EditorGUILayout.LabelField("Instruction Canvas (On Victory)", bigTitle);
+        EditorGUILayout.Space(10);
+
+        EditorGUILayout.PropertyField(instructionCanvas);
+        EditorGUILayout.PropertyField(instructionRect);
+
+        if (instructionCanvas.objectReferenceValue != null)
+        {
+            EditorGUILayout.Space(10);
+            EditorGUILayout.LabelField("Animation", middleTitle);
+            EditorGUILayout.PropertyField(animDuration);
+            EditorGUILayout.PropertyField(animEase);
+        }
+
         EditorGUILayout.Space(20);
 
+        // --------------------
+        // Victory Manager
+        // --------------------
+        EditorGUILayout.LabelField("Victory Manager", bigTitle);
+        EditorGUILayout.PropertyField(victoryManager);
+
+        EditorGUILayout.Space(20);
         serializedObject.ApplyModifiedProperties();
     }
 }

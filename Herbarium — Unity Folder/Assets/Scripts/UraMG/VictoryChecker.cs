@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public enum VictoryType
 {
@@ -27,11 +28,16 @@ public class VictoryChecker : MonoBehaviour
     public List<StoppableDetector> stoppedDetectors;
 
     public VictoryManager victoryManager;
+    public CanvasGroup instructionCanvas;
+    public RectTransform instructionRect;
+    public float animDuration = 0.35f;
+    public Ease animEase = Ease.OutQuad;
 
     private bool victoryTriggered = false;
+    private Sequence instructionSequence;
 
-    void Start()
-    { 
+    void Awake()
+    {
         if (victoryManager == null)
             victoryManager = GetComponentInParent<VictoryManager>();
 
@@ -40,16 +46,99 @@ public class VictoryChecker : MonoBehaviour
 
         if (victoryManager == null)
             Debug.LogWarning("VictoryChecker : Aucun VictoryManager trouvé dans la scène.");
+
+        InitInstructionCanvas();
+        ShowInstructionCanvas();
     }
+
+    // --------------------
+    // INIT
+    // --------------------
+    void InitInstructionCanvas()
+    {
+        if (instructionCanvas == null || instructionRect == null) return;
+
+        instructionCanvas.gameObject.SetActive(true);
+        instructionCanvas.alpha = 0f;
+        instructionCanvas.interactable = false;
+        instructionCanvas.blocksRaycasts = false;
+
+        instructionRect.localScale = new Vector3(0.8f, 1.2f, 1f);
+    }
+
+    // --------------------
+    // SHOW
+    // --------------------
+    void ShowInstructionCanvas()
+    {
+        if (instructionCanvas == null || instructionRect == null) return;
+
+        instructionSequence?.Kill();
+
+        instructionCanvas.gameObject.SetActive(true);
+
+        instructionSequence = DOTween.Sequence();
+
+        instructionSequence.Join(
+            instructionCanvas.DOFade(1f, animDuration)
+        );
+
+        instructionSequence.Join(
+            instructionRect.DOScale(Vector3.one, animDuration)
+                .SetEase(animEase)
+        );
+
+        instructionSequence.OnComplete(() =>
+        {
+            instructionCanvas.interactable = true;
+            instructionCanvas.blocksRaycasts = true;
+        });
+    }
+
+    // --------------------
+    // HIDE
+    // --------------------
+    void HideInstructionCanvas()
+    {
+        if (instructionCanvas == null || instructionRect == null) return;
+
+        instructionSequence?.Kill();
+
+        instructionCanvas.interactable = false;
+        instructionCanvas.blocksRaycasts = false;
+
+        instructionSequence = DOTween.Sequence();
+
+        instructionSequence.Join(
+            instructionRect.DOScale(
+                new Vector3(1.75f, 0.25f, 1f),
+                animDuration * 0.5f
+            ).SetEase(animEase)
+        );
+
+        instructionSequence.Join(
+            instructionCanvas.DOFade(0f, animDuration)
+        );
+
+        instructionSequence.OnComplete(() =>
+        {
+            instructionCanvas.gameObject.SetActive(false);
+        });
+    }
+
     void TriggerIfComplete(bool condition)
     {
         if (victoryTriggered) return;
         if (!condition) return;
-        if (victoryManager == null) return;
 
         victoryTriggered = true;
-        victoryManager.TriggerVictory();
+
+        HideInstructionCanvas();
+
+        if (victoryManager != null)
+            victoryManager.TriggerVictory();
     }
+
     public bool CheckMatchingColors()
     {
         if (colorsDetectors == null || colorsDetectors.Count == 0) 
@@ -164,5 +253,6 @@ public class VictoryChecker : MonoBehaviour
         TriggerIfComplete(true);
         return true;
     }
+
 
 }

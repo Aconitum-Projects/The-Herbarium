@@ -54,11 +54,15 @@ public class DetachDetector : MonoBehaviour
         validated = true;
         OnAllDetached();
     }
+    
+    
 
     void OnAllDetached()
     {
         var vc = transform.parent.GetComponent<VictoryChecker>();
         if (vc != null)
             vc.CheckAllDetached();
+        else
+            Debug.Log("VictoryCheckerNotFound");
     }
 }

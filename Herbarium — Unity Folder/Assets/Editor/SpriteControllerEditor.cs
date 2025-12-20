@@ -301,4 +301,5 @@ public class SpriteControllerEditor : Editor
         EditorGUI.EndDisabledGroup();
         EditorGUILayout.Space(15);
     }
+
 }

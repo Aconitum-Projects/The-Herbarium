@@ -69,7 +69,7 @@ public class SpriteController : MonoBehaviour
     public float eraseSpeed = 0.4f;
     public float minAlpha = 0f;
     
-    // ------------------ Stoppable ------------------
+    // Stoppable Settings
     public Vector3 stoppableTargetOffset;
     public float stoppableDuration = 1f;
     public Ease stoppableEase = Ease.InOutSine;
@@ -180,12 +180,14 @@ public class SpriteController : MonoBehaviour
                     anim.SetTrigger("Cut");
             }
 
-            StartFall();
-            currentMode = Mode.None;
+            PlayCutFeedback(() =>
+            {
+                StartFall();
+                currentMode = Mode.None;
+            });
         }
     }
-
-
+    
     // ------------------ Draggable ------------------
     void OnMouseDown()
     {
@@ -236,7 +238,7 @@ public class SpriteController : MonoBehaviour
                 transform.DOScale(initialScale, 0.3f).SetEase(Ease.OutBack);
             }
         }
-
+        
         isDragging = false;
     }
 
@@ -389,4 +391,20 @@ public class SpriteController : MonoBehaviour
             isStopped = true;
         }
     }
+    
+    private void PlayCutFeedback(System.Action onComplete)
+    {
+        Sequence seq = DOTween.Sequence();
+
+        seq.Append(transform.DOScale(initialScale * 1.2f, 0.15f).SetEase(Ease.OutQuad)) // micro squash
+            .Append(transform.DOScale(initialScale * 0.8f, 0.15f).SetEase(Ease.InQuad))  // snap back
+            .Join(transform.DOShakePosition(
+                0.2f,
+                strength: new Vector3(0.5f, 0.5f, 0),
+                vibrato: 20,
+                randomness: 90,
+                fadeOut: true))
+            .AppendCallback(() => onComplete?.Invoke());
+    }
+
 }

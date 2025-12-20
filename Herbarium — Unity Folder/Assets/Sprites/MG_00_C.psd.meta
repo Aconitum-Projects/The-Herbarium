@@ -1,0 +1,916 @@
+fileFormatVersion: 2
+guid: 4219f150b757e0f4799923445b4ece24
+importerOverride:
+  nativeImporterType: 2089858483
+  scriptedImporterType:
+    serializedVersion: 2
+    Hash: b10b55a1aa6a1aa32521bc0cab59632e
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 2
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: ad50e1f4bb9fa1342b346cccb3cfde66
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  multiSpriteImportData: []
+  layeredSpriteImportData:
+  - name: Tray_L
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4340
+      width: 1143
+      height: 1992
+    spriteID: 24481c804aedb3543af211a696d01fcd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4340}
+    spritePosition: {x: 67, y: 84}
+  - name: Tray_R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1155
+      y: 4340
+      width: 1143
+      height: 1992
+    spriteID: 9ae2de5211794ad42b34338973c7a5bc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1155, y: 4340}
+    spritePosition: {x: 2628, y: 84}
+  - name: Flowers&Buds
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 3840
+      height: 2160
+    spriteID: f8d956f14648ec94e8a194799ff1ace8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 0, y: 0}
+  - name: Background
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2172
+      width: 3840
+      height: 2160
+    spriteID: 5ea38f01946d3ae40b6405267e549926
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2172}
+    spritePosition: {x: 0, y: 0}
+  spriteImportData: []
+  rigSpriteImportData: []
+  sharedRigSpriteImportData: []
+  mosaicSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  characterData:
+    bones:
+    - name: b_root
+      guid: 2d27e690711effd4c85c4bc800dde6f6
+      position: {x: 1964.5197, y: -2.5992239, z: 0}
+      rotation: {x: 0, y: 0, z: 0.7079655, w: 0.70624703}
+      length: 2165.7961
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278190335
+    - name: b_flower
+      guid: 4be875acd43475844bbc3e7c874a0476
+      position: {x: 994.7542, y: 5.476941, z: 0}
+      rotation: {x: 0, y: 0, z: 0.12097593, w: 0.99265546}
+      length: 130.20227
+      parentId: 0
+      color:
+        serializedVersion: 2
+        rgba: 4287474424
+    - name: b_center
+      guid: 75a9eef71ac4f8b449c0aec568e98edc
+      position: {x: 130.20229, y: -0.0000007168419, z: 0}
+      rotation: {x: 0, y: 0, z: -0.24812542, w: 0.96872795}
+      length: 165.9562
+      parentId: 1
+      color:
+        serializedVersion: 2
+        rgba: 4287474424
+    - name: b_petalTop_E_00
+      guid: 035b4a8adefcba145967c8074f3b5d76
+      position: {x: 149.34872, y: 54.890717, z: 0}
+      rotation: {x: 0, y: 0, z: 0.64173174, w: 0.76692927}
+      length: 155.61906
+      parentId: 1
+      color:
+        serializedVersion: 2
+        rgba: 4282210268
+    - name: b_petalTop_E_01
+      guid: 6a4eb9a84a100fd4c96e41782296763d
+      position: {x: 155.61903, y: -0.00001990331, z: 0}
+      rotation: {x: 0, y: 0, z: -0.39385185, w: 0.91917396}
+      length: 128.51727
+      parentId: 3
+      color:
+        serializedVersion: 2
+        rgba: 4282210268
+    - name: b_petalTop_E_02
+      guid: 7cde27b41e5576e4386a6849ab12bc41
+      position: {x: 128.51706, y: 0.00011334421, z: 0}
+      rotation: {x: 0, y: 0, z: -0.9251047, w: 0.37971228}
+      length: 142.20264
+      parentId: 4
+      color:
+        serializedVersion: 2
+        rgba: 4282210268
+    - name: b_petalTop_A_00
+      guid: bfa1a90e9e277004c9ad01785dbf3761
+      position: {x: 231.04747, y: -19.78512, z: 0}
+      rotation: {x: 0, y: 0, z: 0.052853774, w: 0.9986023}
+      length: 114.88768
+      parentId: 1
+      color:
+        serializedVersion: 2
+        rgba: 4282210268
+    - name: b_petalTop_A_01
+      guid: 971806b14c48c1e45a4365e237d62d6a
+      position: {x: 114.88764, y: 0.00003956116, z: 0}
+      rotation: {x: 0, y: 0, z: -0.3659253, w: 0.9306442}
+      length: 108.50284
+      parentId: 6
+      color:
+        serializedVersion: 2
+        rgba: 4282210268
+    - name: b_petalTop_A_02
+      guid: 01b5a00402c7f5c48800ba0cee30611a
+      position: {x: 108.50295, y: -0.00008490392, z: 0}
+      rotation: {x: 0, y: 0, z: -0.105126016, w: 0.994459}
+      length: 137.97565
+      parentId: 7
+      color:
+        serializedVersion: 2
+        rgba: 4282210268
+    - name: b_petalTop_B_00
+      guid: 7f72bbc12a11edd40a2f77c8c08b48c8
+      position: {x: 155.73349, y: -93.18394, z: 0}
+      rotation: {x: 0, y: 0, z: -0.52703154, w: 0.8498457}
+      length: 186.67499
+      parentId: 1
+      color:
+        serializedVersion: 2
+        rgba: 4282210268
+    - name: b_petalTop_B_01
+      guid: 939650729f92b4742b69a941cb75426d
+      position: {x: 186.67499, y: 0.0000074605778, z: 0}
+      rotation: {x: 0, y: 0, z: -0.690474, w: 0.7233573}
+      length: 111.71107
+      parentId: 9
+      color:
+        serializedVersion: 2
+        rgba: 4282210268
+    - name: b_petalTop_B_02
+      guid: 3a6f9351b6afd0947b733fba6a4af45c
+      position: {x: 111.711006, y: 0.0000075106364, z: 0}
+      rotation: {x: 0, y: 0, z: -0.41223007, w: 0.91107976}
+      length: 134.85365
+      parentId: 10
+      color:
+        serializedVersion: 2
+        rgba: 4282210268
+    - name: b_petalTop_C_00
+      guid: a10e97c0704b8a64cb0ebf0142a7c74d
+      position: {x: 58.718864, y: -47.230515, z: 0}
+      rotation: {x: 0, y: -0, z: -0.98021305, w: 0.19794539}
+      length: 131.58052
+      parentId: 1
+      color:
+        serializedVersion: 2
+        rgba: 4282210268
+    - name: b_petalTop_C_01
+      guid: 86c633e662882d142b498ee5f65f6845
+      position: {x: 131.58057, y: -0.0000063035295, z: 0}
+      rotation: {x: 0, y: 0, z: -0.06393596, w: 0.997954}
+      length: 90.7417
+      parentId: 12
+      color:
+        serializedVersion: 2
+        rgba: 4282210268
+    - name: b_petalTop_C_02
+      guid: 06c361a959e4de54f9c2f504045c1e02
+      position: {x: 90.741745, y: 0.00007316521, z: 0}
+      rotation: {x: 0, y: 0, z: -0.08328849, w: 0.99652547}
+      length: 123.2061
+      parentId: 13
+      color:
+        serializedVersion: 2
+        rgba: 4282210268
+    - name: b_petalTop_D_00
+      guid: dd038885ab345ab4b8e83b98ab3f2564
+      position: {x: 63.8249, y: 27.444998, z: 0}
+      rotation: {x: 0, y: -0, z: 0.89163333, w: 0.4527582}
+      length: 123.32152
+      parentId: 1
+      color:
+        serializedVersion: 2
+        rgba: 4282210268
+    - name: b_petalTop_D_01
+      guid: da921ec38dc72254e8e0cfd26ea193d8
+      position: {x: 123.32154, y: -0.000027220307, z: 0}
+      rotation: {x: 0, y: 0, z: 0.4224681, w: 0.90637785}
+      length: 104.27123
+      parentId: 15
+      color:
+        serializedVersion: 2
+        rgba: 4282210268
+    - name: b_petalTop_D_02
+      guid: e4e376e168583d74ba891fbb484609b3
+      position: {x: 104.271225, y: -0.000033249547, z: 0}
+      rotation: {x: 0, y: 0, z: 0.85637045, w: 0.516362}
+      length: 106.863754
+      parentId: 16
+      color:
+        serializedVersion: 2
+        rgba: 4282210268
+    - name: b_petalBack_A_00
+      guid: be77af10455c77f43a19553b7d8a6011
+      position: {x: 1179.0275, y: 31.34497, z: 0}
+      rotation: {x: 0, y: 0, z: -0.0012207032, w: 0.9999993}
+      length: 252.63208
+      parentId: 0
+      color:
+        serializedVersion: 2
+        rgba: 4285119487
+    - name: b_petalBack_A_01
+      guid: 2491ec2bc7f03b247b58476ffe78a837
+      position: {x: 252.63211, y: 0.00204623, z: 0}
+      rotation: {x: 0, y: 0, z: -0.079688266, w: 0.99681985}
+      length: 231.89307
+      parentId: 18
+      color:
+        serializedVersion: 2
+        rgba: 4285119487
+    - name: b_petalBack_A_02
+      guid: 7efdc140aa0ea604384d3289fe953623
+      position: {x: 231.8931, y: 0.000026769478, z: 0}
+      rotation: {x: 0, y: 0, z: -0.081006154, w: 0.99671364}
+      length: 274.61835
+      parentId: 19
+      color:
+        serializedVersion: 2
+        rgba: 4285119487
+    - name: b_petalBack_A_03
+      guid: d117dd157aacbf84e89a1a9119cd1713
+      position: {x: 274.61823, y: -0.000088639754, z: 0}
+      rotation: {x: 0, y: 0, z: -0.055297513, w: 0.99847}
+      length: 150.71388
+      parentId: 20
+      color:
+        serializedVersion: 2
+        rgba: 4285119487
+    - name: b_petalBack_B_00
+      guid: 3773d73fa6d251744954034748bc345d
+      position: {x: 1142.0836, y: -10.670348, z: 0}
+      rotation: {x: 0, y: 0, z: -0.58825964, w: 0.80867213}
+      length: 262.974
+      parentId: 0
+      color:
+        serializedVersion: 2
+        rgba: 4285119487
+    - name: b_petalBack_B_01
+      guid: 00f5e3dbf9effc54680aafcdaaff68fd
+      position: {x: 262.97403, y: 0.000064775115, z: 0}
+      rotation: {x: 0, y: 0, z: 0.01035945, w: 0.99994636}
+      length: 231.37094
+      parentId: 22
+      color:
+        serializedVersion: 2
+        rgba: 4285119487
+    - name: b_petalBack_B_02
+      guid: 4a4df03c8a9cfbd4f8163b8b24cca48f
+      position: {x: 231.37119, y: 0.00050239026, z: 0}
+      rotation: {x: 0, y: 0, z: 0.02688597, w: 0.9996385}
+      length: 207.69437
+      parentId: 23
+      color:
+        serializedVersion: 2
+        rgba: 4285119487
+    - name: b_petalBack_B_03
+      guid: de1d68f27047a4c41be6419667143aac
+      position: {x: 207.69449, y: -0.00013374063, z: 0}
+      rotation: {x: 0, y: 0, z: -0.053653874, w: 0.99855965}
+      length: 254.84306
+      parentId: 24
+      color:
+        serializedVersion: 2
+        rgba: 4285119487
+    - name: b_petalBack_C_00
+      guid: 0a37a1a7799e088439e16c5d6b9d6c13
+      position: {x: 1063.0914, y: -28.899569, z: 0}
+      rotation: {x: 0, y: -0, z: -0.9243434, w: 0.38156164}
+      length: 193.52441
+      parentId: 0
+      color:
+        serializedVersion: 2
+        rgba: 4285119487
+    - name: b_petalBack_C_01
+      guid: 5ff4cf31f161bab4d88da18f305fbfc1
+      position: {x: 193.52441, y: 0.000011413329, z: 0}
+      rotation: {x: 0, y: 0, z: 0.049811576, w: 0.9987587}
+      length: 224.41075
+      parentId: 26
+      color:
+        serializedVersion: 2
+        rgba: 4285119487
+    - name: b_petalBack_C_02
+      guid: c36fecc1dccbe5748b35d5cc15398219
+      position: {x: 224.4107, y: 0.000013166093, z: 0}
+      rotation: {x: 0, y: 0, z: 0.021114988, w: 0.9997771}
+      length: 289.47238
+      parentId: 27
+      color:
+        serializedVersion: 2
+        rgba: 4285119487
+    - name: b_petalBack_C_03
+      guid: 0dc1451d86b97b74384d650a31301257
+      position: {x: 289.47238, y: 0.00047496968, z: 0}
+      rotation: {x: 0, y: 0, z: 0.006650938, w: 0.99997795}
+      length: 276.8667
+      parentId: 28
+      color:
+        serializedVersion: 2
+        rgba: 4285119487
+    - name: b_petalBack_D_00
+      guid: 039c40d324d71c24589e1b33cf873ad4
+      position: {x: 1076.3768, y: 23.69989, z: 0}
+      rotation: {x: 0, y: -0, z: 0.96031994, w: 0.2789009}
+      length: 261.37662
+      parentId: 0
+      color:
+        serializedVersion: 2
+        rgba: 4285119487
+    - name: b_petalBack_D_01
+      guid: 9e207c3ff7f1414449d9a49c550a7a55
+      position: {x: 261.37665, y: -0.000085401625, z: 0}
+      rotation: {x: 0, y: 0, z: 0.060442682, w: 0.9981717}
+      length: 270.74475
+      parentId: 30
+      color:
+        serializedVersion: 2
+        rgba: 4285119487
+    - name: b_petalBack_D_02
+      guid: 6b486e4895c2c4f419a59fae2886dab5
+      position: {x: 270.74472, y: 0.0002742043, z: 0}
+      rotation: {x: 0, y: 0, z: -0.01949001, w: 0.99981004}
+      length: 204.80724
+      parentId: 31
+      color:
+        serializedVersion: 2
+        rgba: 4285119487
+    - name: b_petalBack_D_03
+      guid: a4749030e73981448b7767f662688f24
+      position: {x: 204.80728, y: 0.0001281396, z: 0}
+      rotation: {x: 0, y: 0, z: -0.023124728, w: 0.9997327}
+      length: 204.01103
+      parentId: 32
+      color:
+        serializedVersion: 2
+        rgba: 4285119487
+    - name: b_petalBack_E_00
+      guid: 838fd9a04c8d67c49949931565c79b9d
+      position: {x: 1121.1777, y: 49.906883, z: 0}
+      rotation: {x: 0, y: 0, z: 0.6475824, w: 0.7619955}
+      length: 231.89294
+      parentId: 0
+      color:
+        serializedVersion: 2
+        rgba: 4285119487
+    - name: b_petalBack_E_01
+      guid: 5045e959d1c749a44b94525f17282ee0
+      position: {x: 231.89293, y: 0.000042257707, z: 0}
+      rotation: {x: 0, y: 0, z: -0.06492972, w: 0.9978899}
+      length: 258.1089
+      parentId: 34
+      color:
+        serializedVersion: 2
+        rgba: 4285119487
+    - name: b_petalBack_E_02
+      guid: 37e9938373da36c4aa9b98120969e3c3
+      position: {x: 258.1088, y: 0.00004788591, z: 0}
+      rotation: {x: 0, y: 0, z: -0.046476576, w: 0.99891937}
+      length: 246.77884
+      parentId: 35
+      color:
+        serializedVersion: 2
+        rgba: 4285119487
+    - name: b_petalBack_E_03
+      guid: 7216db766014d3647a0561539ff92fa5
+      position: {x: 246.77887, y: -0.000009050607, z: 0}
+      rotation: {x: 0, y: 0, z: -0.08480579, w: 0.9963975}
+      length: 265.84216
+      parentId: 36
+      color:
+        serializedVersion: 2
+        rgba: 4285119487
+    - name: bone_4
+      guid: 9ad3a6e0ceb2b1f43ad981961d8b2403
+      position: {x: 373.82608, y: -68.3887, z: 0}
+      rotation: {x: 0, y: 0, z: 0.6791773, w: 0.7339743}
+      length: 271.86884
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4294902015
+    - name: bone_5
+      guid: c0d40f3990a52634bb16153b28c6599a
+      position: {x: 271.86887, y: -0.00002501096, z: 0}
+      rotation: {x: 0, y: 0, z: -0.1733598, w: 0.9848586}
+      length: 343.89218
+      parentId: 38
+      color:
+        serializedVersion: 2
+        rgba: 4278190335
+    - name: bone_6
+      guid: 4801aa59810a0154795978cadad7dd48
+      position: {x: 343.8922, y: -0.000026901442, z: 0}
+      rotation: {x: 0, y: 0, z: -0.009897552, w: 0.999951}
+      length: 329.57834
+      parentId: 39
+      color:
+        serializedVersion: 2
+        rgba: 4278255615
+    - name: bone_7
+      guid: 1def0368eb1bdf64d925f5d89045fe96
+      position: {x: 721.1945, y: -97.336235, z: 0}
+      rotation: {x: 0, y: 0, z: 0.3497697, w: 0.9368357}
+      length: 236.91513
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278255360
+    - name: bone_8
+      guid: 3f0cb911ad0300b4d8ab2b14f513adfb
+      position: {x: 236.9151, y: 0.000024588955, z: 0}
+      rotation: {x: 0, y: 0, z: -0.04529784, w: 0.9989736}
+      length: 324.2722
+      parentId: 41
+      color:
+        serializedVersion: 2
+        rgba: 4294934528
+    - name: bone_9
+      guid: c564a94c971c8f04297af81025a9c065
+      position: {x: 74.210335, y: -131.20493, z: 0}
+      rotation: {x: 0, y: 0, z: 0.7671177, w: 0.64150643}
+      length: 237.96526
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4294901888
+    - name: bone_10
+      guid: bfcc14bf6b8fe334db73a480ed984c0a
+      position: {x: 237.96524, y: -0.0000005220677, z: 0}
+      rotation: {x: 0, y: 0, z: 0.13742477, w: 0.99051225}
+      length: 234.21048
+      parentId: 43
+      color:
+        serializedVersion: 2
+        rgba: 4286578943
+    - name: bone_11
+      guid: ce07ac89802b7b846bd87f5bae1752ea
+      position: {x: 1164.4514, y: 2319.696, z: 0}
+      rotation: {x: 0, y: 0, z: -0.95292753, w: 0.3031983}
+      length: 441.74472
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278223103
+    - name: bone_12
+      guid: a804ff99c0cfe514cbecdba329934d74
+      position: {x: 441.74463, y: 0.00023561265, z: 0}
+      rotation: {x: 0, y: 0, z: 0.11032998, w: 0.99389505}
+      length: 251.54636
+      parentId: 45
+      color:
+        serializedVersion: 2
+        rgba: 4278255488
+    - name: bone_13
+      guid: 63de0e229b966f04e98071cdba424f8d
+      position: {x: 251.54645, y: -0.000048872917, z: 0}
+      rotation: {x: 0, y: 0, z: 0.20144579, w: 0.9794997}
+      length: 269.63086
+      parentId: 46
+      color:
+        serializedVersion: 2
+        rgba: 4286643968
+    - name: bone_14
+      guid: 329c55eb01b3782469baed4b7ef4392a
+      position: {x: 1572.3462, y: 2290.7488, z: 0}
+      rotation: {x: 0, y: 0, z: -0.8581427, w: 0.5134114}
+      length: 244.89243
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4294901760
+    - name: bone_15
+      guid: b60dc3275cf41ff43b2993cf08e1871f
+      position: {x: 244.89243, y: 0.00001008917, z: 0}
+      rotation: {x: 0, y: 0, z: -0.13030043, w: 0.99147457}
+      length: 176.86476
+      parentId: 48
+      color:
+        serializedVersion: 2
+        rgba: 4294902015
+    - name: bone_16
+      guid: 771f966311176b649b6461b38e09b6ee
+      position: {x: 3930.5337, y: 15.786615, z: 0}
+      rotation: {x: 0, y: 0, z: 0.8093681, w: 0.58730173}
+      length: 390.29965
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278190335
+    - name: bone_17
+      guid: dc59acdae3845b94bb54e20f4603b76e
+      position: {x: 390.29962, y: -0.00011906296, z: 0}
+      rotation: {x: 0, y: 0, z: 0.23878933, w: 0.9710715}
+      length: 305.195
+      parentId: 50
+      color:
+        serializedVersion: 2
+        rgba: 4278255615
+    - name: bone_18
+      guid: 21fdba051f12e8d49b2d6508195c3908
+      position: {x: 3422.6392, y: -163.16064, z: 0}
+      rotation: {x: 0, y: 0, z: 0.87493324, w: 0.48424357}
+      length: 232.9213
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278255360
+    - name: bone_19
+      guid: 127a7f02409555143a7c6c67369e4d7d
+      position: {x: 232.92113, y: -0.00013201164, z: 0}
+      rotation: {x: 0, y: 0, z: 0.11613343, w: 0.9932336}
+      length: 258.65866
+      parentId: 52
+      color:
+        serializedVersion: 2
+        rgba: 4294967040
+    parts:
+    - spritePosition:
+        x: 1806
+        y: 979
+        width: 294
+        height: 318
+      spriteId: 6a63ace2be7cada468afdb412b2d2508
+      bones: 0100000002000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1768
+        y: 1090
+        width: 304
+        height: 461
+      spriteId: 83e037a65b6d34a4f9907427fc7f6c2c
+      bones: 080000000700000006000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1943
+        y: 1032
+        width: 331
+        height: 358
+      spriteId: b8ae34f33be5bd44b86b5cb3cfd4df35
+      bones: 0b0000000a00000009000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1929
+        y: 768
+        width: 290
+        height: 357
+      spriteId: a9568464038694f4aa90badcc4b2934c
+      bones: 0e0000000c0000000d000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1708
+        y: 767
+        width: 264
+        height: 332
+      spriteId: 5ace8380b0db4434d816e217a9b1480e
+      bones: 110000000f00000010000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1560
+        y: 1016
+        width: 362
+        height: 287
+      spriteId: 2dc706a4326d72c4ea76393284349112
+      bones: 030000000500000004000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 982
+        y: 912
+        width: 888
+        height: 552
+      spriteId: 3d9dbe68ed381764eb04896b89f605ef
+      bones: 22000000230000002400000025000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1464
+        y: 233
+        width: 537
+        height: 828
+      spriteId: 8bad53bea09e86142b18cf57c860b0d9
+      bones: 21000000200000001f0000001e000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1924
+        y: 427
+        width: 845
+        height: 700
+      spriteId: f89c61d3456b416429ae4e29ca09b1f5
+      bones: 1d0000001c0000001b0000001a000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1979
+        y: 1006
+        width: 890
+        height: 493
+      spriteId: ad9f0055bf791ae43a57ab3c2a91391b
+      bones: 17000000180000001900000016000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 1734
+        y: 1183
+        width: 435
+        height: 886
+      spriteId: 9ecde6d59b9c4ff44ad0f4d26ad983f0
+      bones: 12000000140000001500000013000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 0
+        y: 0
+        width: 3840
+        height: 2160
+      spriteId: 369d9cb1e75b425428a94800d96a543a
+      bones: 3100000030000000000000002f0000002e0000002d00000026000000270000002800000032000000330000002b0000002c0000002a000000290000003400000035000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 0
+        y: 0
+        width: 3840
+        height: 2160
+      spriteId: bb555f3fca847c948bd51cd390ad4eea
+      bones: 00000000
+      parentGroup: 0
+      order: 0
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0.5, y: 0}
+    boneReadOnly: 0
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0.5, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  generateTileAssets: 0
+  tilePaletteCellLayout: 0
+  tilePaletteHexagonLayout: 0
+  tilePaletteCellSize: {x: 1, y: 1, z: 0}
+  tilePaletteCellSizing: 0
+  transparencySortMode: 0
+  transparencySortAxis: {x: 0, y: 0, z: 1}
+  tileTemplate: {instanceID: 0}
+  padding: 4
+  spriteSizeExpand: 0
+  skeletonAssetReferenceID: 
+  pipeline: {instanceID: 0}
+  pipelineVersion: 
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  pSDLayerImportSetting: []
+  psdLayers:
+  - name: Tray_L
+    spriteName: Tray_L
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 24481c804aedb3543af211a696d01fcd
+    layerID: 91
+    mosaicPosition: {x: 4, y: 4340}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Tray_R
+    spriteName: Tray_R
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9ae2de5211794ad42b34338973c7a5bc
+    layerID: 90
+    mosaicPosition: {x: 1155, y: 4340}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Flowers&Buds
+    spriteName: Flowers&Buds
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f8d956f14648ec94e8a194799ff1ace8
+    layerID: 89
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Background
+    spriteName: Background
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 5ea38f01946d3ae40b6405267e549926
+    layerID: 88
+    mosaicPosition: {x: 4, y: 2172}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  mosaicPSDLayers: []
+  rigPSDLayers: []
+  sharedRigPSDLayers: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 639015236830944260
+  spriteSizeExpandChanged: 0
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []

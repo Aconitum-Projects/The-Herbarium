@@ -110,10 +110,10 @@ RectTransform:
   - {fileID: 393179420282081027}
   m_Father: {fileID: 8198316643749274477}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0.8}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: -200, y: 230}
+  m_SizeDelta: {x: -200, y: -200}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &9016251348137213967
 CanvasRenderer:
@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 6342248907542929926}
   - component: {fileID: 1773695602851112181}
   - component: {fileID: 2481338569939345041}
+  - component: {fileID: 5910495059941647604}
   m_Layer: 0
   m_Name: InstructionsCanvas
   m_TagString: Untagged
@@ -300,6 +301,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &5910495059941647604
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3831706133130181482}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &6847464262802734910
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,13 +358,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c473210c77530bd43b534d4682982071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  victoryType: 0
+  victoryType: 2
   colorsDetectors: []
   detachDetectors: []
-  cutDetectors: []
+  cutDetectors:
+  - {fileID: 0}
   revealedDetectors: []
   shakeDetectors: []
+  filledDetectors: []
+  erasedDetectors: []
+  stoppedDetectors: []
   victoryManager: {fileID: 0}
+  instructionCanvas: {fileID: 5910495059941647604}
+  instructionRect: {fileID: 5367747548642348924}
+  animDuration: 0.5
+  animEase: 4
 --- !u!1 &8505848360351412754
 GameObject:
   m_ObjectHideFlags: 0
