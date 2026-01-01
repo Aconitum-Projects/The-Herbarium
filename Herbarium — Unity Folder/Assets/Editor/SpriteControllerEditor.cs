@@ -11,7 +11,7 @@ public class SpriteControllerEditor : Editor
     SerializedProperty followX, followY, followSpeed, cutterCollider, limitX, xLimits, limitY, yLimits;
 
     // Detachable
-    SerializedProperty maxScale, detachThreshold, scaleDuration, isDetached, detachType, fallDistance, fallDuration, keepDetachedScale;
+    SerializedProperty maxScale, detachThreshold, scaleDuration, isDetached, detachType, fallDistance, fallDuration, keepDetachedScale, detachVisualMode;
 
     // Cuttable
     SerializedProperty cuttableCollider, isCut;
@@ -51,6 +51,7 @@ public class SpriteControllerEditor : Editor
         fallDistance = serializedObject.FindProperty("fallDistance");
         fallDuration = serializedObject.FindProperty("fallDuration");
         keepDetachedScale = serializedObject.FindProperty("keepDetachedScale");
+        detachVisualMode = serializedObject.FindProperty("detachVisualMode");
 
         // Cuttable
         cuttableCollider = serializedObject.FindProperty("cuttableCollider");
@@ -189,17 +190,46 @@ public class SpriteControllerEditor : Editor
         EditorGUILayout.LabelField("Detach Settings", bigTitle);
         EditorGUILayout.Space(5);
 
-        EditorGUILayout.PropertyField(maxScale, new GUIContent("Max Scale", "Échelle maximale du sprite lors du détachement"));
-        EditorGUILayout.PropertyField(scaleDuration, new GUIContent("Scale Duration", "Durée de l'animation d'échelle"));
-        EditorGUILayout.PropertyField(detachThreshold, new GUIContent("Detach Threshold", "Distance de séparation"));
-        EditorGUI.BeginDisabledGroup(true);
-        EditorGUILayout.PropertyField(isDetached, new GUIContent("Is Detached", "Indique si le sprite est actuellement détaché"));
-        EditorGUI.EndDisabledGroup();
+        EditorGUILayout.PropertyField(detachVisualMode, new GUIContent(
+            "Visual Mode",
+            "Scalable = change le scale\nAnimated = change le sprite selon la distance"
+        ));
+
         EditorGUILayout.Space(5);
 
-        EditorGUILayout.PropertyField(detachType, new GUIContent("Detach Type", "Type de détachement du sprite"));
-        EditorGUILayout.PropertyField(keepDetachedScale, new GUIContent("Keep Detached Scale", "Garder l'échelle du sprite après détachement"));
+        if (!detachVisualMode.hasMultipleDifferentValues)
+        {
+            SpriteController.DetachVisualMode visualMode =
+                (SpriteController.DetachVisualMode)detachVisualMode.enumValueIndex;
+
+            switch (visualMode)
+            {
+                case SpriteController.DetachVisualMode.Scalable:
+                    EditorGUILayout.PropertyField(maxScale, new GUIContent("Max Scale"));
+                    EditorGUILayout.PropertyField(scaleDuration, new GUIContent("Scale Duration"));
+                    break;
+
+                case SpriteController.DetachVisualMode.Animated:
+                    EditorGUILayout.LabelField("Animated Detach", middleTitle);
+                    SerializedProperty animatedSpritesProp = serializedObject.FindProperty("animatedDetachSprites");
+                    EditorGUILayout.PropertyField(animatedSpritesProp, new GUIContent("Animated Sprites"), true);
+                    break;
+
+            }
+        }
+
+        EditorGUILayout.Space(5);
+        EditorGUILayout.PropertyField(detachThreshold, new GUIContent("Detach Threshold"));
+
+        EditorGUI.BeginDisabledGroup(true);
+        EditorGUILayout.PropertyField(isDetached, new GUIContent("Is Detached"));
+        EditorGUI.EndDisabledGroup();
+
+        EditorGUILayout.Space(5);
+        EditorGUILayout.PropertyField(detachType, new GUIContent("Detach Type"));
+        EditorGUILayout.PropertyField(keepDetachedScale, new GUIContent("Keep Detached Scale"));
         EditorGUILayout.Space(10);
+
 
         if (!detachType.hasMultipleDifferentValues)
         {
