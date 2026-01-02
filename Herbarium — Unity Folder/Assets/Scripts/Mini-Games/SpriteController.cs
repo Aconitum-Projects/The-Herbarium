@@ -22,10 +22,12 @@ public class SpriteController : MonoBehaviour
         Draggable,
         Fall
     }
+    [System.Flags]
     public enum DetachVisualMode
     {
-        Scalable,
-        Animated
+        None = 0,
+        Scalable = 1 << 0,
+        Animated = 1 << 1
     }
 
     // Mode
@@ -98,15 +100,28 @@ public class SpriteController : MonoBehaviour
     private bool isDragging = false;
     private Tween fillTween;
     private Vector3 fillStartPos;
+    private SpriteRenderer targetSpriteRenderer;
+
     void Awake()
     {
         mainCam = Camera.main;
         initialScale = transform.localScale;
         lastPos = transform.position;
-        spriteRenderer = GetComponent<SpriteRenderer>();
 
         if (currentMode == Mode.Stoppable)
             StartStoppable();
+        
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null)
+        {
+            targetSpriteRenderer = spriteRenderer;
+        }
+        else
+        {
+            targetSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        }
+
+
     }
 
     void Update()
@@ -126,8 +141,6 @@ public class SpriteController : MonoBehaviour
             case Mode.Stoppable:
                 StoppableUpdate();
                 break;
-
-
         }
 
         // ----------- Shake Detection -----------
@@ -243,21 +256,24 @@ public class SpriteController : MonoBehaviour
 
             if (distance < detachThreshold)
             {
-                if (detachVisualMode == DetachVisualMode.Scalable)
+                bool useScale = detachVisualMode.HasFlag(DetachVisualMode.Scalable);
+                bool useAnim  = detachVisualMode.HasFlag(DetachVisualMode.Animated);
+                
+                
+                if (useScale)
                 {
                     transform.DOMove(detachOrigin, 0.3f).SetEase(Ease.OutBack);
                     transform.DOScale(initialScale, 0.3f).SetEase(Ease.OutBack);
                 }
-                else if (detachVisualMode == DetachVisualMode.Animated)
+                
+                if (useAnim)
                 {
-                    // Smooth retour à la première frame
                     int currentFrame = 0;
                     if (animatedDetachSprites != null && animatedDetachSprites.Length > 0)
                     {
-                        // On récupère la frame actuelle
                         for (int i = 0; i < animatedDetachSprites.Length; i++)
                         {
-                            if (spriteRenderer.sprite == animatedDetachSprites[i])
+                            if (targetSpriteRenderer.sprite == animatedDetachSprites[i])
                             {
                                 currentFrame = i;
                                 break;
@@ -275,8 +291,7 @@ public class SpriteController : MonoBehaviour
 
         isDragging = false;
     }
-
-
+    
     // ------------------ Follow Mouse ------------------
     private void FollowMouseUpdate()
     {
@@ -319,36 +334,47 @@ public class SpriteController : MonoBehaviour
         float distance = Vector3.Distance(worldPos, detachOrigin);
         float t = Mathf.Clamp01(distance / detachThreshold);
 
-        switch (detachVisualMode)
-        {
-            case DetachVisualMode.Scalable:
-                Vector2 targetScale = new Vector2(
-                    Mathf.Lerp(initialScale.x, maxScale.x, t),
-                    Mathf.Lerp(initialScale.y, maxScale.y, t)
-                );
-                transform.DOScale(new Vector3(targetScale.x, targetScale.y, transform.localScale.z), scaleDuration);
-                break;
+        bool useScale = detachVisualMode.HasFlag(DetachVisualMode.Scalable);
+        bool useAnim  = detachVisualMode.HasFlag(DetachVisualMode.Animated);
 
-            case DetachVisualMode.Animated:
-                transform.DOKill(false);
-                UpdateAnimatedSprite(t);
-                break;
+        if (useScale)
+        {
+            Vector2 targetScale = new Vector2(
+                Mathf.Lerp(initialScale.x, maxScale.x, t),
+                Mathf.Lerp(initialScale.y, maxScale.y, t)
+            );
+
+            transform.DOScale(
+                new Vector3(targetScale.x, targetScale.y, transform.localScale.z),
+                scaleDuration
+            );
+        }
+
+        if (useAnim)
+        {
+            //transform.DOKill(false);
+            UpdateAnimatedSprite(t);
         }
 
         if (t >= 1f)
         {
-            isDetached = true; // <-- le sprite est maintenant verrouillé
+            isDetached = true;
             isDragging = false;
 
-            // Scalable : reset scale si nécessaire
-            if (detachVisualMode == DetachVisualMode.Scalable && !keepDetachedScale)
-                transform.DOScale(initialScale, 0.1f);
+            if (useScale)
+            {
+                transform.DOKill(false);
 
-            // Pour Animated, on ne fait plus de DOScale ni DOMove, il reste à sa position
-            if (detachVisualMode == DetachVisualMode.Scalable)
-                transform.position = worldPos;
+                if (!keepDetachedScale)
+                {
+                    transform.DOScale(initialScale, 0.15f)
+                        .SetEase(Ease.OutBack);
+                }
+            }
+            
+            if (useScale)
+                transform.position = ClampToScreen(worldPos);
 
-            // Définition du mode après detach
             switch (detachType)
             {
                 case DetachType.Fall:
@@ -366,13 +392,11 @@ public class SpriteController : MonoBehaviour
             }
         }
     }
-
-
+    
     // ------------------ Animated ------------------
-
     private void UpdateAnimatedSprite(float t)
     {
-        if (animatedDetachSprites == null || animatedDetachSprites.Length == 0 || spriteRenderer == null)
+        if (animatedDetachSprites == null || animatedDetachSprites.Length == 0 || targetSpriteRenderer == null)
             return;
 
         int frameIndex = Mathf.RoundToInt(
@@ -381,7 +405,7 @@ public class SpriteController : MonoBehaviour
 
         frameIndex = Mathf.Clamp(frameIndex, 0, animatedDetachSprites.Length - 1);
 
-        spriteRenderer.sprite = animatedDetachSprites[frameIndex];
+        targetSpriteRenderer.sprite = animatedDetachSprites[frameIndex];
     }
 
     /// ------------------ Fall ------------------
@@ -426,12 +450,12 @@ public class SpriteController : MonoBehaviour
     // ------------------ Erasable ------------------
     private void ErasableUpdate()
     {
-        if (!isBeingErased || spriteRenderer == null) return;
+        if (!isBeingErased || targetSpriteRenderer == null) return;
 
-        Color c = spriteRenderer.color;
+        Color c = targetSpriteRenderer.color;
         c.a -= eraseSpeed * Time.deltaTime;
         c.a = Mathf.Clamp(c.a, minAlpha, 1f);
-        spriteRenderer.color = c;
+        targetSpriteRenderer.color = c;
 
         if (c.a <= minAlpha)
         {
@@ -474,5 +498,18 @@ public class SpriteController : MonoBehaviour
                 fadeOut: true))
             .AppendCallback(() => onComplete?.Invoke());
     }
+    private Vector3 ClampToScreen(Vector3 worldPos)
+    {
+        Vector3 vp = mainCam.WorldToViewportPoint(worldPos);
+
+        vp.x = Mathf.Clamp01(vp.x);
+        vp.y = Mathf.Clamp01(vp.y);
+
+        Vector3 clampedWorld = mainCam.ViewportToWorldPoint(vp);
+        clampedWorld.z = worldPos.z;
+
+        return clampedWorld;
+    }
+
 
 }

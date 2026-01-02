@@ -200,22 +200,36 @@ public class SpriteControllerEditor : Editor
         if (!detachVisualMode.hasMultipleDifferentValues)
         {
             SpriteController.DetachVisualMode visualMode =
-                (SpriteController.DetachVisualMode)detachVisualMode.enumValueIndex;
+                (SpriteController.DetachVisualMode)detachVisualMode.intValue;
 
-            switch (visualMode)
+            bool useScale = visualMode.HasFlag(SpriteController.DetachVisualMode.Scalable);
+            bool useAnim  = visualMode.HasFlag(SpriteController.DetachVisualMode.Animated);
+
+            if (useScale)
             {
-                case SpriteController.DetachVisualMode.Scalable:
-                    EditorGUILayout.PropertyField(maxScale, new GUIContent("Max Scale"));
-                    EditorGUILayout.PropertyField(scaleDuration, new GUIContent("Scale Duration"));
-                    break;
-
-                case SpriteController.DetachVisualMode.Animated:
-                    EditorGUILayout.LabelField("Animated Detach", middleTitle);
-                    SerializedProperty animatedSpritesProp = serializedObject.FindProperty("animatedDetachSprites");
-                    EditorGUILayout.PropertyField(animatedSpritesProp, new GUIContent("Animated Sprites"), true);
-                    break;
-
+                EditorGUILayout.LabelField("Scalable Detach", middleTitle);
+                EditorGUILayout.PropertyField(maxScale, new GUIContent("Max Scale"));
+                EditorGUILayout.PropertyField(scaleDuration, new GUIContent("Scale Duration"));
+                EditorGUILayout.Space(5);
             }
+
+            if (useAnim)
+            {
+                EditorGUILayout.LabelField("Animated Detach", middleTitle);
+                SerializedProperty animatedSpritesProp =
+                    serializedObject.FindProperty("animatedDetachSprites");
+                EditorGUILayout.PropertyField(animatedSpritesProp, new GUIContent("Animated Sprites"), true);
+                EditorGUILayout.Space(5);
+            }
+            
+            if (visualMode == SpriteController.DetachVisualMode.None)
+            {
+                EditorGUILayout.HelpBox(
+                    "Aucun mode visuel sélectionné. Le detach n’aura pas de feedback.",
+                    MessageType.Warning
+                );
+            }
+            
         }
 
         EditorGUILayout.Space(5);
