@@ -768,6 +768,14 @@ PrefabInstance:
       propertyPath: m_text
       value: Separate petals by color
       objectReference: {fileID: 0}
+    - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: m_fontSize
+      value: 136.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: victoryType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: victoryManager
       value: 
@@ -787,11 +795,11 @@ PrefabInstance:
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: 'colorsDetectors.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4841559914414494174}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: 'colorsDetectors.Array.data[1]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4841559914414494173}
     - target: {fileID: 6102159265385049428, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: nextObject
       value: 
@@ -957,22 +965,6 @@ PrefabInstance:
       propertyPath: m_RootBone
       value: 
       objectReference: {fileID: 1768430777}
-    - target: {fileID: 8456856446616846063, guid: f57e31b3cfcf85346aec246d516eaeaf, type: 3}
-      propertyPath: outline
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8456856446616846063, guid: f57e31b3cfcf85346aec246d516eaeaf, type: 3}
-      propertyPath: hoverColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8456856446616846063, guid: f57e31b3cfcf85346aec246d516eaeaf, type: 3}
-      propertyPath: hoverColor.g
-      value: 0.54901963
-      objectReference: {fileID: 0}
-    - target: {fileID: 8456856446616846063, guid: f57e31b3cfcf85346aec246d516eaeaf, type: 3}
-      propertyPath: hoverColor.r
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 8525423612039867837, guid: f57e31b3cfcf85346aec246d516eaeaf, type: 3}
       propertyPath: m_RootBone
       value: 
@@ -986,6 +978,28 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f57e31b3cfcf85346aec246d516eaeaf, type: 3}
+--- !u!114 &4841559914414494173 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5235795392857133016, guid: f57e31b3cfcf85346aec246d516eaeaf, type: 3}
+  m_PrefabInstance: {fileID: 4841559914414494172}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a6c2dcc3ba81cf45b01310823d5061e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4841559914414494174 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 562578700432819378, guid: f57e31b3cfcf85346aec246d516eaeaf, type: 3}
+  m_PrefabInstance: {fileID: 4841559914414494172}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a6c2dcc3ba81cf45b01310823d5061e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5467209401222962205
 PrefabInstance:
   m_ObjectHideFlags: 0

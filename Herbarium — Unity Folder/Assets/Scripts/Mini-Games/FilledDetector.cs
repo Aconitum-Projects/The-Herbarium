@@ -69,7 +69,7 @@ public class FilledDetector : MonoBehaviour
 
     void OnAllFilled()
     {
-        var vc = transform.parent.GetComponent<VictoryChecker>();
+        var vc = transform.parent.GetComponentInParent<VictoryChecker>();
         if (vc != null)
             vc.CheckAllFilled();
         else

@@ -43,7 +43,7 @@ public class RevealedDetector : MonoBehaviour
         if (transform.position.x < xThreshold)
         {
             validated = true;
-            var vc = transform.parent.GetComponent<VictoryChecker>();
+            var vc = transform.parent.GetComponentInParent<VictoryChecker>();
             if (vc != null)
                 vc.CheckAllRevealed();
         }

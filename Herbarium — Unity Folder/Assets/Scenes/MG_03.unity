@@ -287,18 +287,27 @@ MonoBehaviour:
   isDetached: 0
   detachType: 0
   keepDetachedScale: 0
+  detachVisualMode: 1
+  animatedDetachSprites: []
   cuttableCollider: {fileID: 100310515}
   isCut: 0
   isShaken: 0
   shakeThreshold: 15
   shakeMultiplier: 15
   shakeResetTime: 0.2
+  eraserCollider: {fileID: 0}
   fillX: 1
   fillY: 1
   fillOffsetX: 0
   fillOffsetY: 0
   fillDuration: 1.2
   fillEase: 4
+  eraseSpeed: 0.4
+  minAlpha: 0
+  stoppableTargetOffset: {x: 0, y: 0, z: 0}
+  stoppableDuration: 1
+  stoppableEase: 4
+  isStopped: 0
 --- !u!1 &158548856
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,18 +371,27 @@ MonoBehaviour:
   isDetached: 0
   detachType: 0
   keepDetachedScale: 0
+  detachVisualMode: 1
+  animatedDetachSprites: []
   cuttableCollider: {fileID: 158548859}
   isCut: 0
   isShaken: 0
   shakeThreshold: 15
   shakeMultiplier: 15
   shakeResetTime: 0.2
+  eraserCollider: {fileID: 0}
   fillX: 1
   fillY: 1
   fillOffsetX: 0
   fillOffsetY: 0
   fillDuration: 1.2
   fillEase: 4
+  eraseSpeed: 0.4
+  minAlpha: 0
+  stoppableTargetOffset: {x: 0, y: 0, z: 0}
+  stoppableDuration: 1
+  stoppableEase: 4
+  isStopped: 0
 --- !u!61 &158548859
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -483,18 +501,27 @@ MonoBehaviour:
   isDetached: 0
   detachType: 0
   keepDetachedScale: 0
+  detachVisualMode: 1
+  animatedDetachSprites: []
   cuttableCollider: {fileID: 161949373}
   isCut: 0
   isShaken: 0
   shakeThreshold: 15
   shakeMultiplier: 15
   shakeResetTime: 0.2
+  eraserCollider: {fileID: 0}
   fillX: 1
   fillY: 1
   fillOffsetX: 0
   fillOffsetY: 0
   fillDuration: 1.2
   fillEase: 4
+  eraseSpeed: 0.4
+  minAlpha: 0
+  stoppableTargetOffset: {x: 0, y: 0, z: 0}
+  stoppableDuration: 1
+  stoppableEase: 4
+  isStopped: 0
 --- !u!61 &161949373
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -720,18 +747,27 @@ MonoBehaviour:
   isDetached: 0
   detachType: 0
   keepDetachedScale: 0
+  detachVisualMode: 1
+  animatedDetachSprites: []
   cuttableCollider: {fileID: 307380431}
   isCut: 0
   isShaken: 0
   shakeThreshold: 15
   shakeMultiplier: 15
   shakeResetTime: 0.2
+  eraserCollider: {fileID: 0}
   fillX: 1
   fillY: 1
   fillOffsetX: 0
   fillOffsetY: 0
   fillDuration: 1.2
   fillEase: 4
+  eraseSpeed: 0.4
+  minAlpha: 0
+  stoppableTargetOffset: {x: 0, y: 0, z: 0}
+  stoppableDuration: 1
+  stoppableEase: 4
+  isStopped: 0
 --- !u!61 &307380431
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1183,18 +1219,27 @@ MonoBehaviour:
   isDetached: 0
   detachType: 0
   keepDetachedScale: 0
+  detachVisualMode: 1
+  animatedDetachSprites: []
   cuttableCollider: {fileID: 0}
   isCut: 0
   isShaken: 0
-  shakeThreshold: 15
+  shakeThreshold: 10
   shakeMultiplier: 50
   shakeResetTime: 0.2
+  eraserCollider: {fileID: 0}
   fillX: 1
   fillY: 1
   fillOffsetX: 0
   fillOffsetY: 0
   fillDuration: 1.2
   fillEase: 4
+  eraseSpeed: 0.4
+  minAlpha: 0
+  stoppableTargetOffset: {x: 0, y: 0, z: 0}
+  stoppableDuration: 1
+  stoppableEase: 4
+  isStopped: 0
 --- !u!212 &685148254
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1362,18 +1407,27 @@ MonoBehaviour:
   isDetached: 0
   detachType: 0
   keepDetachedScale: 0
+  detachVisualMode: 1
+  animatedDetachSprites: []
   cuttableCollider: {fileID: 756361356}
   isCut: 0
   isShaken: 0
   shakeThreshold: 15
   shakeMultiplier: 15
   shakeResetTime: 0.2
+  eraserCollider: {fileID: 0}
   fillX: 1
   fillY: 1
   fillOffsetX: 0
   fillOffsetY: 0
   fillDuration: 1.2
   fillEase: 4
+  eraseSpeed: 0.4
+  minAlpha: 0
+  stoppableTargetOffset: {x: 0, y: 0, z: 0}
+  stoppableDuration: 1
+  stoppableEase: 4
+  isStopped: 0
 --- !u!61 &756361356
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1652,18 +1706,27 @@ MonoBehaviour:
   isDetached: 0
   detachType: 0
   keepDetachedScale: 0
+  detachVisualMode: 1
+  animatedDetachSprites: []
   cuttableCollider: {fileID: 1336628222}
   isCut: 0
   isShaken: 0
   shakeThreshold: 15
   shakeMultiplier: 15
   shakeResetTime: 0.2
+  eraserCollider: {fileID: 0}
   fillX: 1
   fillY: 1
   fillOffsetX: 0
   fillOffsetY: 0
   fillDuration: 1.2
   fillEase: 4
+  eraseSpeed: 0.4
+  minAlpha: 0
+  stoppableTargetOffset: {x: 0, y: 0, z: 0}
+  stoppableDuration: 1
+  stoppableEase: 4
+  isStopped: 0
 --- !u!61 &1336628222
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1939,18 +2002,27 @@ MonoBehaviour:
   isDetached: 0
   detachType: 0
   keepDetachedScale: 0
+  detachVisualMode: 1
+  animatedDetachSprites: []
   cuttableCollider: {fileID: 1785040756}
   isCut: 0
   isShaken: 0
   shakeThreshold: 15
   shakeMultiplier: 15
   shakeResetTime: 0.2
+  eraserCollider: {fileID: 0}
   fillX: 1
   fillY: 1
   fillOffsetX: 0
   fillOffsetY: 0
   fillDuration: 1.2
   fillEase: 4
+  eraseSpeed: 0.4
+  minAlpha: 0
+  stoppableTargetOffset: {x: 0, y: 0, z: 0}
+  stoppableDuration: 1
+  stoppableEase: 4
+  isStopped: 0
 --- !u!61 &1785040756
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2222,18 +2294,27 @@ MonoBehaviour:
   isDetached: 0
   detachType: 0
   keepDetachedScale: 0
+  detachVisualMode: 1
+  animatedDetachSprites: []
   cuttableCollider: {fileID: 2074271402}
   isCut: 0
   isShaken: 0
   shakeThreshold: 15
   shakeMultiplier: 15
   shakeResetTime: 0.2
+  eraserCollider: {fileID: 0}
   fillX: 1
   fillY: 1
   fillOffsetX: 0
   fillOffsetY: 0
   fillDuration: 1.2
   fillEase: 4
+  eraseSpeed: 0.4
+  minAlpha: 0
+  stoppableTargetOffset: {x: 0, y: 0, z: 0}
+  stoppableDuration: 1
+  stoppableEase: 4
+  isStopped: 0
 --- !u!1001 &2570661400001010404
 PrefabInstance:
   m_ObjectHideFlags: 0

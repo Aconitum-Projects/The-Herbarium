@@ -64,7 +64,7 @@ MonoBehaviour:
   isDetached: 0
   detachType: 0
   keepDetachedScale: 1
-  detachVisualMode: 1
+  detachVisualMode: 2
   animatedDetachSprites:
   - {fileID: 21300000, guid: 2f929db8a74aeea4b84b83f719992dda, type: 3}
   - {fileID: 21300000, guid: 0dfc722104b7b9b4b8971b0cd17693ae, type: 3}
@@ -269,7 +269,7 @@ MonoBehaviour:
   isDetached: 0
   detachType: 0
   keepDetachedScale: 1
-  detachVisualMode: 1
+  detachVisualMode: 2
   animatedDetachSprites:
   - {fileID: 21300000, guid: 07b28a626ff172f4dbdbbe00b3e12ea6, type: 3}
   - {fileID: 21300000, guid: 75905fe3320f93c4bb43058664d83412, type: 3}
@@ -474,7 +474,7 @@ MonoBehaviour:
   isDetached: 0
   detachType: 0
   keepDetachedScale: 1
-  detachVisualMode: 1
+  detachVisualMode: 2
   animatedDetachSprites:
   - {fileID: 21300000, guid: 83eafd968d245b343bed9a08cc327039, type: 3}
   - {fileID: 21300000, guid: b87f5b1ce7b575a42b09d02a9155bde3, type: 3}
@@ -679,7 +679,7 @@ MonoBehaviour:
   isDetached: 0
   detachType: 0
   keepDetachedScale: 1
-  detachVisualMode: 1
+  detachVisualMode: 2
   animatedDetachSprites:
   - {fileID: 21300000, guid: 77d500b52536a0541b21ebb3e173f780, type: 3}
   - {fileID: 21300000, guid: fa656264f3b35b741ac77a1c0a9265ed, type: 3}

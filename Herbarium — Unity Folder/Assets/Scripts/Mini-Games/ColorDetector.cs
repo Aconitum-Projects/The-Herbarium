@@ -95,8 +95,9 @@ public class ColorDetector : MonoBehaviour
 
     void NotifyManager()
     {
-        var vc = transform.parent.GetComponent<VictoryChecker>();
+        var vc = transform.parent.GetComponentInParent<VictoryChecker>();
         if (vc != null)
             vc.CheckMatchingColors();
     }
+    
 }

@@ -59,7 +59,7 @@ public class StoppableDetector : MonoBehaviour
 
     void OnAllStopped()
     {
-        var vc = transform.parent.GetComponent<VictoryChecker>();
+        var vc = transform.parent.GetComponentInParent<VictoryChecker>();
         if (vc != null)
             vc.CheckAllStopped();
         else

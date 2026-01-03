@@ -616,25 +616,34 @@ MonoBehaviour:
   limitY: 0
   yLimits: {x: -3, y: 3}
   maxScale: {x: 2, y: 2}
-  distanceMultiplier: 1
+  detachThreshold: 5
   scaleDuration: 0.2
   fallDistance: 3
   fallDuration: 0.4
   isDetached: 0
   detachType: 0
   keepDetachedScale: 0
+  detachVisualMode: 1
+  animatedDetachSprites: []
   cuttableCollider: {fileID: 0}
   isCut: 0
   isShaken: 0
   shakeThreshold: 15
   shakeMultiplier: 50
   shakeResetTime: 0.2
+  eraserCollider: {fileID: 0}
   fillX: 0
   fillY: 1
   fillOffsetX: 0
   fillOffsetY: 1
   fillDuration: 0.75
   fillEase: 2
+  eraseSpeed: 0.4
+  minAlpha: 0
+  stoppableTargetOffset: {x: 0, y: 0, z: 0}
+  stoppableDuration: 1
+  stoppableEase: 4
+  isStopped: 0
 --- !u!61 &351306958
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -741,25 +750,34 @@ MonoBehaviour:
   limitY: 0
   yLimits: {x: -3, y: 3}
   maxScale: {x: 2, y: 2}
-  distanceMultiplier: 1
+  detachThreshold: 5
   scaleDuration: 0.2
   fallDistance: 3
   fallDuration: 0.4
   isDetached: 0
   detachType: 0
   keepDetachedScale: 0
+  detachVisualMode: 1
+  animatedDetachSprites: []
   cuttableCollider: {fileID: 0}
   isCut: 0
   isShaken: 0
-  shakeThreshold: 15
+  shakeThreshold: 10
   shakeMultiplier: 15
   shakeResetTime: 0.2
+  eraserCollider: {fileID: 0}
   fillX: 1
   fillY: 1
   fillOffsetX: 0
   fillOffsetY: 0
   fillDuration: 1.2
   fillEase: 3
+  eraseSpeed: 0.4
+  minAlpha: 0
+  stoppableTargetOffset: {x: 0, y: 0, z: 0}
+  stoppableDuration: 1
+  stoppableEase: 4
+  isStopped: 0
 --- !u!1001 &564728098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1448,25 +1466,34 @@ MonoBehaviour:
   limitY: 0
   yLimits: {x: -3, y: 3}
   maxScale: {x: 2, y: 2}
-  distanceMultiplier: 1
+  detachThreshold: 5
   scaleDuration: 0.2
   fallDistance: 3
   fallDuration: 0.4
   isDetached: 0
   detachType: 0
   keepDetachedScale: 0
+  detachVisualMode: 1
+  animatedDetachSprites: []
   cuttableCollider: {fileID: 0}
   isCut: 0
   isShaken: 0
   shakeThreshold: 15
   shakeMultiplier: 50
   shakeResetTime: 0.2
+  eraserCollider: {fileID: 0}
   fillX: 0
   fillY: 1
   fillOffsetX: 0
   fillOffsetY: -0.55
   fillDuration: 0.75
   fillEase: 3
+  eraseSpeed: 0.4
+  minAlpha: 0
+  stoppableTargetOffset: {x: 0, y: 0, z: 0}
+  stoppableDuration: 1
+  stoppableEase: 4
+  isStopped: 0
 --- !u!1 &1387292725 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
@@ -2234,25 +2261,34 @@ MonoBehaviour:
   limitY: 0
   yLimits: {x: -3, y: 3}
   maxScale: {x: 2, y: 2}
-  distanceMultiplier: 1
+  detachThreshold: 5
   scaleDuration: 0.2
   fallDistance: 3
   fallDuration: 0.4
   isDetached: 0
   detachType: 0
   keepDetachedScale: 0
+  detachVisualMode: 1
+  animatedDetachSprites: []
   cuttableCollider: {fileID: 0}
   isCut: 0
   isShaken: 0
   shakeThreshold: 15
   shakeMultiplier: 50
   shakeResetTime: 0.2
+  eraserCollider: {fileID: 0}
   fillX: 0
   fillY: 1
   fillOffsetX: 0
   fillOffsetY: 1
   fillDuration: 0.75
   fillEase: 3
+  eraseSpeed: 0.4
+  minAlpha: 0
+  stoppableTargetOffset: {x: 0, y: 0, z: 0}
+  stoppableDuration: 1
+  stoppableEase: 4
+  isStopped: 0
 --- !u!50 &2005976389
 Rigidbody2D:
   serializedVersion: 5

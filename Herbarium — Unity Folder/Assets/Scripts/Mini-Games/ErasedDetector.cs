@@ -56,7 +56,7 @@ public class ErasedDetector : MonoBehaviour
 
     void OnAllErased()
     {
-        var vc = transform.parent.GetComponent<VictoryChecker>();
+        var vc = transform.parent.GetComponentInParent<VictoryChecker>();
         if (vc != null)
             vc.CheckAllErased();
         else

@@ -228,6 +228,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoftBones2D_Manual
   targetRenderer: {fileID: 0}
   hoverOrderOffset: 100
+  zoneOrderOffset: 30
+  placementZone: {fileID: 0}
   influence: 12
   damping: 10
   returnStrength: 7
@@ -255,13 +257,15 @@ MonoBehaviour:
   limitY: 0
   yLimits: {x: -3, y: 3}
   maxScale: {x: 1.1, y: 0.8}
-  detachThreshold: 10
+  detachThreshold: 7
   scaleDuration: 0.1
   fallDistance: 15
   fallDuration: 0.35
   isDetached: 0
   detachType: 1
   keepDetachedScale: 0
+  detachVisualMode: 1
+  animatedDetachSprites: []
   cuttableCollider: {fileID: 0}
   isCut: 0
   isShaken: 0
@@ -346,6 +350,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoftBones2D_Manual
   targetRenderer: {fileID: 0}
   hoverOrderOffset: 100
+  zoneOrderOffset: 30
+  placementZone: {fileID: 0}
   influence: 15
   damping: 10
   returnStrength: 7
@@ -373,13 +379,15 @@ MonoBehaviour:
   limitY: 0
   yLimits: {x: -3, y: 3}
   maxScale: {x: 1.1, y: 0.8}
-  detachThreshold: 10
+  detachThreshold: 4
   scaleDuration: 0.1
   fallDistance: 15
   fallDuration: 0.35
   isDetached: 0
   detachType: 1
   keepDetachedScale: 0
+  detachVisualMode: 1
+  animatedDetachSprites: []
   cuttableCollider: {fileID: 0}
   isCut: 0
   isShaken: 0
@@ -469,6 +477,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoftBones2D_Manual
   targetRenderer: {fileID: 0}
   hoverOrderOffset: 100
+  zoneOrderOffset: 30
+  placementZone: {fileID: 0}
   influence: 12
   damping: 10
   returnStrength: 7
@@ -496,13 +506,15 @@ MonoBehaviour:
   limitY: 0
   yLimits: {x: -3, y: 3}
   maxScale: {x: 1.1, y: 0.8}
-  detachThreshold: 10
+  detachThreshold: 7
   scaleDuration: 0.1
   fallDistance: 15
   fallDuration: 0.35
   isDetached: 0
   detachType: 1
   keepDetachedScale: 0
+  detachVisualMode: 1
+  animatedDetachSprites: []
   cuttableCollider: {fileID: 0}
   isCut: 0
   isShaken: 0
@@ -587,6 +599,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoftBones2D_Manual
   targetRenderer: {fileID: 0}
   hoverOrderOffset: 100
+  zoneOrderOffset: 30
+  placementZone: {fileID: 0}
   influence: 15
   damping: 10
   returnStrength: 7
@@ -614,13 +628,15 @@ MonoBehaviour:
   limitY: 0
   yLimits: {x: -3, y: 3}
   maxScale: {x: 1.1, y: 0.8}
-  detachThreshold: 10
+  detachThreshold: 4
   scaleDuration: 0.1
   fallDistance: 15
   fallDuration: 0.35
   isDetached: 0
   detachType: 1
   keepDetachedScale: 0
+  detachVisualMode: 1
+  animatedDetachSprites: []
   cuttableCollider: {fileID: 0}
   isCut: 0
   isShaken: 0
@@ -705,6 +721,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoftBones2D_Manual
   targetRenderer: {fileID: 0}
   hoverOrderOffset: 100
+  zoneOrderOffset: 30
+  placementZone: {fileID: 0}
   influence: 15
   damping: 10
   returnStrength: 7
@@ -732,13 +750,15 @@ MonoBehaviour:
   limitY: 0
   yLimits: {x: -3, y: 3}
   maxScale: {x: 1.1, y: 0.8}
-  detachThreshold: 10
+  detachThreshold: 4
   scaleDuration: 0.1
   fallDistance: 15
   fallDuration: 0.35
   isDetached: 0
   detachType: 1
   keepDetachedScale: 0
+  detachVisualMode: 1
+  animatedDetachSprites: []
   cuttableCollider: {fileID: 0}
   isCut: 0
   isShaken: 0
@@ -843,6 +863,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoftBones2D_Manual
   targetRenderer: {fileID: 0}
   hoverOrderOffset: 100
+  zoneOrderOffset: 30
+  placementZone: {fileID: 0}
   influence: 15
   damping: 10
   returnStrength: 7
@@ -870,13 +892,15 @@ MonoBehaviour:
   limitY: 0
   yLimits: {x: -3, y: 3}
   maxScale: {x: 1.1, y: 0.8}
-  detachThreshold: 10
+  detachThreshold: 4
   scaleDuration: 0.1
   fallDistance: 15
   fallDuration: 0.35
   isDetached: 0
   detachType: 1
   keepDetachedScale: 0
+  detachVisualMode: 1
+  animatedDetachSprites: []
   cuttableCollider: {fileID: 0}
   isCut: 0
   isShaken: 0
@@ -961,6 +985,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoftBones2D_Manual
   targetRenderer: {fileID: 0}
   hoverOrderOffset: 100
+  zoneOrderOffset: 30
+  placementZone: {fileID: 0}
   influence: 12
   damping: 10
   returnStrength: 7
@@ -988,13 +1014,15 @@ MonoBehaviour:
   limitY: 0
   yLimits: {x: -3, y: 3}
   maxScale: {x: 1.1, y: 0.8}
-  detachThreshold: 10
+  detachThreshold: 7
   scaleDuration: 0.1
   fallDistance: 15
   fallDuration: 0.35
   isDetached: 0
   detachType: 1
   keepDetachedScale: 0
+  detachVisualMode: 1
+  animatedDetachSprites: []
   cuttableCollider: {fileID: 0}
   isCut: 0
   isShaken: 0
@@ -1079,6 +1107,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoftBones2D_Manual
   targetRenderer: {fileID: 0}
   hoverOrderOffset: 100
+  zoneOrderOffset: 30
+  placementZone: {fileID: 0}
   influence: 12
   damping: 10
   returnStrength: 7
@@ -1106,13 +1136,15 @@ MonoBehaviour:
   limitY: 0
   yLimits: {x: -3, y: 3}
   maxScale: {x: 1.1, y: 0.8}
-  detachThreshold: 10
+  detachThreshold: 7
   scaleDuration: 0.1
   fallDistance: 15
   fallDuration: 0.35
   isDetached: 0
   detachType: 1
   keepDetachedScale: 0
+  detachVisualMode: 1
+  animatedDetachSprites: []
   cuttableCollider: {fileID: 0}
   isCut: 0
   isShaken: 0
@@ -1251,6 +1283,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoftBones2D_Manual
   targetRenderer: {fileID: 0}
   hoverOrderOffset: 100
+  zoneOrderOffset: 30
+  placementZone: {fileID: 0}
   influence: 12
   damping: 10
   returnStrength: 7
@@ -1278,13 +1312,15 @@ MonoBehaviour:
   limitY: 0
   yLimits: {x: -3, y: 3}
   maxScale: {x: 1.1, y: 0.8}
-  detachThreshold: 10
+  detachThreshold: 7
   scaleDuration: 0.1
   fallDistance: 15
   fallDuration: 0.35
   isDetached: 0
   detachType: 1
   keepDetachedScale: 0
+  detachVisualMode: 1
+  animatedDetachSprites: []
   cuttableCollider: {fileID: 0}
   isCut: 0
   isShaken: 0
@@ -1369,6 +1405,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoftBones2D_Manual
   targetRenderer: {fileID: 0}
   hoverOrderOffset: 100
+  zoneOrderOffset: 30
+  placementZone: {fileID: 0}
   influence: 15
   damping: 10
   returnStrength: 7
@@ -1396,13 +1434,15 @@ MonoBehaviour:
   limitY: 0
   yLimits: {x: -3, y: 3}
   maxScale: {x: 1.1, y: 0.8}
-  detachThreshold: 10
+  detachThreshold: 4
   scaleDuration: 0.1
   fallDistance: 15
   fallDuration: 0.35
   isDetached: 0
   detachType: 1
   keepDetachedScale: 0
+  detachVisualMode: 1
+  animatedDetachSprites: []
   cuttableCollider: {fileID: 0}
   isCut: 0
   isShaken: 0
