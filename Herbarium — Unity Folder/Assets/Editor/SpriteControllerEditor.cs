@@ -26,7 +26,7 @@ public class SpriteControllerEditor : Editor
     SerializedProperty eraserCollider, eraseSpeed, minAlpha;
 
     // Stoppable
-    SerializedProperty stoppableTargetOffset, stoppableDuration, stoppableEase;
+    SerializedProperty stoppableTargetOffset, stoppableDuration, stoppableEase, stoppableInputDelay;
 
     void OnEnable()
     {
@@ -81,6 +81,7 @@ public class SpriteControllerEditor : Editor
         stoppableTargetOffset = serializedObject.FindProperty("stoppableTargetOffset");
         stoppableDuration = serializedObject.FindProperty("stoppableDuration");
         stoppableEase = serializedObject.FindProperty("stoppableEase");
+        stoppableInputDelay = serializedObject.FindProperty("stoppableInputDelay");
     }
 
     public override void OnInspectorGUI()
@@ -332,6 +333,7 @@ public class SpriteControllerEditor : Editor
         EditorGUILayout.PropertyField(stoppableTargetOffset, new GUIContent("Target Offset", "Déplacement relatif par rapport à la position d'origine"));
         EditorGUILayout.PropertyField(stoppableDuration, new GUIContent("Duration", "Durée du déplacement vers la cible"));
         EditorGUILayout.PropertyField(stoppableEase, new GUIContent("Ease", "Type d'interpolation du mouvement"));
+        EditorGUILayout.PropertyField(stoppableInputDelay, new GUIContent("Input Delay", "Durée d'attente avant click autorisé"));
         EditorGUILayout.Space(15);
     }
 

@@ -45,12 +45,16 @@ public class StoppableDetector : MonoBehaviour
 
     void CheckStoppable()
     {
-        targets.RemoveWhere(t => t == null || !t.gameObject.activeInHierarchy);
+        if (targets.Count == 0)
+            return;
+
+        targets.RemoveWhere(t => t == null);
 
         foreach (var t in targets)
         {
             var sc = t.GetComponent<SpriteController>();
-            if (sc == null && sc.isStopped) return;
+            if (sc == null || !sc.isStopped)
+                return;
         }
 
         validated = true;

@@ -86,6 +86,7 @@ public class SpriteController : MonoBehaviour
     public float stoppableDuration = 1f;
     public Ease stoppableEase = Ease.InOutSine;
     public bool isStopped = false;
+    public float stoppableInputDelay = 0.5f;
 
     private Vector3 stoppableOrigin;
     private Tween stoppableTween;
@@ -101,6 +102,7 @@ public class SpriteController : MonoBehaviour
     private Tween fillTween;
     private Vector3 fillStartPos;
     private SpriteRenderer targetSpriteRenderer;
+    private bool canStop = false;
 
     void Awake()
     {
@@ -108,20 +110,22 @@ public class SpriteController : MonoBehaviour
         initialScale = transform.localScale;
         lastPos = transform.position;
 
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        targetSpriteRenderer = spriteRenderer != null
+            ? spriteRenderer
+            : GetComponentInChildren<SpriteRenderer>();
+    }
+
+    void OnEnable()
+    {
         if (currentMode == Mode.Stoppable)
             StartStoppable();
-        
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        if (spriteRenderer != null)
-        {
-            targetSpriteRenderer = spriteRenderer;
-        }
-        else
-        {
-            targetSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        }
+    }
 
-
+    void OnDisable()
+    {
+        stoppableTween?.Kill();
+        canStop = false;
     }
 
     void Update()
@@ -325,7 +329,7 @@ public class SpriteController : MonoBehaviour
     // ------------------ Detachable ------------------
     private void DetachableUpdate()
     {
-        if (isDetached) return; // <-- nouveau : bloque toute update si déjà détaché
+        if (isDetached) return;
 
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = Mathf.Abs(mainCam.transform.position.z - transform.position.z);
@@ -352,7 +356,6 @@ public class SpriteController : MonoBehaviour
 
         if (useAnim)
         {
-            //transform.DOKill(false);
             UpdateAnimatedSprite(t);
         }
 
@@ -472,10 +475,15 @@ public class SpriteController : MonoBehaviour
         stoppableTween = transform.DOMove(target, stoppableDuration)
             .SetEase(stoppableEase)
             .SetLoops(-1, LoopType.Yoyo);
+
+        canStop = false;
+        DOVirtual.DelayedCall(stoppableInputDelay, () => canStop = true);
     }
     
     void StoppableUpdate()
     {
+        if (!canStop) return;
+        
         if (Input.GetMouseButtonDown(0))
         {
             stoppableTween?.Kill(false);
