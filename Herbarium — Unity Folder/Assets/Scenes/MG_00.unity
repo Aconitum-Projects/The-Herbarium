@@ -545,7 +545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1168,6 +1168,10 @@ PrefabInstance:
     - target: {fileID: 3678946452882396953, guid: 16a2bee9a913e394fbca1ae69497437a, type: 3}
       propertyPath: m_Name
       value: MG_00_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 3678946452882396953, guid: 16a2bee9a913e394fbca1ae69497437a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4273713365452601738, guid: 16a2bee9a913e394fbca1ae69497437a, type: 3}
       propertyPath: cutterCollider
