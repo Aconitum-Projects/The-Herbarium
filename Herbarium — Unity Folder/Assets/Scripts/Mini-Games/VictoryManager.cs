@@ -22,7 +22,11 @@ public class VictoryManager : MonoBehaviour
 
     [Header("MiniGames Sequence")]
     public GameObject[] miniGames;
+    
+    [Header("Input Delay")]
+    public float clickDelay = 0.5f;
 
+    private bool canClick = false;
     private int currentIndex = 0;
     private bool victoryActive = false;
 
@@ -46,18 +50,18 @@ public class VictoryManager : MonoBehaviour
 
     void Update()
     {
-        if (victoryActive && Input.GetMouseButtonDown(0))
+        if (victoryActive && canClick && Input.GetMouseButtonDown(0))
             HideVictoryAndContinue();
     }
-
-    // --------------------
-    // SHOW
-    // --------------------
+    
     public void TriggerVictory()
     {
         if (victoryText == null) return;
 
         victoryActive = true;
+        canClick = false;
+
+        Invoke(nameof(EnableClick), clickDelay);
 
         victorySequence?.Kill();
 
@@ -91,9 +95,6 @@ public class VictoryManager : MonoBehaviour
         }
     }
 
-    // --------------------
-    // HIDE + NEXT
-    // --------------------
     void HideVictoryAndContinue()
     {
         victoryActive = false;
@@ -146,4 +147,10 @@ public class VictoryManager : MonoBehaviour
         else
             Debug.Log("Tous les mini-jeux sont complétés.");
     }
+    
+    void EnableClick()
+    {
+        canClick = true;
+    }
+
 }

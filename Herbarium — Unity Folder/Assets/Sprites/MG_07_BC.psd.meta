@@ -915,8 +915,8 @@ ScriptedImporter:
     spriteBone:
     - name: b_leaf_10
       guid: c065dd5af9a7ea34185db5d485e08395
-      position: {x: 99.87238, y: 0.00008297678, z: 0}
-      rotation: {x: 0, y: 0, z: -0.26322716, w: 0.96473396}
+      position: {x: 99.87157, y: -0.00016910081, z: 0}
+      rotation: {x: 0, y: 0, z: -0.26322743, w: 0.9647338}
       length: 145.387
       parentId: 1
       color:
@@ -924,71 +924,71 @@ ScriptedImporter:
         rgba: 4294901760
     - name: b_leaf_09
       guid: ff6e0dd3c468d624c8133ee0e2f03057
-      position: {x: -27.678352, y: 92.42814, z: 0}
-      rotation: {x: 0, y: 0, z: 0.7969103, w: 0.6040976}
-      length: 99.871666
-      parentId: 6
+      position: {x: 510.75977, y: 212.10742, z: 0}
+      rotation: {x: 0, y: 0, z: 0.76797456, w: -0.64048046}
+      length: 99.8719
+      parentId: -1
       color:
         serializedVersion: 2
         rgba: 4294967040
     - name: b_leaf_05
       guid: a70718d8f3f123a4e81ba17fbb14bbf2
-      position: {x: -106.97474, y: 12.92334, z: 0}
-      rotation: {x: 0, y: 0, z: 0.99991024, w: 0.013402009}
+      position: {x: 616.8943, y: 248.77344, z: 0}
+      rotation: {x: 0, y: 0, z: -0.23813415, w: 0.9712323}
       length: 138.05145
-      parentId: 6
+      parentId: -1
       color:
         serializedVersion: 2
         rgba: 4294901888
     - name: b_leaf_06
       guid: 0004d75bb60a67a41b2fe2bd703f026f
-      position: {x: 138.05164, y: 0.000016127655, z: 0}
-      rotation: {x: 0, y: 0, z: 0.25238502, w: 0.96762687}
-      length: 181.00958
+      position: {x: 138.05132, y: 0.0001626178, z: 0}
+      rotation: {x: 0, y: 0, z: -0.25238678, w: -0.9676265}
+      length: 181.00963
       parentId: 2
       color:
         serializedVersion: 2
         rgba: 4286578943
     - name: b_leaf_03
       guid: 1c19fd606e09962478817d1995cf6aa1
-      position: {x: -53.40205, y: -108.96712, z: 0}
-      rotation: {x: 0, y: 0, z: -0.64231, w: 0.766445}
-      length: 135.5942
-      parentId: 6
+      position: {x: 622.2158, y: 381.81128, z: 0}
+      rotation: {x: 0, y: 0, z: 0.6021952, w: 0.79834896}
+      length: 135.59436
+      parentId: -1
       color:
         serializedVersion: 2
         rgba: 4286643968
     - name: b_leaf_04
       guid: ec1142f9677a5284fb48f8118122d521
-      position: {x: 135.59412, y: -0.00011116037, z: 0}
-      rotation: {x: 0, y: 0, z: 0.18840753, w: 0.982091}
-      length: 238.01468
+      position: {x: 135.59431, y: 0.00019355403, z: 0}
+      rotation: {x: 0, y: 0, z: 0.18840759, w: 0.98209095}
+      length: 238.01476
       parentId: 4
       color:
         serializedVersion: 2
         rgba: 4294934528
     - name: b_leaf_00
       guid: 2fcd72127b8a12d4dadba4e9b92568af
-      position: {x: 526.42773, y: 307.31055, z: 0}
-      rotation: {x: 0, y: 0, z: 0.97433704, w: 0.22509423}
-      length: 248.70586
+      position: {x: 526.4282, y: 307.31055, z: 0}
+      rotation: {x: 0, y: 0, z: 0.9743369, w: 0.22509448}
+      length: 248.70592
       parentId: -1
       color:
         serializedVersion: 2
         rgba: 4294902015
     - name: b_leaf_01
       guid: 64ec1211685916243a3ebb91f77b3201
-      position: {x: 248.70575, y: -0.00018224357, z: 0}
-      rotation: {x: 0, y: 0, z: -0.27318233, w: 0.96196234}
-      length: 239.172
-      parentId: 6
+      position: {x: 302.9253, y: 416.40137, z: 0}
+      rotation: {x: 0, y: 0, z: 0.87578356, w: 0.482704}
+      length: 239.17216
+      parentId: -1
       color:
         serializedVersion: 2
         rgba: 4278223103
     - name: b_leaf_02
       guid: 39ce3e041c74bd642aec71b683a1b852
-      position: {x: 239.17198, y: 0.000028549053, z: 0}
-      rotation: {x: 0, y: 0, z: -0.040949453, w: 0.99916124}
+      position: {x: 239.17273, y: 0.0003707158, z: 0}
+      rotation: {x: 0, y: 0, z: -0.040949404, w: 0.99916124}
       length: 201.12889
       parentId: 7
       color:
@@ -996,18 +996,18 @@ ScriptedImporter:
         rgba: 4278255488
     - name: b_leaf_07
       guid: d8325110f224ca64788b3a8b0b7af03e
-      position: {x: 87.38979, y: 178.85057, z: 0}
-      rotation: {x: 0, y: 0, z: 0.4108809, w: 0.9116891}
+      position: {x: 369.4441, y: 184.91577, z: 0}
+      rotation: {x: 0, y: 0, z: 0.9807793, w: -0.19512047}
       length: 201.60371
-      parentId: 6
+      parentId: -1
       color:
         serializedVersion: 2
         rgba: 4278255615
     - name: b_leaf_08
       guid: 4ab15d5ee9d477b48aa1c6dfeed0cf7e
-      position: {x: 201.60353, y: 0.00015384739, z: 0}
-      rotation: {x: 0, y: 0, z: -0.023877144, w: 0.999715}
-      length: 180.95084
+      position: {x: 201.60379, y: 0.0000106327425, z: 0}
+      rotation: {x: 0, y: 0, z: -0.023877352, w: 0.9997149}
+      length: 180.9509
       parentId: 9
       color:
         serializedVersion: 2
@@ -5824,71 +5824,71 @@ ScriptedImporter:
     spriteBone:
     - name: b_fruit_B
       guid: 5d8382f19b7d07345aeb091e541ba8ab
-      position: {x: 468.6792, y: 469.48145, z: 0}
-      rotation: {x: 0, y: 0, z: 0.71194273, w: -0.7022376}
+      position: {x: 468.67932, y: 469.48145, z: 0}
+      rotation: {x: 0, y: 0, z: 0.71194285, w: -0.7022375}
       length: 521.86035
       parentId: -1
       color:
         serializedVersion: 2
         rgba: 4278255360
-    - name: b_fruit_13
+    - name: b_fruit_BR
       guid: 6a7c68efe224d3042803b01db58a82ad
-      position: {x: 475.03088, y: 466.1233, z: 0}
-      rotation: {x: 0, y: 0, z: -0.37370938, w: 0.9275459}
-      length: 558.385
+      position: {x: 475.031, y: 466.1233, z: 0}
+      rotation: {x: 0, y: 0, z: -0.3737095, w: 0.9275458}
+      length: 558.3851
       parentId: -1
       color:
         serializedVersion: 2
         rgba: 4294934528
-    - name: b_fruit_14
+    - name: b_fruit_BL
       guid: 26bea5c2b9a90e043a0942f143ada4b7
-      position: {x: 477.2179, y: 466.12354, z: 0}
-      rotation: {x: 0, y: 0, z: 0.9249508, w: -0.380087}
-      length: 550.55634
+      position: {x: 477.21802, y: 466.12354, z: 0}
+      rotation: {x: 0, y: 0, z: 0.92495084, w: -0.38008687}
+      length: 550.5563
       parentId: -1
       color:
         serializedVersion: 2
         rgba: 4294901888
     - name: b_fruit_R
       guid: 16023ae2e7e08fb4da4632c9932af9b6
-      position: {x: 466.01843, y: 464.1599, z: 0}
-      rotation: {x: 0, y: 0, z: -0.00027383075, w: 1}
-      length: 554.25543
+      position: {x: 466.01855, y: 464.1599, z: 0}
+      rotation: {x: 0, y: 0, z: -0.00027395706, w: 1}
+      length: 554.2554
       parentId: -1
       color:
         serializedVersion: 2
         rgba: 4294967040
-    - name: b_fruit_12
+    - name: b_fruit_TR
       guid: 9df5377840e15774c8e4bf8adf794c59
-      position: {x: 475.031, y: 463.93652, z: 0}
-      rotation: {x: 0, y: 0, z: 0.37601766, w: 0.9266125}
-      length: 536.68494
+      position: {x: 475.03113, y: 463.93652, z: 0}
+      rotation: {x: 0, y: 0, z: 0.37601754, w: 0.9266126}
+      length: 536.6849
       parentId: -1
       color:
         serializedVersion: 2
         rgba: 4286643968
     - name: b_fruit_T
       guid: 0409e146d19a8374fa4cef6a0409791e
-      position: {x: 466.016, y: 472.14258, z: 0}
-      rotation: {x: 0, y: 0, z: 0.7048605, w: 0.709346}
-      length: 550.4833
+      position: {x: 466.0161, y: 472.14258, z: 0}
+      rotation: {x: 0, y: 0, z: 0.7048604, w: 0.7093461}
+      length: 550.4832
       parentId: -1
       color:
         serializedVersion: 2
         rgba: 4278255615
-    - name: b_fruit_11
+    - name: b_fruit_TL
       guid: c028c5c4d28c6834ab8d71b68a3a0fb2
-      position: {x: 468.46997, y: 463.93628, z: 0}
-      rotation: {x: 0, y: 0, z: 0.92752594, w: 0.3737589}
-      length: 561.4774
+      position: {x: 468.4701, y: 463.93628, z: 0}
+      rotation: {x: 0, y: 0, z: 0.9275259, w: 0.37375906}
+      length: 561.47736
       parentId: -1
       color:
         serializedVersion: 2
         rgba: 4278255488
     - name: b_fruit_L
       guid: 0a39da73d88f08d4a80e632c1dc81b4b
-      position: {x: 460.69678, y: 464.16016, z: 0}
-      rotation: {x: 0, y: 0, z: 0.9999546, w: 0.009537304}
+      position: {x: 460.6969, y: 464.16016, z: 0}
+      rotation: {x: 0, y: 0, z: 0.9999546, w: 0.009537514}
       length: 542.07367
       parentId: -1
       color:
@@ -7099,8 +7099,8 @@ ScriptedImporter:
     - position: {x: 372.055, y: 922.001}
       boneWeight:
         weight0: 0.77603835
-        weight1: 0.21110797
-        weight2: 0.012853826
+        weight1: 0.21110784
+        weight2: 0.012853818
         weight3: 0
         boneIndex0: 5
         boneIndex1: 6
@@ -7208,9 +7208,9 @@ ScriptedImporter:
         boneIndex3: 5
     - position: {x: 241.726, y: 875.122}
       boneWeight:
-        weight0: 0.6633723
+        weight0: 0.6633722
         weight1: 0.31978977
-        weight2: 0.016838018
+        weight2: 0.016838016
         weight3: 0
         boneIndex0: 6
         boneIndex1: 5
@@ -7228,9 +7228,9 @@ ScriptedImporter:
         boneIndex3: 5
     - position: {x: 219.305, y: 862.08}
       boneWeight:
-        weight0: 0.74563646
+        weight0: 0.7456364
         weight1: 0.24207771
-        weight2: 0.012285893
+        weight2: 0.012285892
         weight3: 0
         boneIndex0: 6
         boneIndex1: 5
@@ -8368,7 +8368,7 @@ ScriptedImporter:
         boneIndex3: 0
     - position: {x: 318.31372, y: 148.20259}
       boneWeight:
-        weight0: 0.5983724
+        weight0: 0.59837246
         weight1: 0.40162757
         weight2: 0
         weight3: 0
@@ -9818,26 +9818,26 @@ ScriptedImporter:
         rgba: 4294901760
     - name: b_leaf_00
       guid: 2fcd72127b8a12d4dadba4e9b92568af
-      position: {x: 1554.5214, y: -69.36003, z: 0}
-      rotation: {x: 0, y: 0, z: 0.53337055, w: 0.8458817}
+      position: {x: 101.07819, y: 3.767457, z: 0}
+      rotation: {x: 0, y: 0, z: 0.16429743, w: 0.9864109}
       length: 248.70587
-      parentId: 0
+      parentId: 22
       color:
         serializedVersion: 2
         rgba: 4294902015
     - name: b_leaf_01
       guid: 64ec1211685916243a3ebb91f77b3201
-      position: {x: 248.70589, y: -0.00005893493, z: 0}
-      rotation: {x: 0, y: 0, z: -0.27318233, w: 0.9619623}
-      length: 239.17204
-      parentId: 5
+      position: {x: 336.35693, y: 84.38044, z: 0}
+      rotation: {x: 0, y: 0, z: -0.111422054, w: 0.99377316}
+      length: 239.17216
+      parentId: 22
       color:
         serializedVersion: 2
         rgba: 4278223103
     - name: b_leaf_02
       guid: 39ce3e041c74bd642aec71b683a1b852
-      position: {x: 239.17215, y: 0.00009715158, z: 0}
-      rotation: {x: 0, y: 0, z: -0.040949438, w: 0.9991613}
+      position: {x: 239.17232, y: 0.00003557442, z: 0}
+      rotation: {x: 0, y: 0, z: -0.04094943, w: 0.99916124}
       length: 201.1289
       parentId: 6
       color:
@@ -9845,17 +9845,17 @@ ScriptedImporter:
         rgba: 4278255488
     - name: b_leaf_03
       guid: 1c19fd606e09962478817d1995cf6aa1
-      position: {x: -53.40183, y: -108.96723, z: 0}
-      rotation: {x: 0, y: 0, z: -0.64230996, w: 0.766445}
-      length: 135.59422
-      parentId: 5
+      position: {x: 85.87873, y: -116.626015, z: 0}
+      rotation: {x: 0, y: 0, z: -0.5076567, w: 0.8615595}
+      length: 135.59435
+      parentId: 22
       color:
         serializedVersion: 2
         rgba: 4286643968
     - name: b_leaf_04
       guid: ec1142f9677a5284fb48f8118122d521
-      position: {x: 135.59415, y: 0.00004719795, z: 0}
-      rotation: {x: 0, y: 0, z: 0.18840756, w: 0.982091}
+      position: {x: 135.59447, y: 0.000058535858, z: 0}
+      rotation: {x: 0, y: 0, z: 0.18840764, w: 0.98209095}
       length: 238.01474
       parentId: 8
       color:
@@ -9863,17 +9863,17 @@ ScriptedImporter:
         rgba: 4294934528
     - name: b_leaf_05
       guid: a70718d8f3f123a4e81ba17fbb14bbf2
-      position: {x: -106.9747, y: 12.923292, z: 0}
-      rotation: {x: 0, y: -0, z: 0.9999102, w: 0.013402017}
-      length: 138.05148
-      parentId: 5
+      position: {x: -4.3102374, y: -18.680616, z: 0}
+      rotation: {x: 0, y: -0, z: -0.9885245, w: 0.15106095}
+      length: 138.05144
+      parentId: 22
       color:
         serializedVersion: 2
         rgba: 4294901888
     - name: b_leaf_06
       guid: 0004d75bb60a67a41b2fe2bd703f026f
-      position: {x: 138.05165, y: -0.00045170248, z: 0}
-      rotation: {x: 0, y: 0, z: 0.25238502, w: 0.9676269}
+      position: {x: 138.05142, y: -0.000071254224, z: 0}
+      rotation: {x: 0, y: 0, z: -0.25238678, w: -0.96762645}
       length: 181.00963
       parentId: 10
       color:
@@ -9881,17 +9881,17 @@ ScriptedImporter:
         rgba: 4286578943
     - name: b_leaf_07
       guid: d8325110f224ca64788b3a8b0b7af03e
-      position: {x: 87.38979, y: 178.85066, z: 0}
-      rotation: {x: 0, y: 0, z: 0.41088086, w: 0.91168904}
-      length: 201.60373
-      parentId: 5
+      position: {x: 125.7791, y: 201.28801, z: 0}
+      rotation: {x: 0, y: 0, z: 0.5550857, w: 0.8317932}
+      length: 201.6037
+      parentId: 22
       color:
         serializedVersion: 2
         rgba: 4278255615
     - name: b_leaf_08
       guid: 4ab15d5ee9d477b48aa1c6dfeed0cf7e
-      position: {x: 201.60376, y: 0.000018836145, z: 0}
-      rotation: {x: 0, y: 0, z: -0.02387714, w: 0.9997149}
+      position: {x: 201.60379, y: -0.0000056040444, z: 0}
+      rotation: {x: 0, y: 0, z: -0.023877375, w: 0.999715}
       length: 180.95088
       parentId: 12
       color:
@@ -9899,17 +9899,17 @@ ScriptedImporter:
         rgba: 4278255360
     - name: b_leaf_09
       guid: ff6e0dd3c468d624c8133ee0e2f03057
-      position: {x: -27.67825, y: 92.42827, z: 0}
-      rotation: {x: 0, y: -0, z: 0.79691035, w: 0.6040976}
-      length: 99.87169
-      parentId: 5
+      position: {x: 44.93527, y: 82.234436, z: 0}
+      rotation: {x: 0, y: -0, z: 0.8853328, w: 0.46495783}
+      length: 99.871925
+      parentId: 22
       color:
         serializedVersion: 2
         rgba: 4294967040
     - name: b_leaf_10
       guid: c065dd5af9a7ea34185db5d485e08395
-      position: {x: 99.87175, y: -0.0000068164936, z: 0}
-      rotation: {x: 0, y: 0, z: -0.26322716, w: 0.9647339}
+      position: {x: 99.87201, y: 0.000047569723, z: 0}
+      rotation: {x: 0, y: 0, z: -0.2632275, w: 0.9647338}
       length: 145.38702
       parentId: 14
       color:
@@ -9927,13 +9927,13 @@ ScriptedImporter:
     - name: b_fruit
       guid: 824f37a094c52a54d92cf1483b3c61b2
       position: {x: 563.657, y: -167.26117, z: 0}
-      rotation: {x: 0, y: 0, z: 0.012514614, w: 0.99992174}
+      rotation: {x: 0, y: 0, z: 0.012514441, w: 0.9999217}
       length: 923.06433
       parentId: 0
       color:
         serializedVersion: 2
         rgba: 4278190335
-    - name: b_fruit_11
+    - name: b_fruit_TL
       guid: c028c5c4d28c6834ab8d71b68a3a0fb2
       position: {x: 460.08878, y: 44.864494, z: 0}
       rotation: {x: 0, y: 0, z: 0.38392815, w: 0.923363}
@@ -9942,7 +9942,7 @@ ScriptedImporter:
       color:
         serializedVersion: 2
         rgba: 4278255488
-    - name: b_fruit_12
+    - name: b_fruit_TR
       guid: 9df5377840e15774c8e4bf8adf794c59
       position: {x: 459.9801, y: 38.30436, z: 0}
       rotation: {x: 0, y: 0, z: -0.39695466, w: 0.9178383}
@@ -9951,7 +9951,7 @@ ScriptedImporter:
       color:
         serializedVersion: 2
         rgba: 4286643968
-    - name: b_fruit_13
+    - name: b_fruit_BR
       guid: 6a7c68efe224d3042803b01db58a82ad
       position: {x: 462.16675, y: 38.268208, z: 0}
       rotation: {x: 0, y: -0, z: -0.92334247, w: 0.38397747}
@@ -9960,7 +9960,7 @@ ScriptedImporter:
       color:
         serializedVersion: 2
         rgba: 4294934528
-    - name: b_fruit_14
+    - name: b_fruit_BL
       guid: 26bea5c2b9a90e043a0942f143ada4b7
       position: {x: 462.13058, y: 36.081497, z: 0}
       rotation: {x: 0, y: -0, z: 0.9195742, w: 0.3929164}
@@ -9969,6 +9969,15 @@ ScriptedImporter:
       color:
         serializedVersion: 2
         rgba: 4294901888
+    - name: b_leavesBase
+      guid: efed1c6b3aeff2e42b2356f38bb49574
+      position: {x: 923.0644, y: 0.00022312209, z: 0}
+      rotation: {x: 0, y: 0, z: 0.3755772, w: 0.92679113}
+      length: 104.83677
+      parentId: 17
+      color:
+        serializedVersion: 2
+        rgba: 4286578943
     parts:
     - spritePosition:
         x: 1199
