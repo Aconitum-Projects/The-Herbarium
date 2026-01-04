@@ -3,76 +3,112 @@ using UnityEngine;
 
 public class TrailFollow : MonoBehaviour
 {
-    public LineRenderer line;
-    public int maxPoints = 20;
+    [Header("Trail")]
+    public LineRenderer trailLine;
+    public int maxTrailPoints = 100;
     public float followSpeed = 10f;
-    public float trailLength = 5f;
+    
+    [Header("Outline")]
+    public LineRenderer outlineLine;
 
-    [Header("Spiral ellipse")]
-    public Vector2 center;
-    public Vector2 radius = new Vector2(4f, 2f);
-    public float spiralStrength = 0.15f;
-    public Vector2 spiralClamp = new Vector2(0.2f, 1.5f);
+    [Header("Shape")]
+    public LineRenderer shapeLine;       // forme cible
+    public float maxDistance = 0.3f;    // tolérance
+    public float successThreshold = 0.8f; // 80% pour réussir
+    public Color correctColor = Color.green;
+    public Color wrongColor = Color.red;
 
-    List<Vector3> points = new();
+    [Header("Oval Settings")]
+    public Vector2 ovalCenter = Vector2.zero;
+    public float radiusX = 3f;
+    public float radiusY = 2f;
+    public int ovalPointsCount = 50;
+
+    private List<Vector3> trailPoints = new();
+    private Vector3[] shapePoints;
+    private bool shapeCompleted = false;
 
     void Start()
     {
-        center = Camera.main.ScreenToWorldPoint(
+        // Générer automatiquement l'ovale
+        shapePoints = new Vector3[ovalPointsCount];
+        for (int i = 0; i < ovalPointsCount; i++)
+        {
+            float angle = 2f * Mathf.PI * i / ovalPointsCount;
+            float x = ovalCenter.x + Mathf.Cos(angle) * radiusX;
+            float y = ovalCenter.y + Mathf.Sin(angle) * radiusY;
+            shapePoints[i] = new Vector3(x, y, 0f);
+        }
+
+        // Appliquer les points au LineRenderer de la forme
+        shapeLine.positionCount = shapePoints.Length;
+        shapeLine.SetPositions(shapePoints);
+
+        // Initialise le trail au centre
+        Vector3 startPos = Camera.main.ScreenToWorldPoint(
             new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 10f)
         );
 
-        for (int i = 0; i < maxPoints; i++)
-            points.Add(center);
+        for (int i = 0; i < maxTrailPoints; i++)
+            trailPoints.Add(startPos);
 
-        line.positionCount = points.Count;
-        line.SetPositions(points.ToArray());
+        trailLine.positionCount = trailPoints.Count;
+        trailLine.SetPositions(trailPoints.ToArray());
+        outlineLine.positionCount = trailPoints.Count;
+        outlineLine.SetPositions(trailPoints.ToArray());
+        
     }
 
     void Update()
     {
+        if (shapeCompleted) return;
+
+        // Récupération souris
         Vector3 mouse = Camera.main.ScreenToWorldPoint(
             new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f)
         );
 
-        Vector2 dir = mouse - (Vector3)center;
-        float angle = Mathf.Atan2(dir.y, dir.x);
+        // Lerp pour trail fluide
+        Vector3 newPoint = Vector3.Lerp(trailPoints[^1], mouse, followSpeed * Time.deltaTime);
+        trailPoints.Add(newPoint);
 
-        float spiral = Mathf.Clamp(
-            Mathf.Abs(angle) * spiralStrength,
-            spiralClamp.x,
-            spiralClamp.y
-        );
+        if (trailPoints.Count > maxTrailPoints)
+            trailPoints.RemoveAt(0);
 
-        Vector3 target = center + new Vector2(
-            Mathf.Cos(angle) * radius.x,
-            Mathf.Sin(angle) * radius.y
-        ) * spiral;
+        trailLine.positionCount = trailPoints.Count;
+        trailLine.SetPositions(trailPoints.ToArray());
+        outlineLine.positionCount = trailPoints.Count;
+        outlineLine.SetPositions(trailPoints.ToArray());
 
-        points.Add(Vector3.MoveTowards(
-            points[^1],
-            target,
-            followSpeed * Time.deltaTime
-        ));
-
-        TrimTrail();
-
-        line.positionCount = points.Count;
-        line.SetPositions(points.ToArray());
+        // Vérifier la forme
+        CheckShape();
     }
 
-    void TrimTrail()
+    void CheckShape()
     {
-        float length = 0f;
+        int correctPoints = 0;
 
-        for (int i = points.Count - 1; i > 0; i--)
+        foreach (var sp in shapePoints)
         {
-            length += Vector3.Distance(points[i], points[i - 1]);
-            if (length > trailLength)
+            foreach (var tp in trailPoints)
             {
-                points.RemoveRange(0, i - 1);
-                return;
+                if (Vector3.Distance(sp, tp) <= maxDistance)
+                {
+                    correctPoints++;
+                    break;
+                }
             }
+        }
+
+        float ratio = (float)correctPoints / shapePoints.Length;
+
+        // Feedback visuel
+        shapeLine.startColor = shapeLine.endColor = ratio >= successThreshold ? correctColor : wrongColor;
+
+        if (ratio >= successThreshold && !shapeCompleted)
+        {
+            shapeCompleted = true;
+            Debug.Log("Forme réussie !");
         }
     }
 }
