@@ -8,13 +8,18 @@ public class TrailFollow : MonoBehaviour
     public int maxTrailPoints = 100;
     public float followSpeed = 10f;
     
+    [Header("Vine")]
+    public float segmentLength = 0.15f;
+    [Range(0f, 1f)]
+    public float stiffness = 0.6f;
+
     [Header("Outline")]
     public LineRenderer outlineLine;
 
     [Header("Shape")]
-    public LineRenderer shapeLine;       // forme cible
-    public float maxDistance = 0.3f;    // tolérance
-    public float successThreshold = 0.8f; // 80% pour réussir
+    public LineRenderer shapeLine;
+    public float maxDistance = 0.3f;
+    public float successThreshold = 0.8f;
     public Color correctColor = Color.green;
     public Color wrongColor = Color.red;
 
@@ -23,6 +28,9 @@ public class TrailFollow : MonoBehaviour
     public float radiusX = 3f;
     public float radiusY = 2f;
     public int ovalPointsCount = 50;
+    
+    [Header("State")]
+    public bool isValid = false;
 
     private List<Vector3> trailPoints = new();
     private Vector3[] shapePoints;
@@ -30,7 +38,6 @@ public class TrailFollow : MonoBehaviour
 
     void Start()
     {
-        // Générer automatiquement l'ovale
         shapePoints = new Vector3[ovalPointsCount];
         for (int i = 0; i < ovalPointsCount; i++)
         {
@@ -40,11 +47,9 @@ public class TrailFollow : MonoBehaviour
             shapePoints[i] = new Vector3(x, y, 0f);
         }
 
-        // Appliquer les points au LineRenderer de la forme
         shapeLine.positionCount = shapePoints.Length;
         shapeLine.SetPositions(shapePoints);
 
-        // Initialise le trail au centre
         Vector3 startPos = Camera.main.ScreenToWorldPoint(
             new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 10f)
         );
@@ -63,24 +68,35 @@ public class TrailFollow : MonoBehaviour
     {
         if (shapeCompleted) return;
 
-        // Récupération souris
         Vector3 mouse = Camera.main.ScreenToWorldPoint(
             new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f)
         );
 
-        // Lerp pour trail fluide
-        Vector3 newPoint = Vector3.Lerp(trailPoints[^1], mouse, followSpeed * Time.deltaTime);
-        trailPoints.Add(newPoint);
+        trailPoints[^1] = Vector3.Lerp(
+            trailPoints[^1],
+            mouse,
+            followSpeed * Time.deltaTime
+        );
 
-        if (trailPoints.Count > maxTrailPoints)
-            trailPoints.RemoveAt(0);
+        for (int i = trailPoints.Count - 2; i >= 0; i--)
+        {
+            Vector3 targetPos =
+                trailPoints[i + 1] +
+                (trailPoints[i] - trailPoints[i + 1]).normalized * segmentLength;
+
+            trailPoints[i] = Vector3.Lerp(
+                trailPoints[i],
+                targetPos,
+                stiffness
+            );
+        }
 
         trailLine.positionCount = trailPoints.Count;
         trailLine.SetPositions(trailPoints.ToArray());
+
         outlineLine.positionCount = trailPoints.Count;
         outlineLine.SetPositions(trailPoints.ToArray());
 
-        // Vérifier la forme
         CheckShape();
     }
 
@@ -102,13 +118,14 @@ public class TrailFollow : MonoBehaviour
 
         float ratio = (float)correctPoints / shapePoints.Length;
 
-        // Feedback visuel
         shapeLine.startColor = shapeLine.endColor = ratio >= successThreshold ? correctColor : wrongColor;
 
-        if (ratio >= successThreshold && !shapeCompleted)
+        isValid = ratio >= successThreshold;
+
+        if (isValid && !shapeCompleted)
         {
             shapeCompleted = true;
-            Debug.Log("Forme réussie !");
         }
+
     }
 }

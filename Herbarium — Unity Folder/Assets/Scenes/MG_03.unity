@@ -1035,7 +1035,7 @@ LineRenderer:
       m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    numCornerVertices: 0
+    numCornerVertices: 50
     numCapVertices: 0
     alignment: 0
     textureMode: 0
@@ -1059,18 +1059,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrailFollow
   trailLine: {fileID: 547394299}
-  maxTrailPoints: 35
-  followSpeed: 200
+  maxTrailPoints: 50
+  followSpeed: 20
+  segmentLength: 0.75
+  stiffness: 0.95
   outlineLine: {fileID: 1774016096}
   shapeLine: {fileID: 1053216531}
-  maxDistance: 0.3
-  successThreshold: 0.4
+  maxDistance: 0.4
+  successThreshold: 0.6
   correctColor: {r: 0, g: 1, b: 0, a: 1}
   wrongColor: {r: 1, g: 0, b: 0, a: 1}
   ovalCenter: {x: 0, y: 0}
   radiusX: 5
   radiusY: 2
-  ovalPointsCount: 30
+  ovalPointsCount: 50
+  isValid: 0
 --- !u!1001 &564728098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1588,6 +1591,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1053216530}
+  - component: {fileID: 1053216532}
   - component: {fileID: 1053216531}
   m_Layer: 0
   m_Name: ref
@@ -1637,7 +1641,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 781da4034c5ea9743854a67c95d99274, type: 2}
+  - {fileID: 2100000, guid: 6d520fc4be06ce04b80aa635c9c4e76e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1713,7 +1717,7 @@ LineRenderer:
       m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    numCornerVertices: 0
+    numCornerVertices: 50
     numCapVertices: 0
     alignment: 0
     textureMode: 0
@@ -1724,6 +1728,20 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 0
+--- !u!114 &1053216532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053216529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cf49b824813bfc4da5b12b570890185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrailDetector
+  validated: 0
+  trailFollow: {fileID: 547394300}
 --- !u!1 &1135831353
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,7 +2146,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 547394298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2158,7 +2176,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 781da4034c5ea9743854a67c95d99274, type: 2}
+  - {fileID: 2100000, guid: 6d520fc4be06ce04b80aa635c9c4e76e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2234,7 +2252,7 @@ LineRenderer:
       m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    numCornerVertices: 0
+    numCornerVertices: 50
     numCapVertices: 0
     alignment: 0
     textureMode: 0
@@ -2810,6 +2828,10 @@ PrefabInstance:
       value: Roll up the liana
       objectReference: {fileID: 0}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: victoryType
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: victoryManager
       value: 
       objectReference: {fileID: 7771637918381786674}
@@ -2822,9 +2844,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: trailDetectors.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: colorsDetectors.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: 'trailDetectors.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1053216532}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: 'colorsDetectors.Array.data[0]'
       value: 

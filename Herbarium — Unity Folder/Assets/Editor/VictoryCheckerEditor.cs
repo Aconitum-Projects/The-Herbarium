@@ -5,24 +5,24 @@ using UnityEditor;
 [CanEditMultipleObjects]
 public class VictoryCheckerEditor : Editor
 {
-    SerializedProperty victoryType;
+    SerializedProperty victoryType, victoryManager;
 
-    SerializedProperty colorsDetectors;
-    SerializedProperty detachDetectors;
-    SerializedProperty cutedDetectors;
-    SerializedProperty revealedDetectors;
-    SerializedProperty shakeDetectors;
-    SerializedProperty filledDetectors;
-    SerializedProperty erasedDetectors;
-    SerializedProperty stoppedDetectors;
-
-    SerializedProperty victoryManager;
-
-    // Instruction Canvas
-    SerializedProperty instructionCanvas;
-    SerializedProperty instructionRect;
-    SerializedProperty animDuration;
-    SerializedProperty animEase;
+    private SerializedProperty
+        colorsDetectors,
+        detachDetectors,
+        cutedDetectors,
+        revealedDetectors,
+        shakeDetectors,
+        filledDetectors,
+        erasedDetectors,
+        stoppedDetectors,
+        trailDetectors;
+    
+    SerializedProperty
+        instructionCanvas,
+        instructionRect,
+        animDuration,
+        animEase;
 
     void OnEnable()
     {
@@ -36,6 +36,7 @@ public class VictoryCheckerEditor : Editor
         filledDetectors   = serializedObject.FindProperty("filledDetectors");
         erasedDetectors   = serializedObject.FindProperty("erasedDetectors");
         stoppedDetectors  = serializedObject.FindProperty("stoppedDetectors");
+        trailDetectors  = serializedObject.FindProperty("trailDetectors");
 
         victoryManager = serializedObject.FindProperty("victoryManager");
 
@@ -116,6 +117,11 @@ public class VictoryCheckerEditor : Editor
                 case VictoryType.AllStopped:
                     EditorGUILayout.LabelField("Stopped Detectors", middleTitle);
                     EditorGUILayout.PropertyField(stoppedDetectors, true);
+                    break;
+
+                case VictoryType.TrailValidated:
+                    EditorGUILayout.LabelField("Trail Detectors", middleTitle);
+                    EditorGUILayout.PropertyField(trailDetectors, true);
                     break;
             }
 
