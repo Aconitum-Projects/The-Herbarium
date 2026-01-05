@@ -158,6 +158,29 @@ public class SpriteControllerEditor : Editor
     {
         EditorGUILayout.LabelField("Draggable Settings", bigTitle);
         EditorGUILayout.Space(5);
+
+        SerializedProperty rotateProp = serializedObject.FindProperty("rotateInsteadOfMove");
+        EditorGUILayout.PropertyField(rotateProp, new GUIContent("Rotate Instead of Move", "Si vrai, bouger la souris fait tourner le sprite au lieu de le déplacer"));
+
+        if (rotateProp.boolValue)
+        {
+            SerializedProperty speedProp = serializedObject.FindProperty("rotationSpeed");
+            EditorGUILayout.PropertyField(speedProp, new GUIContent("Rotation Speed", "Sensibilité de rotation selon le mouvement de la souris"));
+
+            SerializedProperty limitProp = serializedObject.FindProperty("limitRotation");
+            EditorGUILayout.PropertyField(limitProp, new GUIContent("Limit Rotation", "Activer la limitation de rotation"));
+
+            if (limitProp.boolValue)
+            {
+                SerializedProperty minProp = serializedObject.FindProperty("minRotation");
+                SerializedProperty maxProp = serializedObject.FindProperty("maxRotation");
+
+                EditorGUILayout.PropertyField(minProp, new GUIContent("Min Rotation", "Rotation minimale (°)"));
+                EditorGUILayout.PropertyField(maxProp, new GUIContent("Max Rotation", "Rotation maximale (°)"));
+            }
+        }
+
+        EditorGUILayout.Space(10);
     }
 
     void DrawFollowMouse(GUIStyle bigTitle)

@@ -9,6 +9,7 @@ public class BoneHanging2D : MonoBehaviour
 {
     [Header("Reference (pseudo-parent)")]
     public Transform referenceParent;
+    public float followSmooth = 15f;
 
     [Header("Gravity / Down")]
     public Vector2 worldDown = Vector2.down;
@@ -23,6 +24,7 @@ public class BoneHanging2D : MonoBehaviour
 
     float noiseOffset;
     double lastEditorTime;
+    Vector3 worldOffset;
 
     void OnEnable()
     {
@@ -31,6 +33,9 @@ public class BoneHanging2D : MonoBehaviour
 #if UNITY_EDITOR
         lastEditorTime = EditorApplication.timeSinceStartup;
 #endif
+
+        if (referenceParent != null)
+            worldOffset = transform.position - referenceParent.position;
     }
 
     void LateUpdate()
@@ -43,11 +48,12 @@ public class BoneHanging2D : MonoBehaviour
 
     void CopyParentPlacement()
     {
-        // Copie position monde (pas de parentage réel)
-        transform.position = referenceParent.position;
-
-        // Optionnel : copier l’échelle si besoin
-        // transform.localScale = referenceParent.lossyScale;
+        Vector3 target = referenceParent.position + worldOffset;
+        transform.position = Vector3.Lerp(
+            transform.position,
+            target,
+            Time.deltaTime * followSmooth
+        );
     }
 
     void ApplyWorldDownRotation()

@@ -87,6 +87,14 @@ public class SpriteController : MonoBehaviour
     public Ease stoppableEase = Ease.InOutSine;
     public bool isStopped = false;
     public float stoppableInputDelay = 0.5f;
+    
+    // Mode Draggable
+    public bool rotateInsteadOfMove = false;
+    public float rotationSpeed = 5f;
+    public bool limitRotation = false;
+    public float minRotation = -45f;
+    public float maxRotation = 45f;
+
 
     private Vector3 stoppableOrigin;
     private Tween stoppableTween;
@@ -103,6 +111,7 @@ public class SpriteController : MonoBehaviour
     private Vector3 fillStartPos;
     private SpriteRenderer targetSpriteRenderer;
     private bool canStop = false;
+    private Vector3 lastMousePos;
 
     void Awake()
     {
@@ -217,8 +226,10 @@ public class SpriteController : MonoBehaviour
     // ------------------ Draggable ------------------
     void OnMouseDown()
     {
+        
         if (currentMode == Mode.Draggable || currentMode == Mode.Detachable)
         {
+            lastMousePos = Input.mousePosition;
             isDragging = true;
 
             Vector3 mousePos = Input.mousePosition;
@@ -238,18 +249,31 @@ public class SpriteController : MonoBehaviour
     {
         if (!isDragging) return;
 
-        if (currentMode == Mode.Draggable)
-        {
-            Vector3 mousePos = Input.mousePosition;
-            mousePos.z = Mathf.Abs(mainCam.transform.position.z - transform.position.z);
-            Vector3 worldPos = mainCam.ScreenToWorldPoint(mousePos);
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = Mathf.Abs(mainCam.transform.position.z - transform.position.z);
+        Vector3 worldPos = mainCam.ScreenToWorldPoint(mousePos);
 
-            transform.position = worldPos + offset;
+        if (currentMode == Mode.Draggable && rotateInsteadOfMove)
+        {
+            Vector3 mouseDelta = Input.mousePosition - lastMousePos;
+            float angle = mouseDelta.x * rotationSpeed * Time.deltaTime;
+
+            if (limitRotation)
+            {
+                float currentZ = transform.eulerAngles.z;
+                if (currentZ > 180f) currentZ -= 360f;
+                angle = Mathf.Clamp(currentZ + angle, minRotation, maxRotation) - currentZ;
+            }
+
+            transform.Rotate(0, 0, angle);
         }
+
         else if (currentMode == Mode.Detachable)
         {
             DetachableUpdate();
         }
+
+        lastMousePos = Input.mousePosition;
     }
 
     void OnMouseUp()
@@ -374,9 +398,15 @@ public class SpriteController : MonoBehaviour
                         .SetEase(Ease.OutBack);
                 }
             }
-            
+
             if (useScale)
                 transform.position = ClampToScreen(worldPos);
+
+            // ----------- NOUVEAU -----------
+            BoneHanging2D boneScript = GetComponent<BoneHanging2D>();
+            if (boneScript != null)
+                boneScript.enabled = false;
+            // -------------------------------
 
             switch (detachType)
             {

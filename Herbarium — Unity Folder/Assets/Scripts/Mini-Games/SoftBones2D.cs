@@ -71,6 +71,11 @@ public class SoftBones2D : MonoBehaviour
         "Forte force = fin du gradient."
     )]
     public Gradient forceGradient;
+    
+    [Tooltip(
+        "Couleur des bones auquels aucune force n'est appliquée."
+    )]
+    public Color colorDisabledBones = new Color(1f, 0f, 0f, 0.3f);
 
     [Tooltip(
         "Rayon des sphères dessinées sur chaque bone.\n" +
@@ -78,6 +83,10 @@ public class SoftBones2D : MonoBehaviour
         "Aucun impact sur le gameplay."
     )]
     public float gizmoBoneRadius = 0.02f;
+    
+    [Header("Wind Ignore List")]
+    [Tooltip("Liste de bones qui ne recevront pas l'effet du vent (ex: le root ou le sprite principal).")]
+    public List<Transform> ignoreBones = new List<Transform>();
 
 public class BoneData
     {
@@ -144,6 +153,8 @@ public class BoneData
         {
             if (bone.transform == null) continue;
 
+            if (ignoreBones.Contains(bone.transform)) continue;
+
             float depthFactor = Mathf.Clamp01(bone.depth / 5f);
             float noise = Mathf.PerlinNoise(time + bone.noiseOffset, 0f);
             float angle = (noise - 0.5f) * 2f;
@@ -170,22 +181,30 @@ public class BoneData
         foreach (var bone in bones)
         {
             if (bone.transform == null || bone.transform.parent == null) continue;
-
             if (hideRootLinks && bone.depth == 0) continue;
-
-            float depthFactor = Mathf.Clamp01(bone.depth / 5f);
-            float noise = Mathf.PerlinNoise(time + bone.noiseOffset, 0f);
-            float angle = Mathf.Abs((noise - 0.5f) * 2f);
-
-            float force = angle * windStrength * depthFactor * randomness;
-            float normalizedForce = Mathf.Clamp01(force / windStrength);
-
-            Color color = forceGradient.Evaluate(normalizedForce);
-            Gizmos.color = color;
 
             Vector3 a = bone.transform.parent.position;
             Vector3 b = bone.transform.position;
 
+            bool isIgnored = ignoreBones.Contains(bone.transform);
+
+            Color color;
+
+            if (isIgnored)
+            {
+                color = colorDisabledBones;
+            }
+            else
+            {
+                float depthFactor = Mathf.Clamp01(bone.depth / 5f);
+                float noise = Mathf.PerlinNoise(time + bone.noiseOffset, 0f);
+                float angle = Mathf.Abs((noise - 0.5f) * 2f);
+                float force = angle * windStrength * depthFactor * randomness;
+                float normalizedForce = Mathf.Clamp01(force / windStrength);
+                color = forceGradient.Evaluate(normalizedForce);
+            }
+
+            Gizmos.color = color;
             Gizmos.DrawLine(a, b);
             Gizmos.DrawSphere(b, gizmoBoneRadius);
 
@@ -194,4 +213,5 @@ public class BoneData
 #endif
         }
     }
+
 }
