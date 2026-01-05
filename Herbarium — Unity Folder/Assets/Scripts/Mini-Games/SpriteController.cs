@@ -253,21 +253,31 @@ public class SpriteController : MonoBehaviour
         mousePos.z = Mathf.Abs(mainCam.transform.position.z - transform.position.z);
         Vector3 worldPos = mainCam.ScreenToWorldPoint(mousePos);
 
-        if (currentMode == Mode.Draggable && rotateInsteadOfMove)
+        if (currentMode == Mode.Draggable)
         {
-            Vector3 mouseDelta = Input.mousePosition - lastMousePos;
-            float angle = mouseDelta.x * rotationSpeed * Time.deltaTime;
-
-            if (limitRotation)
+            if (!rotateInsteadOfMove)
             {
-                float currentZ = transform.eulerAngles.z;
-                if (currentZ > 180f) currentZ -= 360f;
-                angle = Mathf.Clamp(currentZ + angle, minRotation, maxRotation) - currentZ;
+                // DRAG CLASSIQUE
+                transform.position = worldPos + offset;
             }
+            else
+            {
+                // ROTATION
+                Vector3 mouseDelta = Input.mousePosition - lastMousePos;
+                float angle = mouseDelta.x * rotationSpeed * Time.deltaTime;
 
-            transform.Rotate(0, 0, angle);
+                if (limitRotation)
+                {
+                    float currentZ = transform.eulerAngles.z;
+                    if (currentZ > 180f) currentZ -= 360f;
+
+                    float clampedZ = Mathf.Clamp(currentZ + angle, minRotation, maxRotation);
+                    angle = clampedZ - currentZ;
+                }
+
+                transform.Rotate(0, 0, angle);
+            }
         }
-
         else if (currentMode == Mode.Detachable)
         {
             DetachableUpdate();
