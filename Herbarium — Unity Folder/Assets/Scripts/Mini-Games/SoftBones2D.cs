@@ -130,19 +130,28 @@ public class BoneData
 
     void Update()
     {
-        if (!Application.isPlaying) return;
+        if (!Application.isPlaying)
+            return;
 
+        ApplyBoneRotations();
+    }
+
+    void ApplyBoneRotations()
+    {
         float time = Time.time * windSpeed;
 
         foreach (var bone in bones)
         {
+            if (bone.transform == null) continue;
+
             float depthFactor = Mathf.Clamp01(bone.depth / 5f);
             float noise = Mathf.PerlinNoise(time + bone.noiseOffset, 0f);
             float angle = (noise - 0.5f) * 2f;
 
             angle *= windStrength * depthFactor * randomness;
 
-            Quaternion targetRot = bone.baseRotation * Quaternion.Euler(0, 0, angle);
+            Quaternion targetRot =
+                bone.baseRotation * Quaternion.Euler(0, 0, angle);
 
             bone.transform.localRotation = Quaternion.Slerp(
                 bone.transform.localRotation,
