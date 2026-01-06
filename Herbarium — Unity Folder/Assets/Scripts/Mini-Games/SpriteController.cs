@@ -1,6 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 using System.Collections.Generic;
+using UnityEngine.U2D.Animation;
 
 public class SpriteController : MonoBehaviour
 {
@@ -13,7 +14,8 @@ public class SpriteController : MonoBehaviour
         Cuttable,
         Fillable,
         Erasable,
-        Stoppable
+        Stoppable,
+        Moving
     }
 
     public enum DetachType
@@ -94,8 +96,17 @@ public class SpriteController : MonoBehaviour
     public bool limitRotation = false;
     public float minRotation = -45f;
     public float maxRotation = 45f;
+    
+    // Moving Settings
+    public Vector2 moveDirection = Vector2.right;
+    public Vector2 speedRange = new Vector2(1f, 3f);
+    public Collider2D collectCollider;
+    public Collider2D destroyCollider;
+    public bool collected = false;
+    public bool destroyed = false;
+    public SpriteRenderer  collectedSpriteRenderer;
 
-
+    private float currentMoveSpeed;
     private Vector3 stoppableOrigin;
     private Tween stoppableTween;
     private SpriteRenderer spriteRenderer;
@@ -112,6 +123,7 @@ public class SpriteController : MonoBehaviour
     private SpriteRenderer targetSpriteRenderer;
     private bool canStop = false;
     private Vector3 lastMousePos;
+    private bool isFollowingParent = false;
 
     void Awake()
     {
@@ -129,6 +141,14 @@ public class SpriteController : MonoBehaviour
     {
         if (currentMode == Mode.Stoppable)
             StartStoppable();
+
+        if (currentMode == Mode.Moving)
+            InitMoving();
+    }
+    void InitMoving()
+    {
+        currentMoveSpeed = Random.Range(speedRange.x, speedRange.y);
+        moveDirection = moveDirection.normalized;
     }
 
     void OnDisable()
@@ -153,6 +173,9 @@ public class SpriteController : MonoBehaviour
                 break;
             case Mode.Stoppable:
                 StoppableUpdate();
+                break;
+            case Mode.Moving:
+                MovingUpdate();
                 break;
         }
 
@@ -181,13 +204,31 @@ public class SpriteController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (currentMode != Mode.Erasable) return;
-        if (eraserCollider == null) return;
-
-        if (other == eraserCollider)
+        // --- Erasable ---
+        if (currentMode == Mode.Erasable && eraserCollider != null)
         {
-            isBeingErased = true;
+            if (other == eraserCollider)
+                isBeingErased = true;
         }
+
+        // --- Moving ---
+        if (currentMode == Mode.Moving)
+        {
+            if (!collected && collectCollider != null && other == collectCollider)
+            {
+                Debug.Log(name + " collected!!");
+                collected = true;
+                currentMode = Mode.FollowMouse;
+            }
+
+            else if (!destroyed && destroyCollider != null && other == destroyCollider)
+            {
+                Debug.Log(name + " destroyed!!");
+                destroyed = true;
+                Destroy(gameObject);
+            }
+        }
+
     }
 
     void OnTriggerExit2D(Collider2D other)
@@ -532,6 +573,14 @@ public class SpriteController : MonoBehaviour
         }
     }
     
+    void MovingUpdate()
+    {
+        if (collected || destroyed) return;
+
+        transform.position +=
+            (Vector3)(moveDirection * currentMoveSpeed * Time.deltaTime);
+    }
+
     private void PlayCutFeedback(System.Action onComplete)
     {
         Sequence seq = DOTween.Sequence();

@@ -28,6 +28,9 @@ public class SpriteControllerEditor : Editor
     // Stoppable
     SerializedProperty stoppableTargetOffset, stoppableDuration, stoppableEase, stoppableInputDelay;
 
+    // Moving
+    SerializedProperty moveDirection, speedRange, collectCollider, destroyCollider, collectedSpriteRenderer;
+
     void OnEnable()
     {
         currentMode = serializedObject.FindProperty("currentMode");
@@ -82,6 +85,14 @@ public class SpriteControllerEditor : Editor
         stoppableDuration = serializedObject.FindProperty("stoppableDuration");
         stoppableEase = serializedObject.FindProperty("stoppableEase");
         stoppableInputDelay = serializedObject.FindProperty("stoppableInputDelay");
+        
+        // Moving
+        moveDirection   = serializedObject.FindProperty("moveDirection");
+        speedRange      = serializedObject.FindProperty("speedRange");
+        collectCollider = serializedObject.FindProperty("collectCollider");
+        destroyCollider = serializedObject.FindProperty("destroyCollider");
+        collectedSpriteRenderer = serializedObject.FindProperty("collectedSpriteRenderer");
+
     }
 
     public override void OnInspectorGUI()
@@ -123,6 +134,9 @@ public class SpriteControllerEditor : Editor
                     break;
                 case SpriteController.Mode.Stoppable:
                     DrawStoppable(bigTitle);
+                    break;
+                case SpriteController.Mode.Moving:
+                    DrawMoving(bigTitle);
                     break;
                 case SpriteController.Mode.None:
                     DrawNone(bigTitle);
@@ -358,6 +372,51 @@ public class SpriteControllerEditor : Editor
         EditorGUILayout.PropertyField(stoppableEase, new GUIContent("Ease", "Type d'interpolation du mouvement"));
         EditorGUILayout.PropertyField(stoppableInputDelay, new GUIContent("Input Delay", "Durée d'attente avant click autorisé"));
         EditorGUILayout.Space(15);
+    }
+    
+    void DrawMoving(GUIStyle bigTitle)
+    {
+        EditorGUILayout.LabelField("Moving Settings", bigTitle);
+        EditorGUILayout.Space(5);
+
+        EditorGUILayout.HelpBox(
+            "Le sprite se déplace en continu dans une direction donnée avec une vitesse aléatoire.",
+            MessageType.Info
+        );
+        
+        EditorGUILayout.Space(10);
+        EditorGUILayout.LabelField("Collected Visual", EditorStyles.boldLabel);
+
+        EditorGUILayout.PropertyField(
+            collectedSpriteRenderer,
+            new GUIContent(
+                "Collected Sprite Renderer",
+                "SpriteRenderer activé lorsque l'objet est collecté"
+            )
+        );
+
+        EditorGUILayout.PropertyField(
+            moveDirection,
+            new GUIContent("Move Direction", "Direction du déplacement (sera normalisée)")
+        );
+
+        EditorGUILayout.PropertyField(
+            speedRange,
+            new GUIContent("Speed Range", "Vitesse min / max du déplacement")
+        );
+
+        EditorGUILayout.Space(10);
+        EditorGUILayout.LabelField("Collision", EditorStyles.boldLabel);
+
+        EditorGUILayout.PropertyField(
+            collectCollider,
+            new GUIContent("Collect Collider", "Collider qui déclenche l'état collected")
+        );
+
+        EditorGUILayout.PropertyField(
+            destroyCollider,
+            new GUIContent("Destroy Collider", "Collider qui détruit le sprite")
+        );
     }
 
     void DrawNone(GUIStyle bigTitle)
