@@ -372,13 +372,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1389902432}
   - component: {fileID: 1389902433}
+  - component: {fileID: 1389902434}
   m_Layer: 0
   m_Name: DestroyCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1389902432
 Transform:
   m_ObjectHideFlags: 0
@@ -440,6 +441,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 10, y: 25}
   m_EdgeRadius: 0
+--- !u!114 &1389902434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389902431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 324b59608bb3e1c47a391ac52111569e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollectedDetector
+  validated: 0
+  elementsParent: {fileID: 1702228919}
+  targetTag: ToCollect
 --- !u!1001 &1582219564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -494,7 +510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: victoryType
-      value: 2
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: victoryManager
@@ -508,6 +524,14 @@ PrefabInstance:
       propertyPath: 'cutedDetectors.Array.data[0]'
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: collectedDetectors.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: 'collectedDetectors.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1389902434}
     - target: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_Name
       value: SubGame_A
@@ -531,6 +555,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 111986037346041635, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
   m_PrefabInstance: {fileID: 1582219564}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1702228919 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6065842028688165553, guid: 1e87fc27f71bad543aa87d250cedb114, type: 3}
+  m_PrefabInstance: {fileID: 8190429088457064721}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1710579192 stripped
 GameObject:
@@ -977,25 +1006,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 1582219565}
     m_Modifications:
     - target: {fileID: 348657429473853982, guid: 1e87fc27f71bad543aa87d250cedb114, type: 3}
-      propertyPath: collectCollider
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 348657429473853982, guid: 1e87fc27f71bad543aa87d250cedb114, type: 3}
       propertyPath: destroyCollider
       value: 
       objectReference: {fileID: 1389902433}
     - target: {fileID: 1410125827294516498, guid: 1e87fc27f71bad543aa87d250cedb114, type: 3}
-      propertyPath: collectCollider
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1410125827294516498, guid: 1e87fc27f71bad543aa87d250cedb114, type: 3}
       propertyPath: destroyCollider
       value: 
       objectReference: {fileID: 1389902433}
-    - target: {fileID: 2676639610300101237, guid: 1e87fc27f71bad543aa87d250cedb114, type: 3}
-      propertyPath: collectCollider
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2676639610300101237, guid: 1e87fc27f71bad543aa87d250cedb114, type: 3}
       propertyPath: destroyCollider
       value: 
@@ -1045,25 +1062,13 @@ PrefabInstance:
       value: MG_09_A
       objectReference: {fileID: 0}
     - target: {fileID: 4019693312582862024, guid: 1e87fc27f71bad543aa87d250cedb114, type: 3}
-      propertyPath: collectCollider
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4019693312582862024, guid: 1e87fc27f71bad543aa87d250cedb114, type: 3}
       propertyPath: destroyCollider
       value: 
       objectReference: {fileID: 1389902433}
     - target: {fileID: 8947331785483458021, guid: 1e87fc27f71bad543aa87d250cedb114, type: 3}
-      propertyPath: collectCollider
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8947331785483458021, guid: 1e87fc27f71bad543aa87d250cedb114, type: 3}
       propertyPath: destroyCollider
       value: 
       objectReference: {fileID: 1389902433}
-    - target: {fileID: 9125369133791264159, guid: 1e87fc27f71bad543aa87d250cedb114, type: 3}
-      propertyPath: collectCollider
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 9125369133791264159, guid: 1e87fc27f71bad543aa87d250cedb114, type: 3}
       propertyPath: destroyCollider
       value: 

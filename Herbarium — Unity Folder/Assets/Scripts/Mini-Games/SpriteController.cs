@@ -216,14 +216,12 @@ public class SpriteController : MonoBehaviour
         {
             if (!collected && collectCollider != null && other == collectCollider)
             {
-                Debug.Log(name + " collected!!");
                 collected = true;
                 currentMode = Mode.FollowMouse;
             }
 
             else if (!destroyed && destroyCollider != null && other == destroyCollider)
             {
-                Debug.Log(name + " destroyed!!");
                 destroyed = true;
                 Destroy(gameObject);
             }
