@@ -9,28 +9,34 @@ public class SpriteControllerEditor : Editor
     SerializedProperty currentMode;
 
     // Follow Mouse
-    SerializedProperty followX, followY, followSpeed, cutterCollider, limitX, xLimits, limitY, yLimits;
+    SerializedProperty followX, followY, followSpeed, cutterCollider, limitX,
+        xLimits, limitY, yLimits;
 
     // Detachable
-    SerializedProperty maxScale, detachThreshold, scaleDuration, isDetached, detachType, fallDistance, fallDuration, keepDetachedScale, detachVisualMode;
+    SerializedProperty maxScale, detachThreshold, scaleDuration, isDetached,
+        detachType, fallDistance, fallDuration, keepDetachedScale, detachVisualMode;
 
     // Cuttable
     SerializedProperty cuttableCollider, isCut;
 
     // Shakeable
-    SerializedProperty isShakeable, shakeThreshold, shakeVisualMode, animatedShakeSprites;
+    SerializedProperty isShakeable, shakeThreshold, shakeVisualMode,
+        animatedShakeSprites, resetPositionWhenReleased;
 
     // Fillable
-    SerializedProperty fillX, fillY, fillOffsetX, fillOffsetY, fillDuration, fillEase;
-
+    SerializedProperty fillPosition, fillRotation, fillScale, fillOffsetPos,
+        fillOffsetRot, fillOffsetScale, fillDuration, fillEase;
+    
     // Erasable
     SerializedProperty eraserCollider, eraseSpeed, minAlpha;
 
     // Stoppable
-    SerializedProperty stoppableTargetOffset, stoppableDuration, stoppableEase, stoppableInputDelay;
+    SerializedProperty stoppableTargetOffset, stoppableDuration, stoppableEase,
+        stoppableInputDelay;
 
     // Moving
-    SerializedProperty moveDirection, speedRange, collectCollider, destroyCollider, collectedSpriteRenderer;
+    SerializedProperty moveDirection, speedRange, collectCollider, destroyCollider,
+        collectedSpriteRenderer;
 
     void OnEnable()
     {
@@ -68,12 +74,15 @@ public class SpriteControllerEditor : Editor
         animatedShakeSprites = serializedObject.FindProperty("animatedShakeSprites");
 
         // Fillable
-        fillX = serializedObject.FindProperty("fillX");
-        fillY = serializedObject.FindProperty("fillY");
-        fillOffsetX = serializedObject.FindProperty("fillOffsetX");
-        fillOffsetY = serializedObject.FindProperty("fillOffsetY");
-        fillDuration = serializedObject.FindProperty("fillDuration");
-        fillEase = serializedObject.FindProperty("fillEase");
+        fillPosition = serializedObject.FindProperty("fillPosition");
+        fillRotation = serializedObject.FindProperty("fillRotation");
+        fillScale    = serializedObject.FindProperty("fillScale");
+        fillOffsetPos   = serializedObject.FindProperty("fillOffsetPos");
+        fillOffsetRot   = serializedObject.FindProperty("fillOffsetRot");
+        fillOffsetScale = serializedObject.FindProperty("fillOffsetScale");
+        fillDuration    = serializedObject.FindProperty("fillDuration");
+        fillEase        = serializedObject.FindProperty("fillEase");
+        resetPositionWhenReleased = serializedObject.FindProperty("resetPositionWhenReleased");
 
         // Erasable
         eraserCollider = serializedObject.FindProperty("eraserCollider");
@@ -359,21 +368,30 @@ public class SpriteControllerEditor : Editor
     {
         EditorGUILayout.LabelField("Fillable Settings", bigTitle);
         EditorGUILayout.Space(5);
-        EditorGUILayout.HelpBox("Maintenir clic gauche pour attirer lentement le sprite vers la position relative sur les axes activés.", MessageType.Info);
+        EditorGUILayout.HelpBox("Maintenir clic gauche pour attirer lentement le sprite vers la cible selon les transformations activées.", MessageType.Info);
 
-        EditorGUILayout.PropertyField(fillX, new GUIContent("Fill X", "Appliquer le remplissage sur l'axe X"));
-        if (fillX.boolValue)
-            EditorGUILayout.PropertyField(fillOffsetX, new GUIContent("Offset X", "Déplacement relatif sur X"));
+        EditorGUILayout.PropertyField(fillPosition, new GUIContent("Fill Position", "Appliquer le remplissage sur la position"));
+        if (fillPosition.boolValue)
+            EditorGUILayout.PropertyField(fillOffsetPos, new GUIContent("Offset Position", "Décalage local cible"));
 
-        EditorGUILayout.PropertyField(fillY, new GUIContent("Fill Y", "Appliquer le remplissage sur l'axe Y"));
-        if (fillY.boolValue)
-            EditorGUILayout.PropertyField(fillOffsetY, new GUIContent("Offset Y", "Déplacement relatif sur Y"));
+        EditorGUILayout.PropertyField(fillRotation, new GUIContent("Fill Rotation", "Appliquer le remplissage sur la rotation Z"));
+        if (fillRotation.boolValue)
+            EditorGUILayout.PropertyField(fillOffsetRot, new GUIContent("Offset Rotation", "Rotation relative (°)"));
+
+        EditorGUILayout.PropertyField(fillScale, new GUIContent("Fill Scale", "Appliquer le remplissage sur le scale"));
+        if (fillScale.boolValue)
+            EditorGUILayout.PropertyField(fillOffsetScale, new GUIContent("Offset Scale", "Scale relatif cible"));
 
         EditorGUILayout.Space(5);
         EditorGUILayout.PropertyField(fillDuration, new GUIContent("Fill Duration", "Temps du mouvement vers la cible"));
         EditorGUILayout.PropertyField(fillEase, new GUIContent("Fill Ease", "Interpolation du mouvement"));
+
+        EditorGUILayout.Space(5);
+        EditorGUILayout.PropertyField(resetPositionWhenReleased, new GUIContent("Reset When Released", "Revenir à la position/rotation/scale initiale quand le clic est relâché"));
+
         EditorGUILayout.Space(15);
     }
+
 
     void DrawErasable(GUIStyle bigTitle)
     {

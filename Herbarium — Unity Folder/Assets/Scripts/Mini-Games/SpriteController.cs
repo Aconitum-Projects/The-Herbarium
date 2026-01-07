@@ -77,12 +77,15 @@ public class SpriteController : MonoBehaviour
     public bool shakeValidated = false;
 
     // Fillable Settings
-    public bool fillX = true;
-    public bool fillY = true;
-    public float fillOffsetX = 0f;
-    public float fillOffsetY = 0f;
+    public bool fillPosition = true;
+    public bool fillRotation = false;
+    public bool fillScale = false;
+    public Vector3 fillOffsetPos = Vector3.zero; 
+    public float fillOffsetRot = 0f;
+    public Vector3 fillOffsetScale = Vector3.one;
     public float fillDuration = 1.2f;
     public Ease fillEase = Ease.InOutSine;
+    public bool resetPositionWhenReleased = false;
     
     // Erasable Settings
     public float eraseSpeed = 0.4f;
@@ -110,7 +113,7 @@ public class SpriteController : MonoBehaviour
     public Collider2D destroyCollider;
     public bool collected = false;
     public bool destroyed = false;
-    public SpriteRenderer  collectedSpriteRenderer;
+    public SpriteRenderer collectedSpriteRenderer;
 
     // Private
     float currentMoveSpeed;
@@ -132,7 +135,12 @@ public class SpriteController : MonoBehaviour
     float shakeAnimT = 0f;
     Tween shakeRewindTween;
     float currentShakeSpeed = 0f;
-
+    Vector3 fillStartLocalPos;
+    float fillStartRotation;
+    Vector3 fillStartScale;
+    Vector3 fillStartPosGlobal;
+    bool fillInitialized = false;
+    
     void Awake()
     {
         mainCam = Camera.main;
@@ -143,6 +151,10 @@ public class SpriteController : MonoBehaviour
         targetSpriteRenderer = spriteRenderer != null
             ? spriteRenderer
             : GetComponentInChildren<SpriteRenderer>();
+        
+        fillStartPosGlobal = transform.position;
+        fillStartRotation = transform.eulerAngles.z;
+        fillStartScale = transform.localScale;
     }
 
     void OnEnable()
@@ -229,7 +241,6 @@ public class SpriteController : MonoBehaviour
         }
 
     }
-
     void OnTriggerExit2D(Collider2D other)
     {
         if (other == eraserCollider)
@@ -284,7 +295,6 @@ public class SpriteController : MonoBehaviour
             }
         }
     }
-
     void OnMouseDrag()
     {
         if (!isDragging) return;
@@ -325,7 +335,6 @@ public class SpriteController : MonoBehaviour
 
         lastMousePos = Input.mousePosition;
     }
-
     void OnMouseUp()
     {
         if (currentMode == Mode.Detachable && isDragging)
@@ -398,7 +407,6 @@ public class SpriteController : MonoBehaviour
 
         UpdateShakeAnimatedSprite(shakeAnimT);
     }
-
     void UpdateShakeAnimatedSprite(float t)
     {
         if (animatedShakeSprites == null ||
@@ -546,33 +554,76 @@ public class SpriteController : MonoBehaviour
             transform.DOScale(initialScale, fallDuration).SetEase(Ease.OutBack);
         }
     }
-
+    
     // ------------------ Fillable ------------------
-    private Vector3 fillStartLocalPos;
-
     private void FillableUpdate()
     {
-        if (Input.GetMouseButtonDown(0))
+        // Init au clic
+        if (Input.GetMouseButtonDown(0) && !fillInitialized)
         {
-            fillStartLocalPos = transform.localPosition;
+            fillStartPosGlobal = transform.position;
+            fillStartRotation = transform.eulerAngles.z;
+            fillStartScale = transform.localScale;
+            fillInitialized = true;
         }
 
+        // Si pas de clic, reset si activé
         if (!Input.GetMouseButton(0))
         {
-            fillTween?.Kill();
-            fillTween = null;
+            if (!fillInitialized) return;
+
+            if (resetPositionWhenReleased)
+            {
+                fillTween?.Kill();
+                Sequence resetSeq = DOTween.Sequence();
+                if (fillPosition) resetSeq.Join(transform.DOMove(fillStartPosGlobal, fillDuration).SetEase(fillEase));
+                if (fillRotation) resetSeq.Join(transform.DORotate(new Vector3(0,0,fillStartRotation), fillDuration).SetEase(fillEase));
+                if (fillScale) resetSeq.Join(transform.DOScale(fillStartScale, fillDuration).SetEase(fillEase));
+                fillTween = resetSeq;
+            }
+            else
+            {
+                fillTween?.Kill();
+                fillTween = null;
+            }
+
             return;
         }
 
-        Vector3 targetLocalPos = fillStartLocalPos;
-        if (fillX) targetLocalPos.x += fillOffsetX;
-        if (fillY) targetLocalPos.y += fillOffsetY;
-
-        if (fillTween == null || !fillTween.IsActive())
+        // --- Toujours calculer la target à partir de la valeur de départ ---
+        Vector3 targetPos = fillStartPosGlobal + (fillPosition ? fillOffsetPos : Vector3.zero);
+        float targetRot = fillStartRotation + (fillRotation ? fillOffsetRot : 0f);
+        Vector3 targetScale = fillStartScale;
+        if (fillScale)
         {
-            fillTween = transform.DOLocalMove(targetLocalPos, fillDuration).SetEase(fillEase);
+            targetScale = new Vector3(
+                fillStartScale.x * fillOffsetScale.x,
+                fillStartScale.y * fillOffsetScale.y,
+                fillStartScale.z * fillOffsetScale.z
+            );
+        }
+
+        // Kill le tween en cours pour relancer proprement
+        fillTween?.Kill();
+
+        // Tween vers la target
+        Sequence seq = DOTween.Sequence();
+        if (fillPosition) seq.Join(transform.DOMove(targetPos, fillDuration).SetEase(fillEase));
+        if (fillRotation) seq.Join(transform.DORotate(new Vector3(0,0,targetRot), fillDuration).SetEase(fillEase));
+        if (fillScale) seq.Join(transform.DOScale(targetScale, fillDuration).SetEase(fillEase));
+        fillTween = seq;
+
+        // Clamp scale pour éviter dépassement
+        if (fillScale)
+        {
+            transform.localScale = new Vector3(
+                Mathf.Min(transform.localScale.x, targetScale.x),
+                Mathf.Min(transform.localScale.y, targetScale.y),
+                Mathf.Min(transform.localScale.z, targetScale.z)
+            );
         }
     }
+
     
     // ------------------ Erasable ------------------
     private void ErasableUpdate()
@@ -603,7 +654,6 @@ public class SpriteController : MonoBehaviour
         canStop = false;
         DOVirtual.DelayedCall(stoppableInputDelay, () => canStop = true);
     }
-    
     void StoppableUpdate()
     {
         if (!canStop) return;
