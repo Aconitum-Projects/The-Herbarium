@@ -1,8 +1,5 @@
-using UnityEngine;
-
-#if UNITY_EDITOR
 using UnityEditor;
-#endif
+using UnityEngine;
 
 [ExecuteAlways]
 public class BoneHanging2D : MonoBehaviour
@@ -42,13 +39,16 @@ public class BoneHanging2D : MonoBehaviour
     {
         if (referenceParent == null) return;
 
+        if (worldOffset == Vector3.zero)
+            worldOffset = transform.position - referenceParent.position;
+
         CopyParentPlacement();
         ApplyWorldDownRotation();
     }
-
+    
     void CopyParentPlacement()
     {
-        Vector3 target = referenceParent.position + worldOffset;
+        Vector3 target = referenceParent.position + (transform.position - referenceParent.position);
         transform.position = Vector3.Lerp(
             transform.position,
             target,
@@ -80,9 +80,20 @@ public class BoneHanging2D : MonoBehaviour
         float baseAngle = Mathf.Atan2(worldDown.y, worldDown.x) * Mathf.Rad2Deg - 90f;
         Quaternion worldDownRot = Quaternion.Euler(0f, 0f, baseAngle);
 
-        float time = Application.isPlaying
-            ? Time.time
-            : (float)EditorApplication.timeSinceStartup;
+        float time;
+
+        if (Application.isPlaying)
+        {
+            time = Time.time;
+        }
+        else
+        {
+#if UNITY_EDITOR
+    time = (float)EditorApplication.timeSinceStartup;
+#else
+            time = 0f;
+#endif
+        }
 
         float noise = Mathf.PerlinNoise(time * windSpeed + noiseOffset, 0f);
         float windAngle = (noise - 0.5f) * 2f * windAmplitude * windRandomness;

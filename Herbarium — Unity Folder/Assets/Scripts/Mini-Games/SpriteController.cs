@@ -74,6 +74,7 @@ public class SpriteController : MonoBehaviour
     public float shakeThreshold = 0.1f;
     public ShakeVisualMode shakeVisualMode;
     public Sprite[] animatedShakeSprites;
+    public bool shakeValidated = false;
 
     // Fillable Settings
     public bool fillX = true;
@@ -129,7 +130,6 @@ public class SpriteController : MonoBehaviour
     bool canStop = false;
     Vector3 lastMousePos;
     float shakeAnimT = 0f;
-    bool shakeValidated = false;
     Tween shakeRewindTween;
     float currentShakeSpeed = 0f;
 
@@ -373,43 +373,30 @@ public class SpriteController : MonoBehaviour
     // ------------------ Shake Animated ------------------
     void HandleShakeAnimated()
     {
-        if (shakeValidated) return;
+        if (shakeValidated)
+        {
+            UpdateShakeAnimatedSprite(1f);
+            return;
+        }
 
         float normalizedShake =
             (currentShakeSpeed - shakeThreshold) / shakeThreshold;
 
         normalizedShake = Mathf.Clamp01(normalizedShake);
 
-        if (normalizedShake > 0f)
+        shakeAnimT = Mathf.Lerp(
+            shakeAnimT,
+            normalizedShake,
+            Time.deltaTime * 5f
+        );
+
+        if (shakeAnimT >= 0.98f)
         {
-            shakeRewindTween?.Kill();
-
-            shakeAnimT += normalizedShake * Time.deltaTime;
-            shakeAnimT = Mathf.Clamp01(shakeAnimT);
-
-            UpdateShakeAnimatedSprite(shakeAnimT);
-
-            if (shakeAnimT >= 1f)
-            {
-                shakeValidated = true;
-            }
+            shakeValidated = true;
+            shakeAnimT = 1f;
         }
-        else
-        {
-            if (shakeAnimT > 0f &&
-                (shakeRewindTween == null || !shakeRewindTween.IsActive()))
-            {
-                shakeRewindTween = DOVirtual.Float(
-                    shakeAnimT,
-                    0f,
-                    0.25f,
-                    v =>
-                    {
-                        shakeAnimT = v;
-                        UpdateShakeAnimatedSprite(shakeAnimT);
-                    });
-            }
-        }
+
+        UpdateShakeAnimatedSprite(shakeAnimT);
     }
 
     void UpdateShakeAnimatedSprite(float t)
