@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEditor;
 
 [CustomEditor(typeof(SpriteController))]
+
 [CanEditMultipleObjects]
 public class SpriteControllerEditor : Editor
 {
@@ -17,7 +18,7 @@ public class SpriteControllerEditor : Editor
     SerializedProperty cuttableCollider, isCut;
 
     // Shakeable
-    SerializedProperty isShakeable, isShaken, shakeThreshold, shakeMultiplier, shakeResetTime;
+    SerializedProperty isShakeable, shakeThreshold, shakeVisualMode, animatedShakeSprites;
 
     // Fillable
     SerializedProperty fillX, fillY, fillOffsetX, fillOffsetY, fillDuration, fillEase;
@@ -59,13 +60,12 @@ public class SpriteControllerEditor : Editor
         // Cuttable
         cuttableCollider = serializedObject.FindProperty("cuttableCollider");
         isCut = serializedObject.FindProperty("isCut");
-
+        
         // Shakeable
         isShakeable = serializedObject.FindProperty("isShakeable");
-        isShaken = serializedObject.FindProperty("isShaken");
         shakeThreshold = serializedObject.FindProperty("shakeThreshold");
-        shakeMultiplier = serializedObject.FindProperty("shakeMultiplier");
-        shakeResetTime = serializedObject.FindProperty("shakeResetTime");
+        shakeVisualMode = serializedObject.FindProperty("shakeVisualMode");
+        animatedShakeSprites = serializedObject.FindProperty("animatedShakeSprites");
 
         // Fillable
         fillX = serializedObject.FindProperty("fillX");
@@ -150,21 +150,47 @@ public class SpriteControllerEditor : Editor
         }
 
         serializedObject.ApplyModifiedProperties();
+        if (GUI.changed)
+            Repaint();
+
     }
 
     void DrawShakeable(GUIStyle bigTitle)
     {
-        EditorGUILayout.PropertyField(isShakeable, new GUIContent("Shakeable", "Le sprite peut être secoué pour déclencher un événement"));
-        if (isShakeable.boolValue)
-        {
-            EditorGUILayout.PropertyField(shakeThreshold, new GUIContent("Shake Threshold", "Vitesse minimale du mouvement pour déclencher le shake"));
-            EditorGUILayout.PropertyField(shakeMultiplier, new GUIContent("Shake Multiplier", "Réduit ou augmente la sensibilité du shake"));
-            EditorGUILayout.PropertyField(shakeResetTime, new GUIContent("Shake Reset Time", "Durée avant que le shake soit réinitialisé"));
+        EditorGUILayout.LabelField("Shakeable Settings", bigTitle);
+        EditorGUILayout.Space(5);
 
-            EditorGUI.BeginDisabledGroup(true);
-            EditorGUILayout.PropertyField(isShaken, new GUIContent("Is Shaken", "Indique si le sprite est actuellement secoué"));
-            EditorGUI.EndDisabledGroup();
+        EditorGUILayout.PropertyField(isShakeable, new GUIContent("Shakeable", "Le sprite peut être secoué pour déclencher un événement"));
+
+        if (!isShakeable.hasMultipleDifferentValues && isShakeable.boolValue)
+        {
+            EditorGUILayout.PropertyField(shakeThreshold, new GUIContent("Shake Threshold", "Vitesse minimale pour déclencher le shake"));
+
+            // Gestion du flag
+            SpriteController.ShakeVisualMode visualMode = (SpriteController.ShakeVisualMode)shakeVisualMode.intValue;
+            visualMode = (SpriteController.ShakeVisualMode)EditorGUILayout.EnumFlagsField(
+                new GUIContent("Shake Visual Mode", "Animated = animation via sprites"),
+                visualMode
+            );
+            shakeVisualMode.intValue = (int)visualMode;
+
+            bool useAnim = visualMode.HasFlag(SpriteController.ShakeVisualMode.Animated);
+
+            if (useAnim)
+            {
+                EditorGUILayout.LabelField("Animated Shake", EditorStyles.boldLabel);
+                
+                EditorGUILayout.PropertyField(animatedShakeSprites, new GUIContent("Animated Shake Sprites"), true);
+
+                EditorGUILayout.Space(5);
+            }
+
+            if (visualMode == SpriteController.ShakeVisualMode.None)
+            {
+                EditorGUILayout.HelpBox("Aucun mode visuel sélectionné. Le shake n’aura pas de feedback.", MessageType.Warning);
+            }
         }
+
         EditorGUILayout.Space(15);
     }
 

@@ -24,6 +24,7 @@ public class SpriteController : MonoBehaviour
         Draggable,
         Fall
     }
+    
     [System.Flags]
     public enum DetachVisualMode
     {
@@ -31,10 +32,16 @@ public class SpriteController : MonoBehaviour
         Scalable = 1 << 0,
         Animated = 1 << 1
     }
+    
+    [System.Flags]
+    public enum ShakeVisualMode
+    {
+        None = 0,
+        Animated = 1
+    }
 
     // Mode
     public Mode currentMode = Mode.None;
-    public bool isShakeable = false;
 
     // Follow Mouse Settings
     public bool followX = true;
@@ -56,8 +63,6 @@ public class SpriteController : MonoBehaviour
     public DetachType detachType = DetachType.None;
     public bool keepDetachedScale = false;
     public DetachVisualMode detachVisualMode = DetachVisualMode.Scalable;
-
-    // Animated Detach
     public Sprite[] animatedDetachSprites;
 
     // Cuttable Settings
@@ -65,11 +70,10 @@ public class SpriteController : MonoBehaviour
     public bool isCut = false;
 
     // Shakeable Settings
-    public bool isShaken = false;
-    public float shakeThreshold = 15f;
-    public float shakeMultiplier = 50f;
-    public float shakeResetTime = 0.2f;
-    public BoxCollider2D eraserCollider;
+    public bool isShakeable = false;
+    public float shakeThreshold = 0.1f;
+    public ShakeVisualMode shakeVisualMode;
+    public Sprite[] animatedShakeSprites;
 
     // Fillable Settings
     public bool fillX = true;
@@ -82,6 +86,7 @@ public class SpriteController : MonoBehaviour
     // Erasable Settings
     public float eraseSpeed = 0.4f;
     public float minAlpha = 0f;
+    public BoxCollider2D eraserCollider;
     
     // Stoppable Settings
     public Vector3 stoppableTargetOffset;
@@ -106,24 +111,27 @@ public class SpriteController : MonoBehaviour
     public bool destroyed = false;
     public SpriteRenderer  collectedSpriteRenderer;
 
-    private float currentMoveSpeed;
-    private Vector3 stoppableOrigin;
-    private Tween stoppableTween;
-    private SpriteRenderer spriteRenderer;
-    private bool isBeingErased = false;
-    private Vector3 lastPos;
-    private float shakeTimer = 0f;
-    private Vector3 initialScale;
-    private Vector3 detachOrigin;
-    private Camera mainCam;
-    private Vector3 offset;
-    private bool isDragging = false;
-    private Tween fillTween;
-    private Vector3 fillStartPos;
-    private SpriteRenderer targetSpriteRenderer;
-    private bool canStop = false;
-    private Vector3 lastMousePos;
-    private bool isFollowingParent = false;
+    // Private
+    float currentMoveSpeed;
+    Vector3 stoppableOrigin;
+    Tween stoppableTween;
+    SpriteRenderer spriteRenderer;
+    bool isBeingErased = false;
+    Vector3 lastPos;
+    Vector3 initialScale;
+    Vector3 detachOrigin;
+    Camera mainCam;
+    Vector3 offset;
+    bool isDragging = false;
+    Tween fillTween;
+    Vector3 fillStartPos;
+    SpriteRenderer targetSpriteRenderer;
+    bool canStop = false;
+    Vector3 lastMousePos;
+    float shakeAnimT = 0f;
+    bool shakeValidated = false;
+    Tween shakeRewindTween;
+    float currentShakeSpeed = 0f;
 
     void Awake()
     {
@@ -181,24 +189,17 @@ public class SpriteController : MonoBehaviour
 
         // ----------- Shake Detection -----------
         if (isShakeable)
-
-        {
-            float speed = (transform.position - lastPos).magnitude / Time.deltaTime;
-            if (!isShaken && speed > shakeThreshold * shakeMultiplier)
-            {
-                isShaken = true;
-                shakeTimer = shakeResetTime;
-            }
-        }
-
-        if (isShaken)
-        {
-            shakeTimer -= Time.deltaTime;
-            if (shakeTimer <= 0f)
-                isShaken = false;
+        { 
+            Vector3 delta = transform.position - lastPos;
+            currentShakeSpeed = delta.magnitude / Mathf.Max(Time.deltaTime, 0.0001f);
         }
 
         lastPos = transform.position;
+        
+        if (isShakeable && shakeVisualMode.HasFlag(ShakeVisualMode.Animated))
+        {
+            HandleShakeAnimated();
+        }
 
     }
 
@@ -368,7 +369,64 @@ public class SpriteController : MonoBehaviour
 
         isDragging = false;
     }
-    
+
+    // ------------------ Shake Animated ------------------
+    void HandleShakeAnimated()
+    {
+        if (shakeValidated) return;
+
+        float normalizedShake =
+            (currentShakeSpeed - shakeThreshold) / shakeThreshold;
+
+        normalizedShake = Mathf.Clamp01(normalizedShake);
+
+        if (normalizedShake > 0f)
+        {
+            shakeRewindTween?.Kill();
+
+            shakeAnimT += normalizedShake * Time.deltaTime;
+            shakeAnimT = Mathf.Clamp01(shakeAnimT);
+
+            UpdateShakeAnimatedSprite(shakeAnimT);
+
+            if (shakeAnimT >= 1f)
+            {
+                shakeValidated = true;
+            }
+        }
+        else
+        {
+            if (shakeAnimT > 0f &&
+                (shakeRewindTween == null || !shakeRewindTween.IsActive()))
+            {
+                shakeRewindTween = DOVirtual.Float(
+                    shakeAnimT,
+                    0f,
+                    0.25f,
+                    v =>
+                    {
+                        shakeAnimT = v;
+                        UpdateShakeAnimatedSprite(shakeAnimT);
+                    });
+            }
+        }
+    }
+
+    void UpdateShakeAnimatedSprite(float t)
+    {
+        if (animatedShakeSprites == null ||
+            animatedShakeSprites.Length == 0 ||
+            targetSpriteRenderer == null)
+            return;
+
+        int frame = Mathf.RoundToInt(
+            Mathf.Lerp(0, animatedShakeSprites.Length - 1, t)
+        );
+
+        frame = Mathf.Clamp(frame, 0, animatedShakeSprites.Length - 1);
+        targetSpriteRenderer.sprite = animatedShakeSprites[frame];
+    }
+
     // ------------------ Follow Mouse ------------------
     private void FollowMouseUpdate()
     {

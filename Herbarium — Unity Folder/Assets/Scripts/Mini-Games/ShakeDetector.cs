@@ -48,12 +48,12 @@ public class ShakeDetector : MonoBehaviour
 
         foreach (var t in targets)
         {
-            if (t != null && t.isShaken)
-            {
-                validated = true;
-                OnShaken();
-                return;
-            }
+            //if (t != null && t.isShaken)
+            //{
+                //validated = true;
+                //OnShaken();
+                //return;
+            //}
         }
     }
 
