@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
@@ -14,7 +15,8 @@ public enum VictoryType
     AllStopped,
     TrailValidated,
     AllCollected,
-    AllPoints
+    AllPoints,
+    Cooked
 }
 
 public class VictoryChecker : MonoBehaviour
@@ -32,6 +34,7 @@ public class VictoryChecker : MonoBehaviour
     public List<TrailDetector> trailDetectors;
     public List<CollectedDetector> collectedDetectors;
     public List<PointsDetector> pointsDetectors;
+    public List<CookingController> cookingControllers;
 
     public VictoryManager victoryManager;
     public CanvasGroup instructionCanvas;
@@ -301,6 +304,19 @@ public class VictoryChecker : MonoBehaviour
         TriggerIfComplete(true);
         return true;
     }
+    public bool CheckCooked()
+    {
+        if (cookingControllers == null || cookingControllers.Count == 0)
+            return false;
 
+        foreach (var d in cookingControllers)
+        {
+            if (d == null || !d.validated)
+                return false;
+        }
+
+        TriggerIfComplete(true);
+        return true;
+    }
 
 }

@@ -18,7 +18,8 @@ public class VictoryCheckerEditor : Editor
         stoppedDetectors,
         trailDetectors,
         collectedDetectors,
-        pointsDetectors;
+        pointsDetectors,
+        cookingControllers;
     
     SerializedProperty
         instructionCanvas,
@@ -38,9 +39,10 @@ public class VictoryCheckerEditor : Editor
         filledDetectors   = serializedObject.FindProperty("filledDetectors");
         erasedDetectors   = serializedObject.FindProperty("erasedDetectors");
         stoppedDetectors  = serializedObject.FindProperty("stoppedDetectors");
-        trailDetectors  = serializedObject.FindProperty("trailDetectors");
-        collectedDetectors  = serializedObject.FindProperty("collectedDetectors");
-        pointsDetectors  = serializedObject.FindProperty("pointsDetectors");
+        trailDetectors    = serializedObject.FindProperty("trailDetectors");
+        collectedDetectors= serializedObject.FindProperty("collectedDetectors");
+        pointsDetectors   = serializedObject.FindProperty("pointsDetectors");
+        cookingControllers  = serializedObject.FindProperty("cookingControllers");
 
         victoryManager = serializedObject.FindProperty("victoryManager");
 
@@ -136,6 +138,11 @@ public class VictoryCheckerEditor : Editor
                 case VictoryType.AllPoints:
                     EditorGUILayout.LabelField("Points Detectors", middleTitle);
                     EditorGUILayout.PropertyField(pointsDetectors, true);
+                    break;
+
+                case VictoryType.Cooked:
+                    EditorGUILayout.LabelField("Cooking Controllers", middleTitle);
+                    EditorGUILayout.PropertyField(cookingControllers, true);
                     break;
             }
 

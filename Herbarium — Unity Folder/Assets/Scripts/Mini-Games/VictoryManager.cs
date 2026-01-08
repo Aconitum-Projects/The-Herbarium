@@ -26,11 +26,11 @@ public class VictoryManager : MonoBehaviour
     [Header("Input Delay")]
     public float clickDelay = 0.5f;
 
-    private bool canClick = false;
-    private int currentIndex = 0;
-    private bool victoryActive = false;
-
+    bool canClick = false;
+    int currentIndex = 0;
+    bool victoryActive = false;
     Sequence victorySequence;
+    MonoBehaviour[] disabledScripts;
 
     void Start()
     {
@@ -130,7 +130,17 @@ public class VictoryManager : MonoBehaviour
         {
             victoryText.gameObject.SetActive(false);
             ActivateNextMiniGame();
+
+            if (disabledScripts != null)
+            {
+                foreach (var script in disabledScripts)
+                {
+                    if (script != null)
+                        script.enabled = true;
+                }
+            }
         });
+
     }
 
     private void ActivateNextMiniGame()
