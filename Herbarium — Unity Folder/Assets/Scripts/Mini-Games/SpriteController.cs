@@ -558,7 +558,6 @@ public class SpriteController : MonoBehaviour
     // ------------------ Fillable ------------------
     private void FillableUpdate()
     {
-        // Init au clic
         if (Input.GetMouseButtonDown(0) && !fillInitialized)
         {
             fillStartPosGlobal = transform.position;
@@ -567,7 +566,6 @@ public class SpriteController : MonoBehaviour
             fillInitialized = true;
         }
 
-        // Si pas de clic, reset si activé
         if (!Input.GetMouseButton(0))
         {
             if (!fillInitialized) return;
@@ -590,7 +588,6 @@ public class SpriteController : MonoBehaviour
             return;
         }
 
-        // --- Toujours calculer la target à partir de la valeur de départ ---
         Vector3 targetPos = fillStartPosGlobal + (fillPosition ? fillOffsetPos : Vector3.zero);
         float targetRot = fillStartRotation + (fillRotation ? fillOffsetRot : 0f);
         Vector3 targetScale = fillStartScale;
@@ -603,17 +600,14 @@ public class SpriteController : MonoBehaviour
             );
         }
 
-        // Kill le tween en cours pour relancer proprement
         fillTween?.Kill();
 
-        // Tween vers la target
         Sequence seq = DOTween.Sequence();
         if (fillPosition) seq.Join(transform.DOMove(targetPos, fillDuration).SetEase(fillEase));
         if (fillRotation) seq.Join(transform.DORotate(new Vector3(0,0,targetRot), fillDuration).SetEase(fillEase));
         if (fillScale) seq.Join(transform.DOScale(targetScale, fillDuration).SetEase(fillEase));
         fillTween = seq;
 
-        // Clamp scale pour éviter dépassement
         if (fillScale)
         {
             transform.localScale = new Vector3(
@@ -623,7 +617,6 @@ public class SpriteController : MonoBehaviour
             );
         }
     }
-
     
     // ------------------ Erasable ------------------
     private void ErasableUpdate()

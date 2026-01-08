@@ -348,6 +348,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: m_text
+      value: Shake the clouds until they're liquid
+      objectReference: {fileID: 0}
+    - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_fontSize
       value: 136.05
       objectReference: {fileID: 0}
@@ -393,7 +397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -431,19 +435,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2489897513528384025, guid: 2ac5d058f5d9a4044a94cd45f71e422a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.664586
+      value: 12.667092
       objectReference: {fileID: 0}
     - target: {fileID: 2489897513528384025, guid: 2ac5d058f5d9a4044a94cd45f71e422a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.92234
+      value: -8.9235935
       objectReference: {fileID: 0}
     - target: {fileID: 2489897513528384025, guid: 2ac5d058f5d9a4044a94cd45f71e422a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9999991
+      value: 0.9999996
       objectReference: {fileID: 0}
     - target: {fileID: 2489897513528384025, guid: 2ac5d058f5d9a4044a94cd45f71e422a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0013435482
+      value: 0.0009449123
       objectReference: {fileID: 0}
     - target: {fileID: 3957273185113328306, guid: 2ac5d058f5d9a4044a94cd45f71e422a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -487,15 +491,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8252754545788935499, guid: 2ac5d058f5d9a4044a94cd45f71e422a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.5138693
+      value: -6.5151224
       objectReference: {fileID: 0}
     - target: {fileID: 8252754545788935499, guid: 2ac5d058f5d9a4044a94cd45f71e422a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9999984
+      value: 0.99997795
       objectReference: {fileID: 0}
     - target: {fileID: 8252754545788935499, guid: 2ac5d058f5d9a4044a94cd45f71e422a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0018182397
+      value: -0.0066478252
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2006,6 +2010,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: m_text
+      value: Poor the illusion nectar
+      objectReference: {fileID: 0}
+    - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_fontSize
       value: 136.05
       objectReference: {fileID: 0}
@@ -2063,7 +2071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2154,11 +2162,11 @@ PrefabInstance:
     - target: {fileID: 121606632956851241, guid: e8d44bbe121692943bb226e7e067d71d, type: 3}
       propertyPath: 'miniGames.Array.data[0]'
       value: 
-      objectReference: {fileID: 1710579192}
+      objectReference: {fileID: 1387292725}
     - target: {fileID: 121606632956851241, guid: e8d44bbe121692943bb226e7e067d71d, type: 3}
       propertyPath: 'miniGames.Array.data[1]'
       value: 
-      objectReference: {fileID: 1387292725}
+      objectReference: {fileID: 1710579192}
     - target: {fileID: 121606632956851241, guid: e8d44bbe121692943bb226e7e067d71d, type: 3}
       propertyPath: 'miniGames.Array.data[2]'
       value: 
