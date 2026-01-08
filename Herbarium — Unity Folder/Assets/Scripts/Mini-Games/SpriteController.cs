@@ -52,6 +52,12 @@ public class SpriteController : MonoBehaviour
     public Vector2 xLimits = new Vector2(-5f, 5f);
     public bool limitY = false;
     public Vector2 yLimits = new Vector2(-3f, 3f);
+    public bool useFollowPoints = false;
+    public List<Collider2D> followPoints;
+    public int passesPerPoint = 3;
+    public bool followValidated = false;
+    public bool rotateInsteadOfFollow = false;
+    public float rotationSpeedFollow = 5f;
 
     // Detachable Settings
     public Vector2 maxScale = new Vector2(.05f, 1.5f);
@@ -140,6 +146,7 @@ public class SpriteController : MonoBehaviour
     Vector3 fillStartScale;
     Vector3 fillStartPosGlobal;
     bool fillInitialized = false;
+    int[] pointPasses;    
     
     void Awake()
     {
@@ -155,6 +162,11 @@ public class SpriteController : MonoBehaviour
         fillStartPosGlobal = transform.position;
         fillStartRotation = transform.eulerAngles.z;
         fillStartScale = transform.localScale;
+
+        if (useFollowPoints && followPoints != null && followPoints.Count > 0)
+        {
+            pointPasses = new int[followPoints.Count];
+        }
     }
 
     void OnEnable()
@@ -201,17 +213,25 @@ public class SpriteController : MonoBehaviour
 
         // ----------- Shake Detection -----------
         if (isShakeable)
-        { 
+        {
             Vector3 delta = transform.position - lastPos;
             currentShakeSpeed = delta.magnitude / Mathf.Max(Time.deltaTime, 0.0001f);
+
+            // Validation du shake
+            if (!shakeValidated && currentShakeSpeed >= shakeThreshold)
+            {
+                shakeValidated = true;
+            }
+
+            // Animation (optionnelle)
+            if (shakeVisualMode.HasFlag(ShakeVisualMode.Animated))
+            {
+                HandleShakeAnimated();
+            }
         }
 
         lastPos = transform.position;
-        
-        if (isShakeable && shakeVisualMode.HasFlag(ShakeVisualMode.Animated))
-        {
-            HandleShakeAnimated();
-        }
+
 
     }
 
@@ -237,6 +257,26 @@ public class SpriteController : MonoBehaviour
             {
                 destroyed = true;
                 Destroy(gameObject);
+            }
+        }
+        
+        // --- Follow Points ---
+        if (useFollowPoints && followPoints != null && followPoints.Contains(other))
+        {
+            int index = followPoints.IndexOf(other);
+            if (pointPasses != null && index >= 0 && index < pointPasses.Length)
+            {
+                pointPasses[index]++;
+
+                followValidated = true;
+                for (int i = 0; i < pointPasses.Length; i++)
+                {
+                    if (pointPasses[i] < passesPerPoint)
+                    {
+                        followValidated = false;
+                        break;
+                    }
+                }
             }
         }
 
@@ -429,28 +469,42 @@ public class SpriteController : MonoBehaviour
         mousePos.z = Mathf.Abs(mainCam.transform.position.z - transform.position.z);
         Vector3 worldPos = mainCam.ScreenToWorldPoint(mousePos);
 
-        Vector3 targetPos = transform.position;
-
-        if (followX)
+        if (!rotateInsteadOfFollow)
         {
-            float x = worldPos.x;
-            if (limitX) x = Mathf.Clamp(x, xLimits.x, xLimits.y);
-            targetPos.x = x;
+            Vector3 targetPos = transform.position;
+
+            if (followX)
+            {
+                float x = worldPos.x;
+                if (limitX) x = Mathf.Clamp(x, xLimits.x, xLimits.y);
+                targetPos.x = x;
+            }
+
+            if (followY)
+            {
+                float y = worldPos.y;
+                if (limitY) y = Mathf.Clamp(y, yLimits.x, yLimits.y);
+                targetPos.y = y;
+            }
+
+            transform.position = Vector3.Lerp(
+                transform.position,
+                targetPos,
+                followSpeed * Time.deltaTime
+            );
+        }
+        else
+        {
+            Vector3 direction = worldPos - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+            float z = Mathf.LerpAngle(transform.eulerAngles.z, angle, rotationSpeedFollow * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(0, 0, z);
         }
 
-        if (followY)
-        {
-            float y = worldPos.y;
-            if (limitY) y = Mathf.Clamp(y, yLimits.x, yLimits.y);
-            targetPos.y = y;
-        }
-
-        transform.position = Vector3.Lerp(
-            transform.position,
-            targetPos,
-            followSpeed * Time.deltaTime
-        );
+        lastMousePos = Input.mousePosition;
     }
+
 
     // ------------------ Detachable ------------------
     private void DetachableUpdate()

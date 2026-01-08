@@ -14,6 +14,7 @@ public enum VictoryType
     AllStopped,
     TrailValidated,
     AllCollected,
+    AllPoints
 }
 
 public class VictoryChecker : MonoBehaviour
@@ -30,6 +31,7 @@ public class VictoryChecker : MonoBehaviour
     public List<StoppableDetector> stoppedDetectors;
     public List<TrailDetector> trailDetectors;
     public List<CollectedDetector> collectedDetectors;
+    public List<PointsDetector> pointsDetectors;
 
     public VictoryManager victoryManager;
     public CanvasGroup instructionCanvas;
@@ -277,6 +279,20 @@ public class VictoryChecker : MonoBehaviour
             return false;
 
         foreach (var d in collectedDetectors)
+        {
+            if (d == null || !d.validated)
+                return false;
+        }
+
+        TriggerIfComplete(true);
+        return true;
+    }
+    public bool CheckAllPoints()
+    {
+        if (pointsDetectors == null || pointsDetectors.Count == 0)
+            return false;
+
+        foreach (var d in pointsDetectors)
         {
             if (d == null || !d.validated)
                 return false;

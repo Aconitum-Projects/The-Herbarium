@@ -10,7 +10,10 @@ public class SpriteControllerEditor : Editor
 
     // Follow Mouse
     SerializedProperty followX, followY, followSpeed, cutterCollider, limitX,
-        xLimits, limitY, yLimits;
+        xLimits, limitY, yLimits, useFollowPoints, followPoints, passesPerPoint,
+        followValidated, rotateInsteadOfFollow, rotationSpeedFollow;
+
+
 
     // Detachable
     SerializedProperty maxScale, detachThreshold, scaleDuration, isDetached,
@@ -51,6 +54,13 @@ public class SpriteControllerEditor : Editor
         xLimits = serializedObject.FindProperty("xLimits");
         limitY = serializedObject.FindProperty("limitY");
         yLimits = serializedObject.FindProperty("yLimits");
+        useFollowPoints   = serializedObject.FindProperty("useFollowPoints");
+        followPoints      = serializedObject.FindProperty("followPoints");
+        passesPerPoint    = serializedObject.FindProperty("passesPerPoint");
+        followValidated   = serializedObject.FindProperty("followValidated");
+        rotateInsteadOfFollow = serializedObject.FindProperty("rotateInsteadOfFollow");
+        rotationSpeedFollow  = serializedObject.FindProperty("rotationSpeedFollow");
+
 
         // Detachable
         maxScale = serializedObject.FindProperty("maxScale");
@@ -237,26 +247,53 @@ public class SpriteControllerEditor : Editor
         EditorGUILayout.LabelField("Follow Mouse Settings", bigTitle);
         EditorGUILayout.Space(5);
 
-        EditorGUILayout.PropertyField(followX, new GUIContent("Follow X", "Le sprite suit la souris sur l'axe X"));
-        if (followX.boolValue)
-        {
-            EditorGUILayout.PropertyField(limitX, new GUIContent("Limit X", "Limiter le déplacement sur l'axe X"));
-            if (limitX.boolValue)
-                EditorGUILayout.PropertyField(xLimits, new GUIContent("X Limits", "Bornes min / max sur X"));
-        }
+        bool rotate = rotateInsteadOfFollow.boolValue;
         EditorGUILayout.Space(5);
-
-        EditorGUILayout.PropertyField(followY, new GUIContent("Follow Y", "Le sprite suit la souris sur l'axe Y"));
-        if (followY.boolValue)
+        EditorGUILayout.PropertyField(rotateInsteadOfFollow, new GUIContent("Rotate Instead of Follow", "Faire tourner le sprite selon la souris au lieu de suivre la position"));
+        if (rotate)
         {
-            EditorGUILayout.PropertyField(limitY, new GUIContent("Limit Y", "Limiter le déplacement sur l'axe Y"));
-            if (limitY.boolValue)
-                EditorGUILayout.PropertyField(yLimits, new GUIContent("Y Limits", "Bornes min / max sur Y"));
+            EditorGUILayout.PropertyField(rotationSpeedFollow, new GUIContent("Rotation Speed", "Vitesse de rotation selon mouvement de la souris"));
         }
+        
+        if (!rotate)
+        {
+            EditorGUILayout.Space(20);
+            EditorGUILayout.PropertyField(followX, new GUIContent("Follow X", "Le sprite suit la souris sur l'axe X"));
+            if (followX.boolValue)
+            {
+                EditorGUILayout.PropertyField(limitX, new GUIContent("Limit X", "Limiter le déplacement sur l'axe X"));
+                if (limitX.boolValue)
+                    EditorGUILayout.PropertyField(xLimits, new GUIContent("X Limits", "Bornes min / max sur X"));
+            }
+
+            EditorGUILayout.Space(5);
+            EditorGUILayout.PropertyField(followY, new GUIContent("Follow Y", "Le sprite suit la souris sur l'axe Y"));
+            if (followY.boolValue)
+            {
+                EditorGUILayout.PropertyField(limitY, new GUIContent("Limit Y", "Limiter le déplacement sur l'axe Y"));
+                if (limitY.boolValue)
+                    EditorGUILayout.PropertyField(yLimits, new GUIContent("Y Limits", "Bornes min / max sur Y"));
+            }
+
+            EditorGUILayout.Space(10);
+            EditorGUILayout.PropertyField(followSpeed, new GUIContent("Follow Speed", "Vitesse à laquelle le sprite suit la souris"));
+
+        }
+
         EditorGUILayout.Space(10);
-        EditorGUILayout.PropertyField(followSpeed, new GUIContent("Follow Speed", "Vitesse à laquelle le sprite suit la souris"));
-        EditorGUILayout.Space(15);
-    }
+        EditorGUILayout.LabelField("Follow Points Mode", EditorStyles.boldLabel);
+        EditorGUILayout.PropertyField(useFollowPoints, new GUIContent("Use Follow Points", "Active la validation via plusieurs points à toucher"));
+        if (useFollowPoints.boolValue)
+        {
+            EditorGUILayout.PropertyField(followPoints, new GUIContent("Follow Points", "Liste de colliders à toucher dans l'ordre ou plusieurs fois"), true);
+            EditorGUILayout.PropertyField(passesPerPoint, new GUIContent("Passes Per Point", "Nombre de passages requis pour valider chaque point"));
+            EditorGUI.BeginDisabledGroup(true);
+            EditorGUILayout.PropertyField(followValidated, new GUIContent("Follow Validated", "Indique si tous les points ont été validés"));
+            EditorGUI.EndDisabledGroup();
+        }
+
+    EditorGUILayout.Space(15);
+}
 
     void DrawDetachable(GUIStyle bigTitle, GUIStyle middleTitle)
     {

@@ -17,7 +17,8 @@ public class VictoryCheckerEditor : Editor
         erasedDetectors,
         stoppedDetectors,
         trailDetectors,
-        collectedDetectors;
+        collectedDetectors,
+        pointsDetectors;
     
     SerializedProperty
         instructionCanvas,
@@ -39,6 +40,7 @@ public class VictoryCheckerEditor : Editor
         stoppedDetectors  = serializedObject.FindProperty("stoppedDetectors");
         trailDetectors  = serializedObject.FindProperty("trailDetectors");
         collectedDetectors  = serializedObject.FindProperty("collectedDetectors");
+        pointsDetectors  = serializedObject.FindProperty("pointsDetectors");
 
         victoryManager = serializedObject.FindProperty("victoryManager");
 
@@ -129,6 +131,11 @@ public class VictoryCheckerEditor : Editor
                 case VictoryType.AllCollected:
                     EditorGUILayout.LabelField("Collected Detectors", middleTitle);
                     EditorGUILayout.PropertyField(collectedDetectors, true);
+                    break;
+
+                case VictoryType.AllPoints:
+                    EditorGUILayout.LabelField("Points Detectors", middleTitle);
+                    EditorGUILayout.PropertyField(pointsDetectors, true);
                     break;
             }
 

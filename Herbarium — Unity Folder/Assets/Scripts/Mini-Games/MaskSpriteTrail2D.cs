@@ -22,7 +22,7 @@ public class MaskSpriteTrail2D : MonoBehaviour
     public float debugRadius = 0.05f;
     
     [Header("Reveal Tracking")]
-    [Range(0f, 100f)] public float fullyRevealedThreshold = 100f; // <- nouveau champ
+    [Range(0f, 100f)] public float fullyRevealedThreshold = 100f;
     
     [Header("Reveal Tracking")]
     [Range(0, 100)] public int[] revealThresholds = new int[] { 25, 50, 75, 100 };
@@ -40,6 +40,7 @@ public class MaskSpriteTrail2D : MonoBehaviour
         public Vector3 position;
         public float time;
         public float startTime;
+        public GameObject go;
     }
 
     readonly List<MaskInstance> masks = new();
@@ -54,7 +55,6 @@ public class MaskSpriteTrail2D : MonoBehaviour
         Vector3 currentPos = transform.position;
         float distance = Vector3.Distance(lastPos, currentPos);
 
-        // --- Spawn masks along distance ---
         if (distance > 0f)
         {
             Vector3 dir = (currentPos - lastPos).normalized;
@@ -70,14 +70,23 @@ public class MaskSpriteTrail2D : MonoBehaviour
             lastPos = currentPos;
         }
 
-        // --- Update masks lifetime ---
         UpdateMasks();
 
-        // --- Update reveal info ---
         if (targetSprite != null)
         {
             UpdateReveal();
         }
+    }
+
+    void OnDisable()
+    {
+        foreach (var m in masks)
+        {
+            if (m.go != null)
+                Destroy(m.go);
+        }
+
+        masks.Clear();
     }
 
     void SpawnMask(Vector3 position)
@@ -93,7 +102,8 @@ public class MaskSpriteTrail2D : MonoBehaviour
         {
             position = position,
             time = lifetime,
-            startTime = lifetime
+            startTime = lifetime,
+            go = go
         });
 
         Destroy(go, lifetime);
@@ -139,9 +149,7 @@ public class MaskSpriteTrail2D : MonoBehaviour
 
         RevealPercent = 100f * revealedCount / total;
         FullyRevealed = RevealPercent >= fullyRevealedThreshold;
-
-
-        // Trigger thresholds
+        
         foreach (int threshold in revealThresholds)
         {
             if (!triggeredThresholds.Contains(threshold) && RevealPercent >= threshold)
@@ -169,7 +177,6 @@ public class MaskSpriteTrail2D : MonoBehaviour
     {
         if (!showDebug) return;
 
-        // Debug masks
         foreach (var m in masks)
         {
             float t = m.time / m.startTime;
@@ -177,7 +184,6 @@ public class MaskSpriteTrail2D : MonoBehaviour
             Gizmos.DrawSphere(m.position, debugRadius);
         }
 
-        // Debug points of sampling
         if (targetSprite != null && targetSprite.sprite != null)
         {
             Bounds b = targetSprite.bounds;
