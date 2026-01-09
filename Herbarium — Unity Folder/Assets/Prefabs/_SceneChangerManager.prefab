@@ -155,7 +155,9 @@ MonoBehaviour:
   transitionAnimator: {fileID: 6989835061399781390}
   showPanel: {x: 0, y: 0}
   hidePanel: {x: 3950, y: 0}
-  slideDuration: 1.5
+  showDuration: 0.5
+  stayDuration: 1.25
+  hideDuration: 0.5
 --- !u!114 &8589334083693094579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,10 +328,10 @@ RectTransform:
   - {fileID: 7370378024714545308}
   m_Father: {fileID: 3977493578815172804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -3950, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 3840, y: 2160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7829950400015830616
 CanvasRenderer:
@@ -594,7 +596,7 @@ MonoBehaviour:
     m_NumColorKeys: 8
     m_NumAlphaKeys: 2
   colorDisabledBones: {r: 0, g: 0, b: 0, a: 0.70980394}
-  gizmoBoneRadius: 0.77
+  gizmoBoneRadius: 0.1
   ignoreBones:
   - {fileID: 1285338581566488926}
   - {fileID: 1450331549957558203}
@@ -735,7 +737,7 @@ MonoBehaviour:
     m_NumColorKeys: 8
     m_NumAlphaKeys: 2
   colorDisabledBones: {r: 0, g: 0, b: 0, a: 0.70980394}
-  gizmoBoneRadius: 0.77
+  gizmoBoneRadius: 0.1
   ignoreBones:
   - {fileID: 5577885955695366797}
   - {fileID: 5232705322358922344}
@@ -911,7 +913,7 @@ MonoBehaviour:
     m_NumColorKeys: 8
     m_NumAlphaKeys: 2
   colorDisabledBones: {r: 0, g: 0, b: 0, a: 0.70980394}
-  gizmoBoneRadius: 0.77
+  gizmoBoneRadius: 0.1
   ignoreBones:
   - {fileID: 7273030050502943465}
   - {fileID: 6996362048340438028}

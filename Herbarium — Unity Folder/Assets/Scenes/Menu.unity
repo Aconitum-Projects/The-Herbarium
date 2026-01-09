@@ -326,7 +326,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -10
   m_TargetDisplay: 0
 --- !u!224 &1005576058
 RectTransform:
@@ -700,7 +700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneAsset: {fileID: 102900000, guid: 0b68d8f92d564534e926b33ac3798de8, type: 3}
   sceneName: Gameplay
-  transitionAnim: 
+  transitionAnim: Transition_AllChar
 --- !u!1 &2092230419
 GameObject:
   m_ObjectHideFlags: 0

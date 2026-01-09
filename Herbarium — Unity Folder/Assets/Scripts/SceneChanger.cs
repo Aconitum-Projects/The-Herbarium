@@ -11,7 +11,11 @@ public class SceneChanger : MonoBehaviour
 
     public Vector2 showPanel;
     public Vector2 hidePanel = new Vector2(3950, 0);
-    public float slideDuration = 0.5f;
+
+    [Header("Durations")]
+    public float showDuration = 0.5f;
+    public float stayDuration = 1f;
+    public float hideDuration = 0.5f;
 
     public static SceneChanger Instance { get; private set; }
 
@@ -48,16 +52,18 @@ public class SceneChanger : MonoBehaviour
 
     public void ChangeScene(string sceneName)
     {
-        panel.DOAnchorPos(showPanel, slideDuration)
+        panel.DOAnchorPos(showPanel, showDuration)
             .OnComplete(() => StartCoroutine(LoadSceneAsync(sceneName)));
     }
 
     private IEnumerator LoadSceneAsync(string sceneName)
     {
+        yield return new WaitForSeconds(stayDuration);
+
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
         yield return new WaitUntil(() => asyncLoad.isDone);
 
-        panel.DOAnchorPos(hidePanel, slideDuration);
+        panel.DOAnchorPos(hidePanel, hideDuration);
     }
 
 }

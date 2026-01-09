@@ -14,7 +14,7 @@ public class ButtonHandler : MonoBehaviour
 #endif
 
     [SerializeField] private string sceneName;
-    [SerializeField] private string transitionAnim; // 👈 nouveau
+    [SerializeField] private string transitionAnim = "Transition_AllChar";
 
     private Button button;
     private SceneChanger sceneChanger;
