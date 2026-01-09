@@ -1106,7 +1106,7 @@ MonoBehaviour:
   yesButton: {fileID: 1064998753}
   noButton: {fileID: 2007665880}
   animationDuration: 0.5
-  transitionSprite: {fileID: 0}
+  transitionAnim: {fileID: 0}
 --- !u!1 &1166079886
 GameObject:
   m_ObjectHideFlags: 0
@@ -2320,6 +2320,7 @@ GameObject:
   - component: {fileID: 2013462893}
   - component: {fileID: 2013462896}
   - component: {fileID: 2013462897}
+  - component: {fileID: 2013462898}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2353,12 +2354,12 @@ Camera:
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 50
+  m_FocalLength: 0.86602545
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
   m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
+  m_SensorSize: {x: 1, y: 1}
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -2477,6 +2478,18 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!114 &2013462898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013462892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f2e02b476752a4da4da52dc72026c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MainCameraRegister
 --- !u!1 &2041861963
 GameObject:
   m_ObjectHideFlags: 0
@@ -2792,7 +2805,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fcfa66e48a47d07479e1c5f7281133bb, type: 2}
+  - {fileID: 2100000, guid: 5881948b8627dd84aa5a60d1aea31bb1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2922,7 +2935,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 771b9fd9e172035438749f209e99cb99, type: 2}
+  - {fileID: 2100000, guid: 7d155bc307cded44e9b5e6edc0bab383, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3236,7 +3249,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1328cc715a9df1140b661b24529265f1, type: 2}
+  - {fileID: 2100000, guid: 62d22c54aa015ed42afba254f91151db, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

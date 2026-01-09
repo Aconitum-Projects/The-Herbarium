@@ -7,19 +7,19 @@ using UnityEngine.UI;
 public class SceneChanger : MonoBehaviour
 {
     public RectTransform panel;
-    public Image targetImage;
+    public Animator transitionAnimator;
+
     public Vector2 showPanel;
     public Vector2 hidePanel = new Vector2(3950, 0);
     public float slideDuration = 0.5f;
 
-    private static SceneChanger instance;
-    private Vector2 initialPosition;
+    public static SceneChanger Instance { get; private set; }
 
     private void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -27,38 +27,30 @@ public class SceneChanger : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-        if (panel != null)
-            initialPosition = panel.anchoredPosition;
     }
-
-    public void ChangeSprite(Sprite newSprite)
+    
+    public void SetSceneCamera(Camera cam)
     {
-        if (targetImage != null && newSprite != null)
+        if (cam == null) return;
+        var canvas = panel.GetComponentInParent<Canvas>(true);
+        if (canvas != null)
         {
-            targetImage.sprite = newSprite;
+            canvas.renderMode = RenderMode.ScreenSpaceCamera;
+            canvas.worldCamera = cam;
         }
+    }
+    
+    public void PlayTransition(string animationName)
+    {
+        if (transitionAnimator == null) return;
+        transitionAnimator.Play(animationName, 0, 0f);
     }
 
     public void ChangeScene(string sceneName)
     {
-        if (panel == null)
-        {
-            Debug.LogError("Panel non assigné !");
-            return;
-        }
-
-        if (string.IsNullOrEmpty(sceneName))
-        {
-            Debug.LogError("Le nom de la scène est vide ou null !");
-            return;
-        }
-
-        panel.anchoredPosition = initialPosition;
         panel.DOAnchorPos(showPanel, slideDuration)
             .OnComplete(() => StartCoroutine(LoadSceneAsync(sceneName)));
     }
-
 
     private IEnumerator LoadSceneAsync(string sceneName)
     {
@@ -67,4 +59,5 @@ public class SceneChanger : MonoBehaviour
 
         panel.DOAnchorPos(hidePanel, slideDuration);
     }
+
 }

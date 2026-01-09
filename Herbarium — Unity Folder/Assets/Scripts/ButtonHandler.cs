@@ -9,75 +9,40 @@ using DG.Tweening;
 
 public class ButtonHandler : MonoBehaviour
 {
-    #if UNITY_EDITOR
-        public SceneAsset sceneAsset;
-    #endif
-    [SerializeField] private string sceneName;
+#if UNITY_EDITOR
+    public SceneAsset sceneAsset;
+#endif
 
-    public Sprite sprite;
-        
+    [SerializeField] private string sceneName;
+    [SerializeField] private string transitionAnim; // 👈 nouveau
+
     private Button button;
     private SceneChanger sceneChanger;
     private Vector3 originalScale;
     private Color originalColor;
     private Image buttonImage;
 
-    void OnValidate()
-    {
-        #if UNITY_EDITOR
-                if (sceneAsset != null)
-                {
-                    var path = AssetDatabase.GetAssetPath(sceneAsset);
-                    sceneName = System.IO.Path.GetFileNameWithoutExtension(path);
-                }
-        #endif
-    }
-
-
     void Start()
     {
         button = GetComponent<Button>();
         sceneChanger = FindAnyObjectByType<SceneChanger>();
 
-        if (sceneChanger == null)
-        {
-            Debug.LogError("SceneChanger non trouvé dans la scène !");
-            return;
-        }
+        button.onClick.AddListener(OnButtonClick);
 
-        if (button != null)
-        {
-            button.onClick.AddListener(OnButtonClick);
-            originalScale = button.transform.localScale;
-
-            buttonImage = button.GetComponent<Image>();
-            if (buttonImage != null)
-            {
-                originalColor = buttonImage.color;
-            }
-        }
-        else
-        {
-            Debug.LogError("Aucun bouton assigné !");
-        }
+        originalScale = transform.localScale;
+        buttonImage = GetComponent<Image>();
+        originalColor = buttonImage.color;
     }
 
     void OnButtonClick()
     {
-        if (buttonImage != null)
-        {
-            buttonImage.DOColor(Color.gray, 0.2f).OnComplete(() =>
-            {
-                buttonImage.DOColor(originalColor, 0.2f);
-            });
-        }
+        buttonImage.DOColor(Color.gray, 0.2f)
+            .OnComplete(() => buttonImage.DOColor(originalColor, 0.2f));
 
-        button.transform.DOScale(originalScale * 1.2f, 0.1f).SetEase(Ease.OutQuad).OnComplete(() =>
-        {
-            button.transform.DOScale(originalScale, 0.1f).SetEase(Ease.InQuad);
-        });
+        transform.DOScale(originalScale * 1.2f, 0.1f)
+            .OnComplete(() => transform.DOScale(originalScale, 0.1f));
 
-        sceneChanger.ChangeSprite(sprite);
-        sceneChanger.ChangeScene(sceneName);  
+        sceneChanger.PlayTransition(transitionAnim);
+        sceneChanger.ChangeScene(sceneName);
     }
 }

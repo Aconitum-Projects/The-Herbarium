@@ -316,7 +316,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 2092230421}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 5
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -700,7 +700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneAsset: {fileID: 102900000, guid: 0b68d8f92d564534e926b33ac3798de8, type: 3}
   sceneName: Gameplay
-  sprite: {fileID: 21300000, guid: f018908b3d5e6894f88c1c964caa28f2, type: 3}
+  transitionAnim: 
 --- !u!1 &2092230419
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,6 +713,7 @@ GameObject:
   - component: {fileID: 2092230421}
   - component: {fileID: 2092230420}
   - component: {fileID: 2092230423}
+  - component: {fileID: 2092230424}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -838,6 +839,18 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &2092230424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092230419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f2e02b476752a4da4da52dc72026c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MainCameraRegister
 --- !u!1001 &6250215138046404427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -930,21 +943,9 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2092230421}
-    - target: {fileID: 4271912110349360147, guid: ac7b9e98b402806469a2b45139eae42c, type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4271912110349360147, guid: ac7b9e98b402806469a2b45139eae42c, type: 3}
-      propertyPath: m_VertexColorAlwaysGammaSpace
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4639848696802759813, guid: ac7b9e98b402806469a2b45139eae42c, type: 3}
       propertyPath: m_Name
       value: _SceneChangerManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 8589334083693094579, guid: ac7b9e98b402806469a2b45139eae42c, type: 3}
-      propertyPath: sceneName
-      value: Gameplay
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

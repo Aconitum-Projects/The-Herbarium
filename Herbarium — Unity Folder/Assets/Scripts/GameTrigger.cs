@@ -8,7 +8,7 @@ public class GameTrigger : MonoBehaviour
     public CinemachineCamera currentCamera;
     public string question = "Wanna play 's mini-game ?";
     public string sceneToPlay = "MiniGame_";
-    public Sprite transitionSprite;
+    public AnimationClip transitionAnim;
 
     private GameController gameController;
     private CharacterMovement currentCharacterMovement;
@@ -37,9 +37,8 @@ public class GameTrigger : MonoBehaviour
         SwitchCamera();
         isInTrigger = true;
         
-        
-        dialogueBox.transitionSprite = transitionSprite;
-        dialogueBox?.ShowDialogue(question, sceneToPlay);
+        dialogueBox.transitionAnim = transitionAnim;
+        dialogueBox.ShowDialogue(question, sceneToPlay);
     }
 
     void Update()

@@ -16,7 +16,8 @@ public class DialogueBox : MonoBehaviour
     private List<GameTrigger> gameTrigger;
     
     [HideInInspector]
-    public Sprite transitionSprite;
+    public AnimationClip transitionAnim;
+
     void Awake()
     {
         gameTrigger = new List<GameTrigger>(FindObjectsByType<GameTrigger>(FindObjectsSortMode.None));
@@ -42,7 +43,7 @@ public class DialogueBox : MonoBehaviour
     public void OnYesClicked()
     {
         HideDialogue();
-        sceneChanger.ChangeSprite(transitionSprite);
+        sceneChanger.PlayTransition(transitionAnim.name);
         sceneChanger.ChangeScene(nextSceneName);
     }
 
