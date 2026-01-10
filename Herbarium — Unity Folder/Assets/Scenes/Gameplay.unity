@@ -1916,7 +1916,7 @@ PrefabInstance:
     - target: {fileID: 1470631359882604870, guid: fa1599d1b81004749adf0b4e5e3735e0, type: 3}
       propertyPath: newCamera
       value: 
-      objectReference: {fileID: 1331421341}
+      objectReference: {fileID: 984239469}
     - target: {fileID: 1470631359882604870, guid: fa1599d1b81004749adf0b4e5e3735e0, type: 3}
       propertyPath: triggerTag
       value: Aya
@@ -2176,7 +2176,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
