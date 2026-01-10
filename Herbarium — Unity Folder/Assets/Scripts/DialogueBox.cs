@@ -68,8 +68,12 @@ public class DialogueBox : MonoBehaviour
     {
         dialogueCanvas.DOFade(0, animationDuration);
         dialogueCanvas.transform.DOScale(0, animationDuration).SetEase(Ease.InBack)
-            .OnComplete(() => dialogueCanvas.gameObject.SetActive(false));
+            .OnComplete(() =>
+            {
+                dialogueCanvas.gameObject.SetActive(false);
+            });
     }
+
 
     private void AnimateButton(Button button)
     {

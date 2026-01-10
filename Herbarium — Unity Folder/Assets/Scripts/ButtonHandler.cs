@@ -14,8 +14,9 @@ public class ButtonHandler : MonoBehaviour
 #endif
 
     [SerializeField] private string sceneName;
-    [SerializeField] private string transitionAnim = "Transition_AllChar";
-
+    [SerializeField] private AnimationClip transitionAnim;
+    
+    private string transitionAnimName;
     private Button button;
     private SceneChanger sceneChanger;
     private Vector3 originalScale;
@@ -32,6 +33,8 @@ public class ButtonHandler : MonoBehaviour
         originalScale = transform.localScale;
         buttonImage = GetComponent<Image>();
         originalColor = buttonImage.color;
+        
+        transitionAnimName = transitionAnim.name;
     }
 
     void OnButtonClick()
@@ -42,7 +45,7 @@ public class ButtonHandler : MonoBehaviour
         transform.DOScale(originalScale * 1.2f, 0.1f)
             .OnComplete(() => transform.DOScale(originalScale, 0.1f));
 
-        sceneChanger.PlayTransition(transitionAnim);
+        sceneChanger.PlayTransition(transitionAnimName);
         sceneChanger.ChangeScene(sceneName);
     }
 }

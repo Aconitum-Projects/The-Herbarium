@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: sceneAsset
       value: 
       objectReference: {fileID: 102900000, guid: 0b81b168c5758ac41970b32f8eff0943, type: 3}
+    - target: {fileID: 864220646472533362, guid: dcecf4ee837525141bfb456eb2987a01, type: 3}
+      propertyPath: transitionAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
     - target: {fileID: 1037500370675065970, guid: dcecf4ee837525141bfb456eb2987a01, type: 3}
       propertyPath: m_Name
       value: AyaMG_Button (1)
@@ -425,6 +429,10 @@ PrefabInstance:
       propertyPath: sceneAsset
       value: 
       objectReference: {fileID: 102900000, guid: 2f55c6b6947717f4683d84ed1e30d823, type: 3}
+    - target: {fileID: 864220646472533362, guid: dcecf4ee837525141bfb456eb2987a01, type: 3}
+      propertyPath: transitionAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
     - target: {fileID: 1037500370675065970, guid: dcecf4ee837525141bfb456eb2987a01, type: 3}
       propertyPath: m_Name
       value: AyaMG_Button (5)
@@ -682,6 +690,10 @@ PrefabInstance:
       propertyPath: sceneAsset
       value: 
       objectReference: {fileID: 102900000, guid: 83d532cc036435344909cd6092dab791, type: 3}
+    - target: {fileID: 864220646472533362, guid: dcecf4ee837525141bfb456eb2987a01, type: 3}
+      propertyPath: transitionAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
     - target: {fileID: 1037500370675065970, guid: dcecf4ee837525141bfb456eb2987a01, type: 3}
       propertyPath: m_Name
       value: AyaMG_Button (3)
@@ -891,6 +903,10 @@ PrefabInstance:
       propertyPath: sceneAsset
       value: 
       objectReference: {fileID: 102900000, guid: 3fe6fc76b4faff24d8d85dc3de050b0b, type: 3}
+    - target: {fileID: 864220646472533362, guid: dcecf4ee837525141bfb456eb2987a01, type: 3}
+      propertyPath: transitionAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
     - target: {fileID: 1037500370675065970, guid: dcecf4ee837525141bfb456eb2987a01, type: 3}
       propertyPath: m_Name
       value: AyaMG_Button (2)
@@ -1021,6 +1037,10 @@ PrefabInstance:
       propertyPath: sceneAsset
       value: 
       objectReference: {fileID: 102900000, guid: 62df6689483f4274991de64d50d6c512, type: 3}
+    - target: {fileID: 864220646472533362, guid: dcecf4ee837525141bfb456eb2987a01, type: 3}
+      propertyPath: transitionAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
     - target: {fileID: 1037500370675065970, guid: dcecf4ee837525141bfb456eb2987a01, type: 3}
       propertyPath: m_Name
       value: AyaMG_Button (4)
@@ -1291,7 +1311,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -20
   m_TargetDisplay: 0
 --- !u!224 &2116804472
 RectTransform:

@@ -1460,6 +1460,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2041861967}
     - target: {fileID: 1470631359882604870, guid: fa1599d1b81004749adf0b4e5e3735e0, type: 3}
+      propertyPath: transitionAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 0bd87a8becbe1a44a933c0059b9d553d, type: 2}
+    - target: {fileID: 1470631359882604870, guid: fa1599d1b81004749adf0b4e5e3735e0, type: 3}
       propertyPath: transitionSprite
       value: 
       objectReference: {fileID: 21300000, guid: 9c6ca7a61f885d64fa20a1ad490e075f, type: 3}
@@ -1925,6 +1929,10 @@ PrefabInstance:
       propertyPath: currentCamera
       value: 
       objectReference: {fileID: 2041861967}
+    - target: {fileID: 1470631359882604870, guid: fa1599d1b81004749adf0b4e5e3735e0, type: 3}
+      propertyPath: transitionAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: bc7a8bf02343e394693754356065295c, type: 2}
     - target: {fileID: 1470631359882604870, guid: fa1599d1b81004749adf0b4e5e3735e0, type: 3}
       propertyPath: transitionSprite
       value: 
@@ -3485,6 +3493,10 @@ PrefabInstance:
       propertyPath: currentCamera
       value: 
       objectReference: {fileID: 2041861967}
+    - target: {fileID: 1470631359882604870, guid: fa1599d1b81004749adf0b4e5e3735e0, type: 3}
+      propertyPath: transitionAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 0a210524ac346ae4ba2570f023f3f77b, type: 2}
     - target: {fileID: 1470631359882604870, guid: fa1599d1b81004749adf0b4e5e3735e0, type: 3}
       propertyPath: transitionSprite
       value: 

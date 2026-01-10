@@ -12,11 +12,11 @@ public class CharacterMovement : MonoBehaviour
     private GameObject selectionEffect;
     
     public GameObject selectionEffectPrefab;
-    public float rotationSpeed = 10f; // Vitesse de rotation
+    public float rotationSpeed = 10f;
     
     private void OnDestroy()
     {
-        SceneStateManager.Instance?.SaveTransform(gameObject.name, transform);
+        SceneStateManager.Instance.SaveTransform(name, transform);
     }
     
     void Update()
@@ -118,4 +118,11 @@ public class CharacterMovement : MonoBehaviour
         transform.position = targetPosition;
         isMoving = false;
     }
+    
+    public void MoveOutOfTrigger(Vector3 safePosition)
+    {
+        StopAllCoroutines();
+        transform.position = safePosition;
+    }
+
 }

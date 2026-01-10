@@ -700,7 +700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneAsset: {fileID: 102900000, guid: 0b68d8f92d564534e926b33ac3798de8, type: 3}
   sceneName: Gameplay
-  transitionAnim: Transition_AllChar
+  transitionAnim: {fileID: 7400000, guid: 0e9ada6d00fd1954e83be1acc4413b96, type: 2}
 --- !u!1 &2092230419
 GameObject:
   m_ObjectHideFlags: 0

@@ -74,6 +74,9 @@ public class SceneStateManager : MonoBehaviour
         RestoreTransforms();
     }
 
+    public delegate void TransformsRestored();
+    public event TransformsRestored OnTransformsRestored;
+
     private void RestoreTransforms()
     {
         foreach (var kvp in savedTransforms)
@@ -84,7 +87,10 @@ public class SceneStateManager : MonoBehaviour
                 LoadTransform(kvp.Key, obj.transform);
             }
         }
+
+        OnTransformsRestored?.Invoke();
     }
+
 }
 
 [System.Serializable]

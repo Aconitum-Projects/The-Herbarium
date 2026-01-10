@@ -298,6 +298,10 @@ PrefabInstance:
       propertyPath: sceneAsset
       value: 
       objectReference: {fileID: 102900000, guid: 06f961a73db96e54c9fc8cce4cbe5dfe, type: 3}
+    - target: {fileID: 3307060943155237280, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: transitionAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
     - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: m_text
       value: Liane d'Ayahuasca
@@ -436,6 +440,10 @@ PrefabInstance:
       propertyPath: sceneAsset
       value: 
       objectReference: {fileID: 102900000, guid: d1651cc0f36584b439ffe1b8aea08527, type: 3}
+    - target: {fileID: 3307060943155237280, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: transitionAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
     - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: m_text
       value: Nectar d'Inspiration
@@ -646,6 +654,10 @@ PrefabInstance:
       propertyPath: sceneName
       value: UraMG_00
       objectReference: {fileID: 0}
+    - target: {fileID: 3307060943155237280, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: transitionAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
     - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: m_text
       value: "P\xE9tales d'Iboga"
@@ -1040,7 +1052,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -20
   m_TargetDisplay: 0
 --- !u!224 &1005576058
 RectTransform:
@@ -1083,6 +1095,10 @@ PrefabInstance:
       propertyPath: sceneAsset
       value: 
       objectReference: {fileID: 102900000, guid: c808f44378a44914d91f8ea47f362988, type: 3}
+    - target: {fileID: 3307060943155237280, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: transitionAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
     - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: m_text
       value: "Poussi\xE8re d'Illusion"
@@ -1300,6 +1316,10 @@ PrefabInstance:
       propertyPath: sceneAsset
       value: 
       objectReference: {fileID: 102900000, guid: 8bac0db70eec9684c8e1844684d1544b, type: 3}
+    - target: {fileID: 3307060943155237280, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: transitionAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
     - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: m_text
       value: Graines de Datura
@@ -1438,6 +1458,10 @@ PrefabInstance:
       propertyPath: sceneAsset
       value: 
       objectReference: {fileID: 102900000, guid: 54d61ee632ef8d24c83377d1b106b23e, type: 3}
+    - target: {fileID: 3307060943155237280, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: transitionAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
     - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: m_text
       value: Essence d'Illusion
@@ -1576,6 +1600,10 @@ PrefabInstance:
       propertyPath: sceneAsset
       value: 
       objectReference: {fileID: 102900000, guid: 8348089930804224781c42281dc4beff, type: 3}
+    - target: {fileID: 3307060943155237280, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: transitionAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
     - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: m_text
       value: "Feuilles de Paix Int\xE9rieure"
@@ -1714,6 +1742,10 @@ PrefabInstance:
       propertyPath: sceneAsset
       value: 
       objectReference: {fileID: 102900000, guid: f76200f4db18c1444aade828ac33df35, type: 3}
+    - target: {fileID: 3307060943155237280, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: transitionAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
     - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: m_text
       value: "Essence de M\xE9moire"
@@ -1852,6 +1884,10 @@ PrefabInstance:
       propertyPath: sceneAsset
       value: 
       objectReference: {fileID: 102900000, guid: e99f9a0d2ad9d5b4d8b18f04574da36a, type: 3}
+    - target: {fileID: 3307060943155237280, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: transitionAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
     - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: m_text
       value: Fleurs de Datura
@@ -2071,6 +2107,10 @@ PrefabInstance:
       propertyPath: sceneAsset
       value: 
       objectReference: {fileID: 102900000, guid: a07c3e3af3a083a43a3edc4a1af174ea, type: 3}
+    - target: {fileID: 3307060943155237280, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: transitionAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
     - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: m_text
       value: Racine d'Iboga
