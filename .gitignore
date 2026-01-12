@@ -1,3 +1,84 @@
-Herbarium — Unity Folder/Screenshots/Log 1.psd
-Herbarium — Unity Folder/Assets/Sprites/text.psd
-Herbarium — Unity Folder/Screenshots/Log 1.psd
+############################
+# UNITY
+############################
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+UserSettings/
+MemoryCaptures/
+Recordings/
+
+# Unity cache / auto-generated
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+############################
+# IDE / EDITORS
+############################
+.vs/
+.vscode/
+.idea/
+
+*.csproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb.meta
+
+############################
+# OS
+############################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+desktop.ini
+
+############################
+# BUILDS / EXPORTS
+############################
+*.apk
+*.aab
+*.unitypackage
+*.exe
+*.app
+*.x86_64
+*.zip
+
+############################
+# BLENDER
+############################
+*.blend
+*.blend1
+*.blend2
+*.blend3
+*.blend4
+
+############################
+# ADOBE / SOURCES LOURDES
+############################
+*.psd
+*.psb
+
+############################
+# SCREENSHOTS / LOGS PERSO
+############################
+Screenshots/
+*.log
+
+############################
+# OPTIONAL (décommente si besoin)
+############################
+# Assets/StreamingAssets/
+# Assets/AddressableAssetsData/

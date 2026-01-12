@@ -61,7 +61,17 @@ public class SceneChanger : MonoBehaviour
         yield return new WaitForSeconds(stayDuration);
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+
         yield return new WaitUntil(() => asyncLoad.isDone);
+        
+        var async = SceneManager.LoadSceneAsync(sceneName);
+
+        if (async == null)
+        {
+            Debug.LogError($"Scene {sceneName} not found in Build Profile");
+            yield break;
+        }
+
 
         panel.DOAnchorPos(hidePanel, hideDuration);
     }

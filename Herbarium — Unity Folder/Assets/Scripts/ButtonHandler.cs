@@ -13,8 +13,7 @@ public class ButtonHandler : MonoBehaviour
     public SceneAsset sceneAsset;
 #endif
 
-    [SerializeField] private string sceneName;
-    [SerializeField] private AnimationClip transitionAnim;
+    public AnimationClip transitionAnim;
     
     private string transitionAnimName;
     private Button button;
@@ -22,9 +21,11 @@ public class ButtonHandler : MonoBehaviour
     private Vector3 originalScale;
     private Color originalColor;
     private Image buttonImage;
+    private string sceneName;
 
     void Start()
     {
+        sceneName = sceneAsset.name;
         button = GetComponent<Button>();
         sceneChanger = FindAnyObjectByType<SceneChanger>();
 
