@@ -26,8 +26,10 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
+    - _Glow_Size: 0
     - _Highlight_Intensity: 1
-    - _Shadows_Contrast: 1
+    - _Shadows_Contrast: 0
+    - _Shadows_Size: 0
     m_Colors:
     - _Base_Color: {r: 1, g: 0.60784316, b: 0.5058824, a: 0}
     - _Outline_Color: {r: 0.62352943, g: 0.30980393, b: 0.227451, a: 1}
