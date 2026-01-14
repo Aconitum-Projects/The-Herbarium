@@ -524,7 +524,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 435.15
+  m_fontSize: 524.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2697,6 +2697,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4860738972198053387, guid: b49d7f58151f9be49bbf9d1837a25331, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3a3513b88b9c5d945ab1a6637bf6b27c, type: 2}
     - target: {fileID: 4929116914104645391, guid: b49d7f58151f9be49bbf9d1837a25331, type: 3}
       propertyPath: newCamera
       value: 
@@ -2705,6 +2709,10 @@ PrefabInstance:
       propertyPath: currentCamera
       value: 
       objectReference: {fileID: 2041861967}
+    - target: {fileID: 5500196794422558655, guid: b49d7f58151f9be49bbf9d1837a25331, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ec605672516e0994dabeb30f649dfc64, type: 2}
     - target: {fileID: 5748529975868302512, guid: b49d7f58151f9be49bbf9d1837a25331, type: 3}
       propertyPath: newCamera
       value: 
@@ -2733,6 +2741,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 48
       objectReference: {fileID: 0}
+    - target: {fileID: 7811800726197790231, guid: b49d7f58151f9be49bbf9d1837a25331, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f44d3c90663cde341af5769e64ef5a7d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

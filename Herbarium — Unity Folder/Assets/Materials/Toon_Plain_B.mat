@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Toon 17
+  m_Name: Toon_Plain_B
   m_Shader: {fileID: -6465566751694194690, guid: 860444d4db87f874fb7c5ae644f8f5f1, type: 3}
-  m_Parent: {fileID: 2100000, guid: 42b419ae2991c6447a0c4f1b9482fafa, type: 2}
+  m_Parent: {fileID: 2100000, guid: 3a3513b88b9c5d945ab1a6637bf6b27c, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -25,17 +25,12 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats:
-    - _Glow_Size: 0.108
-    - _Outline_Size: 0.3
-    - _Shadows_Contrast: 1
-    - _Shadows_Size: 1.68
+    m_Floats: []
     m_Colors:
-    - _Base_Color: {r: 0.7960785, g: 0.80392164, b: 0.6862745, a: 0}
-    - _HighlightColor: {r: 1, g: 1, b: 1, a: 0}
-    - _Highlight_Color: {r: 0.90196085, g: 0.79215693, b: 0.627451, a: 0}
-    - _Outline_Color: {r: 0.27058825, g: 0.5568628, b: 0.7490196, a: 1}
-    - _Shadows_Color: {r: 0.49803925, g: 0.7843138, b: 0.8431373, a: 0}
+    - _Base_Color: {r: 1, g: 0.83636177, b: 0.69803923, a: 1}
+    - _Highlight_Color: {r: 1, g: 0.8352942, b: 0.69803923, a: 0}
+    - _Outline_Color: {r: 1, g: 0.8352942, b: 0.69803923, a: 1}
+    - _Shadows_Color: {r: 1, g: 0.8352942, b: 0.69803923, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &7523208459516627033
