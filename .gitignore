@@ -50,7 +50,6 @@ desktop.ini
 ############################
 *.apk
 *.aab
-*.unitypackage
 *.exe
 *.app
 *.x86_64
@@ -65,19 +64,7 @@ desktop.ini
 *.blend4
 
 ############################
-# ADOBE / SOURCES LOURDES
-############################
-*.psd
-*.psb
-
-############################
 # SCREENSHOTS / LOGS PERSO
 ############################
 Screenshots/
 *.log
-
-############################
-# OPTIONAL (décommente si besoin)
-############################
-# Assets/StreamingAssets/
-# Assets/AddressableAssetsData/
