@@ -211,6 +211,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonBack
       objectReference: {fileID: 0}
+    - target: {fileID: 2961440832462480125, guid: 6bed55f0fedc118418331ae2631e7577, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6969829714595765680, guid: 6bed55f0fedc118418331ae2631e7577, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -227,6 +235,10 @@ PrefabInstance:
     - target: {fileID: 2917962476366049440, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: m_Name
       value: IngredientButton_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917962476366049440, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3307060943155237280, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: sceneName
@@ -348,6 +360,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.8962264
       objectReference: {fileID: 0}
+    - target: {fileID: 9183062983550902143, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -369,6 +385,10 @@ PrefabInstance:
     - target: {fileID: 2917962476366049440, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: m_Name
       value: IngredientButton_07
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917962476366049440, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3307060943155237280, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: sceneName
@@ -490,6 +510,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9183062983550902143, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -511,7 +535,7 @@ GameObject:
   - component: {fileID: 512250692}
   - component: {fileID: 512250694}
   - component: {fileID: 512250693}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: BottomPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -587,6 +611,10 @@ PrefabInstance:
     - target: {fileID: 2917962476366049440, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: m_Name
       value: IngredientButton_00
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917962476366049440, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3307060943155237280, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: sceneName
@@ -700,6 +728,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9183062983550902143, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -797,7 +829,7 @@ GameObject:
   - component: {fileID: 729524399}
   - component: {fileID: 729524401}
   - component: {fileID: 729524400}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: GlobalPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1047,7 +1079,7 @@ GameObject:
   - component: {fileID: 1005576057}
   - component: {fileID: 1005576056}
   - component: {fileID: 1005576055}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: MiniGameCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1112,7 +1144,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: -20
@@ -1149,6 +1181,10 @@ PrefabInstance:
     - target: {fileID: 2917962476366049440, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: m_Name
       value: IngredientButton_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917962476366049440, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3307060943155237280, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: sceneName
@@ -1269,6 +1305,10 @@ PrefabInstance:
     - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: m_Color.r
       value: 0.9722436
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183062983550902143, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1551,6 +1591,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IngredientButton_02
       objectReference: {fileID: 0}
+    - target: {fileID: 2917962476366049440, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3307060943155237280, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: sceneName
       value: UraMG_02
@@ -1671,6 +1715,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.5671057
       objectReference: {fileID: 0}
+    - target: {fileID: 9183062983550902143, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1692,6 +1740,10 @@ PrefabInstance:
     - target: {fileID: 2917962476366049440, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: m_Name
       value: IngredientButton_09
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917962476366049440, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3307060943155237280, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: sceneName
@@ -1813,6 +1865,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.8915094
       objectReference: {fileID: 0}
+    - target: {fileID: 9183062983550902143, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1834,6 +1890,10 @@ PrefabInstance:
     - target: {fileID: 2917962476366049440, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: m_Name
       value: IngredientButton_08
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917962476366049440, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3307060943155237280, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: sceneName
@@ -1955,6 +2015,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.7294118
       objectReference: {fileID: 0}
+    - target: {fileID: 9183062983550902143, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1976,6 +2040,10 @@ PrefabInstance:
     - target: {fileID: 2917962476366049440, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: m_Name
       value: IngredientButton_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917962476366049440, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3307060943155237280, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: sceneName
@@ -2097,6 +2165,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.75093967
       objectReference: {fileID: 0}
+    - target: {fileID: 9183062983550902143, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2118,6 +2190,10 @@ PrefabInstance:
     - target: {fileID: 2917962476366049440, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: m_Name
       value: IngredientButton_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917962476366049440, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3307060943155237280, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: sceneName
@@ -2239,6 +2315,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.85454434
       objectReference: {fileID: 0}
+    - target: {fileID: 9183062983550902143, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2298,7 +2378,7 @@ GameObject:
   - component: {fileID: 2012640214}
   - component: {fileID: 2012640216}
   - component: {fileID: 2012640215}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: TopPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2558,6 +2638,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IngredientButton_04
       objectReference: {fileID: 0}
+    - target: {fileID: 2917962476366049440, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3307060943155237280, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: sceneName
       value: UraMG_04
@@ -2677,6 +2761,10 @@ PrefabInstance:
     - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: m_Color.r
       value: 0.7169812
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183062983550902143, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

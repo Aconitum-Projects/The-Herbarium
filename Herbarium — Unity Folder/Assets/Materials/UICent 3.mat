@@ -23,7 +23,7 @@ Material:
   m_Name: UICent 3
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 2100000, guid: 9de76c7685ffbcf408231576f0431a9e, type: 2}
-  m_ModifiedSerializedProperties: 0
+  m_ModifiedSerializedProperties: 16
   m_ValidKeywords:
   - _ALPHATEST_ON
   - _EMISSION
@@ -31,7 +31,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2450
   stringTagMap:
     RenderType: TransparentCutout
   disabledShaderPasses:
@@ -41,7 +41,8 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _QueueOffset: 0
     m_Colors:
     - _BaseColor: {r: 1, g: 0.33006534, b: 0.19607842, a: 1}
     - _Color: {r: 1, g: 0.3300653, b: 0.19607839, a: 1}
