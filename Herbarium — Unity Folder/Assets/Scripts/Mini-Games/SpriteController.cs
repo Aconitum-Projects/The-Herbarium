@@ -56,8 +56,11 @@ public class SpriteController : MonoBehaviour
     public List<Collider2D> followPoints;
     public int passesPerPoint = 3;
     public bool followValidated = false;
+    
+    // Follow Rotation Settings
     public bool rotateInsteadOfFollow = false;
     public float rotationSpeedFollow = 5f;
+    public float rotationMinFollow = -45, rotationMaxFollow = 45;
 
     // Detachable Settings
     public Vector2 maxScale = new Vector2(.05f, 1.5f);
@@ -80,7 +83,7 @@ public class SpriteController : MonoBehaviour
     
     // Shakeable Settings
     public bool isShakeable = false;
-    public float shakeThreshold = 0.1f;
+    public float shakeThreshold = 1000f;
     public ShakeVisualMode shakeVisualMode;
     public Sprite[] animatedShakeSprites;
     public bool shakeValidated = false;
@@ -123,7 +126,12 @@ public class SpriteController : MonoBehaviour
     public bool collected = false;
     public bool destroyed = false;
     public SpriteRenderer collectedSpriteRenderer;
-
+    private Vector3 prevPosition;
+    private float prevRotationZ;
+    private float shakeSpeed;
+    public float shakeAccum;
+    private float shakeDecay = 5f;
+    
     // Private
     float currentMoveSpeed;
     Vector3 stoppableOrigin;
@@ -149,7 +157,9 @@ public class SpriteController : MonoBehaviour
     Vector3 fillStartScale;
     Vector3 fillStartPosGlobal;
     bool fillInitialized = false;
-    int[] pointPasses;    
+    int[] pointPasses;
+    private float initialRotationZ;
+    private float lastRotationZ;
     
     void Awake()
     {
@@ -165,6 +175,8 @@ public class SpriteController : MonoBehaviour
         fillStartPosGlobal = transform.position;
         fillStartRotation = transform.eulerAngles.z;
         fillStartScale = transform.localScale;
+        initialRotationZ = transform.eulerAngles.z;
+        if (initialRotationZ > 180f) initialRotationZ -= 360f;
 
         if (useFollowPoints && followPoints != null && followPoints.Count > 0)
         {
@@ -215,26 +227,9 @@ public class SpriteController : MonoBehaviour
         }
 
         // ----------- Shake Detection -----------
-        if (isShakeable)
-        {
-            Vector3 delta = transform.position - lastPos;
-            currentShakeSpeed = delta.magnitude / Mathf.Max(Time.deltaTime, 0.0001f);
-
-            // Validation du shake
-            if (!shakeValidated && currentShakeSpeed >= shakeThreshold)
-            {
-                shakeValidated = true;
-            }
-
-            // Animation (optionnelle)
-            if (shakeVisualMode.HasFlag(ShakeVisualMode.Animated))
-            {
-                HandleShakeAnimated();
-            }
-        }
+        ShakeUpdate();
 
         lastPos = transform.position;
-
 
     }
 
@@ -422,34 +417,56 @@ public class SpriteController : MonoBehaviour
         isDragging = false;
     }
 
-    // ------------------ Shake Animated ------------------
-    void HandleShakeAnimated()
+    // ------------------ Shake ------------------
+    void ShakeInit()
     {
-        if (shakeValidated)
+        prevPosition = transform.position;
+        prevRotationZ = transform.eulerAngles.z;
+        if (prevRotationZ > 180f) prevRotationZ -= 360f;
+        shakeSpeed = 0f;
+        shakeAccum = 0f;
+        shakeValidated = false;
+    }
+
+    void ShakeUpdate()
+    {
+        if (!isShakeable || shakeValidated) return;
+
+        // --- calcul de la vitesse ---
+        float speed = 0f;
+
+        if (!rotateInsteadOfFollow)
         {
-            UpdateShakeAnimatedSprite(1f);
-            return;
+            Vector3 delta = transform.position - prevPosition;
+            speed = delta.magnitude / Mathf.Max(Time.deltaTime, 0.0001f);
+        }
+        else
+        {
+            float currentZ = transform.eulerAngles.z;
+            if (currentZ > 180f) currentZ -= 360f;
+            speed = Mathf.Abs(Mathf.DeltaAngle(prevRotationZ, currentZ)) / Mathf.Max(Time.deltaTime, 0.0001f);
+            prevRotationZ = currentZ;
         }
 
-        float normalizedShake =
-            (currentShakeSpeed - shakeThreshold) / shakeThreshold;
+        prevPosition = transform.position;
 
-        normalizedShake = Mathf.Clamp01(normalizedShake);
+        // --- accumulation pour animation ---
+        shakeAccum = Mathf.Lerp(shakeAccum, speed / shakeThreshold, Time.deltaTime * 10f);
 
-        shakeAnimT = Mathf.Lerp(
-            shakeAnimT,
-            normalizedShake,
-            Time.deltaTime * 5f
-        );
-
-        if (shakeAnimT >= 0.98f)
+        // --- validation du shake ---
+        if (speed >= shakeThreshold)
         {
             shakeValidated = true;
-            shakeAnimT = 1f;
+            shakeAccum = 1f;
         }
 
-        UpdateShakeAnimatedSprite(shakeAnimT);
+        // --- animation ---
+        if (shakeVisualMode.HasFlag(ShakeVisualMode.Animated))
+        {
+            UpdateShakeAnimatedSprite(Mathf.Clamp01(shakeAccum));
+        }
     }
+    
     void UpdateShakeAnimatedSprite(float t)
     {
         if (animatedShakeSprites == null ||
@@ -499,15 +516,25 @@ public class SpriteController : MonoBehaviour
         else
         {
             Vector3 direction = worldPos - transform.position;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-            float z = Mathf.LerpAngle(transform.eulerAngles.z, angle, rotationSpeedFollow * Time.deltaTime);
-            transform.rotation = Quaternion.Euler(0, 0, z);
+            float currentZ = transform.eulerAngles.z;
+            if (currentZ > 180f) currentZ -= 360f;
+
+            float angleDelta = Mathf.DeltaAngle(currentZ, targetAngle); // delta entre current et target
+            angleDelta *= rotationSpeedFollow * Time.deltaTime;         // smooth
+
+            if (limitRotation)
+            {
+                float clampedZ = Mathf.Clamp(currentZ + angleDelta, initialRotationZ + rotationMinFollow, initialRotationZ + rotationMaxFollow);
+                angleDelta = clampedZ - currentZ;
+            }
+
+            transform.Rotate(0, 0, angleDelta);
         }
-
+        
         lastMousePos = Input.mousePosition;
     }
-
 
     // ------------------ Detachable ------------------
     private void DetachableUpdate()
@@ -615,7 +642,6 @@ public class SpriteController : MonoBehaviour
                 .SetEase(Ease.OutBack);
         }
     }
-
     
     // ------------------ Fillable ------------------
     private void FillableUpdate()

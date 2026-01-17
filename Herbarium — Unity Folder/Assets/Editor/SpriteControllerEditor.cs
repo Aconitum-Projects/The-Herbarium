@@ -11,8 +11,12 @@ public class SpriteControllerEditor : Editor
     // Follow Mouse
     SerializedProperty followX, followY, followSpeed, cutterCollider, limitX,
         xLimits, limitY, yLimits, useFollowPoints, followPoints, passesPerPoint,
-        followValidated, rotateInsteadOfFollow, rotationSpeedFollow;
-
+        followValidated;
+    
+    // Follow Rotation Settings
+    private SerializedProperty rotateInsteadOfFollow, rotationSpeedFollow,
+        rotationMinFollow, rotationMaxFollow;
+    
     // Detachable
     SerializedProperty maxScale, detachThreshold, scaleDuration, isDetached,
         detachType, keepDetachedScale, detachVisualMode;
@@ -59,9 +63,12 @@ public class SpriteControllerEditor : Editor
         followPoints      = serializedObject.FindProperty("followPoints");
         passesPerPoint    = serializedObject.FindProperty("passesPerPoint");
         followValidated   = serializedObject.FindProperty("followValidated");
+        
+        // Rotate instead of follow
         rotateInsteadOfFollow = serializedObject.FindProperty("rotateInsteadOfFollow");
         rotationSpeedFollow  = serializedObject.FindProperty("rotationSpeedFollow");
-
+        rotationMinFollow  = serializedObject.FindProperty("rotationMinFollow");
+        rotationMaxFollow  = serializedObject.FindProperty("rotationMaxFollow");
 
         // Detachable
         maxScale = serializedObject.FindProperty("maxScale");
@@ -251,15 +258,21 @@ public class SpriteControllerEditor : Editor
         EditorGUILayout.LabelField("Follow Mouse Settings", bigTitle);
         EditorGUILayout.Space(5);
 
-        bool rotate = rotateInsteadOfFollow.boolValue;
-        EditorGUILayout.Space(5);
         EditorGUILayout.PropertyField(rotateInsteadOfFollow, new GUIContent("Rotate Instead of Follow", "Faire tourner le sprite selon la souris au lieu de suivre la position"));
-        if (rotate)
+        if (rotateInsteadOfFollow.boolValue)
         {
             EditorGUILayout.PropertyField(rotationSpeedFollow, new GUIContent("Rotation Speed", "Vitesse de rotation selon mouvement de la souris"));
+
+            SerializedProperty limitProp = serializedObject.FindProperty("limitRotation");
+            EditorGUILayout.PropertyField(limitProp, new GUIContent("Limit Rotation", "Limiter la rotation"));
+
+            if (limitProp.boolValue)
+            {
+                EditorGUILayout.PropertyField(rotationMinFollow, new GUIContent("Min Rotation Follow", "Rotation minimale pour le mode Follow"));
+                EditorGUILayout.PropertyField(rotationMaxFollow, new GUIContent("Max Rotation Follow", "Rotation maximale pour le mode Follow"));
+            }
         }
-        
-        if (!rotate)
+        else
         {
             EditorGUILayout.Space(20);
             EditorGUILayout.PropertyField(followX, new GUIContent("Follow X", "Le sprite suit la souris sur l'axe X"));
@@ -281,7 +294,6 @@ public class SpriteControllerEditor : Editor
 
             EditorGUILayout.Space(10);
             EditorGUILayout.PropertyField(followSpeed, new GUIContent("Follow Speed", "Vitesse à laquelle le sprite suit la souris"));
-
         }
 
         EditorGUILayout.Space(10);
@@ -297,7 +309,8 @@ public class SpriteControllerEditor : Editor
         }
 
         EditorGUILayout.Space(15);
-}
+    }
+
 
     void DrawDetachable(GUIStyle bigTitle, GUIStyle middleTitle)
     {

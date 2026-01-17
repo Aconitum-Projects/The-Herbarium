@@ -359,11 +359,17 @@ MonoBehaviour:
   xLimits: {x: -5, y: 5}
   limitY: 0
   yLimits: {x: -3, y: 3}
+  useFollowPoints: 0
+  followPoints: []
+  passesPerPoint: 3
+  followValidated: 0
+  rotateInsteadOfFollow: 0
+  rotationSpeedFollow: 5
+  rotationMinFollow: -45
+  rotationMaxFollow: 45
   maxScale: {x: 0.05, y: 1.5}
   detachThreshold: 5
   scaleDuration: 0.2
-  fallDistance: 20
-  fallDuration: 0.4
   isDetached: 0
   detachType: 0
   keepDetachedScale: 0
@@ -371,8 +377,11 @@ MonoBehaviour:
   animatedDetachSprites: []
   cuttableCollider: {fileID: 0}
   isCut: 0
+  fallDistance: 20
+  fallDuration: 0.4
+  fallDirection: {x: 0, y: -1}
   isShakeable: 1
-  shakeThreshold: 3
+  shakeThreshold: 10
   shakeVisualMode: 1
   animatedShakeSprites:
   - {fileID: 21300000, guid: 0e8699c654ba1794ea1d7848b2c8a78a, type: 3}
@@ -395,12 +404,15 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7963719ddadde1c40827f9aa07ac4207, type: 3}
   - {fileID: 21300000, guid: 1185b9c70f52a6845977e6b83fc9539d, type: 3}
   shakeValidated: 0
-  fillX: 1
-  fillY: 1
-  fillOffsetX: 0
-  fillOffsetY: 0
+  fillPosition: 1
+  fillRotation: 0
+  fillScale: 0
+  fillOffsetPos: {x: 0, y: 0, z: 0}
+  fillOffsetRot: 0
+  fillOffsetScale: {x: 1, y: 1, z: 1}
   fillDuration: 1.2
   fillEase: 4
+  resetPositionWhenReleased: 0
   eraseSpeed: 0.4
   minAlpha: 0
   eraserCollider: {fileID: 0}
