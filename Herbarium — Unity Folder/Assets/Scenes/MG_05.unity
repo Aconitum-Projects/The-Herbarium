@@ -507,6 +507,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 111986037346041635, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       insertIndex: -1
       addedObject: {fileID: 423976066}
+    - targetCorrespondingSourceObject: {fileID: 111986037346041635, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1675895512719005173}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
 --- !u!1001 &351306952
@@ -606,7 +609,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteController
   currentMode: 5
-  isShakeable: 0
   followX: 1
   followY: 1
   followSpeed: 20
@@ -615,11 +617,17 @@ MonoBehaviour:
   xLimits: {x: -5, y: 5}
   limitY: 0
   yLimits: {x: -3, y: 3}
+  useFollowPoints: 0
+  followPoints: []
+  passesPerPoint: 3
+  followValidated: 0
+  rotateInsteadOfFollow: 0
+  rotationSpeedFollow: 5
+  rotationMinFollow: -45
+  rotationMaxFollow: 45
   maxScale: {x: 2, y: 2}
   detachThreshold: 5
   scaleDuration: 0.2
-  fallDistance: 3
-  fallDuration: 0.4
   isDetached: 0
   detachType: 0
   keepDetachedScale: 0
@@ -627,23 +635,44 @@ MonoBehaviour:
   animatedDetachSprites: []
   cuttableCollider: {fileID: 0}
   isCut: 0
-  isShaken: 0
+  fallDistance: 3
+  fallDuration: 0.4
+  fallDirection: {x: 0, y: -1}
+  isShakeable: 0
   shakeThreshold: 15
-  shakeMultiplier: 50
-  shakeResetTime: 0.2
-  eraserCollider: {fileID: 0}
-  fillX: 0
-  fillY: 1
-  fillOffsetX: 0
-  fillOffsetY: 1
+  shakeVisualMode: 0
+  animatedShakeSprites: []
+  shakeValidated: 0
+  fillPosition: 1
+  fillRotation: 0
+  fillScale: 0
+  fillOffsetPos: {x: 0, y: 0, z: 0}
+  fillOffsetRot: 0
+  fillOffsetScale: {x: 1, y: 1, z: 1}
   fillDuration: 0.75
   fillEase: 2
+  resetPositionWhenReleased: 0
   eraseSpeed: 0.4
   minAlpha: 0
+  eraserCollider: {fileID: 0}
   stoppableTargetOffset: {x: 0, y: 0, z: 0}
   stoppableDuration: 1
   stoppableEase: 4
   isStopped: 0
+  stoppableInputDelay: 0.5
+  rotateInsteadOfMove: 0
+  rotationSpeed: 5
+  limitRotation: 0
+  minRotation: -45
+  maxRotation: 45
+  moveDirection: {x: 1, y: 0}
+  speedRange: {x: 1, y: 3}
+  collectCollider: {fileID: 0}
+  destroyCollider: {fileID: 0}
+  collected: 0
+  destroyed: 0
+  collectedSpriteRenderer: {fileID: 0}
+  shakeAccum: 0
 --- !u!61 &351306958
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -740,7 +769,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteController
   currentMode: 2
-  isShakeable: 1
   followX: 1
   followY: 0
   followSpeed: 100
@@ -749,11 +777,17 @@ MonoBehaviour:
   xLimits: {x: -1.55, y: 1.55}
   limitY: 0
   yLimits: {x: -3, y: 3}
+  useFollowPoints: 0
+  followPoints: []
+  passesPerPoint: 3
+  followValidated: 0
+  rotateInsteadOfFollow: 0
+  rotationSpeedFollow: 5
+  rotationMinFollow: -45
+  rotationMaxFollow: 45
   maxScale: {x: 2, y: 2}
   detachThreshold: 5
   scaleDuration: 0.2
-  fallDistance: 3
-  fallDuration: 0.4
   isDetached: 0
   detachType: 0
   keepDetachedScale: 0
@@ -761,23 +795,44 @@ MonoBehaviour:
   animatedDetachSprites: []
   cuttableCollider: {fileID: 0}
   isCut: 0
-  isShaken: 0
+  fallDistance: 3
+  fallDuration: 0.4
+  fallDirection: {x: 0, y: -1}
+  isShakeable: 1
   shakeThreshold: 10
-  shakeMultiplier: 15
-  shakeResetTime: 0.2
-  eraserCollider: {fileID: 0}
-  fillX: 1
-  fillY: 1
-  fillOffsetX: 0
-  fillOffsetY: 0
+  shakeVisualMode: 0
+  animatedShakeSprites: []
+  shakeValidated: 0
+  fillPosition: 1
+  fillRotation: 0
+  fillScale: 0
+  fillOffsetPos: {x: 0, y: 0, z: 0}
+  fillOffsetRot: 0
+  fillOffsetScale: {x: 1, y: 1, z: 1}
   fillDuration: 1.2
   fillEase: 3
+  resetPositionWhenReleased: 0
   eraseSpeed: 0.4
   minAlpha: 0
+  eraserCollider: {fileID: 0}
   stoppableTargetOffset: {x: 0, y: 0, z: 0}
   stoppableDuration: 1
   stoppableEase: 4
   isStopped: 0
+  stoppableInputDelay: 0.5
+  rotateInsteadOfMove: 0
+  rotationSpeed: 5
+  limitRotation: 0
+  minRotation: -45
+  maxRotation: 45
+  moveDirection: {x: 1, y: 0}
+  speedRange: {x: 1, y: 3}
+  collectCollider: {fileID: 0}
+  destroyCollider: {fileID: 0}
+  collected: 0
+  destroyed: 0
+  collectedSpriteRenderer: {fileID: 0}
+  shakeAccum: 0
 --- !u!1001 &564728098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -796,7 +851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7483199969961362668, guid: 08d68d180a064cd4591cb0315828078f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7483199969961362668, guid: 08d68d180a064cd4591cb0315828078f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1456,7 +1511,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteController
   currentMode: 5
-  isShakeable: 0
   followX: 1
   followY: 1
   followSpeed: 20
@@ -1465,11 +1519,17 @@ MonoBehaviour:
   xLimits: {x: -5, y: 5}
   limitY: 0
   yLimits: {x: -3, y: 3}
+  useFollowPoints: 0
+  followPoints: []
+  passesPerPoint: 3
+  followValidated: 0
+  rotateInsteadOfFollow: 0
+  rotationSpeedFollow: 5
+  rotationMinFollow: -45
+  rotationMaxFollow: 45
   maxScale: {x: 2, y: 2}
   detachThreshold: 5
   scaleDuration: 0.2
-  fallDistance: 3
-  fallDuration: 0.4
   isDetached: 0
   detachType: 0
   keepDetachedScale: 0
@@ -1477,23 +1537,44 @@ MonoBehaviour:
   animatedDetachSprites: []
   cuttableCollider: {fileID: 0}
   isCut: 0
-  isShaken: 0
+  fallDistance: 3
+  fallDuration: 0.4
+  fallDirection: {x: 0, y: -1}
+  isShakeable: 0
   shakeThreshold: 15
-  shakeMultiplier: 50
-  shakeResetTime: 0.2
-  eraserCollider: {fileID: 0}
-  fillX: 0
-  fillY: 1
-  fillOffsetX: 0
-  fillOffsetY: -0.55
+  shakeVisualMode: 0
+  animatedShakeSprites: []
+  shakeValidated: 0
+  fillPosition: 1
+  fillRotation: 0
+  fillScale: 0
+  fillOffsetPos: {x: 0, y: 0, z: 0}
+  fillOffsetRot: 0
+  fillOffsetScale: {x: 1, y: 1, z: 1}
   fillDuration: 0.75
   fillEase: 3
+  resetPositionWhenReleased: 0
   eraseSpeed: 0.4
   minAlpha: 0
+  eraserCollider: {fileID: 0}
   stoppableTargetOffset: {x: 0, y: 0, z: 0}
   stoppableDuration: 1
   stoppableEase: 4
   isStopped: 0
+  stoppableInputDelay: 0.5
+  rotateInsteadOfMove: 0
+  rotationSpeed: 5
+  limitRotation: 0
+  minRotation: -45
+  maxRotation: 45
+  moveDirection: {x: 1, y: 0}
+  speedRange: {x: 1, y: 3}
+  collectCollider: {fileID: 0}
+  destroyCollider: {fileID: 0}
+  collected: 0
+  destroyed: 0
+  collectedSpriteRenderer: {fileID: 0}
+  shakeAccum: 0
 --- !u!1 &1387292725 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
@@ -1715,6 +1796,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 111986037346041635, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1578173834}
+    - targetCorrespondingSourceObject: {fileID: 111986037346041635, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5873096884938691444}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
 --- !u!4 &1582219565 stripped
@@ -2251,7 +2335,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteController
   currentMode: 5
-  isShakeable: 0
   followX: 1
   followY: 1
   followSpeed: 20
@@ -2260,11 +2343,17 @@ MonoBehaviour:
   xLimits: {x: -5, y: 5}
   limitY: 0
   yLimits: {x: -3, y: 3}
+  useFollowPoints: 0
+  followPoints: []
+  passesPerPoint: 3
+  followValidated: 0
+  rotateInsteadOfFollow: 0
+  rotationSpeedFollow: 5
+  rotationMinFollow: -45
+  rotationMaxFollow: 45
   maxScale: {x: 2, y: 2}
   detachThreshold: 5
   scaleDuration: 0.2
-  fallDistance: 3
-  fallDuration: 0.4
   isDetached: 0
   detachType: 0
   keepDetachedScale: 0
@@ -2272,23 +2361,44 @@ MonoBehaviour:
   animatedDetachSprites: []
   cuttableCollider: {fileID: 0}
   isCut: 0
-  isShaken: 0
+  fallDistance: 3
+  fallDuration: 0.4
+  fallDirection: {x: 0, y: -1}
+  isShakeable: 0
   shakeThreshold: 15
-  shakeMultiplier: 50
-  shakeResetTime: 0.2
-  eraserCollider: {fileID: 0}
-  fillX: 0
-  fillY: 1
-  fillOffsetX: 0
-  fillOffsetY: 1
+  shakeVisualMode: 0
+  animatedShakeSprites: []
+  shakeValidated: 0
+  fillPosition: 1
+  fillRotation: 0
+  fillScale: 0
+  fillOffsetPos: {x: 0, y: 0, z: 0}
+  fillOffsetRot: 0
+  fillOffsetScale: {x: 1, y: 1, z: 1}
   fillDuration: 0.75
   fillEase: 3
+  resetPositionWhenReleased: 0
   eraseSpeed: 0.4
   minAlpha: 0
+  eraserCollider: {fileID: 0}
   stoppableTargetOffset: {x: 0, y: 0, z: 0}
   stoppableDuration: 1
   stoppableEase: 4
   isStopped: 0
+  stoppableInputDelay: 0.5
+  rotateInsteadOfMove: 0
+  rotationSpeed: 5
+  limitRotation: 0
+  minRotation: -45
+  maxRotation: 45
+  moveDirection: {x: 1, y: 0}
+  speedRange: {x: 1, y: 3}
+  collectCollider: {fileID: 0}
+  destroyCollider: {fileID: 0}
+  collected: 0
+  destroyed: 0
+  collectedSpriteRenderer: {fileID: 0}
+  shakeAccum: 0
 --- !u!50 &2005976389
 Rigidbody2D:
   serializedVersion: 5
@@ -2469,6 +2579,130 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1001 &667463541348112938
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1817449468}
+    m_Modifications:
+    - target: {fileID: 5258462901358468667, guid: c3ee3ef7f03c95b40b67657fe93dda14, type: 3}
+      propertyPath: m_Name
+      value: MG_05_C
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355082586666157656, guid: c3ee3ef7f03c95b40b67657fe93dda14, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355082586666157656, guid: c3ee3ef7f03c95b40b67657fe93dda14, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355082586666157656, guid: c3ee3ef7f03c95b40b67657fe93dda14, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355082586666157656, guid: c3ee3ef7f03c95b40b67657fe93dda14, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355082586666157656, guid: c3ee3ef7f03c95b40b67657fe93dda14, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355082586666157656, guid: c3ee3ef7f03c95b40b67657fe93dda14, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355082586666157656, guid: c3ee3ef7f03c95b40b67657fe93dda14, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355082586666157656, guid: c3ee3ef7f03c95b40b67657fe93dda14, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355082586666157656, guid: c3ee3ef7f03c95b40b67657fe93dda14, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355082586666157656, guid: c3ee3ef7f03c95b40b67657fe93dda14, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c3ee3ef7f03c95b40b67657fe93dda14, type: 3}
+--- !u!4 &667463541348112939 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6355082586666157656, guid: c3ee3ef7f03c95b40b67657fe93dda14, type: 3}
+  m_PrefabInstance: {fileID: 667463541348112938}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1675895512719005172
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1387292727}
+    m_Modifications:
+    - target: {fileID: 7389317386827159940, guid: 40943ee68d9b7ca4fbdccc8971830dfd, type: 3}
+      propertyPath: m_Name
+      value: MG_05_B
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521998893158236647, guid: 40943ee68d9b7ca4fbdccc8971830dfd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521998893158236647, guid: 40943ee68d9b7ca4fbdccc8971830dfd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521998893158236647, guid: 40943ee68d9b7ca4fbdccc8971830dfd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521998893158236647, guid: 40943ee68d9b7ca4fbdccc8971830dfd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521998893158236647, guid: 40943ee68d9b7ca4fbdccc8971830dfd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521998893158236647, guid: 40943ee68d9b7ca4fbdccc8971830dfd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521998893158236647, guid: 40943ee68d9b7ca4fbdccc8971830dfd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521998893158236647, guid: 40943ee68d9b7ca4fbdccc8971830dfd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521998893158236647, guid: 40943ee68d9b7ca4fbdccc8971830dfd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521998893158236647, guid: 40943ee68d9b7ca4fbdccc8971830dfd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 40943ee68d9b7ca4fbdccc8971830dfd, type: 3}
+--- !u!4 &1675895512719005173 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8521998893158236647, guid: 40943ee68d9b7ca4fbdccc8971830dfd, type: 3}
+  m_PrefabInstance: {fileID: 1675895512719005172}
+  m_PrefabAsset: {fileID: 0}
 --- !u!212 &2197275954591069634
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2802,6 +3036,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 111986037346041635, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       insertIndex: -1
       addedObject: {fileID: 216287776}
+    - targetCorrespondingSourceObject: {fileID: 111986037346041635, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 667463541348112939}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
 --- !u!1001 &5143782123435572902
@@ -3045,6 +3282,68 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 423976068}
   m_SourcePrefab: {fileID: 100100000, guid: 3ffd1b628db70264c9a8e02dbb9f8781, type: 3}
+--- !u!1001 &5873096884938691443
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1582219565}
+    m_Modifications:
+    - target: {fileID: 4700470021358410211, guid: b4163a9d8275d5d45aa49e0451e614ea, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700470021358410211, guid: b4163a9d8275d5d45aa49e0451e614ea, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700470021358410211, guid: b4163a9d8275d5d45aa49e0451e614ea, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700470021358410211, guid: b4163a9d8275d5d45aa49e0451e614ea, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700470021358410211, guid: b4163a9d8275d5d45aa49e0451e614ea, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700470021358410211, guid: b4163a9d8275d5d45aa49e0451e614ea, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700470021358410211, guid: b4163a9d8275d5d45aa49e0451e614ea, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700470021358410211, guid: b4163a9d8275d5d45aa49e0451e614ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700470021358410211, guid: b4163a9d8275d5d45aa49e0451e614ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700470021358410211, guid: b4163a9d8275d5d45aa49e0451e614ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5905192455644086656, guid: b4163a9d8275d5d45aa49e0451e614ea, type: 3}
+      propertyPath: m_Name
+      value: MG_05_A
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b4163a9d8275d5d45aa49e0451e614ea, type: 3}
+--- !u!4 &5873096884938691444 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4700470021358410211, guid: b4163a9d8275d5d45aa49e0451e614ea, type: 3}
+  m_PrefabInstance: {fileID: 5873096884938691443}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7771637918381786674 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 121606632956851241, guid: e8d44bbe121692943bb226e7e067d71d, type: 3}
