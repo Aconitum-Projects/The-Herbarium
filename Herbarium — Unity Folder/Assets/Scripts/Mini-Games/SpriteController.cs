@@ -63,8 +63,6 @@ public class SpriteController : MonoBehaviour
     public Vector2 maxScale = new Vector2(.05f, 1.5f);
     public float detachThreshold = 5f;
     public float scaleDuration = 0.2f;
-    public float fallDistance = 20f;
-    public float fallDuration = 0.4f;
     public bool isDetached = false;
     public DetachType detachType = DetachType.None;
     public bool keepDetachedScale = false;
@@ -75,6 +73,11 @@ public class SpriteController : MonoBehaviour
     public Collider2D cuttableCollider;
     public bool isCut = false;
 
+    // Fall Settings
+    public float fallDistance = 20f;
+    public float fallDuration = 0.4f;
+    public Vector2 fallDirection = Vector2.down;
+    
     // Shakeable Settings
     public bool isShakeable = false;
     public float shakeThreshold = 0.1f;
@@ -600,14 +603,19 @@ public class SpriteController : MonoBehaviour
     /// ------------------ Fall ------------------
     private void StartFall()
     {
-        Vector3 fallTarget = transform.position - new Vector3(0, fallDistance, 0);
-        Tween moveTween = transform.DOMove(fallTarget, fallDuration).SetEase(Ease.InQuad);
+        Vector3 dir = ((Vector3)fallDirection).normalized;
+        Vector3 fallTarget = transform.position + dir * fallDistance;
+
+        transform.DOMove(fallTarget, fallDuration)
+            .SetEase(Ease.InQuad);
 
         if (!keepDetachedScale)
         {
-            transform.DOScale(initialScale, fallDuration).SetEase(Ease.OutBack);
+            transform.DOScale(initialScale, fallDuration)
+                .SetEase(Ease.OutBack);
         }
     }
+
     
     // ------------------ Fillable ------------------
     private void FillableUpdate()

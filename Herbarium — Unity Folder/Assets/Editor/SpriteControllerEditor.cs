@@ -13,15 +13,16 @@ public class SpriteControllerEditor : Editor
         xLimits, limitY, yLimits, useFollowPoints, followPoints, passesPerPoint,
         followValidated, rotateInsteadOfFollow, rotationSpeedFollow;
 
-
-
     // Detachable
     SerializedProperty maxScale, detachThreshold, scaleDuration, isDetached,
-        detachType, fallDistance, fallDuration, keepDetachedScale, detachVisualMode;
+        detachType, keepDetachedScale, detachVisualMode;
 
     // Cuttable
     SerializedProperty cuttableCollider, isCut;
 
+    // Fall
+    SerializedProperty fallDistance, fallDuration, fallDirection;
+    
     // Shakeable
     SerializedProperty isShakeable, shakeThreshold, shakeVisualMode,
         animatedShakeSprites, resetPositionWhenReleased;
@@ -68,14 +69,17 @@ public class SpriteControllerEditor : Editor
         detachThreshold = serializedObject.FindProperty("detachThreshold");
         isDetached = serializedObject.FindProperty("isDetached");
         detachType = serializedObject.FindProperty("detachType");
-        fallDistance = serializedObject.FindProperty("fallDistance");
-        fallDuration = serializedObject.FindProperty("fallDuration");
         keepDetachedScale = serializedObject.FindProperty("keepDetachedScale");
         detachVisualMode = serializedObject.FindProperty("detachVisualMode");
 
         // Cuttable
         cuttableCollider = serializedObject.FindProperty("cuttableCollider");
         isCut = serializedObject.FindProperty("isCut");
+        
+        // Fall
+        fallDistance = serializedObject.FindProperty("fallDistance");
+        fallDuration = serializedObject.FindProperty("fallDuration");
+        fallDirection = serializedObject.FindProperty("fallDirection");
         
         // Shakeable
         isShakeable = serializedObject.FindProperty("isShakeable");
@@ -292,7 +296,7 @@ public class SpriteControllerEditor : Editor
             EditorGUI.EndDisabledGroup();
         }
 
-    EditorGUILayout.Space(15);
+        EditorGUILayout.Space(15);
 }
 
     void DrawDetachable(GUIStyle bigTitle, GUIStyle middleTitle)
@@ -361,10 +365,7 @@ public class SpriteControllerEditor : Editor
             switch (type)
             {
                 case SpriteController.DetachType.Fall:
-                    EditorGUILayout.LabelField("Fall Settings", middleTitle);
-                    EditorGUILayout.PropertyField(fallDistance, new GUIContent("Fall Distance", "Distance de chute du sprite"));
-                    EditorGUILayout.PropertyField(fallDuration, new GUIContent("Fall Duration", "Durée de la chute"));
-                    EditorGUILayout.Space(10);
+                    DrawFall(middleTitle);
                     break;
                 case SpriteController.DetachType.Draggable:
                     EditorGUILayout.LabelField("Draggable Settings", middleTitle);
@@ -395,9 +396,16 @@ public class SpriteControllerEditor : Editor
         EditorGUILayout.PropertyField(cutterCollider, new GUIContent("Cutter Collider", "Collider qui coupe le sprite"));
         EditorGUILayout.Space(10);
 
+        DrawFall(middleTitle);
+    }
+
+    void DrawFall(GUIStyle middleTitle)
+    {
         EditorGUILayout.LabelField("Fall Settings", middleTitle);
         EditorGUILayout.PropertyField(fallDistance, new GUIContent("Fall Distance", "Distance de chute après coupe"));
         EditorGUILayout.PropertyField(fallDuration, new GUIContent("Fall Duration", "Durée de la chute après coupe"));
+        EditorGUILayout.Space(5);
+        EditorGUILayout.PropertyField(fallDirection, new GUIContent("Fall Direction", "Direction normalisée de la chute"));
         EditorGUILayout.Space(15);
     }
 

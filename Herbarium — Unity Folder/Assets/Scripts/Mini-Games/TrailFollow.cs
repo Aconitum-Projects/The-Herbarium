@@ -12,9 +12,10 @@ public class TrailFollow : MonoBehaviour
     public float segmentLength = 0.15f;
     [Range(0f, 1f)]
     public float stiffness = 0.6f;
-
-    [Header("Outline")]
-    public LineRenderer outlineLine;
+    
+    [Header("Vine Start")]
+    public Transform vineStart;
+    public Vector2 startDirection = Vector2.right;
 
     [Header("Shape")]
     public LineRenderer shapeLine;
@@ -50,17 +51,21 @@ public class TrailFollow : MonoBehaviour
         shapeLine.positionCount = shapePoints.Length;
         shapeLine.SetPositions(shapePoints);
 
-        Vector3 startPos = Camera.main.ScreenToWorldPoint(
-            new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 10f)
-        );
+        Vector3 startPos = vineStart != null
+            ? vineStart.position
+            : transform.position;
 
+        Vector3 dir = startDirection.normalized;
+        
         for (int i = 0; i < maxTrailPoints; i++)
-            trailPoints.Add(startPos);
-
+        {
+            trailPoints.Add(
+                startPos + dir * segmentLength * (maxTrailPoints - 1 - i)
+            );
+        }
+        
         trailLine.positionCount = trailPoints.Count;
         trailLine.SetPositions(trailPoints.ToArray());
-        outlineLine.positionCount = trailPoints.Count;
-        outlineLine.SetPositions(trailPoints.ToArray());
         
     }
 
@@ -94,9 +99,6 @@ public class TrailFollow : MonoBehaviour
         trailLine.positionCount = trailPoints.Count;
         trailLine.SetPositions(trailPoints.ToArray());
 
-        outlineLine.positionCount = trailPoints.Count;
-        outlineLine.SetPositions(trailPoints.ToArray());
-
         CheckShape();
     }
 
@@ -128,4 +130,55 @@ public class TrailFollow : MonoBehaviour
         }
 
     }
+    
+    void OnDrawGizmos()
+    {
+        if (vineStart == null) return;
+
+        Vector3 startPos = vineStart.position;
+        Vector3 dir = ((Vector3)startDirection).normalized;
+
+        // Point de départ
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawSphere(startPos, 0.08f);
+
+        // Direction
+        Gizmos.DrawLine(
+            startPos,
+            startPos + dir * segmentLength * 3f
+        );
+
+        // Preview de la liane
+        Gizmos.color = new Color(0f, 1f, 1f, 0.6f);
+
+        Vector3 prev = startPos;
+        for (int i = 1; i < maxTrailPoints; i++)
+        {
+            Vector3 p = startPos + dir * segmentLength * i;
+            Gizmos.DrawLine(prev, p);
+            prev = p;
+        }
+    }
+    
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+
+        Vector3 prev = Vector3.zero;
+        for (int i = 0; i <= ovalPointsCount; i++)
+        {
+            float angle = 2f * Mathf.PI * i / ovalPointsCount;
+            Vector3 p = new Vector3(
+                ovalCenter.x + Mathf.Cos(angle) * radiusX,
+                ovalCenter.y + Mathf.Sin(angle) * radiusY,
+                0f
+            );
+
+            if (i > 0)
+                Gizmos.DrawLine(prev, p);
+
+            prev = p;
+        }
+    }
+    
 }
