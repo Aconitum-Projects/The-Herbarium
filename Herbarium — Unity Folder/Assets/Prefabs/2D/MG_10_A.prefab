@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84e1a9aae24cfa4b984a5af474219b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScaleOnShake
-  shakeSource: {fileID: 0}
+  shakeSource: {fileID: 3402504130125527504}
   minScale: {x: 0.5, y: 1, z: 1}
   maxScale: {x: 1, y: 1, z: 1}
 --- !u!1 &7962481988555488457 stripped
@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84e1a9aae24cfa4b984a5af474219b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScaleOnShake
-  shakeSource: {fileID: 0}
+  shakeSource: {fileID: 3402504130125527504}
   minScale: {x: 1, y: 1, z: 1}
   maxScale: {x: 0.8, y: 1, z: 1}
 --- !u!4 &8425992744772420020 stripped
