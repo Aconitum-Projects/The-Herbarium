@@ -418,16 +418,6 @@ public class SpriteController : MonoBehaviour
     }
 
     // ------------------ Shake ------------------
-    void ShakeInit()
-    {
-        prevPosition = transform.position;
-        prevRotationZ = transform.eulerAngles.z;
-        if (prevRotationZ > 180f) prevRotationZ -= 360f;
-        shakeSpeed = 0f;
-        shakeAccum = 0f;
-        shakeValidated = false;
-    }
-
     void ShakeUpdate()
     {
         if (!isShakeable || shakeValidated) return;
@@ -646,66 +636,49 @@ public class SpriteController : MonoBehaviour
     // ------------------ Fillable ------------------
     private void FillableUpdate()
     {
-        if (Input.GetMouseButtonDown(0) && !fillInitialized)
+        // Début du fill
+        if (Input.GetMouseButtonDown(0))
         {
-            fillStartPosGlobal = transform.position;
-            fillStartRotation = transform.eulerAngles.z;
-            fillStartScale = transform.localScale;
+            // Kill l'ancien tween sans forcer la fin
+            fillTween?.Kill(false);
+
             fillInitialized = true;
+
+            // Calcul des targets
+            Vector3 targetPos = fillPosition ? fillStartPosGlobal + fillOffsetPos : transform.position;
+            float targetRot = fillRotation ? fillStartRotation + fillOffsetRot : transform.eulerAngles.z;
+            Vector3 targetScale = fillScale ? Vector3.Scale(fillStartScale, fillOffsetScale) : transform.localScale;
+
+            // Création de la sequence DOTween
+            Sequence seq = DOTween.Sequence();
+            if (fillPosition) seq.Join(transform.DOMove(targetPos, fillDuration).SetEase(fillEase));
+            if (fillRotation) seq.Join(transform.DORotate(new Vector3(0, 0, targetRot), fillDuration).SetEase(fillEase));
+            if (fillScale)    seq.Join(transform.DOScale(targetScale, fillDuration).SetEase(fillEase));
+
+            fillTween = seq;
         }
 
-        if (!Input.GetMouseButton(0))
+        // Fin du fill / reset
+        if (Input.GetMouseButtonUp(0) && fillInitialized)
         {
-            if (!fillInitialized) return;
+            fillTween?.Kill(false);
 
             if (resetPositionWhenReleased)
             {
-                fillTween?.Kill();
+                // Reset vers la position/rotation/scale de départ avec tween
                 Sequence resetSeq = DOTween.Sequence();
                 if (fillPosition) resetSeq.Join(transform.DOMove(fillStartPosGlobal, fillDuration).SetEase(fillEase));
-                if (fillRotation) resetSeq.Join(transform.DORotate(new Vector3(0,0,fillStartRotation), fillDuration).SetEase(fillEase));
-                if (fillScale) resetSeq.Join(transform.DOScale(fillStartScale, fillDuration).SetEase(fillEase));
+                if (fillRotation) resetSeq.Join(transform.DORotate(new Vector3(0, 0, fillStartRotation), fillDuration).SetEase(fillEase));
+                if (fillScale)    resetSeq.Join(transform.DOScale(fillStartScale, fillDuration).SetEase(fillEase));
+
                 fillTween = resetSeq;
             }
-            else
-            {
-                fillTween?.Kill();
-                fillTween = null;
-            }
 
-            return;
-        }
-
-        Vector3 targetPos = fillStartPosGlobal + (fillPosition ? fillOffsetPos : Vector3.zero);
-        float targetRot = fillStartRotation + (fillRotation ? fillOffsetRot : 0f);
-        Vector3 targetScale = fillStartScale;
-        if (fillScale)
-        {
-            targetScale = new Vector3(
-                fillStartScale.x * fillOffsetScale.x,
-                fillStartScale.y * fillOffsetScale.y,
-                fillStartScale.z * fillOffsetScale.z
-            );
-        }
-
-        fillTween?.Kill();
-
-        Sequence seq = DOTween.Sequence();
-        if (fillPosition) seq.Join(transform.DOMove(targetPos, fillDuration).SetEase(fillEase));
-        if (fillRotation) seq.Join(transform.DORotate(new Vector3(0,0,targetRot), fillDuration).SetEase(fillEase));
-        if (fillScale) seq.Join(transform.DOScale(targetScale, fillDuration).SetEase(fillEase));
-        fillTween = seq;
-
-        if (fillScale)
-        {
-            transform.localScale = new Vector3(
-                Mathf.Min(transform.localScale.x, targetScale.x),
-                Mathf.Min(transform.localScale.y, targetScale.y),
-                Mathf.Min(transform.localScale.z, targetScale.z)
-            );
+            fillInitialized = false;
         }
     }
-    
+
+
     // ------------------ Erasable ------------------
     private void ErasableUpdate()
     {

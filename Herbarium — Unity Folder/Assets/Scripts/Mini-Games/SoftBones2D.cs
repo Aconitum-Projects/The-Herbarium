@@ -181,7 +181,8 @@ public class BoneData
         foreach (var bone in bones)
         {
             if (bone.transform == null || bone.transform.parent == null) continue;
-            if (hideRootLinks && bone.depth == 0) continue;
+            if (hideRootLinks && bone.transform.parent == transform)
+                continue;
 
             Vector3 a = bone.transform.parent.position;
             Vector3 b = bone.transform.position;
