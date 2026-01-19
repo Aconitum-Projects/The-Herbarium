@@ -216,6 +216,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -3675501220438446021, guid: 505de7fcbd2fd8e409439ef789b4d792, type: 3}
+      propertyPath: 'm_BoneTransforms.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2859051252180128414}
     - target: {fileID: 9184058220550889596, guid: 505de7fcbd2fd8e409439ef789b4d792, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -326,6 +330,11 @@ MonoBehaviour:
   destroyed: 0
   collectedSpriteRenderer: {fileID: 0}
   shakeAccum: 0
+--- !u!4 &2859051252180128414 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4930762361799518964, guid: 505de7fcbd2fd8e409439ef789b4d792, type: 3}
+  m_PrefabInstance: {fileID: 7188015249695979626}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6815362164506351510 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4419704752639700988, guid: 505de7fcbd2fd8e409439ef789b4d792, type: 3}

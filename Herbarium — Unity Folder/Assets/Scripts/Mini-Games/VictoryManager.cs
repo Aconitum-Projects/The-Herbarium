@@ -30,7 +30,7 @@ public class VictoryManager : MonoBehaviour
     int currentIndex = 0;
     bool victoryActive = false;
     Sequence victorySequence;
-    MonoBehaviour[] disabledScripts;
+    SpriteController[] disabledSpriteControllers;
 
     void Start()
     {
@@ -60,6 +60,8 @@ public class VictoryManager : MonoBehaviour
 
         victoryActive = true;
         canClick = false;
+
+        DisableGameplayScripts();
 
         Invoke(nameof(EnableClick), clickDelay);
 
@@ -92,6 +94,19 @@ public class VictoryManager : MonoBehaviour
                     volumeDuration
                 ).SetEase(volumeEase)
             );
+        }
+    }
+    
+    void DisableGameplayScripts()
+    {
+        disabledSpriteControllers = FindObjectsOfType<SpriteController>();
+
+        foreach (var sc in disabledSpriteControllers)
+        {
+            if (sc == null) continue;
+            if (sc.ignoreVictoryFreeze) continue;
+
+            sc.enabled = false;
         }
     }
 
@@ -131,14 +146,15 @@ public class VictoryManager : MonoBehaviour
             victoryText.gameObject.SetActive(false);
             ActivateNextMiniGame();
 
-            if (disabledScripts != null)
+            if (disabledSpriteControllers != null)
             {
-                foreach (var script in disabledScripts)
+                foreach (var sc in disabledSpriteControllers)
                 {
-                    if (script != null)
-                        script.enabled = true;
+                    if (sc != null)
+                        sc.enabled = true;
                 }
             }
+
         });
 
     }

@@ -42,6 +42,7 @@ public class SpriteController : MonoBehaviour
 
     // Mode
     public Mode currentMode = Mode.None;
+    public bool ignoreVictoryFreeze = false;
 
     // Follow Mouse Settings
     public bool followX = true;

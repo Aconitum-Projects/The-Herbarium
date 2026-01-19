@@ -16,7 +16,8 @@ public enum VictoryType
     TrailValidated,
     AllCollected,
     AllPoints,
-    Cooked
+    Cooked,
+    AllTouched
 }
 
 public class VictoryChecker : MonoBehaviour
@@ -35,6 +36,7 @@ public class VictoryChecker : MonoBehaviour
     public List<CollectedDetector> collectedDetectors;
     public List<PointsDetector> pointsDetectors;
     public List<CookingController> cookingControllers;
+    public List<TouchedDetector> touchedDetectors;
 
     public VictoryManager victoryManager;
     public CanvasGroup instructionCanvas;
@@ -310,6 +312,20 @@ public class VictoryChecker : MonoBehaviour
             return false;
 
         foreach (var d in cookingControllers)
+        {
+            if (d == null || !d.validated)
+                return false;
+        }
+
+        TriggerIfComplete(true);
+        return true;
+    }
+    public bool CheckAllTouched()
+    {
+        if (touchedDetectors == null || touchedDetectors.Count == 0)
+            return false;
+
+        foreach (var d in touchedDetectors)
         {
             if (d == null || !d.validated)
                 return false;

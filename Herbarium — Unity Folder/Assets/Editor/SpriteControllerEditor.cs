@@ -7,6 +7,7 @@ using UnityEditor;
 public class SpriteControllerEditor : Editor
 {
     SerializedProperty currentMode;
+    SerializedProperty ignoreVictoryFreeze;
 
     // Follow Mouse
     SerializedProperty followX, followY, followSpeed, cutterCollider, limitX,
@@ -49,6 +50,7 @@ public class SpriteControllerEditor : Editor
     void OnEnable()
     {
         currentMode = serializedObject.FindProperty("currentMode");
+        ignoreVictoryFreeze = serializedObject.FindProperty("ignoreVictoryFreeze");
 
         // Follow Mouse
         followX = serializedObject.FindProperty("followX");
@@ -134,6 +136,7 @@ public class SpriteControllerEditor : Editor
 
         EditorGUILayout.Space(10);
         EditorGUILayout.PropertyField(currentMode, new GUIContent("Mode", "Mode de fonctionnement du sprite"));
+        EditorGUILayout.PropertyField(ignoreVictoryFreeze, new GUIContent("Ignore Freeze in Victory"));
         EditorGUILayout.Space(15);
 
         DrawShakeable(bigTitle);
