@@ -898,6 +898,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 1582219565}
     m_Modifications:
     - target: {fileID: 2179230526254668152, guid: 5a65cac6ea5e0a84e9bd28804983692d, type: 3}
+      propertyPath: perfectMax
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 2179230526254668152, guid: 5a65cac6ea5e0a84e9bd28804983692d, type: 3}
+      propertyPath: perfectMin
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2179230526254668152, guid: 5a65cac6ea5e0a84e9bd28804983692d, type: 3}
       propertyPath: temperatureText
       value: 
       objectReference: {fileID: 1832710621}

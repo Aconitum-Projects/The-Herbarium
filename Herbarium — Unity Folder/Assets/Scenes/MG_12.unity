@@ -1143,6 +1143,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8955171975567063979, guid: ec35e1e7f8ac5094f8c78c1a3f500771, type: 3}
+      propertyPath: perfectMax
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8955171975567063979, guid: ec35e1e7f8ac5094f8c78c1a3f500771, type: 3}
+      propertyPath: perfectMin
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8955171975567063979, guid: ec35e1e7f8ac5094f8c78c1a3f500771, type: 3}
       propertyPath: temperatureText
       value: 
       objectReference: {fileID: 619278878}
