@@ -261,6 +261,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbdc42c56fe80fd4f8f28e3455d5b0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MiniGameCooking
+--- !u!114 &1101772065 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4418285931729970245, guid: 6b06906cc922e3e47b15ef663eeb3814, type: 3}
+  m_PrefabInstance: {fileID: 7324877555100333615}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7c47640131aa6b4f8f07f435b7f7406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PointsDetector
 --- !u!1 &1135831353
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,6 +883,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: victoryType
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: pointsDetectors.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: 'pointsDetectors.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1101772065}
     - target: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_Name
       value: SubGame_C
