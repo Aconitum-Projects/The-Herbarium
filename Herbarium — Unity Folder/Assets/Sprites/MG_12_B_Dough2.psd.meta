@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2ffcbf8d417e76c47be74f7fc32819b9
+guid: 3f6ca1f23fcb23e4aa2d328da42e2439
 importerOverride:
   nativeImporterType: 2089858483
   scriptedImporterType:
@@ -35,7 +35,7 @@ ScriptedImporter:
     ignoreMipmapLimit: 0
     nPOTScale: 1
     sRGBTexture: 1
-    spriteMode: 2
+    spriteMode: 1
     spriteExtrude: 1
     spriteMeshType: 1
     alignment: 0
@@ -100,72 +100,6 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   multiSpriteImportData: []
   layeredSpriteImportData:
-  - name: Roll
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 2172
-      width: 3331
-      height: 468
-    spriteID: 161e45921b7ec8d4c94981e76c3ef8b4
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 2172}
-    spritePosition: {x: 254, y: 845}
-  - name: Seeds
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 2648
-      width: 946
-      height: 1137
-    spriteID: 644ef3112c6041749b4429108af9d1c3
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 2648}
-    spritePosition: {x: 1443, y: 492}
-  - name: Broken Seeds
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 5749
-      y: 4
-      width: 1576
-      height: 1305
-    spriteID: e7fbdda96f739db4a9200d5cf0c15e28
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 5749, y: 4}
-    spritePosition: {x: 1132, y: 416}
   - name: Dough
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -174,7 +108,7 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 3852
+      x: 4
       y: 4
       width: 1889
       height: 1900
@@ -186,30 +120,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 3852, y: 4}
-    spritePosition: {x: 968, y: 108}
-  - name: Background
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 3840
-      height: 2160
-    spriteID: 47b3635507bd09e45bab7b8c82964b31
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 0, y: 0}
+    spritePosition: {x: 968, y: 108}
   spriteImportData: []
   rigSpriteImportData: []
   sharedRigSpriteImportData: []
@@ -232,7 +144,7 @@ ScriptedImporter:
   - name: DefaultTexturePlatform
     overridden: 0
     ignorePlatformSupport: 0
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 2
@@ -281,112 +193,12 @@ ScriptedImporter:
   resliceFromLayer: 0
   pSDLayerImportSetting: []
   psdLayers:
-  - name: Roll
-    spriteName: Roll
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 161e45921b7ec8d4c94981e76c3ef8b4
-    layerID: 5
-    mosaicPosition: {x: 4, y: 2172}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Seeds
-    spriteName: Seeds
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 644ef3112c6041749b4429108af9d1c3
-    layerID: 6
-    mosaicPosition: {x: 4, y: 2648}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Broken Seeds
-    spriteName: Broken Seeds
-    isGroup: 0
-    parentIndex: -1
-    spriteID: e7fbdda96f739db4a9200d5cf0c15e28
-    layerID: 20
-    mosaicPosition: {x: 5749, y: 4}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Broken Seeds
-    spriteName: 
-    isGroup: 1
-    parentIndex: -1
-    spriteID: 7ffab7333b13dea4bab90445810e4bdb
-    layerID: 12
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 0
-  - name: Calque 2
-    spriteName: 
-    isGroup: 0
-    parentIndex: 3
-    spriteID: ec36fc810ff3d2144abf4d5cbc9ede22
-    layerID: 8
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: SeedsBroken
-    spriteName: Seeds
-    isGroup: 0
-    parentIndex: 3
-    spriteID: f356b91dd2c2fa84aa462410742ebb7c
-    layerID: 4
-    mosaicPosition: {x: 1901, y: 2172}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Calque 3
-    spriteName: 
-    isGroup: 0
-    parentIndex: 3
-    spriteID: 73922b813cd923d42885ce94d742accc
-    layerID: 9
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Calque 1 copie
-    spriteName: 
-    isGroup: 0
-    parentIndex: 3
-    spriteID: 58b6956b5412eca4bbf9b83b04b6caaa
-    layerID: 10
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Calque 1
-    spriteName: 
-    isGroup: 0
-    parentIndex: 3
-    spriteID: a978e1916df96d643975d78910221ef9
-    layerID: 7
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
   - name: Dough
     spriteName: Dough
     isGroup: 0
     parentIndex: -1
     spriteID: b0ce9c3ac4a032f4cb499f959912d4b0
     layerID: 3
-    mosaicPosition: {x: 3852, y: 4}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Background
-    spriteName: Background
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 47b3635507bd09e45bab7b8c82964b31
-    layerID: 2
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
     isImported: 1
@@ -395,7 +207,7 @@ ScriptedImporter:
   rigPSDLayers: []
   sharedRigPSDLayers: []
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639042610906749272
+  platformSettingsDirtyTick: 639044429412435892
   spriteSizeExpandChanged: 0
   generateGOHierarchy: 0
   textureAssetName: 

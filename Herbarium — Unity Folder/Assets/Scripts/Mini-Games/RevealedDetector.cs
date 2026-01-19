@@ -10,6 +10,7 @@ public class RevealedDetector : MonoBehaviour
     [Header("--- Trigger Settings ---")]
     public float yThreshold = -15f;
     public float xThreshold = -17.5f;
+    public float thresholdTolerance = 0.2f;
 
     [Header("--- Teleport Target ---")]
     public Vector3 newPosition;
@@ -24,15 +25,20 @@ public class RevealedDetector : MonoBehaviour
     [Space(20)]
     [Header("===== Trail Settings =====")]
     public MaskSpriteTrail2D trail;
-
+    
+    bool yTriggered = false;
+    bool xTriggered = false;
 
     void Update()
     {
         if (MoveASprite)
         {
-            // ancienne logique
-            if (transform.position.y < yThreshold)
+            // ===== Y trigger =====
+            if (!yTriggered &&
+                Mathf.Abs(transform.position.y - yThreshold) <= thresholdTolerance)
             {
+                yTriggered = true;
+
                 transform.position = newPosition;
 
                 if (objectToActivate != null)
@@ -45,6 +51,7 @@ public class RevealedDetector : MonoBehaviour
                 {
                     spriteToMove.position = spriteNewPosition;
                     spriteToMove.rotation = Quaternion.Euler(spriteNewRotation);
+
                     var sc = spriteToMove.GetComponent<SpriteController>();
                     if (sc != null)
                     {
@@ -54,10 +61,14 @@ public class RevealedDetector : MonoBehaviour
                 }
             }
 
-            if (transform.position.x < xThreshold)
+            // ===== X trigger =====
+            if (!xTriggered &&
+                Mathf.Abs(transform.position.x - xThreshold) <= thresholdTolerance)
             {
+                xTriggered = true;
                 validated = true;
-                var vc = transform.parent.GetComponentInParent<VictoryChecker>();
+                var vc = GetComponentInParent<VictoryChecker>();
+
                 if (vc != null)
                     vc.CheckAllRevealed();
             }
@@ -68,7 +79,7 @@ public class RevealedDetector : MonoBehaviour
             if (trail != null && trail.FullyRevealed)
             {
                 validated = true;
-                var vc = transform.parent.GetComponentInParent<VictoryChecker>();
+                var vc = GetComponentInParent<VictoryChecker>();
                 if (vc != null)
                     vc.CheckAllRevealed();
             }

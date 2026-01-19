@@ -184,6 +184,7 @@ MonoBehaviour:
   MoveASprite: 0
   yThreshold: -15
   xThreshold: -17.5
+  thresholdTolerance: 0.2
   newPosition: {x: 0, y: 0, z: 0}
   objectToActivate: {fileID: 0}
   objectToDesactivate: {fileID: 0}
@@ -252,8 +253,68 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -7552582706839291426, guid: 7f6fc60045c237b4a8738d95439e9ba7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 186912057915329820}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -1156023150606587804, guid: 7f6fc60045c237b4a8738d95439e9ba7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6187502029532150693}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 7f6fc60045c237b4a8738d95439e9ba7, type: 3}
+--- !u!1 &47195704257671612 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1156023150606587804, guid: 7f6fc60045c237b4a8738d95439e9ba7, type: 3}
+  m_PrefabInstance: {fileID: 8021851224691481048}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6187502029532150693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47195704257671612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70106415e37c8a24c9a8f2cd03949ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoftBones2D
+  windStrength: 15
+  windSpeed: 0.5
+  randomness: 2
+  smooth: 5
+  showGizmos: 1
+  hideRootLinks: 1
+  forceGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 0, b: 0, a: 1}
+    key1: {r: 1, g: 0.90659106, b: 0, a: 1}
+    key2: {r: 0.5, g: 1, b: 0, a: 0}
+    key3: {r: 0, g: 1, b: 1, a: 0}
+    key4: {r: 0, g: 0.12994361, b: 1, a: 0}
+    key5: {r: 0.5087719, g: 0, b: 1, a: 0}
+    key6: {r: 1, g: 0, b: 0.825047, a: 0}
+    key7: {r: 1, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 10254
+    ctime2: 20432
+    ctime3: 31688
+    ctime4: 42945
+    ctime5: 50038
+    ctime6: 59136
+    ctime7: 65535
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 8
+    m_NumAlphaKeys: 2
+  colorDisabledBones: {r: 1, g: 0, b: 0, a: 0.3}
+  gizmoBoneRadius: 0.34
+  ignoreBones: []
+  useFlameMode: 0
 --- !u!4 &8681956177288978438 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: 7f6fc60045c237b4a8738d95439e9ba7, type: 3}
