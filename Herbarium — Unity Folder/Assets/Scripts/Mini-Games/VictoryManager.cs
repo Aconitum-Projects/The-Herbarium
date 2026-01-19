@@ -31,6 +31,7 @@ public class VictoryManager : MonoBehaviour
     bool victoryActive = false;
     Sequence victorySequence;
     SpriteController[] disabledSpriteControllers;
+    CookingController[] disabledCookingController;
 
     void Start()
     {
@@ -100,8 +101,16 @@ public class VictoryManager : MonoBehaviour
     void DisableGameplayScripts()
     {
         disabledSpriteControllers = FindObjectsOfType<SpriteController>();
-
         foreach (var sc in disabledSpriteControllers)
+        {
+            if (sc == null) continue;
+            if (sc.ignoreVictoryFreeze) continue;
+
+            sc.enabled = false;
+        }
+        
+        disabledCookingController = FindObjectsOfType<CookingController>();
+        foreach (var sc in disabledCookingController)
         {
             if (sc == null) continue;
             if (sc.ignoreVictoryFreeze) continue;
@@ -149,6 +158,14 @@ public class VictoryManager : MonoBehaviour
             if (disabledSpriteControllers != null)
             {
                 foreach (var sc in disabledSpriteControllers)
+                {
+                    if (sc != null)
+                        sc.enabled = true;
+                }
+            }
+            if (disabledCookingController != null)
+            {
+                foreach (var sc in disabledCookingController)
                 {
                     if (sc != null)
                         sc.enabled = true;

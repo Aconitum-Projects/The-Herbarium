@@ -88,6 +88,9 @@ public class SoftBones2D : MonoBehaviour
     [Tooltip("Liste de bones qui ne recevront pas l'effet du vent (ex: le root ou le sprite principal).")]
     public List<Transform> ignoreBones = new List<Transform>();
 
+    [Header("Mode Options")]
+    public bool useFlameMode = false;
+
 public class BoneData
     {
         public Transform transform;
@@ -145,33 +148,6 @@ public class BoneData
         ApplyBoneRotations();
     }
 
-    void ApplyBoneRotations()
-    {
-        float time = Time.time * windSpeed;
-
-        foreach (var bone in bones)
-        {
-            if (bone.transform == null) continue;
-
-            if (ignoreBones.Contains(bone.transform)) continue;
-
-            float depthFactor = Mathf.Clamp01(bone.depth / 5f);
-            float noise = Mathf.PerlinNoise(time + bone.noiseOffset, 0f);
-            float angle = (noise - 0.5f) * 2f;
-
-            angle *= windStrength * depthFactor * randomness;
-
-            Quaternion targetRot =
-                bone.baseRotation * Quaternion.Euler(0, 0, angle);
-
-            bone.transform.localRotation = Quaternion.Slerp(
-                bone.transform.localRotation,
-                targetRot,
-                Time.deltaTime * smooth
-            );
-        }
-    }
-
     void OnDrawGizmos()
     {
         if (!showGizmos || bones == null) return;
@@ -212,6 +188,45 @@ public class BoneData
 #if UNITY_EDITOR
             Handles.color = color;
 #endif
+        }
+    }
+    
+    void ApplyBoneRotations()
+    {
+        float time = Time.time * windSpeed;
+
+        foreach (var bone in bones)
+        {
+            if (bone.transform == null) continue;
+            if (ignoreBones.Contains(bone.transform)) continue;
+
+            float depthFactor = Mathf.Clamp01(bone.depth / 5f);
+
+            Quaternion targetRot = bone.baseRotation;
+
+            if (useFlameMode)
+            {
+                // Flame mode : Perlin + Sin pour tremblement organique
+                float noise = Mathf.PerlinNoise(time + bone.noiseOffset, 0f);
+                float sineOsc = Mathf.Sin(time * (1f + bone.noiseOffset % 1f) * 2f * Mathf.PI);
+                float angle = (noise - 0.5f + sineOsc * 0.3f) * 2f;
+                angle *= windStrength * depthFactor * randomness;
+                targetRot = bone.baseRotation * Quaternion.Euler(0, 0, angle);
+            }
+            else
+            {
+                // Mode classique vent/balancier
+                float noise = Mathf.PerlinNoise(time + bone.noiseOffset, 0f);
+                float angle = (noise - 0.5f) * 2f;
+                angle *= windStrength * depthFactor * randomness;
+                targetRot = bone.baseRotation * Quaternion.Euler(0, 0, angle);
+            }
+
+            bone.transform.localRotation = Quaternion.Slerp(
+                bone.transform.localRotation,
+                targetRot,
+                Time.deltaTime * smooth
+            );
         }
     }
 
