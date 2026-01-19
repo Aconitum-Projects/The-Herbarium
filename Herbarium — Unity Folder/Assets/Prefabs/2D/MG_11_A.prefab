@@ -209,6 +209,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9184058220550889596, guid: 28f026a392889bf49b560a356f0703b7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9184058220550889596, guid: 28f026a392889bf49b560a356f0703b7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -246,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84e1a9aae24cfa4b984a5af474219b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScaleOnShake
-  shakeSource: {fileID: 0}
+  shakeSource: {fileID: 8244347030785660485}
   minScale: {x: 0.5, y: 1, z: 1}
   maxScale: {x: 1, y: 1, z: 1}
 --- !u!1 &2572335792914852911 stripped
@@ -266,7 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84e1a9aae24cfa4b984a5af474219b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScaleOnShake
-  shakeSource: {fileID: 0}
+  shakeSource: {fileID: 8244347030785660485}
   minScale: {x: 1, y: 1, z: 1}
   maxScale: {x: 0.8, y: 1, z: 1}
 --- !u!4 &4169644041841938770 stripped

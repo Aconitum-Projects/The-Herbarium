@@ -189,7 +189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -509,6 +509,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
   m_PrefabInstance: {fileID: 254200301}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &1409874828 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5393007586063215690, guid: baf70f00f8c74ad4a9e767a17b2e7306, type: 3}
+  m_PrefabInstance: {fileID: 5531955127310801674}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1475397440 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5973306666517875474, guid: baf70f00f8c74ad4a9e767a17b2e7306, type: 3}
@@ -721,10 +726,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1582219565}
     m_Modifications:
-    - target: {fileID: 1128378366040366293, guid: 7f64158d97ffb2d4f874f5acec92d681, type: 3}
-      propertyPath: shakeSource
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2960436152019667249, guid: 7f64158d97ffb2d4f874f5acec92d681, type: 3}
       propertyPath: m_Name
       value: MG_11_A
@@ -768,10 +769,6 @@ PrefabInstance:
     - target: {fileID: 4169644041841938770, guid: 7f64158d97ffb2d4f874f5acec92d681, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6821594025403976797, guid: 7f64158d97ffb2d4f874f5acec92d681, type: 3}
-      propertyPath: shakeSource
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -995,7 +992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1106,7 +1103,7 @@ PrefabInstance:
     - target: {fileID: 121606632956851241, guid: e8d44bbe121692943bb226e7e067d71d, type: 3}
       propertyPath: 'miniGames.Array.data[0]'
       value: 
-      objectReference: {fileID: 1817449466}
+      objectReference: {fileID: 1387292725}
     - target: {fileID: 121606632956851241, guid: e8d44bbe121692943bb226e7e067d71d, type: 3}
       propertyPath: 'miniGames.Array.data[1]'
       value: 
@@ -1114,7 +1111,7 @@ PrefabInstance:
     - target: {fileID: 121606632956851241, guid: e8d44bbe121692943bb226e7e067d71d, type: 3}
       propertyPath: 'miniGames.Array.data[2]'
       value: 
-      objectReference: {fileID: 1387292725}
+      objectReference: {fileID: 1817449466}
     - target: {fileID: 3590329957699650091, guid: e8d44bbe121692943bb226e7e067d71d, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1220,10 +1217,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 254200302}
     m_Modifications:
+    - target: {fileID: 47195704257671612, guid: baf70f00f8c74ad4a9e767a17b2e7306, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5393007586063215690, guid: baf70f00f8c74ad4a9e767a17b2e7306, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6195184970532266239, guid: baf70f00f8c74ad4a9e767a17b2e7306, type: 3}
       propertyPath: targetSprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1409874828}
     - target: {fileID: 7544823433290987621, guid: baf70f00f8c74ad4a9e767a17b2e7306, type: 3}
       propertyPath: m_Name
       value: MG_11_B
