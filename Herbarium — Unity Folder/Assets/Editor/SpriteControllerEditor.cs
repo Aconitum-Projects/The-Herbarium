@@ -15,8 +15,11 @@ public class SpriteControllerEditor : Editor
         followValidated;
     
     // Follow Rotation Settings
-    private SerializedProperty rotateInsteadOfFollow, rotationSpeedFollow,
+    SerializedProperty rotateInsteadOfFollow, rotationSpeedFollow,
         rotationMinFollow, rotationMaxFollow;
+    
+    // Raping / Grating
+    SerializedProperty enableProgressiveDown, yDecreasePerUnitX, minY;
     
     // Detachable
     SerializedProperty maxScale, detachThreshold, scaleDuration, isDetached,
@@ -72,6 +75,11 @@ public class SpriteControllerEditor : Editor
         rotationMinFollow  = serializedObject.FindProperty("rotationMinFollow");
         rotationMaxFollow  = serializedObject.FindProperty("rotationMaxFollow");
 
+        // Rapin / Gratinh
+        enableProgressiveDown = serializedObject.FindProperty("enableProgressiveDown");
+        yDecreasePerUnitX     = serializedObject.FindProperty("yDecreasePerUnitX");
+        minY                 = serializedObject.FindProperty("minY");
+        
         // Detachable
         maxScale = serializedObject.FindProperty("maxScale");
         scaleDuration = serializedObject.FindProperty("scaleDuration");
@@ -297,6 +305,36 @@ public class SpriteControllerEditor : Editor
 
             EditorGUILayout.Space(10);
             EditorGUILayout.PropertyField(followSpeed, new GUIContent("Follow Speed", "Vitesse à laquelle le sprite suit la souris"));
+        }
+        
+        EditorGUILayout.Space(15);
+        EditorGUILayout.LabelField("Progressive Grating", EditorStyles.boldLabel);
+
+        EditorGUILayout.PropertyField(
+            enableProgressiveDown,
+            new GUIContent(
+                "Enable Progressive Down",
+                "Fait descendre l'objet progressivement selon les déplacements horizontaux"
+            )
+        );
+
+        if (enableProgressiveDown.boolValue)
+        {
+            EditorGUILayout.PropertyField(
+                yDecreasePerUnitX,
+                new GUIContent(
+                    "Y Decrease Per Unit X",
+                    "Quantité de descente en Y par unité de déplacement horizontal"
+                )
+            );
+
+            EditorGUILayout.PropertyField(
+                minY,
+                new GUIContent(
+                    "Min Y",
+                    "Limite basse de descente (fin du râpage)"
+                )
+            );
         }
 
         EditorGUILayout.Space(10);

@@ -63,6 +63,11 @@ public class SpriteController : MonoBehaviour
     public float rotationSpeedFollow = 5f;
     public float rotationMinFollow = -45, rotationMaxFollow = 45;
 
+    // Raping Grating
+    public bool enableProgressiveDown = true;
+    public float yDecreasePerUnitX = 0.05f;
+    public float minY = -5f;
+    
     // Detachable Settings
     public Vector2 maxScale = new Vector2(.05f, 1.5f);
     public float detachThreshold = 5f;
@@ -159,8 +164,10 @@ public class SpriteController : MonoBehaviour
     Vector3 fillStartPosGlobal;
     bool fillInitialized = false;
     int[] pointPasses;
-    private float initialRotationZ;
-    private float lastRotationZ;
+    float initialRotationZ;
+    float lastRotationZ;
+    float accumulatedXDistance = 0f;
+    float startY;
     
     void Awake()
     {
@@ -183,6 +190,8 @@ public class SpriteController : MonoBehaviour
         {
             pointPasses = new int[followPoints.Count];
         }
+        
+        startY = transform.position.y;
     }
 
     void OnEnable()
@@ -522,6 +531,24 @@ public class SpriteController : MonoBehaviour
             }
 
             transform.Rotate(0, 0, angleDelta);
+        }
+        
+        if (enableProgressiveDown && followX)
+        {
+            float deltaX = Mathf.Abs(transform.position.x - lastPos.x);
+            accumulatedXDistance += deltaX;
+
+            float targetY = startY - accumulatedXDistance * yDecreasePerUnitX;
+
+            if (limitY)
+                targetY = Mathf.Max(targetY, yLimits.x);
+
+            if (targetY < minY)
+                targetY = minY;
+
+            Vector3 pos = transform.position;
+            pos.y = Mathf.Lerp(pos.y, targetY, followSpeed * Time.deltaTime);
+            transform.position = pos;
         }
         
         lastMousePos = Input.mousePosition;
