@@ -3997,8 +3997,8 @@
     "m_ObjectId": "2dbd48e84ca9490fbf11eac3e9c50123",
     "m_Title": "Noise",
     "m_Position": {
-        "x": -1500.800048828125,
-        "y": 2472.0
+        "x": -1500.0,
+        "y": 2474.0
     }
 }
 
@@ -5494,10 +5494,10 @@
     "m_Guid": {
         "m_GuidSerialized": "8816593a-9cba-4c04-a3b1-6570deab86f9"
     },
-    "m_Name": "BrushTexture",
+    "m_Name": "Brush Texture",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "BrushTexture",
-    "m_DefaultReferenceName": "_BrushTexture",
+    "m_RefNameGeneratedByDisplayName": "Brush Texture",
+    "m_DefaultReferenceName": "_Brush_Texture",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -5510,7 +5510,7 @@
     "m_PerRendererData": false,
     "m_customAttributes": [],
     "m_Value": {
-        "m_SerializedTexture": "",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"27f46c4737caf574d8f3ac00d0116687\",\"type\":3}}",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -5809,8 +5809,8 @@
     "m_ObjectId": "5ac66468a85b41409d22e05c8b58cfd2",
     "m_Title": "Triplanar",
     "m_Position": {
-        "x": -4092.80029296875,
-        "y": -105.60003662109375
+        "x": -4092.0,
+        "y": -104.0
     }
 }
 
@@ -6941,8 +6941,8 @@
     "m_ObjectId": "72d18c99feca43b1a05cbcdcb53fd584",
     "m_Title": "Triplanar",
     "m_Position": {
-        "x": -4036.00048828125,
-        "y": 2468.0
+        "x": -4035.00048828125,
+        "y": 2470.000244140625
     }
 }
 
@@ -6966,7 +6966,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
     "m_ObjectId": "73a135896a534299a97b5f6933b4e914",
     "m_Id": 0,
-    "m_DisplayName": "BrushTexture",
+    "m_DisplayName": "Brush Texture",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -10022,7 +10022,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
     "m_ObjectId": "b5d63a3189e747ab9896e4c19d000c46",
     "m_Id": 0,
-    "m_DisplayName": "BrushTexture",
+    "m_DisplayName": "Brush Texture",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -10383,7 +10383,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
     "m_ObjectId": "befc49fa835a40d29a8b2b3bb9945d5a",
     "m_Id": 0,
-    "m_DisplayName": "BrushTexture",
+    "m_DisplayName": "Brush Texture",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -11831,8 +11831,8 @@
     "m_ObjectId": "e05fd1861c1b4ee19e525fbc6f847933",
     "m_Title": "Gradient",
     "m_Position": {
-        "x": -761.5999755859375,
-        "y": -776.0
+        "x": -761.0,
+        "y": -774.0
     }
 }
 
@@ -12031,8 +12031,8 @@
     "m_ObjectId": "e5b2a80e3c7d4e03999b708de5e69f42",
     "m_Title": "Lighting Texture",
     "m_Position": {
-        "x": -1207.9998779296875,
-        "y": -20.000045776367189
+        "x": -1207.0,
+        "y": -18.0
     }
 }
 
