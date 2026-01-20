@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Toon 16
+  m_Name: Toon 8
   m_Shader: {fileID: -6465566751694194690, guid: 860444d4db87f874fb7c5ae644f8f5f1, type: 3}
-  m_Parent: {fileID: 2100000, guid: 25a87655b681d054a97d09e6c91f719d, type: 2}
+  m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -23,20 +23,35 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Glow_Size: 0.108
-    - _Highlight_Intensity: 0
-    - _Highlight_Size: -1
-    - _Outline_Size: 0.3
-    - _Shadows_Contrast: 1
-    - _Shadows_Size: 1.68
+    - _Glow_Size: 0.256
+    - _Highlight_Intensity: 0.1
+    - _Highlight_Size: 0.5
+    - _Outline_Size: 0.37
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _Shadows_Contrast: 2
+    - _Shadows_Size: 1
     m_Colors:
-    - _Base_Color: {r: 0.8980393, g: 0.8000001, b: 0.6313726, a: 0}
-    - _Highlight_Color: {r: 0.90196085, g: 0.79215693, b: 0.627451, a: 0}
-    - _Outline_Color: {r: 0.27058825, g: 0.5568628, b: 0.7490196, a: 1}
-    - _Shadows_Color: {r: 0.6666667, g: 0.7960785, b: 0.75294125, a: 0}
+    - _Base_Color: {r: 1, g: 0.92549026, b: 0.909804, a: 0}
+    - _HighlightColor: {r: 1, g: 0.7858338, b: 0, a: 1}
+    - _Highlight_Color: {r: 1, g: 0.92549026, b: 0.909804, a: 0}
+    - _Outline_Color: {r: 0.9725491, g: 0.6627451, b: 0.5529412, a: 1}
+    - _Shadows_Color: {r: 0.9686275, g: 0.7568628, b: 0.7490196, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &7523208459516627033
