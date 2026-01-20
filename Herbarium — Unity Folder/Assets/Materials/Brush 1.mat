@@ -55,10 +55,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Base_Alpha: 1
+    - _Contrast: 1
+    - _Details_Alpha: 1
     - _GradientEnsd: 10
-    - _GradientOffset: 0.07
+    - _GradientOffset: 0
     - _GradientRotation: 0
-    - _GradientSize: 0.1
+    - _GradientSize: 0.08
     - _GradientStart: 0
     - _GradientStenght: 2
     - _GradientStrenght: 1
@@ -75,11 +78,11 @@ Material:
     - _Second_Color_Metalness: 0
     - _Size: 0.22
     - _Triplanar_Factor: 0
-    - _UseGradient: 0
+    - _UseGradient: 1
     - _Use_Noise: 1
     m_Colors:
-    - _GradientColor: {r: 0.9725491, g: 0.6627451, b: 0.5529412, a: 1}
-    - _Main_Color: {r: 1, g: 0.80392164, b: 0.64705884, a: 1}
-    - _Second_Color: {r: 0.8773585, g: 0.60173553, b: 0.41798684, a: 1}
+    - _GradientColor: {r: 0.8941177, g: 0.80392164, b: 0.63529414, a: 1}
+    - _Main_Color: {r: 0.93725497, g: 0.7372549, b: 0.5921569, a: 1}
+    - _Second_Color: {r: 0.9725491, g: 0.6666667, b: 0.5647059, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
