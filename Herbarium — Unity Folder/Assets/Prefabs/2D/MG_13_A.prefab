@@ -259,8 +259,8 @@ MonoBehaviour:
   temperature: 0
   minTemp: 0
   maxTemp: 100
-  perfectMin: 60
-  perfectMax: 75
+  perfectMin: 45
+  perfectMax: 60
   burnThreshold: 98
   heatSpeed: 80
   coolSpeed: 30
