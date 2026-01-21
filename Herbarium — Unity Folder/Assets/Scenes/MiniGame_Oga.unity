@@ -397,8 +397,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091291696}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3565536, y: -0.08335529, z: 0.045908358, w: 0.9294159}
-  m_LocalPosition: {x: -0.33, y: 13.41, z: -15.92}
+  m_LocalRotation: {x: -0.09045249, y: -0.7436759, z: 0.1290763, w: -0.6496952}
+  m_LocalPosition: {x: -38.51, y: 10.8, z: 13.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -534,7 +534,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 80
+  field of view: 25
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -761,7 +761,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 80
+  field of view: 25
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -883,8 +883,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319059651}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3565536, y: -0.08335529, z: 0.045908358, w: 0.9294159}
-  m_LocalPosition: {x: -0.33, y: 13.41, z: -15.92}
+  m_LocalRotation: {x: -0.09045249, y: -0.7436759, z: 0.1290763, w: -0.6496952}
+  m_LocalPosition: {x: -38.51, y: 10.8, z: 13.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -900,7 +900,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1537210735}
   - component: {fileID: 1537210740}
-  - component: {fileID: 1537210739}
   - component: {fileID: 1537210738}
   - component: {fileID: 1537210737}
   - component: {fileID: 1537210736}
@@ -919,8 +918,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537210734}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3565536, y: -0.08335529, z: 0.045908358, w: 0.9294159}
-  m_LocalPosition: {x: -0.33, y: 13.41, z: -15.92}
+  m_LocalRotation: {x: -0.09045249, y: -0.7436759, z: 0.1290763, w: -0.6496952}
+  m_LocalPosition: {x: -38.51, y: 10.8, z: 13.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1014,14 +1013,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0.5
   m_Version: 2
---- !u!81 &1537210739
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1537210734}
-  m_Enabled: 1
 --- !u!20 &1537210740
 Camera:
   m_ObjectHideFlags: 0
@@ -1055,7 +1046,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 80
+  field of view: 25
   orthographic: 0
   orthographic size: 10
   m_Depth: -5

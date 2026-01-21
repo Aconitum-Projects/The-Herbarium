@@ -225,7 +225,6 @@ GameObject:
   m_Component:
   - component: {fileID: 276882630}
   - component: {fileID: 276882635}
-  - component: {fileID: 276882634}
   - component: {fileID: 276882633}
   - component: {fileID: 276882632}
   - component: {fileID: 276882631}
@@ -244,8 +243,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276882629}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3565536, y: -0.08335529, z: 0.045908358, w: 0.9294159}
-  m_LocalPosition: {x: -0.33, y: 13.41, z: -15.92}
+  m_LocalRotation: {x: -0.049915105, y: -0.5917726, z: 0.004308112, w: -0.80454654}
+  m_LocalPosition: {x: 3.11, y: 6.87, z: 8.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -339,14 +338,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0.5
   m_Version: 2
---- !u!81 &276882634
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 276882629}
-  m_Enabled: 1
 --- !u!20 &276882635
 Camera:
   m_ObjectHideFlags: 0
@@ -380,7 +371,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 80
+  field of view: 25
   orthographic: 0
   orthographic size: 10
   m_Depth: -5
@@ -1139,8 +1130,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079859529}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3565536, y: -0.08335529, z: 0.045908358, w: 0.9294159}
-  m_LocalPosition: {x: -0.33, y: 13.41, z: -15.92}
+  m_LocalRotation: {x: -0.049915105, y: -0.5917726, z: 0.004308112, w: -0.80454654}
+  m_LocalPosition: {x: 3.11, y: 6.87, z: 8.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1276,7 +1267,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 80
+  field of view: 25
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
