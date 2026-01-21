@@ -27,7 +27,7 @@ Material:
   m_ValidKeywords:
   - _GRADIENT_BLEND_MODE_NORMAL
   - _GRADIENT_ORIENTATION_LENGHT
-  - _NOISE_BLEND_MODE_NORMAL
+  - _NOISE_BLEND_MODE_MULTIPLY
   - _TEXTURES_RENDER_ORDER_NOISE_ON_TOP
   m_InvalidKeywords:
   - _GRADIENT_ORIENTATION_HORIZONTAL
@@ -100,8 +100,8 @@ Material:
     - _Lines_Size: 0.927
     - _Main_Color_Metalness: 0
     - _Main_Smoothness: 1
-    - _NOISE_BLEND_MODE: 0
-    - _Noise_Blend: 1
+    - _NOISE_BLEND_MODE: 1
+    - _Noise_Blend: 0.47
     - _Noise_Contrast: 20
     - _Noise_Scale: 0.07
     - _Noise_Smoothness: 1
