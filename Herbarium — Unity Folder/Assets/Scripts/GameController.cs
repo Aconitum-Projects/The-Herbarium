@@ -7,6 +7,8 @@ public class GameController : MonoBehaviour
 
     public GameObject[] characters;
     public int currentCharacterIndex = 0;
+    
+    
     private CharacterMovement[] characterMovements;
 
     void Awake()

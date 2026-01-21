@@ -1872,6 +1872,7 @@ MonoBehaviour:
   - {fileID: 1065460410}
   - {fileID: 1173855446}
   currentCharacterIndex: 0
+  depthOfField: {fileID: 2041861968}
 --- !u!4 &1928691413
 Transform:
   m_ObjectHideFlags: 0
@@ -2367,6 +2368,7 @@ GameObject:
   - component: {fileID: 2041861965}
   - component: {fileID: 2041861967}
   - component: {fileID: 2041861966}
+  - component: {fileID: 2041861968}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -2454,6 +2456,22 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 0
+--- !u!114 &2041861968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041861963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94b6cd6ad2d29634e84bf211b04263ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DynamicDepthOfField
+  globalVolume: {fileID: 193746560}
+  target: {fileID: 0}
+  focusOffset: 0
+  smoothTime: 0.1
 --- !u!1 &291239661866131109
 GameObject:
   m_ObjectHideFlags: 0
