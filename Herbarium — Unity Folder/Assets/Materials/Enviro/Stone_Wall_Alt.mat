@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6358793605349179687
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.Rendering.Universal.AssetVersion
+  version: 10
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Stone_Wall_Alt
+  m_Shader: {fileID: -6465566751694194690, guid: 376187a6a09ab3e47abe3b2ce74fc6cd, type: 3}
+  m_Parent: {fileID: 2100000, guid: 426df65d049858248a1fbe30d97e3494, type: 2}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _GRADIENT_BLEND_MODE_NORMAL
+  - _GRADIENT_ORIENTATION_HEIGHT
+  - _NOISE_BLEND_MODE_ADD
+  - _TEXTURES_RENDER_ORDER_NOISE_ON_TOP
+  m_InvalidKeywords:
+  - _GRADIENT_ORIENTATION_HORIZONTAL
+  - _GRADIENT_ORIENTATION_X
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _Gradient_Blend: 0.787
+    - _Gradient_Hardness: 0.1
+    - _Gradient_Offset: -0.29
+    - _Invert_Gradient: 0
+    - _Noise_Blend: 0.363
+    m_Colors:
+    - _Gradient_Color: {r: 0.28627452, g: 0.28627452, b: 0.43137258, a: 1}
+    - _Main_Color: {r: 0.2392157, g: 0.50980395, b: 0.7176471, a: 1}
+    - _Noise_Color: {r: 0.29803923, g: 0.5882353, b: 0.76470596, a: 1}
+    - _Second_Color: {r: 0.28627452, g: 0.28627452, b: 0.43137258, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
