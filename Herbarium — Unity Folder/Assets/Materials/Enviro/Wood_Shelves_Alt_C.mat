@@ -23,7 +23,7 @@ Material:
   m_Name: Wood_Shelves_Alt_C
   m_Shader: {fileID: -6465566751694194690, guid: 376187a6a09ab3e47abe3b2ce74fc6cd, type: 3}
   m_Parent: {fileID: 2100000, guid: 6c3b762fa019dd244b2c103ad41aab97, type: 2}
-  m_ModifiedSerializedProperties: 0
+  m_ModifiedSerializedProperties: 16
   m_ValidKeywords:
   - _GRADIENT_BLEND_MODE_NORMAL
   - _GRADIENT_ORIENTATION_WIDTH
@@ -35,7 +35,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 1500
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
@@ -59,6 +59,7 @@ Material:
     - _Noise_Blend: 0.273
     - _Noise_Contrast: 1.06
     - _Noise_Scale: 0.1
+    - _QueueControl: 1
     - _TEXTURES_RENDER_ORDER: 0
     - _Use_Gradient: 1
     m_Colors:

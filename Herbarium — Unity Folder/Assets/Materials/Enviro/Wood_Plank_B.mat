@@ -23,7 +23,7 @@ Material:
   m_Name: Wood_Plank_B
   m_Shader: {fileID: -6465566751694194690, guid: 376187a6a09ab3e47abe3b2ce74fc6cd, type: 3}
   m_Parent: {fileID: 2100000, guid: 252f29388ffd8ef4bbc2f6719bbb515d, type: 2}
-  m_ModifiedSerializedProperties: 0
+  m_ModifiedSerializedProperties: 16
   m_ValidKeywords:
   - _GRADIENT_BLEND_MODE_NORMAL
   - _GRADIENT_ORIENTATION_HEIGHT
@@ -35,7 +35,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 1500
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
@@ -61,6 +61,7 @@ Material:
     - _Noise_Contrast: 1.21
     - _Noise_Scale: 0.12
     - _Noise_Smoothness: 1
+    - _QueueControl: 1
     - _TEXTURES_RENDER_ORDER: 0
     - _Texture_Scale: 0.2
     - _Use_Gradient: 1
