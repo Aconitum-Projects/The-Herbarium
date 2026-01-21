@@ -20,15 +20,15 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Wood_Plank_A
+  m_Name: Wood_Dark_C
   m_Shader: {fileID: -6465566751694194690, guid: 376187a6a09ab3e47abe3b2ce74fc6cd, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _GRADIENT_BLEND_MODE_NORMAL
   - _GRADIENT_ORIENTATION_LENGHT
-  - _NOISE_BLEND_MODE_MULTIPLY
-  - _TEXTURES_RENDER_ORDER_NOISE_ON_TOP
+  - _NOISE_BLEND_MODE_NORMAL
+  - _TEXTURES_RENDER_ORDER_GRADIENT_ON_TOP
   m_InvalidKeywords:
   - _GRADIENT_ORIENTATION_HORIZONTAL
   - _GRADIENT_ORIENTATION_X
@@ -52,11 +52,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Main_Texture:
-        m_Texture: {fileID: 2800000, guid: 57b294cb3777f1f49b49e562c24dd02a, type: 3}
+        m_Texture: {fileID: 2800000, guid: aea531e6fc3b179408e814ae837dda4c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Noise_Texture:
-        m_Texture: {fileID: 2800000, guid: 109ee189cbdcc8644af90e5a02673949, type: 3}
+        m_Texture: {fileID: 2800000, guid: 57b294cb3777f1f49b49e562c24dd02a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal_Map:
@@ -89,21 +89,21 @@ Material:
     - _GradientStart: 0
     - _GradientStenght: 2
     - _GradientStrenght: 1
-    - _Gradient_Blend: 0.48
-    - _Gradient_Hardness: 0.5
-    - _Gradient_Offset: 2.48
+    - _Gradient_Blend: 0.469
+    - _Gradient_Hardness: 0.34
+    - _Gradient_Offset: 2.4
     - _Invert: 1
     - _Invert_Gradient: 1
-    - _Invert_Main_Colors: 0
-    - _Invert_Noise: 1
+    - _Invert_Main_Colors: 1
+    - _Invert_Noise: 0
     - _Lighter_Factor: 0
     - _Lines_Size: 0.927
     - _Main_Color_Metalness: 0
     - _Main_Smoothness: 1
-    - _NOISE_BLEND_MODE: 1
-    - _Noise_Blend: 0.364
-    - _Noise_Contrast: 7.83
-    - _Noise_Scale: 0.16
+    - _NOISE_BLEND_MODE: 0
+    - _Noise_Blend: 0.621
+    - _Noise_Contrast: 2.54
+    - _Noise_Scale: 0.025
     - _Noise_Smoothness: 1
     - _Noise_Strenght: -0.13
     - _QueueControl: 0
@@ -112,18 +112,18 @@ Material:
     - _Size: 0.07
     - _Smoothness_Contrast: 0
     - _TEST: -39.44
-    - _TEXTURES_RENDER_ORDER: 0
-    - _Texture_Contrast: 2.02
-    - _Texture_Scale: 0.26
+    - _TEXTURES_RENDER_ORDER: 1
+    - _Texture_Contrast: 1.76
+    - _Texture_Scale: 0.15
     - _Triplanar_Factor: 1
     - _UseGradient: 1
-    - _Use_Gradient: 1
+    - _Use_Gradient: 0
     - _Use_Noise: 1
     m_Colors:
     - _GradientColor: {r: 0.26666668, g: 0.43529415, b: 0.627451, a: 1}
-    - _Gradient_Color: {r: 0.28627452, g: 0.3019608, b: 0.45098042, a: 1}
-    - _Main_Color: {r: 0.6666667, g: 0.7960785, b: 0.75294125, a: 1}
-    - _Noise_Color: {r: 0.23529413, g: 0.5137255, b: 0.7254902, a: 1}
-    - _Second_Color: {r: 0.48235297, g: 0.7803922, b: 0.85098046, a: 1}
+    - _Gradient_Color: {r: 0.4666667, g: 0.7686275, b: 0.8470589, a: 1}
+    - _Main_Color: {r: 0.24313727, g: 0.5058824, b: 0.7137255, a: 1}
+    - _Noise_Color: {r: 0.2627451, g: 0.454902, b: 0.6509804, a: 1}
+    - _Second_Color: {r: 0.34117648, g: 0.63529414, b: 0.7843138, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
