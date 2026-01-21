@@ -20,7 +20,8 @@ public class VictoryCheckerEditor : Editor
         collectedDetectors,
         pointsDetectors,
         cookingControllers,
-        touchedDetectors;
+        touchedDetectors,
+        progressiveGratingDetector;
     
     SerializedProperty
         instructionCanvas,
@@ -45,6 +46,7 @@ public class VictoryCheckerEditor : Editor
         pointsDetectors   = serializedObject.FindProperty("pointsDetectors");
         cookingControllers  = serializedObject.FindProperty("cookingControllers");
         touchedDetectors  = serializedObject.FindProperty("touchedDetectors");
+        progressiveGratingDetector  = serializedObject.FindProperty("progressiveGratingDetector");
 
         victoryManager = serializedObject.FindProperty("victoryManager");
 
@@ -148,8 +150,13 @@ public class VictoryCheckerEditor : Editor
                     break;
 
                 case VictoryType.AllTouched:
-                    EditorGUILayout.LabelField("Touched Controllers", middleTitle);
+                    EditorGUILayout.LabelField("Touched Detectors", middleTitle);
                     EditorGUILayout.PropertyField(touchedDetectors, true);
+                    break;
+
+                case VictoryType.AllProgressed:
+                    EditorGUILayout.LabelField("progressive Grating Detectors", middleTitle);
+                    EditorGUILayout.PropertyField(progressiveGratingDetector, true);
                     break;
             }
 

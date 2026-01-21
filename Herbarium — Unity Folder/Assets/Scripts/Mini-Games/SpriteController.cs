@@ -67,6 +67,7 @@ public class SpriteController : MonoBehaviour
     public bool enableProgressiveDown = true;
     public float yDecreasePerUnitX = 0.05f;
     public float minY = -5f;
+    public bool progressiveValidated = false;
     
     // Detachable Settings
     public Vector2 maxScale = new Vector2(.05f, 1.5f);
@@ -550,6 +551,15 @@ public class SpriteController : MonoBehaviour
             pos.y = Mathf.Lerp(pos.y, targetY, followSpeed * Time.deltaTime);
             transform.position = pos;
         }
+        
+        if (enableProgressiveDown && !progressiveValidated)
+        {
+            if (transform.position.y <= minY + 0.001f)
+            {
+                progressiveValidated = true;
+            }
+        }
+
         
         lastMousePos = Input.mousePosition;
     }

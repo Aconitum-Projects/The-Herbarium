@@ -19,7 +19,8 @@ public class SpriteControllerEditor : Editor
         rotationMinFollow, rotationMaxFollow;
     
     // Raping / Grating
-    SerializedProperty enableProgressiveDown, yDecreasePerUnitX, minY;
+    SerializedProperty enableProgressiveDown, yDecreasePerUnitX, minY,
+        progressiveValidated;
     
     // Detachable
     SerializedProperty maxScale, detachThreshold, scaleDuration, isDetached,
@@ -79,6 +80,7 @@ public class SpriteControllerEditor : Editor
         enableProgressiveDown = serializedObject.FindProperty("enableProgressiveDown");
         yDecreasePerUnitX     = serializedObject.FindProperty("yDecreasePerUnitX");
         minY                 = serializedObject.FindProperty("minY");
+        progressiveValidated = serializedObject.FindProperty("progressiveValidated");
         
         // Detachable
         maxScale = serializedObject.FindProperty("maxScale");
@@ -320,6 +322,13 @@ public class SpriteControllerEditor : Editor
 
         if (enableProgressiveDown.boolValue)
         {
+            EditorGUILayout.PropertyField(
+                progressiveValidated,
+                new GUIContent(
+                    "Progressive Validated",
+                    "Validation de la descente progressive quand elle atteint son min Y"
+                )
+            );
             EditorGUILayout.PropertyField(
                 yDecreasePerUnitX,
                 new GUIContent(

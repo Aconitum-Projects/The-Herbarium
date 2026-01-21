@@ -7,60 +7,95 @@ public class Projection : MonoBehaviour
     public float lifetime = 3f;
     public float growSpeed = 5f;
 
+    [Header("Particle Emission")]
+    public int particlesPerShot = 1;
+    public float spreadAngle = 15f;
+
     [Header("Shooting Settings")]
     public Vector2 direction = Vector2.right;
     public float speed = 5f;
     public float speedRandomness = 1f;
-    public float fireRate = 0.2f;
+    public float fireRate = 0.05f;
 
-    [Header("Rotation Settings")]
-    public float minRotation = 0f;
-    public float maxRotation = 0f;
+    [Header("Trigger Mode")]
+    public bool dropOnMovement = false;
+    public float movementThreshold = 0.01f;
 
-    private float fireCooldown = 0f;
+    [Header("Reference Object")]
+    public Transform referenceObject; // L'objet à suivre pour générer les particules
+
+    private float fireCooldown;
+    private Vector3 lastReferencePos;
+    private Vector2 movementDirection;
+
+    void Start()
+    {
+        if (referenceObject != null)
+            lastReferencePos = referenceObject.position;
+    }
 
     void Update()
     {
         fireCooldown -= Time.deltaTime;
 
-        if (Input.GetMouseButton(0) && fireCooldown <= 0f)
+        bool shouldShoot = false;
+
+        if (dropOnMovement && referenceObject != null)
+        {
+            Vector3 delta = referenceObject.position - lastReferencePos;
+            if (delta.magnitude > movementThreshold)
+            {
+                movementDirection = delta.normalized;
+                shouldShoot = true;
+            }
+            lastReferencePos = referenceObject.position;
+        }
+        else
+        {
+            shouldShoot = Input.GetMouseButton(0);
+        }
+
+        if (shouldShoot && fireCooldown <= 0f)
+        {
+            EmitParticles();
+            fireCooldown = fireRate;
+        }
+    }
+
+    void EmitParticles()
+    {
+        for (int i = 0; i < particlesPerShot; i++)
         {
             ShootSprite();
-            fireCooldown = fireRate;
         }
     }
 
     void ShootSprite()
     {
         if (spritePrefabs.Length == 0) return;
-        GameObject chosenPrefab = spritePrefabs[Random.Range(0, spritePrefabs.Length)];
 
-        // Instantiate
-        GameObject newSprite = Instantiate(chosenPrefab, transform.position, Quaternion.identity);
+        GameObject prefab = spritePrefabs[Random.Range(0, spritePrefabs.Length)];
+        GameObject particle = Instantiate(prefab, transform.position, Quaternion.identity);
 
-        float randomRotation = Random.Range(minRotation, maxRotation);
-        newSprite.transform.rotation = Quaternion.Euler(0, 0, randomRotation);
+        Vector2 baseDir = dropOnMovement && referenceObject != null ? movementDirection : direction.normalized;
 
-        Vector2 finalDirection = direction.normalized;
-        finalDirection = Quaternion.Euler(0, 0, randomRotation) * finalDirection;
+        float angleOffset = Random.Range(-spreadAngle, spreadAngle);
+        Vector2 finalDir = Quaternion.Euler(0, 0, angleOffset) * baseDir;
 
-        Vector2 speedVariation = new Vector2(
-            Random.Range(-speedRandomness, speedRandomness),
-            Random.Range(-speedRandomness, speedRandomness)
-        );
-
-        Vector2 finalVelocity = finalDirection * speed + speedVariation;
-
-        Rigidbody2D rb = newSprite.GetComponent<Rigidbody2D>();
+        Rigidbody2D rb = particle.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.linearVelocity = finalVelocity;
-        }
-        
-        newSprite.transform.localScale = Vector3.zero;
-        newSprite.AddComponent<SpriteGrow>().growSpeed = growSpeed;
+            Vector2 velocity =
+                finalDir * speed +
+                Random.insideUnitCircle * speedRandomness;
 
-        Destroy(newSprite, lifetime);
+            rb.linearVelocity = velocity;
+        }
+
+        particle.transform.localScale = Vector3.zero;
+        particle.AddComponent<SpriteGrow>().growSpeed = growSpeed;
+
+        Destroy(particle, lifetime);
     }
 }
 
@@ -70,6 +105,10 @@ public class SpriteGrow : MonoBehaviour
 
     void Update()
     {
-        transform.localScale = Vector3.MoveTowards(transform.localScale, Vector3.one, growSpeed * Time.deltaTime);
+        transform.localScale = Vector3.MoveTowards(
+            transform.localScale,
+            Vector3.one,
+            growSpeed * Time.deltaTime
+        );
     }
 }

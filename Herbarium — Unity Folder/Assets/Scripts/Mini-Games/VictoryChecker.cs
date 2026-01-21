@@ -17,7 +17,8 @@ public enum VictoryType
     AllCollected,
     AllPoints,
     Cooked,
-    AllTouched
+    AllTouched,
+    AllProgressed
 }
 
 public class VictoryChecker : MonoBehaviour
@@ -37,6 +38,7 @@ public class VictoryChecker : MonoBehaviour
     public List<PointsDetector> pointsDetectors;
     public List<CookingController> cookingControllers;
     public List<TouchedDetector> touchedDetectors;
+    public List<ProgressiveGratingDetector> progressiveGratingDetector;
 
     public VictoryManager victoryManager;
     public CanvasGroup instructionCanvas;
@@ -326,6 +328,20 @@ public class VictoryChecker : MonoBehaviour
             return false;
 
         foreach (var d in touchedDetectors)
+        {
+            if (d == null || !d.validated)
+                return false;
+        }
+
+        TriggerIfComplete(true);
+        return true;
+    }
+    public bool CheckAllProgressed()
+    {
+        if (progressiveGratingDetector == null || progressiveGratingDetector.Count == 0)
+            return false;
+
+        foreach (var d in progressiveGratingDetector)
         {
             if (d == null || !d.validated)
                 return false;
