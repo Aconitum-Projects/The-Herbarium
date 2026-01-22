@@ -100,7 +100,7 @@ public class VictoryManager : MonoBehaviour
     
     void DisableGameplayScripts()
     {
-        disabledSpriteControllers = FindObjectsOfType<SpriteController>();
+        disabledSpriteControllers = FindObjectsByType<SpriteController>(0);
         foreach (var sc in disabledSpriteControllers)
         {
             if (sc == null) continue;
@@ -109,7 +109,7 @@ public class VictoryManager : MonoBehaviour
             sc.enabled = false;
         }
         
-        disabledCookingController = FindObjectsOfType<CookingController>();
+        disabledCookingController = FindObjectsByType<CookingController>(0);
         foreach (var sc in disabledCookingController)
         {
             if (sc == null) continue;

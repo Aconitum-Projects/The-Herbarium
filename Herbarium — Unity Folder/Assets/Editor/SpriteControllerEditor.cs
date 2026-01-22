@@ -19,8 +19,8 @@ public class SpriteControllerEditor : Editor
         rotationMinFollow, rotationMaxFollow;
     
     // Raping / Grating
-    SerializedProperty enableProgressiveDown, yDecreasePerUnitX, minY,
-        progressiveValidated;
+    SerializedProperty enableProgressiveDown, yDecreasePerUnitX, minYOffset,
+        progressiveValidated, progressiveTarget;
     
     // Detachable
     SerializedProperty maxScale, detachThreshold, scaleDuration, isDetached,
@@ -79,8 +79,9 @@ public class SpriteControllerEditor : Editor
         // Rapin / Gratinh
         enableProgressiveDown = serializedObject.FindProperty("enableProgressiveDown");
         yDecreasePerUnitX     = serializedObject.FindProperty("yDecreasePerUnitX");
-        minY                 = serializedObject.FindProperty("minY");
+        minYOffset                 = serializedObject.FindProperty("minYOffset");
         progressiveValidated = serializedObject.FindProperty("progressiveValidated");
+        progressiveTarget = serializedObject.FindProperty("progressiveTarget");
         
         // Detachable
         maxScale = serializedObject.FindProperty("maxScale");
@@ -330,6 +331,13 @@ public class SpriteControllerEditor : Editor
                 )
             );
             EditorGUILayout.PropertyField(
+                progressiveTarget,
+                new GUIContent(
+                    "Progressive Target",
+                    "Objet target qui bougera vers le max Y a mesure qu'il follow mouse"
+                )
+            );
+            EditorGUILayout.PropertyField(
                 yDecreasePerUnitX,
                 new GUIContent(
                     "Y Decrease Per Unit X",
@@ -338,10 +346,10 @@ public class SpriteControllerEditor : Editor
             );
 
             EditorGUILayout.PropertyField(
-                minY,
+                minYOffset,
                 new GUIContent(
-                    "Min Y",
-                    "Limite basse de descente (fin du râpage)"
+                    "Min Y Offset",
+                    "Limite basse de descente ou montée (fin du râpage)"
                 )
             );
         }

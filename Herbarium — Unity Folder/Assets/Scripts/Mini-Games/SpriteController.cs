@@ -66,8 +66,9 @@ public class SpriteController : MonoBehaviour
     // Raping Grating
     public bool enableProgressiveDown = true;
     public float yDecreasePerUnitX = 0.05f;
-    public float minY = -5f;
+    public float minYOffset = -5f;
     public bool progressiveValidated = false;
+    public Transform progressiveTarget;
     
     // Detachable Settings
     public Vector2 maxScale = new Vector2(.05f, 1.5f);
@@ -132,12 +133,9 @@ public class SpriteController : MonoBehaviour
     public Collider2D destroyCollider;
     public bool collected = false;
     public bool destroyed = false;
-    public SpriteRenderer collectedSpriteRenderer;
     private Vector3 prevPosition;
     private float prevRotationZ;
-    private float shakeSpeed;
     public float shakeAccum;
-    private float shakeDecay = 5f;
     
     // Private
     float currentMoveSpeed;
@@ -152,21 +150,15 @@ public class SpriteController : MonoBehaviour
     Vector3 offset;
     bool isDragging = false;
     Tween fillTween;
-    Vector3 fillStartPos;
     SpriteRenderer targetSpriteRenderer;
     bool canStop = false;
     Vector3 lastMousePos;
-    float shakeAnimT = 0f;
-    Tween shakeRewindTween;
-    float currentShakeSpeed = 0f;
-    Vector3 fillStartLocalPos;
     float fillStartRotation;
     Vector3 fillStartScale;
     Vector3 fillStartPosGlobal;
     bool fillInitialized = false;
     int[] pointPasses;
     float initialRotationZ;
-    float lastRotationZ;
     float accumulatedXDistance = 0f;
     float startY;
     
@@ -192,7 +184,9 @@ public class SpriteController : MonoBehaviour
             pointPasses = new int[followPoints.Count];
         }
         
-        startY = transform.position.y;
+        if (progressiveTarget == null)
+            progressiveTarget = transform;
+        startY = progressiveTarget.position.y;
     }
 
     void OnEnable()
@@ -330,6 +324,7 @@ public class SpriteController : MonoBehaviour
         if (currentMode == Mode.Draggable || currentMode == Mode.Detachable)
         {
             lastMousePos = Input.mousePosition;
+
             isDragging = true;
 
             Vector3 mousePos = Input.mousePosition;
@@ -522,8 +517,8 @@ public class SpriteController : MonoBehaviour
             float currentZ = transform.eulerAngles.z;
             if (currentZ > 180f) currentZ -= 360f;
 
-            float angleDelta = Mathf.DeltaAngle(currentZ, targetAngle); // delta entre current et target
-            angleDelta *= rotationSpeedFollow * Time.deltaTime;         // smooth
+            float angleDelta = Mathf.DeltaAngle(currentZ, targetAngle);
+            angleDelta *= rotationSpeedFollow * Time.deltaTime;
 
             if (limitRotation)
             {
@@ -534,32 +529,28 @@ public class SpriteController : MonoBehaviour
             transform.Rotate(0, 0, angleDelta);
         }
         
-        if (enableProgressiveDown && followX)
+        if (enableProgressiveDown && followX && progressiveTarget != null)
         {
             float deltaX = Mathf.Abs(transform.position.x - lastPos.x);
             accumulatedXDistance += deltaX;
 
-            float targetY = startY - accumulatedXDistance * yDecreasePerUnitX;
-
-            if (limitY)
-                targetY = Mathf.Max(targetY, yLimits.x);
-
-            if (targetY < minY)
-                targetY = minY;
-
-            Vector3 pos = transform.position;
+            float direction = Mathf.Sign(minYOffset);
+            float targetY = startY + (-direction * accumulatedXDistance * yDecreasePerUnitX);
+            
+            Vector3 pos = progressiveTarget.position;
             pos.y = Mathf.Lerp(pos.y, targetY, followSpeed * Time.deltaTime);
-            transform.position = pos;
+            progressiveTarget.position = pos;
         }
         
-        if (enableProgressiveDown && !progressiveValidated)
+        if (enableProgressiveDown && !progressiveValidated && progressiveTarget != null)
         {
-            if (transform.position.y <= minY + 0.001f)
+            float deltaY = progressiveTarget.position.y - startY;
+
+            if (Mathf.Abs(deltaY) >= Mathf.Abs(minYOffset))
             {
                 progressiveValidated = true;
             }
         }
-
         
         lastMousePos = Input.mousePosition;
     }
