@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &109606026 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2571069298922912957, guid: a8cc54d93208c2448b23c332f44c801e, type: 3}
+  m_PrefabInstance: {fileID: 1601070945688411629}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d0867f3d3fc8c643832d76db8ea9674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpriteController
 --- !u!1 &141455165
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteController
   currentMode: 2
+  ignoreVictoryFreeze: 0
   followX: 1
   followY: 1
   followSpeed: 100
@@ -180,6 +192,11 @@ MonoBehaviour:
   rotationSpeedFollow: 5
   rotationMinFollow: -21
   rotationMaxFollow: 21
+  enableProgressiveDown: 0
+  yDecreasePerUnitX: 0.05
+  minYOffset: -5
+  progressiveValidated: 0
+  progressiveTarget: {fileID: 0}
   maxScale: {x: 2, y: 2}
   detachThreshold: 1
   scaleDuration: 0.2
@@ -226,8 +243,8 @@ MonoBehaviour:
   destroyCollider: {fileID: 0}
   collected: 0
   destroyed: 0
-  collectedSpriteRenderer: {fileID: 0}
   shakeAccum: 0
+  pointPasses: 
 --- !u!1001 &254200301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -331,17 +348,6 @@ PrefabInstance:
       addedObject: {fileID: 6035942775338781421}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
---- !u!114 &470294434 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1798618409505252777, guid: a8cc54d93208c2448b23c332f44c801e, type: 3}
-  m_PrefabInstance: {fileID: 1601070945688411629}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1050590c1f049147b11f7f3b40a4964, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ShakeDetector
 --- !u!1001 &564728098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -763,22 +769,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1798618409505252777, guid: a8cc54d93208c2448b23c332f44c801e, type: 3}
-      propertyPath: elementsParent
-      value: 
-      objectReference: {fileID: 1817449468}
     - target: {fileID: 1904695812143894023, guid: a8cc54d93208c2448b23c332f44c801e, type: 3}
       propertyPath: m_Name
       value: MG_06_C
       objectReference: {fileID: 0}
-    - target: {fileID: 4149811436882539534, guid: a8cc54d93208c2448b23c332f44c801e, type: 3}
-      propertyPath: shakeSource
+    - target: {fileID: 2217579575438802699, guid: a8cc54d93208c2448b23c332f44c801e, type: 3}
+      propertyPath: source
       value: 
-      objectReference: {fileID: 141455167}
-    - target: {fileID: 6680363793158880576, guid: a8cc54d93208c2448b23c332f44c801e, type: 3}
-      propertyPath: shakeSource
+      objectReference: {fileID: 109606026}
+    - target: {fileID: 6075571438995593860, guid: a8cc54d93208c2448b23c332f44c801e, type: 3}
+      propertyPath: source
       value: 
-      objectReference: {fileID: 141455167}
+      objectReference: {fileID: 109606026}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -789,6 +791,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 767528845997348452, guid: a8cc54d93208c2448b23c332f44c801e, type: 3}
   m_PrefabInstance: {fileID: 1601070945688411629}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1601070945688411631 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2786050625361931683, guid: a8cc54d93208c2448b23c332f44c801e, type: 3}
+  m_PrefabInstance: {fileID: 1601070945688411629}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7c47640131aa6b4f8f07f435b7f7406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PointsDetector
 --- !u!1001 &2570661400001010404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -977,7 +990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: victoryType
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: victoryManager
@@ -1000,9 +1013,13 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: pointsDetectors.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: 'shakeDetectors.Array.data[0]'
       value: 
-      objectReference: {fileID: 470294434}
+      objectReference: {fileID: 0}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: 'colorsDetectors.Array.data[0]'
       value: 
@@ -1011,6 +1028,10 @@ PrefabInstance:
       propertyPath: 'colorsDetectors.Array.data[1]'
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: 'pointsDetectors.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1601070945688411631}
     - target: {fileID: 6102159265385049428, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: nextObject
       value: 
