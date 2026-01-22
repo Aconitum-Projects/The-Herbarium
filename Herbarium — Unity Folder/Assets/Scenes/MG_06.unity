@@ -119,17 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &109606026 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2571069298922912957, guid: a8cc54d93208c2448b23c332f44c801e, type: 3}
-  m_PrefabInstance: {fileID: 1601070945688411629}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d0867f3d3fc8c643832d76db8ea9674, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpriteController
 --- !u!1 &141455165
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,14 +762,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MG_06_C
       objectReference: {fileID: 0}
-    - target: {fileID: 2217579575438802699, guid: a8cc54d93208c2448b23c332f44c801e, type: 3}
-      propertyPath: source
-      value: 
-      objectReference: {fileID: 109606026}
-    - target: {fileID: 6075571438995593860, guid: a8cc54d93208c2448b23c332f44c801e, type: 3}
-      propertyPath: source
-      value: 
-      objectReference: {fileID: 109606026}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
