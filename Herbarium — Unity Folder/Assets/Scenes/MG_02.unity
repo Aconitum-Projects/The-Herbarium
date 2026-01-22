@@ -298,14 +298,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   validated: 0
+  MoveASprite: 1
   yThreshold: -15.5
   xThreshold: -17.5
+  thresholdTolerance: 0.2
   newPosition: {x: 0, y: 0, z: 0}
   objectToActivate: {fileID: 622511045166621875}
   objectToDesactivate: {fileID: 622511045166621874}
   spriteToMove: {fileID: 1366553987}
   spriteNewPosition: {x: 15.5, y: 0, z: 0}
   spriteNewRotation: {x: 0, y: 0, z: 0}
+  trail: {fileID: 0}
 --- !u!4 &15603325 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 18569992805018429, guid: 7e8973570c1a64246994240c2fa36cd2, type: 3}
@@ -773,6 +776,10 @@ PrefabInstance:
     - target: {fileID: 6603093444115684928, guid: 8184972814e54634f9dd92f73f17d228, type: 3}
       propertyPath: yLimits.y
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6603093444115684928, guid: 8184972814e54634f9dd92f73f17d228, type: 3}
+      propertyPath: enableProgressiveDown
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8003060535150554606, guid: 8184972814e54634f9dd92f73f17d228, type: 3}
       propertyPath: elementsParent

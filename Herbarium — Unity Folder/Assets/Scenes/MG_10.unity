@@ -119,17 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &132305774 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 701695955789134822, guid: 8152a47a7f0bbc141970bc04e30d076e, type: 3}
-  m_PrefabInstance: {fileID: 7419635514318611264}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1050590c1f049147b11f7f3b40a4964, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ShakeDetector
 --- !u!1001 &254200301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -219,6 +208,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 111986037346041635, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
   m_PrefabInstance: {fileID: 254200301}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &457817471 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4137400222959460341, guid: 8152a47a7f0bbc141970bc04e30d076e, type: 3}
+  m_PrefabInstance: {fileID: 7419635514318611264}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7c47640131aa6b4f8f07f435b7f7406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PointsDetector
 --- !u!1001 &564728098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -415,23 +415,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: victoryType
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: shakeDetectors.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: pointsDetectors.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: 'shakeDetectors.Array.data[0]'
       value: 
-      objectReference: {fileID: 132305774}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: 'pointsDetectors.Array.data[0]'
+      value: 
+      objectReference: {fileID: 457817471}
     - target: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_Name
       value: SubGame_A
       objectReference: {fileID: 0}
     - target: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -768,7 +776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -961,9 +969,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1582219565}
     m_Modifications:
+    - target: {fileID: 2531492152438307889, guid: 8152a47a7f0bbc141970bc04e30d076e, type: 3}
+      propertyPath: maxScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2531492152438307889, guid: 8152a47a7f0bbc141970bc04e30d076e, type: 3}
+      propertyPath: minScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 7216800797884324311, guid: 8152a47a7f0bbc141970bc04e30d076e, type: 3}
       propertyPath: m_Name
       value: MG_10_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 7559186133254234682, guid: 8152a47a7f0bbc141970bc04e30d076e, type: 3}
+      propertyPath: maxScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7559186133254234682, guid: 8152a47a7f0bbc141970bc04e30d076e, type: 3}
+      propertyPath: minScale.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8425992744772420020, guid: 8152a47a7f0bbc141970bc04e30d076e, type: 3}
       propertyPath: m_LocalPosition.x

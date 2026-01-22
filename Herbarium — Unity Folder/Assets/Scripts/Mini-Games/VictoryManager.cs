@@ -24,6 +24,7 @@ public class VictoryManager : MonoBehaviour
     public GameObject[] miniGames;
     
     [Header("Input Delay")]
+    public float startDelay = 1.0f;
     public float clickDelay = 0.5f;
 
     bool canClick = false;
@@ -35,6 +36,29 @@ public class VictoryManager : MonoBehaviour
 
     void Start()
     {
+        for (int i = 0; i < miniGames.Length; i++)
+            miniGames[i].SetActive(i == currentIndex);
+    }
+    void Awake()
+    {
+        canClick = false;
+
+        disabledSpriteControllers = FindObjectsByType<SpriteController>(0);
+        foreach (var sc in disabledSpriteControllers)
+        {
+            if (sc == null || sc.ignoreVictoryFreeze) continue;
+            sc.enabled = false;
+        }
+
+        disabledCookingController = FindObjectsByType<CookingController>(0);
+        foreach (var cc in disabledCookingController)
+        {
+            if (cc == null || cc.ignoreVictoryFreeze) continue;
+            cc.enabled = false;
+        }
+
+        Invoke(nameof(EnableGameplayScripts), startDelay);
+
         if (victoryText != null)
         {
             victoryText.gameObject.SetActive(false);
@@ -44,10 +68,31 @@ public class VictoryManager : MonoBehaviour
 
         if (globalVolume != null)
             globalVolume.weight = 0f;
-
-        for (int i = 0; i < miniGames.Length; i++)
-            miniGames[i].SetActive(i == currentIndex);
     }
+
+    void EnableGameplayScripts()
+    {
+        canClick = true;
+
+        if (disabledSpriteControllers != null)
+        {
+            foreach (var sc in disabledSpriteControllers)
+            {
+                if (sc != null)
+                    sc.enabled = true;
+            }
+        }
+
+        if (disabledCookingController != null)
+        {
+            foreach (var cc in disabledCookingController)
+            {
+                if (cc != null)
+                    cc.enabled = true;
+            }
+        }
+    }
+
 
     void Update()
     {
@@ -63,7 +108,6 @@ public class VictoryManager : MonoBehaviour
         canClick = false;
 
         DisableGameplayScripts();
-
         Invoke(nameof(EnableClick), clickDelay);
 
         victorySequence?.Kill();

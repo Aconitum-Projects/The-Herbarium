@@ -64,7 +64,7 @@ public class SpriteController : MonoBehaviour
     public float rotationMinFollow = -45, rotationMaxFollow = 45;
 
     // Raping Grating
-    public bool enableProgressiveDown = true;
+    public bool enableProgressiveDown = false;
     public float yDecreasePerUnitX = 0.05f;
     public float minYOffset = -5f;
     public bool progressiveValidated = false;
@@ -157,7 +157,7 @@ public class SpriteController : MonoBehaviour
     Vector3 fillStartScale;
     Vector3 fillStartPosGlobal;
     bool fillInitialized = false;
-    int[] pointPasses;
+    public int[] pointPasses;
     float initialRotationZ;
     float accumulatedXDistance = 0f;
     float startY;

@@ -1249,6 +1249,10 @@ PrefabInstance:
       propertyPath: xLimits.y
       value: 15.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6603093444115684928, guid: 8184972814e54634f9dd92f73f17d228, type: 3}
+      propertyPath: enableProgressiveDown
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8003060535150554606, guid: 8184972814e54634f9dd92f73f17d228, type: 3}
       propertyPath: elementsParent
       value: 
