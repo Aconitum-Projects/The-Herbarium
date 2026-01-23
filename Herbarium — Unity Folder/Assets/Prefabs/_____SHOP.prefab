@@ -3192,6 +3192,8 @@ MonoBehaviour:
   question: Wanna play Ura's mini-game ?
   sceneToPlay: MiniGame_Ura
   transitionAnim: {fileID: 7400000, guid: 0a210524ac346ae4ba2570f023f3f77b, type: 2}
+  gameController: {fileID: 0}
+  dialogueBox: {fileID: 0}
   isInTrigger: 0
 --- !u!65 &4580358464173789787
 BoxCollider:
@@ -7517,6 +7519,8 @@ MonoBehaviour:
   question: Wanna play Oga's mini-game ?
   sceneToPlay: MiniGame_Oga
   transitionAnim: {fileID: 7400000, guid: 0bd87a8becbe1a44a933c0059b9d553d, type: 2}
+  gameController: {fileID: 0}
+  dialogueBox: {fileID: 0}
   isInTrigger: 0
 --- !u!65 &3662416789927245298
 BoxCollider:
@@ -17054,8 +17058,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7a03fd8eb68ea6d4e857776974ef5ce0, type: 2}
-  - {fileID: 2100000, guid: 5cc4397b026654d4d98c3f592dcffc1e, type: 2}
+  - {fileID: 2100000, guid: acd227a9427627e4aa39b8f812bb6e2c, type: 2}
+  - {fileID: 2100000, guid: eb7da1aadc691c4469a50950f06b99b1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17223,6 +17227,8 @@ MonoBehaviour:
   question: Wanna play Aya's mini-game ?
   sceneToPlay: MiniGame_Aya
   transitionAnim: {fileID: 7400000, guid: bc7a8bf02343e394693754356065295c, type: 2}
+  gameController: {fileID: 0}
+  dialogueBox: {fileID: 0}
   isInTrigger: 0
 --- !u!65 &5605504903752945102
 BoxCollider:

@@ -8,13 +8,17 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Water_Fog
-  m_Shader: {fileID: -6465566751694194690, guid: 7ff82077f1505864dac30e3ec6e37140, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_Shader: {fileID: -6465566751694194690, guid: 376187a6a09ab3e47abe3b2ce74fc6cd, type: 3}
+  m_Parent: {fileID: 2100000, guid: 9a0f8fc6735182b40971b5cc9008e011, type: 2}
+  m_ModifiedSerializedProperties: 16
+  m_ValidKeywords:
+  - _GRADIENT_BLEND_MODE_NORMAL
+  - _GRADIENT_ORIENTATION_HEIGHT
+  - _NOISE_BLEND_MODE_NORMAL
+  - _TEXTURES_RENDER_ORDER_NOISE_ON_TOP
   m_InvalidKeywords:
   - _EMISSION
-  m_LightmapFlags: 2
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -25,26 +29,35 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
+    - _Main_Texture:
+        m_Texture: {fileID: 2800000, guid: 27f46c4737caf574d8f3ac00d0116687, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
+    - _Noise_Texture:
+        m_Texture: {fileID: 2800000, guid: c1f0c0d02561e044daa4e372a60e3130, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Depth: -2.99
+    - _GRADIENT_BLEND_MODE: 0
+    - _Gradient_Blend: 1
+    - _Gradient_Offset: -2
+    - _Invert_Gradient: 0
+    - _Invert_Main_Colors: 0
+    - _Main_Smoothness: 0.7
+    - _Noise_Blend: 1
+    - _Noise_Contrast: 1
+    - _Noise_Scale: 0.1
+    - _Noise_Smoothness: 0.4
     - _QueueControl: 0
-    - _QueueOffset: 0
-    - _Strenght: 0.073
+    - _Texture_Contrast: 1
+    - _Texture_Scale: 1
+    - _Use_Gradient: 1
     m_Colors:
-    - _Color: {r: 0.2392157, g: 0.36862746, b: 0.5529412, a: 1}
+    - _Gradient_Color: {r: 0.02745098, g: 0.40312496, b: 1, a: 1}
+    - _Main_Color: {r: 1, g: 0.22297567, b: 0, a: 1}
+    - _Noise_Color: {r: 0, g: 0.5733935, b: 1, a: 1}
+    - _Second_Color: {r: 1, g: 0.805723, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &3906810629236821333

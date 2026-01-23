@@ -37,11 +37,15 @@ public class VictoryManager : MonoBehaviour
 
     [Header("MiniGames Sequence")]
     public GameObject[] miniGames;
+    [Header("End Game Object")]
+    public GameObject endGameObject;
+    public string mainSceneName = "Gameplay";
     
     [Header("Input Delay")]
     public float startDelay = 1.0f;
     public float clickDelay = 0.5f;
     
+    bool endGameActive = false;
     bool canClick = false;
     int currentIndex = 0;
     bool victoryActive = false;
@@ -132,7 +136,14 @@ public class VictoryManager : MonoBehaviour
         {
             if (!EventSystem.current.IsPointerOverGameObject())
             {
-                HideVictoryAndContinue();
+                if (endGameActive)
+                {
+                    UnityEngine.SceneManagement.SceneManager.LoadScene(mainSceneName);
+                }
+                else
+                {
+                    HideVictoryAndContinue();
+                }
             }
         }
     }
@@ -380,14 +391,71 @@ public class VictoryManager : MonoBehaviour
         currentIndex++;
 
         if (currentIndex < miniGames.Length)
+        {
             miniGames[currentIndex].SetActive(true);
+        }
         else
-            Debug.Log("Tous les mini-jeux sont complétés.");
+        {
+
+            if (endGameObject != null)
+                endGameObject.SetActive(true);
+
+            TriggerEndGameVictory();
+            endGameActive = true;
+        }
     }
     
     void EnableClick()
     {
         canClick = true;
     }
+    private void TriggerEndGameVictory()
+    {
+        if (victoryText == null) return;
+
+        victoryActive = true;
+        canClick = false;
+
+        DisableGameplayScripts();
+        Invoke(nameof(EnableClick), clickDelay);
+
+        victorySequence?.Kill();
+
+        victoryText.text = "Mini-game completed!";
+        subtitleText.text = "Click anywhere to get back to the shop";
+
+        victoryText.gameObject.SetActive(true);
+        victoryText.alpha = 0f;
+        victoryText.transform.localScale = scaleFrom;
+
+        victorySequence = DOTween.Sequence();
+
+        victorySequence.Join(
+            victoryText.DOFade(1f, tweenDuration * 0.6f)
+                .SetEase(fadeEaseAnim)
+        );
+
+        victorySequence.Join(
+            victoryText.transform
+                .DOScale(scaleTo, tweenDuration)
+                .SetEase(textEaseAnim)
+        );
+
+        if (victoryButton != null)
+            victoryButton.gameObject.SetActive(false);
+
+        if (globalVolume != null)
+        {
+            victorySequence.Join(
+                DOTween.To(
+                    () => globalVolume.weight,
+                    x => globalVolume.weight = x,
+                    1f,
+                    volumeDuration
+                ).SetEase(volumeEase)
+            );
+        }
+    }
+    
 
 }
