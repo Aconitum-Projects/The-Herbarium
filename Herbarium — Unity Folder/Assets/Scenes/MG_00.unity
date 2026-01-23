@@ -515,6 +515,22 @@ PrefabInstance:
       propertyPath: m_text
       value: Cut the flowers
       objectReference: {fileID: 0}
+    - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: m_fontSize
+      value: 137.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4287521353
+      objectReference: {fileID: 0}
+    - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: victoryType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: victoryManager
       value: 
@@ -530,14 +546,6 @@ PrefabInstance:
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: 'cutedDetectors.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5367747548642348924, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5367747548642348924, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_Name

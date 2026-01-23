@@ -48,6 +48,7 @@ public class VictoryManager : MonoBehaviour
     Sequence victorySequence;
     SpriteController[] disabledSpriteControllers;
     CookingController[] disabledCookingController;
+    VictoryChecker[] victoryCheckers;
 
     void Start()
     {
@@ -89,6 +90,9 @@ public class VictoryManager : MonoBehaviour
             victoryButton.gameObject.SetActive(false);
             victoryButton.onClick.RemoveAllListeners();
         }
+        
+        victoryCheckers = FindObjectsByType<VictoryChecker>(FindObjectsSortMode.None);
+
     }
 
     void EnableGameplayScripts()
@@ -170,9 +174,16 @@ public class VictoryManager : MonoBehaviour
         
         if (victoryButton != null)
         {
-            victoryButton.gameObject.SetActive(true);
-        }
+            Transform bt = victoryButton.transform;
+            bt.DOKill();
 
+            bt.localScale = scaleFrom;
+            victoryButton.gameObject.SetActive(true);
+
+            bt.DOScale(scaleTo, tweenDuration)
+                .SetEase(textEaseAnim);
+        }
+        
         if (globalVolume != null)
         {
             victorySequence.Join(
@@ -190,6 +201,13 @@ public class VictoryManager : MonoBehaviour
     void TriggerPause()
     {
         isPaused = true;
+        
+        if (victoryCheckers != null)
+        {
+            foreach (var vc in victoryCheckers)
+                vc.HideInstructions();
+        }
+
         victoryActive = true;
         canClick = false;
 
@@ -220,7 +238,16 @@ public class VictoryManager : MonoBehaviour
         );
 
         if (victoryButton != null)
+        {
+            Transform bt = victoryButton.transform;
+            bt.DOKill();
+
+            bt.localScale = scaleFrom;
             victoryButton.gameObject.SetActive(true);
+
+            bt.DOScale(scaleTo, tweenDuration)
+                .SetEase(textEaseAnim);
+        }
 
         if (globalVolume != null)
         {
@@ -277,7 +304,15 @@ public class VictoryManager : MonoBehaviour
         
         if (victoryButton != null)
         {
-            victoryButton.gameObject.SetActive(false);
+            Transform bt = victoryButton.transform;
+            bt.DOKill();
+
+            bt.DOScale(scaleFrom, tweenDuration * 0.5f)
+                .SetEase(Ease.InBack)
+                .OnComplete(() =>
+                {
+                    victoryButton.gameObject.SetActive(false);
+                });
         }
 
         if (globalVolume != null)
@@ -300,8 +335,15 @@ public class VictoryManager : MonoBehaviour
             {
                 isPaused = false;
 
+                if (victoryCheckers != null)
+                {
+                    foreach (var vc in victoryCheckers)
+                        vc.ShowInstructions();
+                }
+
                 Invoke(nameof(EnableGameplayScripts), clickDelay);
             }
+
             else
             {
                 ActivateNextMiniGame();

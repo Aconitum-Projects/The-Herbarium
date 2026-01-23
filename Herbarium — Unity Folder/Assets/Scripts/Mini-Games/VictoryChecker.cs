@@ -86,6 +86,9 @@ public class VictoryChecker : MonoBehaviour
     {
         if (instructionCanvas == null || instructionRect == null) return;
 
+        if (victoryManager != null && victoryManager.isPaused)
+            return;
+
         instructionSequence?.Kill();
 
         instructionCanvas.gameObject.SetActive(true);
@@ -349,6 +352,16 @@ public class VictoryChecker : MonoBehaviour
 
         TriggerIfComplete(true);
         return true;
+    }
+    
+    public void HideInstructions()
+    {
+        HideInstructionCanvas();
+    }
+
+    public void ShowInstructions()
+    {
+        ShowInstructionCanvas();
     }
 
 }
