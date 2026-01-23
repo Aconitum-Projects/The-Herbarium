@@ -557,7 +557,7 @@ MonoBehaviour:
   priority: 2
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 0}
+  sharedProfile: {fileID: 11400000, guid: 5f733507d42cd7645be2c1e57a2f7eee, type: 2}
 --- !u!225 &766767346 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 3481669321540044934, guid: d6e67a8da2a854b47bf94ecaaee880f6, type: 3}
@@ -593,14 +593,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984239467}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.56741875, y: 0.23278952, z: -0.17131382, w: 0.7710361}
-  m_LocalPosition: {x: 15, y: 21.1, z: 6.3}
+  m_LocalRotation: {x: 0.31167266, y: 0.27328494, z: -0.09409952, w: 0.9051634}
+  m_LocalPosition: {x: 10.45, y: 14.7, z: -3.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 709888722}
   m_Father: {fileID: 514087582}
-  m_LocalEulerAnglesHint: {x: 72.7, y: 33.6, z: 0}
+  m_LocalEulerAnglesHint: {x: 38, y: 33.6, z: 0}
 --- !u!114 &984239469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,12 +614,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
   Priority:
-    Enabled: 0
-    m_Value: 0
+    Enabled: 1
+    m_Value: 10
   OutputChannel: 1
   StandbyUpdate: 2
-  m_StreamingVersion: 20170927
-  m_LegacyPriority: 10
+  m_StreamingVersion: 20241001
+  m_LegacyPriority: 0
   Target:
     TrackingTarget: {fileID: 0}
     LookAtTarget: {fileID: 0}
@@ -692,18 +692,7 @@ MonoBehaviour:
   priority: 2
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 0}
---- !u!114 &1064998753 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6678980642158056503, guid: d6e67a8da2a854b47bf94ecaaee880f6, type: 3}
-  m_PrefabInstance: {fileID: 8640432877850655072}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 5f733507d42cd7645be2c1e57a2f7eee, type: 2}
 --- !u!1 &1065460410 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3130307178302532403, guid: baeaabaec8409354486a0f0a74e11b33, type: 3}
@@ -760,8 +749,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueCanvas: {fileID: 766767346}
   dialogueText: {fileID: 580316448}
-  yesButton: {fileID: 1064998753}
-  noButton: {fileID: 2007665880}
+  yesButton: {fileID: 0}
+  noButton: {fileID: 0}
   animationDuration: 0.5
   transitionAnim: {fileID: 0}
 --- !u!1 &1166079886
@@ -840,14 +829,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331421339}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.19101736, y: -0.40583792, z: 0.08715231, w: 0.8895012}
-  m_LocalPosition: {x: 7.8, y: 6.7, z: -10.8}
+  m_LocalRotation: {x: 0.20319419, y: -0.09892608, z: 0.020639705, w: 0.9739095}
+  m_LocalPosition: {x: 1.37, y: 8.87, z: -24.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1014642894}
   m_Father: {fileID: 514087582}
-  m_LocalEulerAnglesHint: {x: 24.24, y: -49.05, z: 0}
+  m_LocalEulerAnglesHint: {x: 23.57, y: -11.6, z: 0}
 --- !u!114 &1331421341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,12 +850,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
   Priority:
-    Enabled: 0
-    m_Value: 0
+    Enabled: 1
+    m_Value: 10
   OutputChannel: 1
   StandbyUpdate: 2
-  m_StreamingVersion: 20170927
-  m_LegacyPriority: 10
+  m_StreamingVersion: 20241001
+  m_LegacyPriority: 0
   Target:
     TrackingTarget: {fileID: 0}
     LookAtTarget: {fileID: 0}
@@ -1062,7 +1051,7 @@ Transform:
   m_GameObject: {fileID: 1666672856}
   serializedVersion: 2
   m_LocalRotation: {x: 0.20321602, y: -0.43903664, z: 0.1026518, w: 0.86914486}
-  m_LocalPosition: {x: -9.8, y: 14.1, z: 2}
+  m_LocalPosition: {x: -9.61, y: 13.62, z: 1.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1160,7 +1149,7 @@ MonoBehaviour:
   priority: 2
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 0}
+  sharedProfile: {fileID: 11400000, guid: 5f733507d42cd7645be2c1e57a2f7eee, type: 2}
 --- !u!1 &1928691411
 GameObject:
   m_ObjectHideFlags: 0
@@ -1226,17 +1215,6 @@ MonoBehaviour:
   feedbackPanel: {fileID: 5630612731361656102}
   feedbackDuration: 0.1
   scaleDuration: 0.2
---- !u!114 &2007665880 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8117400934530943285, guid: d6e67a8da2a854b47bf94ecaaee880f6, type: 3}
-  m_PrefabInstance: {fileID: 8640432877850655072}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2013462892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1473,9 +1451,6 @@ MonoBehaviour:
   smoothSpeed: 0.125
   maxDistance: 100
   minDistance: 15
-  globalVolume: {fileID: 193746560}
-  focusSmoothSpeed: 5
-  extraFocusMargin: 0.5
 --- !u!114 &2041861967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2139,54 +2114,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 4398122684210143822, guid: d6e67a8da2a854b47bf94ecaaee880f6, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4398122684210143822, guid: d6e67a8da2a854b47bf94ecaaee880f6, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4398122684210143822, guid: d6e67a8da2a854b47bf94ecaaee880f6, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4398122684210143822, guid: d6e67a8da2a854b47bf94ecaaee880f6, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4398122684210143822, guid: d6e67a8da2a854b47bf94ecaaee880f6, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4398122684210143822, guid: d6e67a8da2a854b47bf94ecaaee880f6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4704307618973638211, guid: d6e67a8da2a854b47bf94ecaaee880f6, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4704307618973638211, guid: d6e67a8da2a854b47bf94ecaaee880f6, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4704307618973638211, guid: d6e67a8da2a854b47bf94ecaaee880f6, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4704307618973638211, guid: d6e67a8da2a854b47bf94ecaaee880f6, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4704307618973638211, guid: d6e67a8da2a854b47bf94ecaaee880f6, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4704307618973638211, guid: d6e67a8da2a854b47bf94ecaaee880f6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6651831229400072273, guid: d6e67a8da2a854b47bf94ecaaee880f6, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2267,14 +2194,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6678980642158056503, guid: d6e67a8da2a854b47bf94ecaaee880f6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1147248729}
-    - target: {fileID: 8117400934530943285, guid: d6e67a8da2a854b47bf94ecaaee880f6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1147248729}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
