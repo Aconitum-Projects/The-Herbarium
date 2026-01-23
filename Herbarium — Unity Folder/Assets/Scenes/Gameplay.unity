@@ -749,8 +749,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueCanvas: {fileID: 766767346}
   dialogueText: {fileID: 580316448}
-  yesButton: {fileID: 0}
-  noButton: {fileID: 0}
+  yesButton: {fileID: 1314173442}
+  noButton: {fileID: 2007665884}
   animationDuration: 0.5
   transitionAnim: {fileID: 0}
 --- !u!1 &1166079886
@@ -804,6 +804,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7542904360858241247, guid: 289fc0de5d7d9174c8c036d89fac67d9, type: 3}
   m_PrefabInstance: {fileID: 4122459599198362895}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1314173442 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5083993826133832297, guid: d6e67a8da2a854b47bf94ecaaee880f6, type: 3}
+  m_PrefabInstance: {fileID: 8640432877850655072}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &1331421339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,6 +1226,17 @@ MonoBehaviour:
   feedbackPanel: {fileID: 5630612731361656102}
   feedbackDuration: 0.1
   scaleDuration: 0.2
+--- !u!114 &2007665884 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6224311770890337548, guid: d6e67a8da2a854b47bf94ecaaee880f6, type: 3}
+  m_PrefabInstance: {fileID: 8640432877850655072}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &2013462892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,7 +1357,7 @@ MonoBehaviour:
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
-  m_Antialiasing: 0
+  m_Antialiasing: 2
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -1906,9 +1928,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1666672858}
     - target: {fileID: 2159757379816979734, guid: 4bcc5793b213fca479f3eeade2dee048, type: 3}
+      propertyPath: dialogueBox
+      value: 
+      objectReference: {fileID: 1147248729}
+    - target: {fileID: 2159757379816979734, guid: 4bcc5793b213fca479f3eeade2dee048, type: 3}
       propertyPath: currentCamera
       value: 
       objectReference: {fileID: 2041861967}
+    - target: {fileID: 2159757379816979734, guid: 4bcc5793b213fca479f3eeade2dee048, type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 1928691412}
     - target: {fileID: 2829652727625774396, guid: 4bcc5793b213fca479f3eeade2dee048, type: 3}
       propertyPath: m_Name
       value: _____SHOP
@@ -1922,9 +1952,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 984239469}
     - target: {fileID: 6019009988585940901, guid: 4bcc5793b213fca479f3eeade2dee048, type: 3}
+      propertyPath: dialogueBox
+      value: 
+      objectReference: {fileID: 1147248729}
+    - target: {fileID: 6019009988585940901, guid: 4bcc5793b213fca479f3eeade2dee048, type: 3}
       propertyPath: currentCamera
       value: 
       objectReference: {fileID: 2041861967}
+    - target: {fileID: 6019009988585940901, guid: 4bcc5793b213fca479f3eeade2dee048, type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 1928691412}
     - target: {fileID: 7014048585785864945, guid: 4bcc5793b213fca479f3eeade2dee048, type: 3}
       propertyPath: question
       value: Gather ingredients with Ura?
@@ -1934,9 +1972,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1331421341}
     - target: {fileID: 7014048585785864945, guid: 4bcc5793b213fca479f3eeade2dee048, type: 3}
+      propertyPath: dialogueBox
+      value: 
+      objectReference: {fileID: 1147248729}
+    - target: {fileID: 7014048585785864945, guid: 4bcc5793b213fca479f3eeade2dee048, type: 3}
       propertyPath: currentCamera
       value: 
       objectReference: {fileID: 2041861967}
+    - target: {fileID: 7014048585785864945, guid: 4bcc5793b213fca479f3eeade2dee048, type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 1928691412}
     - target: {fileID: 8585375990153382416, guid: 4bcc5793b213fca479f3eeade2dee048, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

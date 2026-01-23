@@ -19,7 +19,8 @@ public class ButtonHandler : MonoBehaviour,
     #endregion
 
     [Header("Animator")]
-    public Animator animator; // L'Animator du panel / bouton
+    public Animator animator;
+    public string hoverTriggerName = "OnHover", exitTriggerName = "OnExit", clickTriggerName = "OnClick";
 
     [Header("SceneChanger")]
     public SceneChanger sceneChanger;
@@ -37,19 +38,19 @@ public class ButtonHandler : MonoBehaviour,
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (animator)
-            animator.SetTrigger("OnHover");
+            animator.SetTrigger(hoverTriggerName);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         if (animator)
-            animator.SetTrigger("OnExit");
+            animator.SetTrigger(exitTriggerName);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         if (animator)
-            animator.SetTrigger("OnClick");
+            animator.SetTrigger(clickTriggerName);
 
         if (transitionAnim && sceneChanger)
         {

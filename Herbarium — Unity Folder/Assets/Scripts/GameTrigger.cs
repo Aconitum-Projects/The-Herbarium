@@ -10,10 +10,11 @@ public class GameTrigger : MonoBehaviour
     public string question = "Wanna play 's mini-game ?";
     public string sceneToPlay = "MiniGame_";
     public AnimationClip transitionAnim;
-
-    private GameController gameController;
+    [Space(15)]
+    public GameController gameController;
+    public DialogueBox dialogueBox;
+    
     private CharacterMovement currentCharacterMovement;
-    private DialogueBox dialogueBox;
 
     public bool isInTrigger = false;
 
@@ -21,16 +22,13 @@ public class GameTrigger : MonoBehaviour
 
     void Awake()
     {
-
         triggerCollider = GetComponent<Collider>();
         if (triggerCollider == null)
             Debug.LogWarning(name + " has no Collider!");
 
-        dialogueBox = FindAnyObjectByType<DialogueBox>();
         if (dialogueBox == null) Debug.LogWarning("DialogueBox not found");
-
-        gameController = FindAnyObjectByType<GameController>();
         if (gameController == null) Debug.LogWarning("GameController not found");
+        
     }
 
     void OnEnable()

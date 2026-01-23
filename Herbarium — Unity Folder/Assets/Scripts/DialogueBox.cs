@@ -23,7 +23,13 @@ public class DialogueBox : MonoBehaviour
         gameTrigger = new List<GameTrigger>(FindObjectsByType<GameTrigger>(FindObjectsSortMode.None));
         sceneChanger = FindAnyObjectByType<SceneChanger>();
         dialogueCanvas.gameObject.SetActive(false);
+
+        if (yesButton != null)
+            yesButton.onClick.AddListener(OnYesClicked);
+        if (noButton != null)
+            noButton.onClick.AddListener(OnNoClicked);
     }
+
 
     public void ShowDialogue(string question, string sceneToPlay)
     {
@@ -33,12 +39,16 @@ public class DialogueBox : MonoBehaviour
         dialogueCanvas.alpha = 0;
         dialogueCanvas.transform.localScale = Vector3.zero;
 
+        dialogueCanvas.blocksRaycasts = false;
+
         dialogueCanvas.DOFade(1, animationDuration);
-        dialogueCanvas.transform.DOScale(1, animationDuration).SetEase(Ease.OutBack);
+        dialogueCanvas.transform.DOScale(1, animationDuration).SetEase(Ease.OutBack)
+            .OnComplete(() => dialogueCanvas.blocksRaycasts = true);
 
         AnimateButton(yesButton);
         AnimateButton(noButton);
     }
+
 
     public void OnYesClicked()
     {

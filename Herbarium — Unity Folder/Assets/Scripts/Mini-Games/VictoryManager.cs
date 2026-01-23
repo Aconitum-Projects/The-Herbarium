@@ -1,12 +1,27 @@
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
+using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 
 public class VictoryManager : MonoBehaviour
 {
+    
+    [Header("Pause")]
+    public bool isPaused = false;
+    
     [Header("UI Elements")]
-    public TextMeshProUGUI victoryText;
+    public TextMeshProUGUI victoryText, subtitleText;
+    public string[] victoryMessages;
+    public string[] pauseMessages =
+    {
+        "Need a break?",
+        "Take a breath.",
+        "Paused. No rush.",
+        "Still here when you are."
+    };
+    public string pauseSubtitleMessage = "Click anywhere to get back to the game";
+    public UnityEngine.UI.Button victoryButton;
     public Volume globalVolume;
 
     [Header("Victory Text Anim")]
@@ -26,7 +41,7 @@ public class VictoryManager : MonoBehaviour
     [Header("Input Delay")]
     public float startDelay = 1.0f;
     public float clickDelay = 0.5f;
-
+    
     bool canClick = false;
     int currentIndex = 0;
     bool victoryActive = false;
@@ -68,6 +83,12 @@ public class VictoryManager : MonoBehaviour
 
         if (globalVolume != null)
             globalVolume.weight = 0f;
+        
+        if (victoryButton != null)
+        {
+            victoryButton.gameObject.SetActive(false);
+            victoryButton.onClick.RemoveAllListeners();
+        }
     }
 
     void EnableGameplayScripts()
@@ -93,11 +114,23 @@ public class VictoryManager : MonoBehaviour
         }
     }
 
-
     void Update()
     {
-        if (victoryActive && canClick && Input.GetMouseButtonDown(0))
-            HideVictoryAndContinue();
+        if (!victoryActive && Input.GetKeyDown(KeyCode.Escape))
+        {
+            TriggerPause();
+            return;
+        }
+
+        if (!victoryActive || !canClick) return;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (!EventSystem.current.IsPointerOverGameObject())
+            {
+                HideVictoryAndContinue();
+            }
+        }
     }
     
     public void TriggerVictory()
@@ -111,6 +144,63 @@ public class VictoryManager : MonoBehaviour
         Invoke(nameof(EnableClick), clickDelay);
 
         victorySequence?.Kill();
+        
+        if (victoryMessages != null && victoryMessages.Length > 0)
+        {
+            int randomIndex = Random.Range(0, victoryMessages.Length);
+            victoryText.text = victoryMessages[randomIndex];
+        }
+        
+        victoryText.gameObject.SetActive(true);
+        victoryText.alpha = 0f;
+        victoryText.transform.localScale = scaleFrom;
+
+        victorySequence = DOTween.Sequence();
+
+        victorySequence.Join(
+            victoryText.DOFade(1f, tweenDuration * 0.6f)
+                .SetEase(fadeEaseAnim)
+        );
+
+        victorySequence.Join(
+            victoryText.transform
+                .DOScale(scaleTo, tweenDuration)
+                .SetEase(textEaseAnim)
+        );
+        
+        if (victoryButton != null)
+        {
+            victoryButton.gameObject.SetActive(true);
+        }
+
+        if (globalVolume != null)
+        {
+            victorySequence.Join(
+                DOTween.To(
+                    () => globalVolume.weight,
+                    x => globalVolume.weight = x,
+                    1f,
+                    volumeDuration
+                ).SetEase(volumeEase)
+            );
+        }
+        
+    }
+    
+    void TriggerPause()
+    {
+        isPaused = true;
+        victoryActive = true;
+        canClick = false;
+
+        DisableGameplayScripts();
+        Invoke(nameof(EnableClick), clickDelay);
+
+        victorySequence?.Kill();
+
+        int randomIndex = Random.Range(0, pauseMessages.Length);
+        victoryText.text = pauseMessages[randomIndex];
+        subtitleText.text = pauseSubtitleMessage;
 
         victoryText.gameObject.SetActive(true);
         victoryText.alpha = 0f;
@@ -128,6 +218,9 @@ public class VictoryManager : MonoBehaviour
                 .DOScale(scaleTo, tweenDuration)
                 .SetEase(textEaseAnim)
         );
+
+        if (victoryButton != null)
+            victoryButton.gameObject.SetActive(true);
 
         if (globalVolume != null)
         {
@@ -181,6 +274,11 @@ public class VictoryManager : MonoBehaviour
                 .DOScale(scaleFrom, tweenDuration * 0.5f)
                 .SetEase(Ease.InBack)
         );
+        
+        if (victoryButton != null)
+        {
+            victoryButton.gameObject.SetActive(false);
+        }
 
         if (globalVolume != null)
         {
@@ -197,25 +295,35 @@ public class VictoryManager : MonoBehaviour
         hideSeq.OnComplete(() =>
         {
             victoryText.gameObject.SetActive(false);
-            ActivateNextMiniGame();
 
-            if (disabledSpriteControllers != null)
+            if (isPaused)
             {
-                foreach (var sc in disabledSpriteControllers)
+                isPaused = false;
+
+                Invoke(nameof(EnableGameplayScripts), clickDelay);
+            }
+            else
+            {
+                ActivateNextMiniGame();
+
+                if (disabledSpriteControllers != null)
                 {
-                    if (sc != null)
-                        sc.enabled = true;
+                    foreach (var sc in disabledSpriteControllers)
+                    {
+                        if (sc != null)
+                            sc.enabled = true;
+                    }
+                }
+
+                if (disabledCookingController != null)
+                {
+                    foreach (var sc in disabledCookingController)
+                    {
+                        if (sc != null)
+                            sc.enabled = true;
+                    }
                 }
             }
-            if (disabledCookingController != null)
-            {
-                foreach (var sc in disabledCookingController)
-                {
-                    if (sc != null)
-                        sc.enabled = true;
-                }
-            }
-
         });
 
     }
