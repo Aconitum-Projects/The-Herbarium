@@ -1,52 +1,60 @@
+using UnityEngine;
+using UnityEngine.EventSystems;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
-using UnityEngine.SceneManagement;
 
-using UnityEngine;
-using UnityEngine.UI;
-using DG.Tweening;
-
-public class ButtonHandler : MonoBehaviour
+public class ButtonHandler : MonoBehaviour,
+    IPointerEnterHandler,
+    IPointerExitHandler,
+    IPointerClickHandler
 {
+    #region Scene
 #if UNITY_EDITOR
     public SceneAsset sceneAsset;
 #endif
-
     public AnimationClip transitionAnim;
-    
-    private string transitionAnimName;
-    private Button button;
-    private SceneChanger sceneChanger;
-    private Vector3 originalScale;
-    private Color originalColor;
-    private Image buttonImage;
     private string sceneName;
+    #endregion
+
+    [Header("Animator")]
+    public Animator animator; // L'Animator du panel / bouton
+
+    [Header("SceneChanger")]
+    public SceneChanger sceneChanger;
 
     void Start()
     {
-        sceneName = sceneAsset.name;
-        button = GetComponent<Button>();
-        sceneChanger = FindAnyObjectByType<SceneChanger>();
-
-        button.onClick.AddListener(OnButtonClick);
-
-        originalScale = transform.localScale;
-        buttonImage = GetComponent<Image>();
-        originalColor = buttonImage.color;
-        
-        transitionAnimName = transitionAnim.name;
+#if UNITY_EDITOR
+        if (sceneAsset)
+            sceneName = sceneAsset.name;
+#endif
+        if (!sceneChanger)
+            sceneChanger = FindAnyObjectByType<SceneChanger>();
     }
 
-    void OnButtonClick()
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        buttonImage.DOColor(Color.gray, 0.2f)
-            .OnComplete(() => buttonImage.DOColor(originalColor, 0.2f));
+        if (animator)
+            animator.SetTrigger("OnHover");
+    }
 
-        transform.DOScale(originalScale * 1.2f, 0.1f)
-            .OnComplete(() => transform.DOScale(originalScale, 0.1f));
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (animator)
+            animator.SetTrigger("OnExit");
+    }
 
-        sceneChanger.PlayTransition(transitionAnimName);
-        sceneChanger.ChangeScene(sceneName);
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (animator)
+            animator.SetTrigger("OnClick");
+
+        if (transitionAnim && sceneChanger)
+        {
+            sceneChanger.PlayTransition(transitionAnim.name);
+            sceneChanger.ChangeScene(sceneName);
+        }
     }
 }
