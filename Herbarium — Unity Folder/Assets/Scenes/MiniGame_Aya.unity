@@ -127,6 +127,102 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1245164060}
     m_Modifications:
+    - target: {fileID: 936949658746772009, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 936949658746772009, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 936949658746772009, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185173098864890854, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8117648
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185173098864890854, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.g
+      value: 0.85098046
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185173098864890854, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.r
+      value: 0.97647065
+      objectReference: {fileID: 0}
+    - target: {fileID: 2424452167291169774, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 3fe6fc76b4faff24d8d85dc3de050b0b, type: 3}
+    - target: {fileID: 3064865512103296036, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8117648
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064865512103296036, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.g
+      value: 0.85098046
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064865512103296036, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.r
+      value: 0.97647065
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_text
+      value: Potion of Confusion
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.b
+      value: 0.6313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.g
+      value: 0.6901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.r
+      value: 0.9686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.topRight.b
+      value: 0.6313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.topRight.g
+      value: 0.6901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.topRight.r
+      value: 0.9686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.b
+      value: 0.8117648
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.g
+      value: 0.85098046
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.r
+      value: 0.97647065
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.b
+      value: 0.8117648
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.g
+      value: 0.85098046
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.r
+      value: 0.97647065
+      objectReference: {fileID: 0}
     - target: {fileID: 6570322945575581669, guid: 10f4517175069c04baa699247374b2ba, type: 3}
       propertyPath: m_TargetGraphic
       value: 
@@ -165,7 +261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8093362820017559367, guid: 10f4517175069c04baa699247374b2ba, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 516
       objectReference: {fileID: 0}
     - target: {fileID: 8093362820017559367, guid: 10f4517175069c04baa699247374b2ba, type: 3}
       propertyPath: m_LocalPosition.x
@@ -218,40 +314,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6773050536877339671, guid: 10f4517175069c04baa699247374b2ba, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 9726626}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10f4517175069c04baa699247374b2ba, type: 3}
 --- !u!224 &9726624 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8093362820017559367, guid: 10f4517175069c04baa699247374b2ba, type: 3}
   m_PrefabInstance: {fileID: 9726623}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &9726625 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6773050536877339671, guid: 10f4517175069c04baa699247374b2ba, type: 3}
-  m_PrefabInstance: {fileID: 9726623}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &9726626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9726625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b692940a5a06398478832de105d186d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneAsset: {fileID: 102900000, guid: 3fe6fc76b4faff24d8d85dc3de050b0b, type: 3}
-  transitionAnim: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
-  animator: {fileID: 0}
-  hoverTriggerName: OnHover
-  exitTriggerName: OnExit
-  clickTriggerName: OnClick
-  sceneChanger: {fileID: 0}
 --- !u!1001 &9978135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -753,6 +822,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7329560287039850238, guid: 6bed55f0fedc118418331ae2631e7577, type: 3}
+      propertyPath: sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 0b68d8f92d564534e926b33ac3798de8, type: 3}
     - target: {fileID: 8421541573200817903, guid: 6bed55f0fedc118418331ae2631e7577, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -1209,12 +1282,12 @@ MonoBehaviour:
     m_Right: 100
     m_Top: 50
     m_Bottom: 50
-  m_ChildAlignment: 3
+  m_ChildAlignment: 4
   m_Spacing: -130
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
-  m_ChildControlHeight: 1
+  m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
@@ -1457,6 +1530,98 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1245164060}
     m_Modifications:
+    - target: {fileID: 936949658746772009, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 936949658746772009, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8078432
+      objectReference: {fileID: 0}
+    - target: {fileID: 936949658746772009, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185173098864890854, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185173098864890854, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185173098864890854, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 2424452167291169774, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 62df6689483f4274991de64d50d6c512, type: 3}
+    - target: {fileID: 3064865512103296036, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064865512103296036, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064865512103296036, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_text
+      value: Potion of Serenity
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.b
+      value: 0.6392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.g
+      value: 0.8078432
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.r
+      value: 0.8862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.topRight.b
+      value: 0.6392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.topRight.g
+      value: 0.8078432
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.topRight.r
+      value: 0.8862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.b
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.g
+      value: 0.6745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.r
+      value: 0.9686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.b
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.g
+      value: 0.6745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.r
+      value: 0.9686275
+      objectReference: {fileID: 0}
     - target: {fileID: 6570322945575581669, guid: 10f4517175069c04baa699247374b2ba, type: 3}
       propertyPath: m_TargetGraphic
       value: 
@@ -1495,7 +1660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8093362820017559367, guid: 10f4517175069c04baa699247374b2ba, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 516
       objectReference: {fileID: 0}
     - target: {fileID: 8093362820017559367, guid: 10f4517175069c04baa699247374b2ba, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1548,40 +1713,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6773050536877339671, guid: 10f4517175069c04baa699247374b2ba, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 1893995025}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10f4517175069c04baa699247374b2ba, type: 3}
 --- !u!224 &1893995023 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8093362820017559367, guid: 10f4517175069c04baa699247374b2ba, type: 3}
   m_PrefabInstance: {fileID: 1893995022}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1893995024 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6773050536877339671, guid: 10f4517175069c04baa699247374b2ba, type: 3}
-  m_PrefabInstance: {fileID: 1893995022}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1893995025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1893995024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b692940a5a06398478832de105d186d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneAsset: {fileID: 102900000, guid: 62df6689483f4274991de64d50d6c512, type: 3}
-  transitionAnim: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
-  animator: {fileID: 0}
-  hoverTriggerName: OnHover
-  exitTriggerName: OnExit
-  clickTriggerName: OnClick
-  sceneChanger: {fileID: 0}
 --- !u!1001 &1901100640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1590,6 +1728,98 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1245164060}
     m_Modifications:
+    - target: {fileID: 936949658746772009, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8196079
+      objectReference: {fileID: 0}
+    - target: {fileID: 936949658746772009, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.g
+      value: 0.78823537
+      objectReference: {fileID: 0}
+    - target: {fileID: 936949658746772009, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185173098864890854, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185173098864890854, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.g
+      value: 0.57254905
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185173098864890854, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.r
+      value: 0.28235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2424452167291169774, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 83d532cc036435344909cd6092dab791, type: 3}
+    - target: {fileID: 3064865512103296036, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064865512103296036, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.g
+      value: 0.57254905
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064865512103296036, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.r
+      value: 0.28235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_text
+      value: Potion of Awakening
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.b
+      value: 0.8196079
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.g
+      value: 0.78823537
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.r
+      value: 0.5411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.topRight.b
+      value: 0.8196079
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.topRight.g
+      value: 0.78823537
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.topRight.r
+      value: 0.5411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.b
+      value: 0.7568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.g
+      value: 0.57254905
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.r
+      value: 0.28235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.b
+      value: 0.7568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.g
+      value: 0.57254905
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.r
+      value: 0.28235295
+      objectReference: {fileID: 0}
     - target: {fileID: 6570322945575581669, guid: 10f4517175069c04baa699247374b2ba, type: 3}
       propertyPath: m_TargetGraphic
       value: 
@@ -1628,7 +1858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8093362820017559367, guid: 10f4517175069c04baa699247374b2ba, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 516
       objectReference: {fileID: 0}
     - target: {fileID: 8093362820017559367, guid: 10f4517175069c04baa699247374b2ba, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1681,40 +1911,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6773050536877339671, guid: 10f4517175069c04baa699247374b2ba, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 1901100643}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10f4517175069c04baa699247374b2ba, type: 3}
 --- !u!224 &1901100641 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8093362820017559367, guid: 10f4517175069c04baa699247374b2ba, type: 3}
   m_PrefabInstance: {fileID: 1901100640}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1901100642 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6773050536877339671, guid: 10f4517175069c04baa699247374b2ba, type: 3}
-  m_PrefabInstance: {fileID: 1901100640}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1901100643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1901100642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b692940a5a06398478832de105d186d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneAsset: {fileID: 102900000, guid: 83d532cc036435344909cd6092dab791, type: 3}
-  transitionAnim: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
-  animator: {fileID: 0}
-  hoverTriggerName: OnHover
-  exitTriggerName: OnExit
-  clickTriggerName: OnClick
-  sceneChanger: {fileID: 0}
 --- !u!1001 &1913278276
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1723,6 +1926,102 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1245164060}
     m_Modifications:
+    - target: {fileID: 936949658746772009, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 936949658746772009, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8078432
+      objectReference: {fileID: 0}
+    - target: {fileID: 936949658746772009, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185173098864890854, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7843138
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185173098864890854, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.g
+      value: 0.79215693
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185173098864890854, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 2424452167291169774, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 2f55c6b6947717f4683d84ed1e30d823, type: 3}
+    - target: {fileID: 3064865512103296036, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7843138
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064865512103296036, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.g
+      value: 0.79215693
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064865512103296036, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_text
+      value: Potion of Transformation
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.b
+      value: 0.6627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.g
+      value: 0.8078432
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.r
+      value: 0.8431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.topRight.b
+      value: 0.6627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.topRight.g
+      value: 0.8078432
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.topRight.r
+      value: 0.8431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.b
+      value: 0.7843138
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.g
+      value: 0.79215693
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.r
+      value: 0.6039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.b
+      value: 0.7843138
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.g
+      value: 0.79215693
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681612679798308131, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.r
+      value: 0.6039216
+      objectReference: {fileID: 0}
     - target: {fileID: 6570322945575581669, guid: 10f4517175069c04baa699247374b2ba, type: 3}
       propertyPath: m_TargetGraphic
       value: 
@@ -1761,7 +2060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8093362820017559367, guid: 10f4517175069c04baa699247374b2ba, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 516
       objectReference: {fileID: 0}
     - target: {fileID: 8093362820017559367, guid: 10f4517175069c04baa699247374b2ba, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1814,40 +2113,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6773050536877339671, guid: 10f4517175069c04baa699247374b2ba, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 1913278279}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10f4517175069c04baa699247374b2ba, type: 3}
 --- !u!224 &1913278277 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8093362820017559367, guid: 10f4517175069c04baa699247374b2ba, type: 3}
   m_PrefabInstance: {fileID: 1913278276}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1913278278 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6773050536877339671, guid: 10f4517175069c04baa699247374b2ba, type: 3}
-  m_PrefabInstance: {fileID: 1913278276}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1913278279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1913278278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b692940a5a06398478832de105d186d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneAsset: {fileID: 102900000, guid: 2f55c6b6947717f4683d84ed1e30d823, type: 3}
-  transitionAnim: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
-  animator: {fileID: 0}
-  hoverTriggerName: OnHover
-  exitTriggerName: OnExit
-  clickTriggerName: OnClick
-  sceneChanger: {fileID: 0}
 --- !u!1 &2116804468
 GameObject:
   m_ObjectHideFlags: 0
@@ -1959,10 +2231,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1245164060}
     m_Modifications:
-    - target: {fileID: 6570322945575581669, guid: 10f4517175069c04baa699247374b2ba, type: 3}
-      propertyPath: m_TargetGraphic
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6773050536877339671, guid: 10f4517175069c04baa699247374b2ba, type: 3}
       propertyPath: m_Name
       value: PotionButton_A
@@ -1997,7 +2265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8093362820017559367, guid: 10f4517175069c04baa699247374b2ba, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 516
       objectReference: {fileID: 0}
     - target: {fileID: 8093362820017559367, guid: 10f4517175069c04baa699247374b2ba, type: 3}
       propertyPath: m_LocalPosition.x

@@ -100,6 +100,28 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   multiSpriteImportData: []
   layeredSpriteImportData:
+  - name: Bubbles
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 2391
+      y: 4
+      width: 915
+      height: 1238
+    spriteID: 735fc4b408921054a848777d29026afa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2390, y: 3}
+    spritePosition: {x: 1464, y: 1584}
   - name: Liquid_Gradient
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -174,8 +196,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 7445
+      x: 2391
+      y: 1250
       width: 299
       height: 357
     spriteID: e8b55b71a7832e045a28acd47119135a
@@ -186,7 +208,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 7445}
+    uvTransform: {x: 2391, y: 1250}
     spritePosition: {x: 85, y: 2252}
   - name: Base
     originalName: 
@@ -281,6 +303,16 @@ ScriptedImporter:
   resliceFromLayer: 1
   pSDLayerImportSetting: []
   psdLayers:
+  - name: Bubbles
+    spriteName: Bubbles
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 735fc4b408921054a848777d29026afa
+    layerID: 25
+    mosaicPosition: {x: 2391, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Liquid_Gradient
     spriteName: Liquid_Gradient
     isGroup: 0
@@ -317,7 +349,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: e8b55b71a7832e045a28acd47119135a
     layerID: 13
-    mosaicPosition: {x: 4, y: 7445}
+    mosaicPosition: {x: 2391, y: 1250}
     flatten: 0
     isImported: 1
     isVisible: 1
