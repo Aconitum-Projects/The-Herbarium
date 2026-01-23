@@ -349,7 +349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_text
-      value: Shake the clouds until they're liquid
+      value: Mix the clouds
       objectReference: {fileID: 0}
     - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_fontSize
@@ -451,19 +451,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2489897513528384025, guid: 2ac5d058f5d9a4044a94cd45f71e422a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.672437
+      value: 12.672635
       objectReference: {fileID: 0}
     - target: {fileID: 2489897513528384025, guid: 2ac5d058f5d9a4044a94cd45f71e422a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.926266
+      value: -8.926365
       objectReference: {fileID: 0}
     - target: {fileID: 2489897513528384025, guid: 2ac5d058f5d9a4044a94cd45f71e422a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9999647
+      value: 0.99991626
       objectReference: {fileID: 0}
     - target: {fileID: 2489897513528384025, guid: 2ac5d058f5d9a4044a94cd45f71e422a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.008398323
+      value: -0.012946308
       objectReference: {fileID: 0}
     - target: {fileID: 3957273185113328306, guid: 2ac5d058f5d9a4044a94cd45f71e422a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -523,15 +523,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 8252754545788935499, guid: 2ac5d058f5d9a4044a94cd45f71e422a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.5177946
+      value: -6.517894
       objectReference: {fileID: 0}
     - target: {fileID: 8252754545788935499, guid: 2ac5d058f5d9a4044a94cd45f71e422a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9999783
+      value: 0.99999416
       objectReference: {fileID: 0}
     - target: {fileID: 8252754545788935499, guid: 2ac5d058f5d9a4044a94cd45f71e422a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0065939715
+      value: 0.003442496
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1792,8 +1792,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: m_text
+      value: Catch the clouds
+      objectReference: {fileID: 0}
+    - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_fontSize
-      value: 136.05
+      value: 84.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4287521353
       objectReference: {fileID: 0}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: victoryType
@@ -2003,7 +2011,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_text
-      value: Poor the illusion nectar
+      value: Pouur the cloud mix
       objectReference: {fileID: 0}
     - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_fontSize

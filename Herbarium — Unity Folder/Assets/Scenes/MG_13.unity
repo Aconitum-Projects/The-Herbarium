@@ -258,8 +258,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: m_text
+      value: Pour the brew
+      objectReference: {fileID: 0}
+    - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_fontSize
-      value: 136.05
+      value: 84.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4287521353
       objectReference: {fileID: 0}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: victoryType
@@ -1069,6 +1077,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: m_text
+      value: Cook the leaves
+      objectReference: {fileID: 0}
+    - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: m_fontSize
+      value: 84.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4287521353
+      objectReference: {fileID: 0}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: victoryType
       value: 11
@@ -1854,6 +1874,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: m_text
+      value: Mix the brew
+      objectReference: {fileID: 0}
+    - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: m_fontSize
+      value: 84.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 694853880349481868, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4287521353
+      objectReference: {fileID: 0}
     - target: {fileID: 4653189293422416929, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: victoryType
       value: 10
@@ -2080,15 +2112,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 989859917608072332, guid: a896566bd488c514988325268cd547df, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.8738227
+      value: -5.8738265
       objectReference: {fileID: 0}
     - target: {fileID: 989859917608072332, guid: a896566bd488c514988325268cd547df, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9999641
+      value: 0.99997586
       objectReference: {fileID: 0}
     - target: {fileID: 989859917608072332, guid: a896566bd488c514988325268cd547df, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.008477807
+      value: -0.0069559216
       objectReference: {fileID: 0}
     - target: {fileID: 2729966244982283525, guid: a896566bd488c514988325268cd547df, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2132,19 +2164,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3343682484663104582, guid: a896566bd488c514988325268cd547df, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.279575
+      value: 13.279591
       objectReference: {fileID: 0}
     - target: {fileID: 3343682484663104582, guid: a896566bd488c514988325268cd547df, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.904788
+      value: -7.9047956
       objectReference: {fileID: 0}
     - target: {fileID: 3343682484663104582, guid: a896566bd488c514988325268cd547df, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9999596
+      value: 0.99997413
       objectReference: {fileID: 0}
     - target: {fileID: 3343682484663104582, guid: a896566bd488c514988325268cd547df, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.008992105
+      value: -0.0071980655
       objectReference: {fileID: 0}
     - target: {fileID: 3831103136491275622, guid: a896566bd488c514988325268cd547df, type: 3}
       propertyPath: m_Name
