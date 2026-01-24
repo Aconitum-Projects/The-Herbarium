@@ -1541,6 +1541,10 @@ PrefabInstance:
       value: ButtonBack
       objectReference: {fileID: 0}
     - target: {fileID: 7329560287039850238, guid: 6bed55f0fedc118418331ae2631e7577, type: 3}
+      propertyPath: sceneName
+      value: Gameplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329560287039850238, guid: 6bed55f0fedc118418331ae2631e7577, type: 3}
       propertyPath: sceneAsset
       value: 
       objectReference: {fileID: 102900000, guid: 0b68d8f92d564534e926b33ac3798de8, type: 3}

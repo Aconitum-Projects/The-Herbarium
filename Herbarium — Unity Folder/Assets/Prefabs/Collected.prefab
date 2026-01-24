@@ -2302,7 +2302,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3705769562435884874}
   - component: {fileID: 7272855068919151067}
-  - component: {fileID: 4228826587933660984}
   - component: {fileID: 5188749997619003803}
   m_Layer: 0
   m_Name: CameraOverride
@@ -2377,14 +2376,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &4228826587933660984
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6366131266723345958}
-  m_Enabled: 1
 --- !u!114 &5188749997619003803
 MonoBehaviour:
   m_ObjectHideFlags: 0

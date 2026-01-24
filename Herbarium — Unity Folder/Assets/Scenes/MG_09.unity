@@ -289,19 +289,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2489897513528384025, guid: 2ac5d058f5d9a4044a94cd45f71e422a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.673947
+      value: 12.674394
       objectReference: {fileID: 0}
     - target: {fileID: 2489897513528384025, guid: 2ac5d058f5d9a4044a94cd45f71e422a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.927021
+      value: -8.927244
       objectReference: {fileID: 0}
     - target: {fileID: 2489897513528384025, guid: 2ac5d058f5d9a4044a94cd45f71e422a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9999989
+      value: 0.9999999
       objectReference: {fileID: 0}
     - target: {fileID: 2489897513528384025, guid: 2ac5d058f5d9a4044a94cd45f71e422a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0015098155
+      value: 0.00053808093
       objectReference: {fileID: 0}
     - target: {fileID: 3957273185113328306, guid: 2ac5d058f5d9a4044a94cd45f71e422a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -361,15 +361,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 8252754545788935499, guid: 2ac5d058f5d9a4044a94cd45f71e422a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.51855
+      value: -6.518773
       objectReference: {fileID: 0}
     - target: {fileID: 8252754545788935499, guid: 2ac5d058f5d9a4044a94cd45f71e422a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9999776
+      value: 0.9999856
       objectReference: {fileID: 0}
     - target: {fileID: 8252754545788935499, guid: 2ac5d058f5d9a4044a94cd45f71e422a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.006705761
+      value: -0.005385995
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2240,6 +2240,10 @@ PrefabInstance:
       propertyPath: 'miniGames.Array.data[2]'
       value: 
       objectReference: {fileID: 1817449466}
+    - target: {fileID: 2732811288118708065, guid: e8d44bbe121692943bb226e7e067d71d, type: 3}
+      propertyPath: sceneName
+      value: MiniGame_Ura
+      objectReference: {fileID: 0}
     - target: {fileID: 3590329957699650091, guid: e8d44bbe121692943bb226e7e067d71d, type: 3}
       propertyPath: m_Camera
       value: 

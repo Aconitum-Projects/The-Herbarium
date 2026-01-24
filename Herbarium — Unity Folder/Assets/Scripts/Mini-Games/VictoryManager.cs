@@ -137,25 +137,20 @@ public class VictoryManager : MonoBehaviour
 
         if (!victoryActive || !canClick) return;
 
-        if (Input.GetMouseButtonDown(0))
+        if (!Input.GetMouseButtonDown(0)) return;
+
+        if (endGameActive)
         {
-            if (!EventSystem.current.IsPointerOverGameObject())
-            {
-                if (endGameActive)
-                {
-                    if (victoryTextRect != null)
-                    {
-                        victoryTextRect.anchoredPosition = victoryTextBasePos;
-                    }
-                    UnityEngine.SceneManagement.SceneManager.LoadScene(mainSceneName);
-                }
-                else
-                {
-                    HideVictoryAndContinue();
-                }
-            }
+            UnityEngine.SceneManagement.SceneManager.LoadScene(mainSceneName);
+            return;
         }
+
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+            return;
+
+        HideVictoryAndContinue();
     }
+
     
     public void TriggerVictory()
     {
@@ -164,7 +159,7 @@ public class VictoryManager : MonoBehaviour
         victoryActive = true;
         canClick = false;
 
-        DisableGameplayScripts();
+        DisableGameplay();
         Invoke(nameof(EnableClick), clickDelay);
 
         victorySequence?.Kill();
@@ -231,7 +226,7 @@ public class VictoryManager : MonoBehaviour
         victoryActive = true;
         canClick = false;
 
-        DisableGameplayScripts();
+        DisableGameplay();
         Invoke(nameof(EnableClick), clickDelay);
 
         victorySequence?.Kill();
@@ -282,26 +277,38 @@ public class VictoryManager : MonoBehaviour
         }
     }
     
-    void DisableGameplayScripts()
+    void DisableGameplay()
     {
         disabledSpriteControllers = FindObjectsByType<SpriteController>(0);
         foreach (var sc in disabledSpriteControllers)
         {
-            if (sc == null) continue;
-            if (sc.ignoreVictoryFreeze) continue;
-
+            if (sc == null || sc.ignoreVictoryFreeze) continue;
             sc.enabled = false;
         }
-        
-        disabledCookingController = FindObjectsByType<CookingController>(0);
-        foreach (var sc in disabledCookingController)
-        {
-            if (sc == null) continue;
-            if (sc.ignoreVictoryFreeze) continue;
 
-            sc.enabled = false;
+        disabledCookingController = FindObjectsByType<CookingController>(0);
+        foreach (var cc in disabledCookingController)
+        {
+            if (cc == null || cc.ignoreVictoryFreeze) continue;
+            cc.enabled = false;
         }
     }
+
+    void EnableGameplay()
+    {
+        if (disabledSpriteControllers != null)
+        {
+            foreach (var sc in disabledSpriteControllers)
+                if (sc != null) sc.enabled = true;
+        }
+
+        if (disabledCookingController != null)
+        {
+            foreach (var cc in disabledCookingController)
+                if (cc != null) cc.enabled = true;
+        }
+    }
+
 
     void HideVictoryAndContinue()
     {
@@ -361,7 +368,7 @@ public class VictoryManager : MonoBehaviour
                         vc.ShowInstructions();
                 }
 
-                Invoke(nameof(EnableGameplayScripts), clickDelay);
+                Invoke(nameof(EnableGameplay), clickDelay);
             }
 
             else
@@ -425,7 +432,7 @@ public class VictoryManager : MonoBehaviour
         victoryActive = true;
         canClick = false;
 
-        DisableGameplayScripts();
+        DisableGameplay();
         Invoke(nameof(EnableClick), clickDelay);
 
         victorySequence?.Kill();
