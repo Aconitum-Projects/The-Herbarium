@@ -20,6 +20,7 @@ public class VictoryManager : MonoBehaviour
         "Paused. No rush.",
         "Still here when you are."
     };
+    public float endGameYOffset = -120f;
     public string pauseSubtitleMessage = "Click anywhere to get back to the game";
     public UnityEngine.UI.Button victoryButton;
     public Volume globalVolume;
@@ -53,6 +54,8 @@ public class VictoryManager : MonoBehaviour
     SpriteController[] disabledSpriteControllers;
     CookingController[] disabledCookingController;
     VictoryChecker[] victoryCheckers;
+    Vector2 victoryTextBasePos;
+    RectTransform victoryTextRect;
 
     void Start()
     {
@@ -84,6 +87,8 @@ public class VictoryManager : MonoBehaviour
             victoryText.gameObject.SetActive(false);
             victoryText.alpha = 0f;
             victoryText.transform.localScale = scaleFrom;
+            victoryTextRect = victoryText.GetComponent<RectTransform>();
+            victoryTextBasePos = victoryTextRect.anchoredPosition;
         }
 
         if (globalVolume != null)
@@ -138,6 +143,10 @@ public class VictoryManager : MonoBehaviour
             {
                 if (endGameActive)
                 {
+                    if (victoryTextRect != null)
+                    {
+                        victoryTextRect.anchoredPosition = victoryTextBasePos;
+                    }
                     UnityEngine.SceneManagement.SceneManager.LoadScene(mainSceneName);
                 }
                 else
@@ -427,6 +436,12 @@ public class VictoryManager : MonoBehaviour
         victoryText.gameObject.SetActive(true);
         victoryText.alpha = 0f;
         victoryText.transform.localScale = scaleFrom;
+        
+        if (victoryTextRect != null)
+        {
+            victoryTextRect.anchoredPosition =
+                victoryTextBasePos + Vector2.up * endGameYOffset;
+        }
 
         victorySequence = DOTween.Sequence();
 

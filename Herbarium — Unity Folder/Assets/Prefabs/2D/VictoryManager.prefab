@@ -397,6 +397,7 @@ MonoBehaviour:
   - Paused. No rush.
   - Still here when you are.
   - Phew, getting tired?
+  endGameYOffset: -550
   pauseSubtitleMessage: Click anywhere to get back to the game
   victoryButton: {fileID: 1358525996539895156}
   globalVolume: {fileID: 486015276162205065}
@@ -411,6 +412,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  endGameObject: {fileID: 0}
+  mainSceneName: Gameplay
   startDelay: 1
   clickDelay: 0.5
 --- !u!223 &3590329957699650091
