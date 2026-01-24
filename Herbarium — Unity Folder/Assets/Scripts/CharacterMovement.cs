@@ -70,11 +70,13 @@ public class CharacterMovement : MonoBehaviour
     {
         if (!isMoving)
         {
-            float horizontal = Input.GetAxis("Horizontal");
-            float vertical = Input.GetAxis("Vertical");
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            float vertical = Input.GetAxisRaw("Vertical");
+
             Vector3 moveDirection = new Vector3(horizontal, 0, vertical);
 
-            bool isWalkingNow = moveDirection.magnitude >= 0.1f;
+            bool isWalkingNow = moveDirection.sqrMagnitude > 0.01f;
+
             animator.SetBool("isWalking", isWalkingNow);
 
             if (isWalkingNow)
