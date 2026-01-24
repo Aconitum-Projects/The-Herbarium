@@ -5,15 +5,27 @@ using DG.Tweening;
 public class CharacterMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    private Vector3 targetPosition;
-    private bool isMoving = false;
-
-    private bool isControlled = false;
-    private GameObject selectionEffect;
     
     public GameObject selectionEffectPrefab;
     public float rotationSpeed = 10f;
     
+    private Vector3 targetPosition;
+    private bool isMoving = false;
+    private Animator animator;
+
+    private bool isControlled = false;
+    private GameObject selectionEffect;
+    
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+
+        if (animator == null)
+        {
+            animator = GetComponentInChildren<Animator>();
+        }
+    }
+
     private void OnDestroy()
     {
         SceneStateManager.Instance.SaveTransform(name, transform);
@@ -60,15 +72,18 @@ public class CharacterMovement : MonoBehaviour
         {
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
-            Vector3 moveDirection = new Vector3(horizontal, 0, vertical).normalized;
+            Vector3 moveDirection = new Vector3(horizontal, 0, vertical);
 
-            if (moveDirection.magnitude >= 0.1f)
+            bool isWalkingNow = moveDirection.magnitude >= 0.1f;
+            animator.SetBool("isWalking", isWalkingNow);
+
+            if (isWalkingNow)
             {
-                // Rotation vers la direction du déplacement
+                moveDirection.Normalize();
+
                 Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
                 transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
 
-                // Déplacement du personnage
                 transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
             }
         }
@@ -100,25 +115,32 @@ public class CharacterMovement : MonoBehaviour
     private IEnumerator MoveToTarget()
     {
         isMoving = true;
+        animator.SetBool("isWalking", true);
 
         while (Vector3.Distance(transform.position, targetPosition) > 0.1f)
         {
             Vector3 direction = (targetPosition - transform.position).normalized;
-            
+
             if (direction.magnitude > 0.1f)
             {
                 Quaternion toRotation = Quaternion.LookRotation(direction, Vector3.up);
                 transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
             }
 
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(
+                transform.position,
+                targetPosition,
+                moveSpeed * Time.deltaTime
+            );
+
             yield return null;
         }
 
         transform.position = targetPosition;
         isMoving = false;
+        animator.SetBool("isWalking", false);
     }
-    
+
     public void MoveOutOfTrigger(Vector3 safePosition)
     {
         StopAllCoroutines();
