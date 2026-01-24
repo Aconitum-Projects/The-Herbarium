@@ -385,7 +385,7 @@ Transform:
   m_GameObject: {fileID: 837433690}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.5, y: 14, z: 0}
+  m_LocalPosition: {x: 16.5, y: 16, z: 0}
   m_LocalScale: {x: 10, y: 20, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -619,6 +619,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 254200302}
     m_Modifications:
+    - target: {fileID: 2082515951482444992, guid: 8184972814e54634f9dd92f73f17d228, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082515951482444992, guid: 8184972814e54634f9dd92f73f17d228, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 4005142584304633741, guid: 8184972814e54634f9dd92f73f17d228, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16
@@ -663,6 +671,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scisor
       objectReference: {fileID: 0}
+    - target: {fileID: 5158207337754423181, guid: 8184972814e54634f9dd92f73f17d228, type: 3}
+      propertyPath: m_SortingOrder
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 6603093444115684928, guid: 8184972814e54634f9dd92f73f17d228, type: 3}
       propertyPath: limitY
       value: 1
@@ -676,8 +688,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6603093444115684928, guid: 8184972814e54634f9dd92f73f17d228, type: 3}
+      propertyPath: yLimits.x
+      value: -6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6603093444115684928, guid: 8184972814e54634f9dd92f73f17d228, type: 3}
       propertyPath: yLimits.y
-      value: 7.5
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8824338266848453916, guid: 8184972814e54634f9dd92f73f17d228, type: 3}
+      propertyPath: m_SortingOrder
+      value: -4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1125,7 +1145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 380679755398857532}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 14.36, z: 0}
   m_LocalScale: {x: 40, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -388,7 +388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1645858247631993260, guid: 9a1e9267fb36940409f35c4be7f0b1ff, type: 3}
       propertyPath: m_MaskInteraction
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4269878149344056760, guid: 9a1e9267fb36940409f35c4be7f0b1ff, type: 3}
       propertyPath: m_LocalPosition.y
@@ -465,9 +465,10 @@ MonoBehaviour:
   rotationMinFollow: -45
   rotationMaxFollow: 45
   enableProgressiveDown: 1
-  yDecreasePerUnitX: 0.1
-  minY: -6
+  yDecreasePerUnitX: 0.15
+  minYOffset: 9
   progressiveValidated: 0
+  progressiveTarget: {fileID: 0}
   maxScale: {x: 0.05, y: 1.5}
   detachThreshold: 5
   scaleDuration: 0.2
@@ -514,8 +515,8 @@ MonoBehaviour:
   destroyCollider: {fileID: 0}
   collected: 0
   destroyed: 0
-  collectedSpriteRenderer: {fileID: 0}
   shakeAccum: 0
+  pointPasses: 
 --- !u!4 &4793274257926070491 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4269878149344056760, guid: 9a1e9267fb36940409f35c4be7f0b1ff, type: 3}

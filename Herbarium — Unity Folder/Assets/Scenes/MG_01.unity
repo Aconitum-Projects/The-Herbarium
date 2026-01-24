@@ -424,7 +424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -678,10 +678,30 @@ PrefabInstance:
       propertyPath: cutterCollider
       value: 
       objectReference: {fileID: 464827771}
+    - target: {fileID: 979844512721044975, guid: a1ed3a927ec8d2b499c9fbf3122fdbb2, type: 3}
+      propertyPath: m_SortingOrder
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2101467710289569999, guid: a1ed3a927ec8d2b499c9fbf3122fdbb2, type: 3}
+      propertyPath: m_SortingOrder
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229397208844123190, guid: a1ed3a927ec8d2b499c9fbf3122fdbb2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2709434525193786810, guid: a1ed3a927ec8d2b499c9fbf3122fdbb2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6471985576986845041, guid: a1ed3a927ec8d2b499c9fbf3122fdbb2, type: 3}
       propertyPath: cutterCollider
       value: 
       objectReference: {fileID: 464827771}
+    - target: {fileID: 6773069828431253461, guid: a1ed3a927ec8d2b499c9fbf3122fdbb2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7078008721355272638, guid: a1ed3a927ec8d2b499c9fbf3122fdbb2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -722,6 +742,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7540932185497337156, guid: a1ed3a927ec8d2b499c9fbf3122fdbb2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153704709534931265, guid: a1ed3a927ec8d2b499c9fbf3122fdbb2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8160203625395715209, guid: a1ed3a927ec8d2b499c9fbf3122fdbb2, type: 3}
       propertyPath: cutterCollider
       value: 
@@ -729,6 +757,10 @@ PrefabInstance:
     - target: {fileID: 8282747238278769117, guid: a1ed3a927ec8d2b499c9fbf3122fdbb2, type: 3}
       propertyPath: m_Name
       value: MG_01_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174726722551415164, guid: a1ed3a927ec8d2b499c9fbf3122fdbb2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -904,7 +936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6847464262802734910, guid: dd8a15f62d149b246a51c680be796b62, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
