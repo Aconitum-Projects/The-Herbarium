@@ -12,10 +12,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collected_14
       objectReference: {fileID: 0}
-    - target: {fileID: 2222976551286092052, guid: ec165f8fa1092fa4580edb8841cdb5c4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7991334024345401391, guid: ec165f8fa1092fa4580edb8841cdb5c4, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -66,6 +62,10 @@ PrefabInstance:
     - {fileID: 4250467476463706427, guid: ec165f8fa1092fa4580edb8841cdb5c4, type: 3}
     - {fileID: 4900910123720678572, guid: ec165f8fa1092fa4580edb8841cdb5c4, type: 3}
     - {fileID: 2517100667168756795, guid: ec165f8fa1092fa4580edb8841cdb5c4, type: 3}
+    - {fileID: 6165884593251663492, guid: ec165f8fa1092fa4580edb8841cdb5c4, type: 3}
+    - {fileID: 2412049747113987388, guid: ec165f8fa1092fa4580edb8841cdb5c4, type: 3}
+    - {fileID: 409438684210568163, guid: ec165f8fa1092fa4580edb8841cdb5c4, type: 3}
+    - {fileID: 5207382813098939825, guid: ec165f8fa1092fa4580edb8841cdb5c4, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec165f8fa1092fa4580edb8841cdb5c4, type: 3}
