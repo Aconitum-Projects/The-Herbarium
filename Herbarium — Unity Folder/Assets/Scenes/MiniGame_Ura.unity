@@ -220,6 +220,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7329560287039850238, guid: 6bed55f0fedc118418331ae2631e7577, type: 3}
+      propertyPath: sceneName
+      value: Gameplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329560287039850238, guid: 6bed55f0fedc118418331ae2631e7577, type: 3}
       propertyPath: sceneAsset
       value: 
       objectReference: {fileID: 102900000, guid: 0b68d8f92d564534e926b33ac3798de8, type: 3}
@@ -363,30 +367,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2012640214}
     m_Modifications:
-    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_text
-      value: Liane d'Ayahuasca
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_fontSize
-      value: 68.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Color.b
-      value: 0.58762014
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Color.g
-      value: 0.8201465
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Color.r
-      value: 0.8962264
-      objectReference: {fileID: 0}
-    - target: {fileID: 9183062983550902143, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 3657229141342214416, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Color.b
       value: 0.79215693
@@ -399,14 +379,6 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.3529412
       objectReference: {fileID: 0}
-    - target: {fileID: 3657229141342214416, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Color.r
-      value: 0.3529412
-      objectReference: {fileID: 0}
-    - target: {fileID: 4047772679486378899, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Color.b
-      value: 0.6603774
-      objectReference: {fileID: 0}
     - target: {fileID: 4047772679486378899, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Color.b
       value: 0.6603774
@@ -414,14 +386,6 @@ PrefabInstance:
     - target: {fileID: 4047772679486378899, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Color.g
       value: 0.46078783
-      objectReference: {fileID: 0}
-    - target: {fileID: 4047772679486378899, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Color.g
-      value: 0.46078783
-      objectReference: {fileID: 0}
-    - target: {fileID: 4047772679486378899, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Color.r
-      value: 0.2834639
       objectReference: {fileID: 0}
     - target: {fileID: 4047772679486378899, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Color.r
@@ -437,7 +401,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7605857456024236546, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: sceneName
-      value: UraMG_03
+      value: MG_03
       objectReference: {fileID: 0}
     - target: {fileID: 7605857456024236546, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: sceneAsset
@@ -447,10 +411,6 @@ PrefabInstance:
       propertyPath: transitionAnim
       value: 
       objectReference: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
-    - target: {fileID: 8137552549507453131, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Name
-      value: PotionButton_03
-      objectReference: {fileID: 0}
     - target: {fileID: 8137552549507453131, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Name
       value: PotionButton_03
@@ -563,6 +523,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_text
+      value: Liane d'Ayahuasca
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_fontSize
+      value: 68.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Color.b
+      value: 0.58762014
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8201465
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8962264
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183062983550902143, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -581,30 +565,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 512250692}
     m_Modifications:
-    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_text
-      value: Nectar d'Inspiration
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_fontSize
-      value: 70.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Color.b
-      value: 0.6650944
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Color.g
-      value: 0.771731
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9183062983550902143, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 3657229141342214416, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Color.b
       value: 0.8078432
@@ -612,10 +572,6 @@ PrefabInstance:
     - target: {fileID: 3657229141342214416, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Color.g
       value: 0.79215693
-      objectReference: {fileID: 0}
-    - target: {fileID: 3657229141342214416, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Color.r
-      value: 0.57254905
       objectReference: {fileID: 0}
     - target: {fileID: 3657229141342214416, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Color.r
@@ -630,20 +586,8 @@ PrefabInstance:
       value: 0.6603774
       objectReference: {fileID: 0}
     - target: {fileID: 4047772679486378899, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Color.b
-      value: 0.6603774
-      objectReference: {fileID: 0}
-    - target: {fileID: 4047772679486378899, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Color.g
       value: 0.46078783
-      objectReference: {fileID: 0}
-    - target: {fileID: 4047772679486378899, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Color.g
-      value: 0.46078783
-      objectReference: {fileID: 0}
-    - target: {fileID: 4047772679486378899, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Color.r
-      value: 0.2834639
       objectReference: {fileID: 0}
     - target: {fileID: 4047772679486378899, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Color.r
@@ -663,7 +607,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 44539ed03dfc69a41ba681b666773300, type: 3}
     - target: {fileID: 7605857456024236546, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: sceneName
-      value: UraMG_07
+      value: MG_07
       objectReference: {fileID: 0}
     - target: {fileID: 7605857456024236546, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: sceneAsset
@@ -673,10 +617,6 @@ PrefabInstance:
       propertyPath: transitionAnim
       value: 
       objectReference: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
-    - target: {fileID: 8137552549507453131, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Name
-      value: PotionButton_07
-      objectReference: {fileID: 0}
     - target: {fileID: 8137552549507453131, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Name
       value: PotionButton_07
@@ -788,6 +728,30 @@ PrefabInstance:
     - target: {fileID: 8296805109271520778, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_text
+      value: Nectar d'Inspiration
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_fontSize
+      value: 70.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6650944
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Color.g
+      value: 0.771731
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183062983550902143, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1425,21 +1389,21 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 729f408d2228e9f459e82dadb09ae026, type: 3}
+    - target: {fileID: 4387031070191375132, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387031070191375132, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
     - target: {fileID: 6690144134406781330, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 44539ed03dfc69a41ba681b666773300, type: 3}
-    - target: {fileID: 8137552549507453131, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Name
-      value: PotionButton_06
-      objectReference: {fileID: 0}
-    - target: {fileID: 8137552549507453131, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 7605857456024236546, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: sceneName
-      value: UraMG_06
+      value: MG_06
       objectReference: {fileID: 0}
     - target: {fileID: 7605857456024236546, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: sceneAsset
@@ -1449,21 +1413,13 @@ PrefabInstance:
       propertyPath: transitionAnim
       value: 
       objectReference: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
-    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_text
-      value: "Poussi\xE8re d'Illusion"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_fontSize
-      value: 70.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 3657229141342214416, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Color.r
-      value: 0.7019608
-      objectReference: {fileID: 0}
     - target: {fileID: 8137552549507453131, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Name
       value: PotionButton_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137552549507453131, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8284767730577502511, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_text
@@ -1569,13 +1525,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4387031070191375132, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
+    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_text
+      value: "Poussi\xE8re d'Illusion"
       objectReference: {fileID: 0}
-    - target: {fileID: 4387031070191375132, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
+    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_fontSize
+      value: 70.75
       objectReference: {fileID: 0}
     - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: m_Color.b
@@ -2044,30 +2000,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2012640214}
     m_Modifications:
-    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_text
-      value: Graines de Datura
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_fontSize
-      value: 68.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Color.b
-      value: 0.6792453
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Color.g
-      value: 0.5717718
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Color.r
-      value: 0.5671057
-      objectReference: {fileID: 0}
-    - target: {fileID: 9183062983550902143, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 3657229141342214416, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Color.b
       value: 0.73333335
@@ -2075,10 +2007,6 @@ PrefabInstance:
     - target: {fileID: 3657229141342214416, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Color.g
       value: 0.5254902
-      objectReference: {fileID: 0}
-    - target: {fileID: 3657229141342214416, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Color.r
-      value: 0.24313727
       objectReference: {fileID: 0}
     - target: {fileID: 3657229141342214416, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Color.r
@@ -2094,7 +2022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7605857456024236546, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: sceneName
-      value: UraMG_02
+      value: MG_02
       objectReference: {fileID: 0}
     - target: {fileID: 7605857456024236546, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: sceneAsset
@@ -2104,10 +2032,6 @@ PrefabInstance:
       propertyPath: transitionAnim
       value: 
       objectReference: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
-    - target: {fileID: 8137552549507453131, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Name
-      value: PotionButton_02
-      objectReference: {fileID: 0}
     - target: {fileID: 8137552549507453131, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Name
       value: PotionButton_02
@@ -2224,6 +2148,30 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_text
+      value: Graines de Datura
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_fontSize
+      value: 68.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6792453
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5717718
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5671057
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183062983550902143, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2242,30 +2190,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 512250692}
     m_Modifications:
-    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_text
-      value: Essence d'Illusion
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_fontSize
-      value: 76.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Color.g
-      value: 0.9491031
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Color.r
-      value: 0.8915094
-      objectReference: {fileID: 0}
-    - target: {fileID: 9183062983550902143, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 3657229141342214416, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Color.b
       value: 0.7254902
@@ -2308,7 +2232,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 44539ed03dfc69a41ba681b666773300, type: 3}
     - target: {fileID: 7605857456024236546, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: sceneName
-      value: UraMG_09
+      value: MG_09
       objectReference: {fileID: 0}
     - target: {fileID: 7605857456024236546, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: sceneAsset
@@ -2318,10 +2242,6 @@ PrefabInstance:
       propertyPath: transitionAnim
       value: 
       objectReference: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
-    - target: {fileID: 8137552549507453131, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Name
-      value: PotionButton_09
-      objectReference: {fileID: 0}
     - target: {fileID: 8137552549507453131, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Name
       value: PotionButton_09
@@ -2434,6 +2354,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_text
+      value: Essence d'Illusion
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_fontSize
+      value: 76.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9491031
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8915094
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183062983550902143, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2452,30 +2396,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 512250692}
     m_Modifications:
-    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_text
-      value: "Feuilles de Paix Int\xE9rieure"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_fontSize
-      value: 68.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Color.g
-      value: 0.7396138
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Color.r
-      value: 0.7294118
-      objectReference: {fileID: 0}
-    - target: {fileID: 9183062983550902143, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 3657229141342214416, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Color.b
       value: 0.6666667
@@ -2506,7 +2426,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 44539ed03dfc69a41ba681b666773300, type: 3}
     - target: {fileID: 7605857456024236546, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: sceneName
-      value: UraMG_08
+      value: MG_08
       objectReference: {fileID: 0}
     - target: {fileID: 7605857456024236546, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: sceneAsset
@@ -2516,10 +2436,6 @@ PrefabInstance:
       propertyPath: transitionAnim
       value: 
       objectReference: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
-    - target: {fileID: 8137552549507453131, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Name
-      value: PotionButton_08
-      objectReference: {fileID: 0}
     - target: {fileID: 8137552549507453131, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Name
       value: PotionButton_08
@@ -2632,6 +2548,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_text
+      value: "Feuilles de Paix Int\xE9rieure"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_fontSize
+      value: 68.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7396138
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183062983550902143, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2650,30 +2590,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 512250692}
     m_Modifications:
-    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_text
-      value: "Essence de M\xE9moire"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_fontSize
-      value: 68.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Color.g
-      value: 0.6273585
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Color.r
-      value: 0.75093967
-      objectReference: {fileID: 0}
-    - target: {fileID: 9183062983550902143, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 3657229141342214416, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Color.b
       value: 0.8313726
@@ -2681,10 +2597,6 @@ PrefabInstance:
     - target: {fileID: 3657229141342214416, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Color.g
       value: 0.7843138
-      objectReference: {fileID: 0}
-    - target: {fileID: 3657229141342214416, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Color.r
-      value: 0.5176471
       objectReference: {fileID: 0}
     - target: {fileID: 3657229141342214416, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Color.r
@@ -2720,7 +2632,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 44539ed03dfc69a41ba681b666773300, type: 3}
     - target: {fileID: 7605857456024236546, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: sceneName
-      value: UraMG_05
+      value: MG_05
       objectReference: {fileID: 0}
     - target: {fileID: 7605857456024236546, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: sceneAsset
@@ -2730,10 +2642,6 @@ PrefabInstance:
       propertyPath: transitionAnim
       value: 
       objectReference: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
-    - target: {fileID: 8137552549507453131, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Name
-      value: PotionButton_05
-      objectReference: {fileID: 0}
     - target: {fileID: 8137552549507453131, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Name
       value: PotionButton_05
@@ -2846,6 +2754,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_text
+      value: "Essence de M\xE9moire"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_fontSize
+      value: 68.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6273585
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Color.r
+      value: 0.75093967
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183062983550902143, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2864,30 +2796,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2012640214}
     m_Modifications:
-    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_text
-      value: Fleurs de Datura
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_fontSize
-      value: 68.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Color.b
-      value: 0.9622642
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Color.g
-      value: 0.78524387
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Color.r
-      value: 0.85454434
-      objectReference: {fileID: 0}
-    - target: {fileID: 9183062983550902143, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 3657229141342214416, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Color.b
       value: 0.9058824
@@ -2900,14 +2808,6 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3657229141342214416, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4047772679486378899, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Color.b
-      value: 0.6603774
-      objectReference: {fileID: 0}
     - target: {fileID: 4047772679486378899, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Color.b
       value: 0.6603774
@@ -2915,14 +2815,6 @@ PrefabInstance:
     - target: {fileID: 4047772679486378899, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Color.g
       value: 0.46078783
-      objectReference: {fileID: 0}
-    - target: {fileID: 4047772679486378899, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Color.g
-      value: 0.46078783
-      objectReference: {fileID: 0}
-    - target: {fileID: 4047772679486378899, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Color.r
-      value: 0.2834639
       objectReference: {fileID: 0}
     - target: {fileID: 4047772679486378899, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Color.r
@@ -2938,7 +2830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7605857456024236546, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: sceneName
-      value: UraMG_01
+      value: MG_01
       objectReference: {fileID: 0}
     - target: {fileID: 7605857456024236546, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: sceneAsset
@@ -2948,10 +2840,6 @@ PrefabInstance:
       propertyPath: transitionAnim
       value: 
       objectReference: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
-    - target: {fileID: 8137552549507453131, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Name
-      value: PotionButton_01
-      objectReference: {fileID: 0}
     - target: {fileID: 8137552549507453131, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Name
       value: PotionButton_01
@@ -3083,6 +2971,30 @@ PrefabInstance:
     - target: {fileID: 8296805109271520778, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_text
+      value: Fleurs de Datura
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_fontSize
+      value: 68.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9622642
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Color.g
+      value: 0.78524387
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Color.r
+      value: 0.85454434
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183062983550902143, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3252,17 +3164,17 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.7803922
       objectReference: {fileID: 0}
-    - target: {fileID: 8137552549507453131, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Name
-      value: PotionButton_04
+    - target: {fileID: 4387031070191375132, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 8137552549507453131, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Layer
-      value: 6
+    - target: {fileID: 4387031070191375132, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 7605857456024236546, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: sceneName
-      value: UraMG_04
+      value: MG_04
       objectReference: {fileID: 0}
     - target: {fileID: 7605857456024236546, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: sceneAsset
@@ -3272,21 +3184,13 @@ PrefabInstance:
       propertyPath: transitionAnim
       value: 
       objectReference: {fileID: 7400000, guid: 4beb496eba3784e419201b4d2e9d91b1, type: 2}
-    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_text
-      value: Racine d'Iboga
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
-      propertyPath: m_fontSize
-      value: 68.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 3657229141342214416, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_Color.r
-      value: 0.7803922
-      objectReference: {fileID: 0}
     - target: {fileID: 8137552549507453131, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_Name
       value: PotionButton_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137552549507453131, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8284767730577502511, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
       propertyPath: m_text
@@ -3392,13 +3296,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4387031070191375132, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
+    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_text
+      value: Racine d'Iboga
       objectReference: {fileID: 0}
-    - target: {fileID: 4387031070191375132, guid: 5f07eeed42dd1f34b8a2baebcf2c90d6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
+    - target: {fileID: 6703075057884772387, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
+      propertyPath: m_fontSize
+      value: 68.35
       objectReference: {fileID: 0}
     - target: {fileID: 8100528934053906255, guid: 9b77688f814315c4981c16a11081cb26, type: 3}
       propertyPath: m_Color.b

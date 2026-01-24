@@ -1,36 +1,28 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
-
 public class ButtonHandler : MonoBehaviour,
     IPointerEnterHandler,
     IPointerExitHandler,
     IPointerClickHandler
 {
-    #region Scene
-#if UNITY_EDITOR
-    public SceneAsset sceneAsset;
-#endif
+    [Header("Scene")]
+    public string sceneName;
+
+    [Header("Transition")]
     public AnimationClip transitionAnim;
-    private string sceneName;
-    #endregion
 
     [Header("Animator")]
     public Animator animator;
-    public string hoverTriggerName = "OnHover", exitTriggerName = "OnExit", clickTriggerName = "OnClick";
+    public string hoverTriggerName = "OnHover";
+    public string exitTriggerName = "OnExit";
+    public string clickTriggerName = "OnClick";
 
     [Header("SceneChanger")]
     public SceneChanger sceneChanger;
 
-    void Start()
+    private void Awake()
     {
-#if UNITY_EDITOR
-        if (sceneAsset)
-            sceneName = sceneAsset.name;
-#endif
         if (!sceneChanger)
             sceneChanger = FindAnyObjectByType<SceneChanger>();
     }
@@ -49,6 +41,12 @@ public class ButtonHandler : MonoBehaviour,
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (string.IsNullOrEmpty(sceneName))
+        {
+            Debug.LogError("ButtonHandler: sceneName is EMPTY");
+            return;
+        }
+
         if (animator)
             animator.SetTrigger(clickTriggerName);
 

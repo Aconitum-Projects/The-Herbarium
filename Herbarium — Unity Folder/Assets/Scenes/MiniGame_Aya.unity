@@ -152,6 +152,10 @@ PrefabInstance:
       value: 0.97647065
       objectReference: {fileID: 0}
     - target: {fileID: 2424452167291169774, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: sceneName
+      value: MG_11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2424452167291169774, guid: 10f4517175069c04baa699247374b2ba, type: 3}
       propertyPath: sceneAsset
       value: 
       objectReference: {fileID: 102900000, guid: 3fe6fc76b4faff24d8d85dc3de050b0b, type: 3}
@@ -821,6 +825,10 @@ PrefabInstance:
     - target: {fileID: 6969829714595765680, guid: 6bed55f0fedc118418331ae2631e7577, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329560287039850238, guid: 6bed55f0fedc118418331ae2631e7577, type: 3}
+      propertyPath: sceneName
+      value: Gameplay
       objectReference: {fileID: 0}
     - target: {fileID: 7329560287039850238, guid: 6bed55f0fedc118418331ae2631e7577, type: 3}
       propertyPath: sceneAsset
@@ -1555,6 +1563,10 @@ PrefabInstance:
       value: 0.9686275
       objectReference: {fileID: 0}
     - target: {fileID: 2424452167291169774, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: sceneName
+      value: MG_13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2424452167291169774, guid: 10f4517175069c04baa699247374b2ba, type: 3}
       propertyPath: sceneAsset
       value: 
       objectReference: {fileID: 102900000, guid: 62df6689483f4274991de64d50d6c512, type: 3}
@@ -1751,6 +1763,10 @@ PrefabInstance:
     - target: {fileID: 1185173098864890854, guid: 10f4517175069c04baa699247374b2ba, type: 3}
       propertyPath: m_Color.r
       value: 0.28235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2424452167291169774, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: sceneName
+      value: MG_12
       objectReference: {fileID: 0}
     - target: {fileID: 2424452167291169774, guid: 10f4517175069c04baa699247374b2ba, type: 3}
       propertyPath: sceneAsset
@@ -2231,6 +2247,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1245164060}
     m_Modifications:
+    - target: {fileID: 2424452167291169774, guid: 10f4517175069c04baa699247374b2ba, type: 3}
+      propertyPath: sceneName
+      value: MG_10
+      objectReference: {fileID: 0}
     - target: {fileID: 6773050536877339671, guid: 10f4517175069c04baa699247374b2ba, type: 3}
       propertyPath: m_Name
       value: PotionButton_A

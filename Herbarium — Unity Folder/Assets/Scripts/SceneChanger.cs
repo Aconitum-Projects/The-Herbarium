@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 using System.Collections;
+using TMPro;
 using UnityEngine.UI;
 
 public class SceneChanger : MonoBehaviour
@@ -16,11 +17,11 @@ public class SceneChanger : MonoBehaviour
     public float showDuration = 0.5f;
     public float stayDuration = 1f;
     public float hideDuration = 0.5f;
-
     public static SceneChanger Instance { get; private set; }
 
     private void Awake()
     {
+        
         if (Instance == null)
         {
             Instance = this;
@@ -62,16 +63,14 @@ public class SceneChanger : MonoBehaviour
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
 
-        yield return new WaitUntil(() => asyncLoad.isDone);
-        
-        var async = SceneManager.LoadSceneAsync(sceneName);
-
-        if (async == null)
+        if (asyncLoad == null)
         {
             Debug.LogError($"Scene {sceneName} not found in Build Profile");
+
             yield break;
         }
 
+        yield return new WaitUntil(() => asyncLoad.isDone);
 
         panel.DOAnchorPos(hidePanel, hideDuration);
     }

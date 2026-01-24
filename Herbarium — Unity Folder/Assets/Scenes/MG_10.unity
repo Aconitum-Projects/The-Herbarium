@@ -782,6 +782,10 @@ PrefabInstance:
       propertyPath: 'miniGames.Array.data[2]'
       value: 
       objectReference: {fileID: 1817449466}
+    - target: {fileID: 2732811288118708065, guid: e8d44bbe121692943bb226e7e067d71d, type: 3}
+      propertyPath: sceneName
+      value: MiniGame_Aya
+      objectReference: {fileID: 0}
     - target: {fileID: 3590329957699650091, guid: e8d44bbe121692943bb226e7e067d71d, type: 3}
       propertyPath: m_Camera
       value: 
