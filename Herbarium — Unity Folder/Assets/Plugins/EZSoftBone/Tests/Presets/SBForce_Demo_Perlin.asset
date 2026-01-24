@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e0e7a7eb454834a9a4d800966e3c40, type: 3}
   m_Name: SBForce_Demo_Perlin
   m_EditorClassIdentifier: 
-  m_Force: 0.05
-  m_Turbulence: {x: 0.3, y: 0.3, z: 0.3}
+  m_Force: 1
+  m_Turbulence: {x: 2, y: 1, z: 2}
   m_TurbulenceMode: 1
-  m_Frequency: {x: 0.4, y: 0.4, z: 0.4}
+  m_Frequency: {x: 2, y: 2, z: 2}
   m_TimeCycle: 5
   m_CurveX:
     serializedVersion: 2

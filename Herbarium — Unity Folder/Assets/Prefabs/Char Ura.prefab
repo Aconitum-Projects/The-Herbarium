@@ -105,17 +105,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5985583560308303940, guid: 20b6b6713172f494d970737326771192, type: 3}
   m_PrefabInstance: {fileID: 2286744010880907877}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7528592184889898484 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8630809193855192977, guid: 20b6b6713172f494d970737326771192, type: 3}
-  m_PrefabInstance: {fileID: 2286744010880907877}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588f44dfb579d464d842eb583138fb31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: EZhex1991.EZSoftBone::EZhex1991.EZSoftBone.EZSoftBoneForceField
 --- !u!1001 &4211548016908358234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2232,8 +2221,8 @@ MonoBehaviour:
   m_Iterations: 1
   m_SleepThreshold: 0.005
   m_GravityAligner: {fileID: 0}
-  m_Gravity: {x: 0, y: 0, z: 0}
-  m_ForceModule: {fileID: 7528592184889898484}
+  m_Gravity: {x: 0, y: 0.5, z: 0}
+  m_ForceModule: {fileID: 0}
   m_ForceScale: 0.05
   m_SimulateSpace: {fileID: 0}
 --- !u!4 &4465554218399282609 stripped
