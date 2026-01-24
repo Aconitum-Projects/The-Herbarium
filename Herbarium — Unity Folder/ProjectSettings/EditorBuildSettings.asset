@@ -6,11 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 268d40b903ccafb41a09281c9037b22f
+  - enabled: 1
     path: Assets/Scenes/Gameplay.unity
     guid: 0b68d8f92d564534e926b33ac3798de8
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 268d40b903ccafb41a09281c9037b22f
+    path: Assets/Scenes/MiniGame_Aya.unity
+    guid: e428b6d783f0b9e409929db951b7d897
+  - enabled: 1
+    path: Assets/Scenes/MiniGame_Ura.unity
+    guid: 3321f47f19420b54eaf890c195995c67
+  - enabled: 1
+    path: Assets/Scenes/MiniGame_Oga.unity
+    guid: 5a4c5d488ed25154685fc3112386df31
   - enabled: 1
     path: Assets/Scenes/MG_00.unity
     guid: 5a7ff2dcedd5d6748a6fc210132014cc
@@ -56,15 +65,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MG_14.unity
     guid: 2f55c6b6947717f4683d84ed1e30d823
-  - enabled: 1
-    path: Assets/Scenes/MiniGame_Aya.unity
-    guid: e428b6d783f0b9e409929db951b7d897
-  - enabled: 1
-    path: Assets/Scenes/MiniGame_Oga.unity
-    guid: cdc4bc6600d56ee449d44998c97c2867
-  - enabled: 1
-    path: Assets/Scenes/MiniGame_Ura.unity
-    guid: 3321f47f19420b54eaf890c195995c67
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
